@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { Reaction, Story, WallEntry } from '../types';
 import { REACTIONS } from '../types';
-import { getCover, COVERS } from '../utils/covers';
+import { getCover, COVERS, coverText } from '../utils/covers';
 import { REACTION_GLYPH, fallbackCount } from '../utils/reactions';
 import { openAigramProfile } from '@shared/runtime/bridge';
 import { t } from '../i18n';
@@ -246,7 +246,7 @@ function WallCard({
         <div className="ph-wall-card__veil" aria-hidden />
         <div className="ph-wall-card__masthead">PULP HOUR</div>
         <div className="ph-wall-card__title">{ending.title}</div>
-        <div className="ph-wall-card__dek">{cover.subtitle}</div>
+        <div className="ph-wall-card__dek">{coverText(cover, 'subtitle')}</div>
       </button>
       <div className="ph-wall-card__meta">
         <button

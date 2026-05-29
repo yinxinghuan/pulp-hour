@@ -4,14 +4,16 @@ export const AXES: Axis[] = ['defy', 'yield', 'lie'];
 
 export type CoverId = 'operator' | 'tenant' | 'voyager' | 'last-train';
 
+export type CoverLocale = 'en' | 'zh' | 'ja' | 'ko' | 'es';
+
 export interface Cover {
   id: CoverId;
-  title: string;         // big pulp headline
-  subtitle: string;      // dek
-  hook: string;          // one-line pitch shown on cover
-  persona: string;       // injected into LLM system prompt
-  imageUrl: string;      // pre-baked cover art (in /public/covers/)
-  ink: string;           // dominant ink color for this issue
+  title: Record<CoverLocale, string>;       // big pulp headline, per locale
+  subtitle: Record<CoverLocale, string>;    // dek, per locale
+  hook: Record<CoverLocale, string>;        // one-line pitch shown on cover, per locale
+  persona: string;                          // injected into LLM system prompt (English)
+  imageUrl: string;
+  ink: string;
 }
 
 export interface Beat {

@@ -1,4 +1,5 @@
 import type { Axis, Beat, Cover } from '../types';
+import { locale } from '../i18n';
 
 const AXIS_DESC: Record<Axis, string> = {
   defy: 'refuse, fight, leave, hang up, push back',
@@ -9,15 +10,38 @@ const AXIS_DESC: Record<Axis, string> = {
 const ILLUSTRATION_TAIL =
   '1960s American pulp horror comic book panel, heavy black ink outlines, Ben-Day halftone dots, lurid spot colors, dramatic high-contrast shadows, hand-drawn comic book style, no text, no letters, no logos';
 
+const LOCALE_LANGUAGE: Record<string, string> = {
+  en: 'American English',
+  zh: '简体中文',
+  ja: '日本語',
+  ko: '한국어',
+  es: 'español',
+};
+
+function languageDirective(): string {
+  const lc = locale();
+  if (lc === 'en') {
+    return `LANGUAGE
+Write "narration", every "choices" label, and (in beat 6) the "title" in American English, second-person present tense, noir tone.
+The "illustration_prompt" MUST stay in English regardless.`;
+  }
+  const lang = LOCALE_LANGUAGE[lc] || 'American English';
+  return `LANGUAGE
+Write "narration", every "choices" label, and (in beat 6) the "title" in ${lang}. Second-person present tense, noir tone, idiomatic.
+The "illustration_prompt" MUST stay in English regardless — it goes to an image generation model that only understands English.`;
+}
+
 export function beatSystemPrompt(cover: Cover): string {
   return `You are the ghostwriter of a 6-beat illustrated pulp short story for the comic-book magazine "Pulp Hour".
 
 This issue's story:
-TITLE: ${cover.title}
-HOOK: ${cover.hook}
+TITLE: ${cover.title.en}
+HOOK: ${cover.hook.en}
 
 PERSONA / SETTING:
 ${cover.persona}
+
+${languageDirective()}
 
 OUTPUT FORMAT — strict JSON only, no markdown fences, no commentary.
 
@@ -44,7 +68,7 @@ ILLUSTRATION RULES — every beat (including 1–5) returns its own "illustratio
 
 BEAT 6 SPECIFICS
 - "narration" resolves the story in a single paragraph (3–5 sentences).
-- "title" is a punchy 4–7 word pulp story title in Title Case, no quotes.
+- "title" is a punchy 4–7 word pulp story title in the language above, Title Case where applicable, no quotes.
 - "illustration_prompt" describes the climactic moment and ends with the same tail above.
 
 Keep narration TIGHT. No throat-clearing. No "you find yourself" openers.`;

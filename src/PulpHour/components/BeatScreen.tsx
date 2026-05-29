@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import type { Axis, Beat, Cover } from '../types';
 import { AXES } from '../types';
+import { coverText } from '../utils/covers';
 import { t } from '../i18n';
 
 interface Props {
@@ -51,7 +52,7 @@ export default function BeatScreen({
       </div>
 
       <div className="ph-beat__article" ref={scrollRef}>
-        <div className="ph-beat__masthead">{cover.title.toUpperCase()}</div>
+        <div className="ph-beat__masthead">{coverText(cover, 'title').toUpperCase()}</div>
 
         {current && (
           <div className="ph-beat__splash">

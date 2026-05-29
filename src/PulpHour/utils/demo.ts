@@ -35,7 +35,7 @@ function makeEnding(cover: Cover): Ending {
   return {
     narration:
       'The operator hangs up first, which the operator has never done. The hold-music starts on its own. You realize you are not on hold for them.',
-    title: cover.title.split(/[:—]/)[0].trim().slice(0, 40) || 'Last Call',
+    title: cover.title.en.split(/[:—]/)[0].trim().slice(0, 40) || 'Last Call',
     illustrationPrompt: '',
     illustrationUrl: cover.imageUrl,
   };

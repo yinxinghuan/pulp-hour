@@ -1,4 +1,5 @@
 import type { Cover } from '../types';
+import { coverText } from '../utils/covers';
 
 interface Props {
   cover: Cover;
@@ -22,9 +23,9 @@ export default function CoverArt({ cover, size = 'md', printed = true }: Props) 
             <span className="ph-cover__masthead-text">PULP HOUR</span>
             <span className="ph-cover__masthead-issue">VOL · I</span>
           </div>
-          <div className="ph-cover__title">{cover.title}</div>
-          <div className="ph-cover__dek">{cover.subtitle}</div>
-          <div className="ph-cover__hook">{cover.hook}</div>
+          <div className="ph-cover__title">{coverText(cover, 'title')}</div>
+          <div className="ph-cover__dek">{coverText(cover, 'subtitle')}</div>
+          <div className="ph-cover__hook">{coverText(cover, 'hook')}</div>
         </>
       )}
     </div>

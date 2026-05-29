@@ -1,4 +1,4 @@
-import { COVERS } from '../utils/covers';
+import { COVERS, coverText } from '../utils/covers';
 import CoverArt from './CoverArt';
 import { t } from '../i18n';
 import type { CoverId } from '../types';
@@ -24,7 +24,7 @@ export default function Newsstand({ onPick, onBack }: Props) {
             key={c.id}
             className="ph-newsstand__slot"
             onPointerDown={() => onPick(c.id)}
-            aria-label={c.title}
+            aria-label={coverText(c, 'title')}
           >
             <CoverArt cover={c} size="md" />
             <div className="ph-newsstand__cta">{t('read_now')}</div>
