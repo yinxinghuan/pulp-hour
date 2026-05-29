@@ -22,7 +22,7 @@ import EndingScreen from './components/EndingScreen';
 import StoryViewer from './components/StoryViewer';
 import Watermark from './components/Watermark';
 import LangSwitcher from './components/LangSwitcher';
-import { t } from './i18n';
+import { t, locale } from './i18n';
 import type {
   Axis, Beat, CoverId, Ending, Phase, PulpSave, Reaction, Story, WallEntry,
 } from './types';
@@ -319,6 +319,7 @@ export default function PulpHour() {
       beats: finalBeats,
       ending,
       authorName: me?.name,
+      authorLocale: locale(),
     });
     pendingStoryRef.current = story;
 

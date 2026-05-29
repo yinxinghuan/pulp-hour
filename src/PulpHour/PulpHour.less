@@ -1308,6 +1308,36 @@ img.ph-bp__art--fallback,
   .ph-link { color: @paper-light; }
 }
 
+.ph-viewer__trbar {
+  display: flex;
+  justify-content: center;
+  padding: 8px 14px 4px;
+  background: @paper-light;
+  border-bottom: 2px solid @ink;
+}
+
+.ph-viewer__trbtn {
+  font-family: @head;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: @paper-light;
+  background: @cool;
+  border: 2.5px solid @ink;
+  padding: 4px 12px 2px;
+  box-shadow: 2px 2px 0 @ink;
+  cursor: pointer;
+  transform: rotate(-1deg);
+  &:active {
+    transform: rotate(-1deg) translate(1px, 1px);
+    box-shadow: 1px 1px 0 @ink;
+  }
+  &:disabled { opacity: 0.55; cursor: default; }
+}
+.ph-viewer__trbtn--orig {
+  background: @paper-light;
+  color: @ink;
+}
+
 .ph-viewer__masthead {
   font-family: @head;
   font-size: 22px;

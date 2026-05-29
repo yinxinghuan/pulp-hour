@@ -251,6 +251,7 @@ export function assembleStory(opts: {
   beats: Beat[];
   ending: Ending;
   authorName?: string;
+  authorLocale?: string;
 }): Story {
   return {
     id: newStoryId(opts.coverId),
@@ -258,6 +259,7 @@ export function assembleStory(opts: {
     beats: opts.beats,
     ending: opts.ending,
     authorName: opts.authorName,
+    authorLocale: opts.authorLocale,
     createdAt: Date.now(),
   };
 }

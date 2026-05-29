@@ -38,6 +38,10 @@ export interface Story {
   beats: Beat[];        // five mid beats (1-5)
   ending: Ending;       // beat 6
   authorName?: string;  // captured at write-time (real-name byline)
+  authorLocale?: string; // 'en' | 'zh' | 'ja' | 'ko' | 'es' — language the
+                        // story body was written in. Drives the translate
+                        // affordance in StoryViewer. Missing on pre-v0.16
+                        // stories — fall back to character-set detection.
   createdAt: number;
 }
 
