@@ -12,6 +12,9 @@ interface Props {
   loaded: boolean;
   isInAigram: boolean;
   myStories: Story[];
+  /** false while the cloud save is still resolving — hide the write
+   *  CTA so a swipe/tap can't slip past a stale unlocked state. */
+  saveLoaded: boolean;
   lockedToday: boolean;
   streakDays: number;
   onPickNewIssue: () => void;
@@ -22,7 +25,7 @@ const INTRO_HIDDEN_KEY = 'pulp-hour-intro-hidden';
 
 export default function Wall({
   entries, loaded, isInAigram, myStories,
-  lockedToday, streakDays,
+  saveLoaded, lockedToday, streakDays,
   onPickNewIssue, onOpenStory,
 }: Props) {
   // Intro collapse state — sticky in localStorage.
@@ -59,7 +62,9 @@ export default function Wall({
       )}
 
       <div className="ph-wall__cta-bar">
-        {lockedToday ? (
+        {!saveLoaded ? (
+          <div className="ph-cta-loading" aria-hidden />
+        ) : lockedToday ? (
           <LockedCta />
         ) : (
           <button className="ph-cta-burst ph-cta-burst--write" onPointerDown={onPickNewIssue}>

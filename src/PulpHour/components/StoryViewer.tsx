@@ -51,6 +51,12 @@ export default function StoryViewer({ entry, onClose }: Props) {
             ))}
             <div className="ph-viewer__beat">
               <div className="ph-viewer__beat-no">PANEL 6 · FINALE</div>
+              <div
+                className="ph-viewer__beat-art"
+                style={{
+                  backgroundImage: `url(${ending.illustrationUrl || cover.imageUrl})`,
+                }}
+              />
               <p className="ph-viewer__beat-text">{ending.narration}</p>
             </div>
           </div>

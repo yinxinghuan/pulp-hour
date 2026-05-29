@@ -604,13 +604,21 @@
 .ph-bp__art {
   position: absolute;
   inset: 0;
-  background-size: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  background-size: cover;     // retained for any leftover div users
   background-position: center;
+  display: block;
 }
+img.ph-bp__art--fallback,
 .ph-bp__art--fallback {
   filter: contrast(1.05) saturate(0.55) sepia(0.15);
 }
 .ph-bp__art--pending {
+  // The div-with-pending uses background pattern; img can't, but
+  // CookingPlaceholder paints over a div anyway, so this stays a div.
   background:
     repeating-linear-gradient(
       45deg,
@@ -1651,6 +1659,24 @@
   filter: drop-shadow(3px 4px 0 @ink);
   animation: ph-cta-wobble-browse 3.2s ease-in-out infinite;
   &:active { animation: none; }
+}
+
+// Skeleton placeholder shown while the cloud save is loading, so the
+// real write CTA only appears once we know whether the daily quota
+// is locked or not (otherwise a swipe/tap during the load window
+// could dive into the writing flow on a stale 'unlocked' state).
+.ph-cta-loading {
+  width: 240px;
+  height: 240px;
+  position: relative;
+  background:
+    radial-gradient(circle at 50% 50%, fade(@ink, 8%) 0 80px, transparent 90px);
+  border-radius: 50%;
+  animation: ph-cta-loading 1.4s ease-in-out infinite;
+}
+@keyframes ph-cta-loading {
+  0%, 100% { opacity: 0.55; }
+  50%      { opacity: 1; }
 }
 @keyframes ph-cta-wobble-write {
   0%, 100% { transform: rotate(-3deg) scale(1); }

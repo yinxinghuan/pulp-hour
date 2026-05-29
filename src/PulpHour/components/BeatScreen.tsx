@@ -14,10 +14,11 @@ interface Props {
   onChoose: (axis: Axis) => void;
   onBack: () => void;
   onRetryPanel: (beatIdx: number) => void;
+  onLoadFailPanel: (beatIdx: number) => void;
 }
 
 export default function BeatScreen({
-  cover, beats, index, loading, onChoose, onBack, onRetryPanel,
+  cover, beats, index, loading, onChoose, onBack, onRetryPanel, onLoadFailPanel,
 }: Props) {
   const current = beats[beats.length - 1];
   const articleRef = useRef<HTMLDivElement>(null);
@@ -71,6 +72,7 @@ export default function BeatScreen({
             index={i + 1}
             isPast={i < beats.length - 1}
             onRetry={b.illustrationFailed ? () => onRetryPanel(i) : undefined}
+            onLoadFail={() => onLoadFailPanel(i)}
           />
         ))}
         {loading && <WritingPlaceholder />}

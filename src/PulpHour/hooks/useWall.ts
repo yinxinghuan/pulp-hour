@@ -47,34 +47,57 @@ export function useWall(): UseWall {
         );
         const rows = Array.isArray(res?.data) ? res.data : [];
 
-        const parsed: Array<{ row: SaveRow; story: Story }> = [];
+        // Flatten ALL stories from each user's save row (each cap-20 by
+        // PulpSave.MAX_STORIES). Past versions only took stories[0] per
+        // user, which made the newest publish visually 'replace' the
+        // older ones on the wall — we throttle at publish, not at
+        // display, so every published story stays browsable.
+        const pairs: Array<{ userId: string; story: Story }> = [];
         for (const row of rows) {
           if (!row.user_id || !row.resource_data) continue;
           try {
             const save = JSON.parse(row.resource_data) as PulpSave;
-            const story = save.stories?.[0];
-            if (story && story.ending) parsed.push({ row, story });
-          } catch { /* skip corrupt */ }
-          if (parsed.length >= 6) break;
+            for (const story of save.stories || []) {
+              if (story && story.ending) {
+                pairs.push({ userId: row.user_id, story });
+              }
+            }
+          } catch { /* skip corrupt row */ }
         }
+        // Newest first across all authors, cap visible count.
+        pairs.sort((a, b) => b.story.createdAt - a.story.createdAt);
+        const limited = pairs.slice(0, 24);
 
-        const profiles = await Promise.all(
-          parsed.map(({ row }) =>
-            callAigramAPI<AigramResponse<{ name?: string; head_url?: string }>>(
-              `/note/telegram/user/get/info/by/telegram_id?telegram_id=${encodeURIComponent(row.user_id)}`,
-              'GET',
-            ).catch(() => null),
-          ),
+        // Resolve each unique author's profile once and cache.
+        const uniqueIds = Array.from(new Set(limited.map(p => p.userId)));
+        const profileEntries = await Promise.all(
+          uniqueIds.map(async uid => {
+            try {
+              const r = await callAigramAPI<
+                AigramResponse<{ name?: string; head_url?: string }>
+              >(
+                `/note/telegram/user/get/info/by/telegram_id?telegram_id=${encodeURIComponent(uid)}`,
+                'GET',
+              );
+              return [uid, r?.data] as const;
+            } catch {
+              return [uid, null] as const;
+            }
+          }),
         );
+        const profileMap = new Map<string, { name?: string; head_url?: string } | null>(profileEntries);
 
         if (cancelled) return;
         setEntries(
-          parsed.map(({ row, story }, i) => ({
-            userId: row.user_id,
-            userName: profiles[i]?.data?.name,
-            userAvatarUrl: profiles[i]?.data?.head_url,
-            story,
-          })),
+          limited.map(({ userId, story }) => {
+            const p = profileMap.get(userId) || null;
+            return {
+              userId,
+              userName: p?.name,
+              userAvatarUrl: p?.head_url,
+              story,
+            };
+          }),
         );
       } catch {
         if (!cancelled) setEntries([]);

@@ -15,11 +15,14 @@ interface Props {
   index: number;          // 1-based panel number
   isPast: boolean;        // already chosen, read-only
   onRetry?: () => void;   // re-kick gen-image for this panel
+  onLoadFail?: () => void; // <img> failed to load the returned URL
 }
 
 const AXIS_GLYPH = { defy: '↺', yield: '↓', lie: '↹' } as const;
 
-export default function BeatPanel({ beat, cover, index, isPast, onRetry }: Props) {
+export default function BeatPanel({
+  beat, cover, index, isPast, onRetry, onLoadFail,
+}: Props) {
   const showImage = !!beat.illustrationUrl;
   const showFallback = !showImage && beat.illustrationFailed;
   const showCooking = !showImage && !beat.illustrationFailed;
@@ -31,16 +34,26 @@ export default function BeatPanel({ beat, cover, index, isPast, onRetry }: Props
     <div className={`ph-bp ${isPast ? 'ph-bp--past' : 'ph-bp--current'}`}>
       <div className="ph-bp__splash">
         {showImage && (
-          <div
+          // Real <img> instead of CSS background so we can catch load
+          // failures (broken URL, expired CDN link, network blip) and
+          // bubble them up to flip into the failed state — otherwise the
+          // panel just sat blank with no retry affordance.
+          <img
+            key={beat.illustrationUrl}
             className="ph-bp__art"
-            style={{ backgroundImage: `url(${beat.illustrationUrl})` }}
+            src={beat.illustrationUrl}
+            alt=""
+            draggable={false}
+            onError={onLoadFail}
           />
         )}
         {showFallback && (
           <>
-            <div
+            <img
               className="ph-bp__art ph-bp__art--fallback"
-              style={{ backgroundImage: `url(${fallbackArt})` }}
+              src={fallbackArt}
+              alt=""
+              draggable={false}
             />
             {onRetry ? (
               <button

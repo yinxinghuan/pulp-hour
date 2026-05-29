@@ -56,7 +56,7 @@ export default function PulpHour() {
   }, []);
 
   // ── Persistence ────────────────────────────────────────────────────────
-  const { savedData, persist } = useGameSave<PulpSave>('pulp-hour');
+  const { savedData, persist, loaded: saveLoaded } = useGameSave<PulpSave>('pulp-hour');
   const myStories = savedData?.stories ?? [];
 
   // ── Wall ───────────────────────────────────────────────────────────────
@@ -138,10 +138,28 @@ export default function PulpHour() {
   }, []);
 
   // ── Daily quota: my newest story today → locked ───────────────────────
+  // Gate on saveLoaded so the brief load window doesn't render the write
+  // CTA as unlocked — without this, a quick swipe/tap during load could
+  // dive into the writing flow before the cloud save resolves.
   const filedTodayAt = myStories[0]?.createdAt;
-  const lockedToday = !!filedTodayAt && isSameLocalDay(filedTodayAt, Date.now());
+  const lockedToday =
+    saveLoaded && !!filedTodayAt && isSameLocalDay(filedTodayAt, Date.now());
 
   // ── Helpers ────────────────────────────────────────────────────────────
+  function markPanelLoadFailed(idx: number) {
+    // The <img> for an already-returned URL failed to load (CDN blip,
+    // expired link, etc). Drop the URL and flag failed so the retry
+    // button shows and the wall + viewer fall back to the cover.
+    setBeats(prev => {
+      const next = [...prev];
+      const b = next[idx];
+      if (b && b.illustrationUrl) {
+        next[idx] = { ...b, illustrationUrl: undefined, illustrationFailed: true };
+      }
+      return next;
+    });
+  }
+
   function retryPanelIllustration(idx: number) {
     if (!activeCoverId) return;
     const beat = beats[idx];
@@ -337,6 +355,7 @@ export default function PulpHour() {
           loaded={wallLoaded}
           isInAigram={isInAigram}
           myStories={wallSelfStories}
+          saveLoaded={saveLoaded || demo === 'wall' || demo === 'viewer'}
           lockedToday={lockedToday && !noLimit && demo !== 'wall' && demo !== 'viewer'}
           streakDays={stats.continuous_days}
           onPickNewIssue={goNewsstand}
@@ -358,6 +377,7 @@ export default function PulpHour() {
           onChoose={chooseAxis}
           onBack={goWall}
           onRetryPanel={retryPanelIllustration}
+          onLoadFailPanel={markPanelLoadFailed}
         />
       )}
 
