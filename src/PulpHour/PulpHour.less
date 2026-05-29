@@ -174,8 +174,11 @@
 
 .ph-wall__cta-bar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  margin: 18px 0 28px;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 32px;
 }
 
 .ph-wall__loading {
@@ -1343,48 +1346,45 @@
   border: none;
   padding: 0;
   cursor: pointer;
-  width: 300px;
-  height: 300px;
+  width: 230px;
+  height: 230px;
   display: block;
   position: relative;
-  animation: ph-cta-wobble 2.4s ease-in-out infinite;
-  filter: drop-shadow(5px 6px 0 @ink);
-  &:active {
-    animation: none;
-    transform: scale(0.96);
-  }
+  filter: drop-shadow(4px 5px 0 @ink);
+  &:active { transform: scale(0.96); }
 }
-@keyframes ph-cta-wobble {
+.ph-cta-burst--write {
+  animation: ph-cta-wobble-write 2.4s ease-in-out infinite;
+  &:active { animation: none; }
+}
+.ph-cta-burst--browse {
+  animation: ph-cta-wobble-browse 2.6s ease-in-out infinite;
+  &:active { animation: none; }
+}
+@keyframes ph-cta-wobble-write {
   0%, 100% { transform: rotate(-3deg) scale(1); }
-  50%      { transform: rotate(3deg) scale(1.03); }
+  50%      { transform: rotate(3deg) scale(1.04); }
+}
+@keyframes ph-cta-wobble-browse {
+  0%, 100% { transform: rotate(2deg) scale(1); }
+  50%      { transform: rotate(-3deg) scale(1.03); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .ph-cta-burst { animation: none; }
+  .ph-cta-burst,
+  .ph-cta-burst--write,
+  .ph-cta-burst--browse { animation: none; }
 }
 .ph-cta-burst__label {
   font-family: @head;
-  font-size: 36px;
-  line-height: 1;
+  font-size: 28px;
+  line-height: 0.95;
   color: @paper-light;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  text-shadow: 3px 3px 0 @ink;
-  white-space: nowrap;
-}
-.ph-cta-burst__tap {
-  position: absolute;
-  left: 50%;
-  bottom: -22px;
-  transform: translateX(-50%) rotate(-2deg);
-  font-family: @head;
-  font-size: 16px;
-  color: @ink;
-  background: @yellow;
-  border: 2.5px solid @ink;
-  box-shadow: 2px 2px 0 @ink;
-  padding: 2px 12px 0;
-  letter-spacing: 0.06em;
-  pointer-events: none;
+  text-shadow: 2.5px 2.5px 0 @ink;
+  white-space: pre-wrap;
+  display: inline-block;
+  max-width: 80%;
 }
 
 // ─── Locked CTA ──────────────────────────────────────────────────────

@@ -167,11 +167,18 @@ const STRINGS = {
     es: 'Estantería vacía. Sé el primero en cerrar una historia.',
   },
   wall_open: {
-    en: 'Pick Up a New Issue',
-    zh: '翻一本新刊',
-    ja: '新しい号を読む',
-    ko: '새 호 펼치기',
-    es: 'Tomar un Nuevo Número',
+    en: 'Write a New Issue',
+    zh: '写一本新刊',
+    ja: '新しい号を書く',
+    ko: '새 호 쓰기',
+    es: 'Escribir un Número',
+  },
+  wall_browse: {
+    en: "Read the Others",
+    zh: '读别人写的',
+    ja: '他人の号を読む',
+    ko: '다른 사람 호 읽기',
+    es: 'Leer las Otras',
   },
   wall_self: { en: 'You', zh: '你', ja: 'あなた', ko: '당신', es: 'Tú' },
 

@@ -62,13 +62,24 @@ export default function Wall({
         {lockedToday ? (
           <LockedCta />
         ) : (
-          <button className="ph-cta-burst" onPointerDown={onPickNewIssue}>
+          <button className="ph-cta-burst ph-cta-burst--write" onPointerDown={onPickNewIssue}>
             <Burst fill="#e63946" outer={49} inner={32} points={20}>
               <span className="ph-cta-burst__label">{t('wall_open')}</span>
             </Burst>
-            <span className="ph-cta-burst__tap">↓ TAP ↓</span>
           </button>
         )}
+        <button
+          className="ph-cta-burst ph-cta-burst--browse"
+          onPointerDown={() => {
+            const el = document.querySelector('.ph-wall__rack')
+              ?? document.querySelector('.ph-wall__head');
+            el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }}
+        >
+          <Burst fill="#2c6df4" outer={49} inner={32} points={20}>
+            <span className="ph-cta-burst__label">{t('wall_browse')}</span>
+          </Burst>
+        </button>
       </div>
 
       <div className="ph-wall__head">
