@@ -38,13 +38,22 @@ export default function Wall({
     try { localStorage.setItem(INTRO_HIDDEN_KEY, next ? '1' : '0'); } catch { /* ignore */ }
   }
 
+  // Optimistic merge: cloud write is debounced (~1s) + RTT, so a
+  // just-published story isn't in `entries` for a few seconds. Always
+  // merge myStories into the wall so the user sees their own publish
+  // immediately. After cloud sync, the dup is removed by story.id.
   const displayed = useMemo<WallEntry[]>(() => {
-    if (entries.length > 0) return entries;
-    return myStories.slice(0, 6).map(s => ({
-      userId: 'self',
-      userName: t('wall_self'),
-      story: s,
-    }));
+    const cloudIds = new Set(entries.map(e => e.story.id));
+    const selfEntries: WallEntry[] = myStories
+      .filter(s => !cloudIds.has(s.id))
+      .map(s => ({
+        userId: 'self',
+        userName: t('wall_self'),
+        story: s,
+      }));
+    return [...selfEntries, ...entries]
+      .sort((a, b) => (b.story.createdAt ?? 0) - (a.story.createdAt ?? 0))
+      .slice(0, 24);
   }, [entries, myStories]);
 
   return (
