@@ -95,7 +95,7 @@ export function demoBeats(coverId: CoverId = 'operator'): { beats: Beat[]; cover
         lie: 'Apologize and offer to reschedule',
       },
       illustrationPrompt: '',
-      illustrationUrl: cover.imageUrl,
+      // Leave illustrationUrl undefined so the demo shows the cooking placeholder.
     },
   ];
   return { beats, cover };

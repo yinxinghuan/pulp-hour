@@ -58,21 +58,22 @@ export default function Wall({
         <HowItWorks onHide={toggleIntro} />
       )}
 
-      <div className="ph-wall__head">
-        <div className="ph-wall__title">{t('wall_title')}</div>
-        <div className="ph-wall__subtitle">{t('wall_subtitle')}</div>
-      </div>
-
       <div className="ph-wall__cta-bar">
         {lockedToday ? (
           <LockedCta />
         ) : (
           <button className="ph-cta-burst" onPointerDown={onPickNewIssue}>
-            <Burst fill="#e63946" outer={48} inner={36} points={18}>
+            <Burst fill="#e63946" outer={49} inner={32} points={20}>
               <span className="ph-cta-burst__label">{t('wall_open')}</span>
             </Burst>
+            <span className="ph-cta-burst__tap">↓ TAP ↓</span>
           </button>
         )}
+      </div>
+
+      <div className="ph-wall__head">
+        <div className="ph-wall__title">{t('wall_title')}</div>
+        <div className="ph-wall__subtitle">{t('wall_subtitle')}</div>
       </div>
 
       {!loaded && <div className="ph-wall__loading">…</div>}

@@ -3,6 +3,7 @@ import type { Axis, Beat, Cover } from '../types';
 import { AXES } from '../types';
 import { coverText } from '../utils/covers';
 import { t } from '../i18n';
+import CookingPlaceholder from './CookingPlaceholder';
 
 interface Props {
   cover: Cover;
@@ -63,7 +64,7 @@ export default function BeatScreen({
               />
             ) : (
               <div className="ph-beat__splash-art ph-beat__splash-art--pending">
-                <span className="ph-beat__splash-stamp">DEVELOPING…</span>
+                <CookingPlaceholder seed={index} />
               </div>
             )}
             <span className="ph-beat__splash-no">PANEL {index}</span>

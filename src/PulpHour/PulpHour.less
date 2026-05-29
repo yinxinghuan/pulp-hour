@@ -1343,21 +1343,48 @@
   border: none;
   padding: 0;
   cursor: pointer;
-  width: 220px;
-  height: 220px;
+  width: 300px;
+  height: 300px;
   display: block;
   position: relative;
-  transition: transform 90ms;
-  &:active { transform: scale(0.96); }
+  animation: ph-cta-wobble 2.4s ease-in-out infinite;
+  filter: drop-shadow(5px 6px 0 @ink);
+  &:active {
+    animation: none;
+    transform: scale(0.96);
+  }
+}
+@keyframes ph-cta-wobble {
+  0%, 100% { transform: rotate(-3deg) scale(1); }
+  50%      { transform: rotate(3deg) scale(1.03); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ph-cta-burst { animation: none; }
 }
 .ph-cta-burst__label {
   font-family: @head;
-  font-size: 26px;
+  font-size: 36px;
   line-height: 1;
   color: @paper-light;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  text-shadow: 2.5px 2.5px 0 @ink;
+  text-shadow: 3px 3px 0 @ink;
+  white-space: nowrap;
+}
+.ph-cta-burst__tap {
+  position: absolute;
+  left: 50%;
+  bottom: -22px;
+  transform: translateX(-50%) rotate(-2deg);
+  font-family: @head;
+  font-size: 16px;
+  color: @ink;
+  background: @yellow;
+  border: 2.5px solid @ink;
+  box-shadow: 2px 2px 0 @ink;
+  padding: 2px 12px 0;
+  letter-spacing: 0.06em;
+  pointer-events: none;
 }
 
 // ─── Locked CTA ──────────────────────────────────────────────────────
@@ -1413,9 +1440,6 @@
   background-position: center;
 }
 .ph-beat__splash-art--pending {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background:
     repeating-linear-gradient(
       45deg,
@@ -1423,6 +1447,83 @@
       @paper 12px 24px
     );
 }
+
+// ─── CookingPlaceholder (cycling status + decorative bursts) ──────────
+
+.ph-cook {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  overflow: hidden;
+}
+.ph-cook__bursts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.ph-cook__burst {
+  position: absolute;
+  opacity: 0;
+  animation: ph-cook-burst 2.2s ease-in-out infinite;
+}
+@keyframes ph-cook-burst {
+  0%   { opacity: 0; transform: scale(0.4) rotate(-12deg); }
+  35%  { opacity: 0.9; transform: scale(1) rotate(0deg); }
+  70%  { opacity: 0.6; transform: scale(0.9) rotate(8deg); }
+  100% { opacity: 0; transform: scale(0.4) rotate(-12deg); }
+}
+.ph-cook__stamp {
+  position: relative;
+  z-index: 2;
+  font-family: @head;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  color: @paper-light;
+  background: @ink;
+  border: 3px solid @yellow;
+  box-shadow: 3px 3px 0 @ink;
+  padding: 6px 14px 4px;
+  transform: rotate(-2deg);
+  max-width: 88%;
+  text-align: center;
+  animation: ph-cook-stamp-in 0.4s ease-out;
+}
+.ph-cook__stamp--ready {
+  background: @yellow;
+  color: @ink;
+  border-color: @ink;
+}
+@keyframes ph-cook-stamp-in {
+  from { transform: rotate(-2deg) scale(0.85); opacity: 0.4; }
+  to   { transform: rotate(-2deg) scale(1);    opacity: 1; }
+}
+.ph-cook__dots {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 5px;
+  margin-top: 6px;
+  span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: @ink;
+    animation: ph-cook-dot 1.1s ease-in-out infinite;
+    &:nth-child(1) { background: @it; }
+    &:nth-child(2) { background: @cool; animation-delay: 0.18s; }
+    &:nth-child(3) { background: @pink; animation-delay: 0.36s; }
+  }
+}
+@keyframes ph-cook-dot {
+  0%, 100% { opacity: 0.4; transform: translateY(0); }
+  50%      { opacity: 1;   transform: translateY(-4px); }
+}
+
 .ph-beat__splash-stamp {
   font-family: @head;
   font-size: 22px;

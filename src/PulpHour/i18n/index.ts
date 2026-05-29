@@ -199,6 +199,50 @@ const STRINGS = {
   },
   retry: { en: 'Retry', zh: '重试', ja: '再試行', ko: '재시도', es: 'Reintentar' },
 
+  // ── illustration cook lines (cycling while a splash is generating) ─
+  cook_1: {
+    en: 'inking the panel…',
+    zh: '正在勾线…',
+    ja: 'インクを引いてる…',
+    ko: '잉크 펜질 중…',
+    es: 'tintando el panel…',
+  },
+  cook_2: {
+    en: 'mixing the halftone dots…',
+    zh: '调配半色调网点…',
+    ja: 'ハーフトーンを調合中…',
+    ko: '하프톤 점 조절 중…',
+    es: 'mezclando los puntos…',
+  },
+  cook_3: {
+    en: 'pressing the printing plate…',
+    zh: '上印刷版…',
+    ja: '製版中…',
+    ko: '인쇄판 누르는 중…',
+    es: 'prensando la placa…',
+  },
+  cook_4: {
+    en: 'developing in the darkroom…',
+    zh: '暗房显影…',
+    ja: '暗室で現像中…',
+    ko: '암실에서 현상 중…',
+    es: 'revelando en el cuarto oscuro…',
+  },
+  cook_5: {
+    en: 'waiting for the ink to set…',
+    zh: '等油墨干透…',
+    ja: 'インクの乾燥待ち…',
+    ko: '잉크 마르길 기다리는 중…',
+    es: 'esperando que la tinta seque…',
+  },
+  cook_ready: {
+    en: 'fresh off the press!',
+    zh: '刚下印刷机！',
+    ja: '刷り上がり！',
+    ko: '갓 인쇄!',
+    es: '¡recién impreso!',
+  },
+
   // ── footer (new) ────────────────────────────────────────────────────
   footer_fin: {
     en: 'FIN · TO BE CONTINUED',

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Cover, Ending, Story } from '../types';
 import { t } from '../i18n';
+import CookingPlaceholder from './CookingPlaceholder';
 
 interface Props {
   cover: Cover;
@@ -59,12 +60,16 @@ export default function EndingScreen({
         </div>
         {loading && (
           <div className="ph-ending__overlay">
-            <div className="ph-ending__overlay-spinner" />
-            <div className="ph-ending__overlay-text">
-              {loadingStage === 'closing'
-                ? t('loading_illustrating')
-                : t('loading_narrating')}
-            </div>
+            {loadingStage === 'closing' ? (
+              <CookingPlaceholder seed={6} />
+            ) : (
+              <>
+                <div className="ph-ending__overlay-spinner" />
+                <div className="ph-ending__overlay-text">
+                  {t('loading_narrating')}
+                </div>
+              </>
+            )}
           </div>
         )}
         {!loading && stamped && (
