@@ -18,7 +18,6 @@ export default function BeatScreen({
   cover, beats, index, loading, loadingStage, onChoose, onBack,
 }: Props) {
   const current = beats[beats.length - 1];
-  const ready = !!current && (!!current.illustrationUrl || !!current.illustrationFailed);
   const articleRef = useRef<HTMLDivElement>(null);
   const lastBeatCount = useRef(0);
 
@@ -85,10 +84,7 @@ export default function BeatScreen({
         )}
       </div>
 
-      <div className={`ph-beat__choices ${!ready ? 'ph-beat__choices--locked' : ''}`}>
-        {!ready && current && (
-          <div className="ph-beat__lockbar">{t('wait_for_panel')}</div>
-        )}
+      <div className="ph-beat__choices">
         {AXES.map(axis => {
           const label = current?.choices[axis];
           const axisLabel = t(`axis_${axis}` as 'axis_defy');
@@ -97,7 +93,7 @@ export default function BeatScreen({
               key={axis}
               className={`ph-choice ph-choice--${axis}`}
               onPointerDown={() => onChoose(axis)}
-              disabled={loading || !current || !ready}
+              disabled={loading || !current}
             >
               <span className="ph-choice__axis">{axisLabel}</span>
               <span className="ph-choice__label">{label || '…'}</span>
