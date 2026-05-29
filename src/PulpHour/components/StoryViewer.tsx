@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import type { WallEntry } from '../types';
 import { getCover } from '../utils/covers';
 import { storyHeroArt } from '../utils/storyArt';
@@ -22,6 +22,16 @@ export default function StoryViewer({ entry, onClose }: Props) {
 
   const { translated, loading, translate, showOriginal } =
     useTranslateStory(entry.story, viewerLocale);
+
+  // Auto-fire translation on mount when the author's locale differs
+  // from the viewer's. translate() short-circuits to the cache if
+  // we've translated this story before, so re-opens are instant.
+  useEffect(() => {
+    if (canTranslate && !translated && !loading) {
+      void translate();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [canTranslate, entry.story.id]);
 
   // Use translated data when available, otherwise the saved original.
   const showBeats = translated ? translated.beats : beats;

@@ -3,6 +3,9 @@ import type { Reaction, Story, WallEntry } from '../types';
 import { REACTIONS } from '../types';
 import { getCover, COVERS, coverText } from '../utils/covers';
 import { storyHeroArt } from '../utils/storyArt';
+import { locale } from '../i18n';
+import { storySourceLocale } from '../hooks/useTranslateStory';
+import { useTranslateTitle } from '../hooks/useTranslateTitle';
 import { REACTION_GLYPH, fallbackCount } from '../utils/reactions';
 import { openAigramProfile } from '@shared/runtime/bridge';
 import { t } from '../i18n';
@@ -261,6 +264,17 @@ function WallCard({
   // beat that succeeded before going all the way to the static cover.
   const bg = storyHeroArt(entry.story, cover);
 
+  // Auto-translate the title if the author's locale ≠ the viewer's.
+  // Tiny one-line LLM payload, cached per (storyId, targetLocale).
+  const viewerLocale = locale();
+  const sourceLocale = storySourceLocale(entry.story);
+  const displayTitle = useTranslateTitle(
+    entry.story.id,
+    ending.title,
+    viewerLocale,
+    sourceLocale !== viewerLocale,
+  );
+
   return (
     <div className="ph-wall-card" style={{ ['--ph-ink' as string]: cover.ink }}>
       <button
@@ -274,7 +288,7 @@ function WallCard({
         />
         <div className="ph-wall-card__veil" aria-hidden />
         <div className="ph-wall-card__masthead">PULP HOUR</div>
-        <div className="ph-wall-card__title">{ending.title}</div>
+        <div className="ph-wall-card__title">{displayTitle}</div>
         <div className="ph-wall-card__dek">{coverText(cover, 'subtitle')}</div>
       </button>
       <div className="ph-wall-card__meta">
