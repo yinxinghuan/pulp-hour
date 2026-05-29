@@ -76,7 +76,7 @@ export default function Wall({
             el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }}
         >
-          <Burst fill="#2c6df4" outer={49} inner={32} points={20}>
+          <Burst fill="#2c6df4" outer={48} inner={40} points={28} strokeWidth={2}>
             <span className="ph-cta-burst__label">{t('wall_browse')}</span>
           </Burst>
         </button>

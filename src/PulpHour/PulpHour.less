@@ -1346,28 +1346,35 @@
   border: none;
   padding: 0;
   cursor: pointer;
-  width: 230px;
-  height: 230px;
   display: block;
   position: relative;
   filter: drop-shadow(4px 5px 0 @ink);
   &:active { transform: scale(0.96); }
 }
+// Primary: bigger, hotter, more aggressive points.
 .ph-cta-burst--write {
+  width: 240px;
+  height: 240px;
   animation: ph-cta-wobble-write 2.4s ease-in-out infinite;
   &:active { animation: none; }
 }
+// Secondary: smaller, calmer wobble — clearly a "browse" affordance.
+// Slightly inset and lower so visually it reads as "and also you can…"
 .ph-cta-burst--browse {
-  animation: ph-cta-wobble-browse 2.6s ease-in-out infinite;
+  width: 190px;
+  height: 190px;
+  margin-top: 30px;
+  filter: drop-shadow(3px 4px 0 @ink);
+  animation: ph-cta-wobble-browse 3.2s ease-in-out infinite;
   &:active { animation: none; }
 }
 @keyframes ph-cta-wobble-write {
   0%, 100% { transform: rotate(-3deg) scale(1); }
-  50%      { transform: rotate(3deg) scale(1.04); }
+  50%      { transform: rotate(3deg) scale(1.05); }
 }
 @keyframes ph-cta-wobble-browse {
-  0%, 100% { transform: rotate(2deg) scale(1); }
-  50%      { transform: rotate(-3deg) scale(1.03); }
+  0%, 100% { transform: rotate(1.5deg); }
+  50%      { transform: rotate(-1.5deg); }
 }
 @media (prefers-reduced-motion: reduce) {
   .ph-cta-burst,
@@ -1385,6 +1392,10 @@
   white-space: pre-wrap;
   display: inline-block;
   max-width: 80%;
+}
+.ph-cta-burst--browse .ph-cta-burst__label {
+  font-size: 20px;
+  text-shadow: 2px 2px 0 @ink;
 }
 
 // ─── Locked CTA ──────────────────────────────────────────────────────

@@ -2,76 +2,128 @@ import type { Axis, Beat, Cover } from '../types';
 import { locale } from '../i18n';
 
 const AXIS_DESC: Record<Axis, string> = {
-  defy: 'refuse, fight, leave, hang up, push back',
-  yield: 'accept, sign, stay, let it happen, comply',
-  lie: 'pretend, hide identity, deflect, perform a different self',
+  defy: 'refuse / fight / leave / hang up / push back',
+  yield: 'accept / sign / stay / let it happen / comply',
+  lie: 'pretend / hide identity / deflect / perform a different self',
 };
 
 const ILLUSTRATION_TAIL =
   '1960s American pulp horror comic book panel, heavy black ink outlines, Ben-Day halftone dots, lurid spot colors, dramatic high-contrast shadows, hand-drawn comic book style, no text, no letters, no logos';
 
-const LOCALE_LANGUAGE: Record<string, string> = {
-  en: 'American English',
-  zh: '简体中文',
-  ja: '日本語',
-  ko: '한국어',
-  es: 'español',
+interface LangSpec {
+  /** Self-name of the language for display in the prompt. */
+  name: string;
+  /** Example text used as placeholder in the JSON shape — anchors the model. */
+  sample: string;
+  /** Example choice labels — shown to the model so it picks the right tone. */
+  sampleChoices: { defy: string; yield: string; lie: string };
+}
+
+const LANG_SPECS: Record<string, LangSpec> = {
+  en: {
+    name: 'American English',
+    sample: 'The line clicks, then a voice that knows your name.',
+    sampleChoices: {
+      defy: 'Hang up immediately',
+      yield: 'Stay on the line',
+      lie: 'Say you dialed wrong',
+    },
+  },
+  zh: {
+    name: '简体中文',
+    sample: '电话喀的一声接通，对面的人叫出了你的名字。',
+    sampleChoices: {
+      defy: '立刻挂断',
+      yield: '继续听',
+      lie: '说你拨错号了',
+    },
+  },
+  ja: {
+    name: '日本語',
+    sample: '電話がカチッと繋がる。受話器の向こうの声が、君の名を呼ぶ。',
+    sampleChoices: {
+      defy: 'すぐ電話を切る',
+      yield: '黙ったまま聞く',
+      lie: '番号を間違えたと言う',
+    },
+  },
+  ko: {
+    name: '한국어',
+    sample: '전화가 딸깍 연결되고, 너의 이름을 부르는 목소리.',
+    sampleChoices: {
+      defy: '즉시 전화 끊기',
+      yield: '말없이 듣기',
+      lie: '잘못 걸었다고 말하기',
+    },
+  },
+  es: {
+    name: 'español',
+    sample: 'La línea hace clic; del otro lado, una voz que sabe tu nombre.',
+    sampleChoices: {
+      defy: 'Colgar de inmediato',
+      yield: 'Quedarse escuchando',
+      lie: 'Decir que marcaste mal',
+    },
+  },
 };
 
-function languageDirective(): string {
-  const lc = locale();
-  if (lc === 'en') {
-    return `LANGUAGE
-Write "narration", every "choices" label, and (in beat 6) the "title" in American English, second-person present tense, noir tone.
-The "illustration_prompt" MUST stay in English regardless.`;
-  }
-  const lang = LOCALE_LANGUAGE[lc] || 'American English';
-  return `LANGUAGE
-Write "narration", every "choices" label, and (in beat 6) the "title" in ${lang}. Second-person present tense, noir tone, idiomatic.
-The "illustration_prompt" MUST stay in English regardless — it goes to an image generation model that only understands English.`;
+function activeLang(): LangSpec {
+  return LANG_SPECS[locale()] || LANG_SPECS.en;
 }
 
 export function beatSystemPrompt(cover: Cover): string {
-  return `You are the ghostwriter of a 6-beat illustrated pulp short story for the comic-book magazine "Pulp Hour".
+  const lang = activeLang();
+  return `🌐 LANGUAGE RULE — READ FIRST, OVERRIDES EVERYTHING BELOW 🌐
+You will write in ${lang.name} for THIS ENTIRE CONVERSATION.
+Every "narration", every "choices" label, and (in beat 6) the "title" field MUST be written in ${lang.name}.
+Example tone in ${lang.name}: "${lang.sample}"
+Example choice phrasing in ${lang.name}:
+  defy  → "${lang.sampleChoices.defy}"
+  yield → "${lang.sampleChoices.yield}"
+  lie   → "${lang.sampleChoices.lie}"
+The ONLY field that stays in English is "illustration_prompt" — it feeds an image-generation model that only understands English. Do not translate that field.
+If you slip into English in narration or choices, you have failed the task.
 
-This issue's story:
+────────────────────────────────────────
+
+You are the ghostwriter of a 6-beat illustrated pulp short story for the comic-book magazine "Pulp Hour".
+
+This issue's story (titled in English for reference — your output will be in ${lang.name}):
 TITLE: ${cover.title.en}
 HOOK: ${cover.hook.en}
 
-PERSONA / SETTING:
+PERSONA / SETTING (English reference — render the actual story in ${lang.name}):
 ${cover.persona}
-
-${languageDirective()}
 
 OUTPUT FORMAT — strict JSON only, no markdown fences, no commentary.
 
 For beats 1–5:
-{"narration":"...","illustration_prompt":"...","choices":{"defy":"...","yield":"...","lie":"..."}}
+{"narration":"<${lang.name} text, 2–4 sentences, second-person present tense, noir tone>","illustration_prompt":"<English only, ends with the tail below>","choices":{"defy":"<${lang.name}, 3–7 words>","yield":"<${lang.name}, 3–7 words>","lie":"<${lang.name}, 3–7 words>"}}
 
 For beat 6 (FINAL):
-{"narration":"...","title":"...","illustration_prompt":"..."}
+{"narration":"<${lang.name} resolving paragraph, 3–5 sentences>","title":"<${lang.name}, 4–7 word pulp title>","illustration_prompt":"<English, ends with the tail below>"}
 
 WRITING RULES
-- "narration" is 2–4 sentences, present tense, second person ("you"), pulp-noir voice.
+- Narration: present tense, second person ("you" / its ${lang.name} equivalent), pulp-noir voice.
 - Each beat ends on tension — a stare, a door cracking, a question half-asked.
-- Each beat must escalate. By beat 5 the situation should be uncomfortable enough to require a real ending.
-- The three choices are specific, in-scene actions (3–7 words), tagged by axis:
-    defy  = ${AXIS_DESC.defy}
-    yield = ${AXIS_DESC.yield}
-    lie   = ${AXIS_DESC.lie}
-  Each label must be different enough that picking feels like a decision, not a coin flip.
+- Each beat escalates. Beat 5 must be uncomfortable enough to demand a real ending.
+- The three choices are specific, in-scene actions tagged by axis:
+    defy  intent = ${AXIS_DESC.defy}
+    yield intent = ${AXIS_DESC.yield}
+    lie   intent = ${AXIS_DESC.lie}
+  Each label must be a different in-scene action so picking feels like a decision.
 
-ILLUSTRATION RULES — every beat (including 1–5) returns its own "illustration_prompt".
-- Describe ONE arrested cinematic moment from THIS beat — a single readable image.
-- Subject-agnostic: name objects, mood, lighting, composition. Do NOT describe specific faces / clothing details.
-- End every illustration_prompt with this exact tail (verbatim, including punctuation): "${ILLUSTRATION_TAIL}".
+ILLUSTRATION RULES — every beat returns its own "illustration_prompt".
+- Describe ONE arrested cinematic moment from THIS beat.
+- Subject-agnostic: name objects, mood, lighting, composition. Do not describe specific faces / clothing details.
+- End every illustration_prompt with this exact tail (verbatim): "${ILLUSTRATION_TAIL}".
 
 BEAT 6 SPECIFICS
-- "narration" resolves the story in a single paragraph (3–5 sentences).
-- "title" is a punchy 4–7 word pulp story title in the language above, Title Case where applicable, no quotes.
-- "illustration_prompt" describes the climactic moment and ends with the same tail above.
+- narration: a single resolving paragraph, 3–5 sentences, in ${lang.name}.
+- title: punchy 4–7 word pulp story title in ${lang.name}, no quotes.
+- illustration_prompt: the climactic moment in English, ending with the same tail above.
 
-Keep narration TIGHT. No throat-clearing. No "you find yourself" openers.`;
+🌐 FINAL REMINDER: narration + every choice label + beat-6 title are in ${lang.name}. illustration_prompt is English. Do not mix. 🌐`;
 }
 
 export function beatUserPrompt(opts: {
@@ -79,16 +131,19 @@ export function beatUserPrompt(opts: {
   beatsSoFar: Beat[];
 }): string {
   const { beatIndex, beatsSoFar } = opts;
+  const lang = activeLang();
+
+  const remind = `(Reminder: narration and choices must be in ${lang.name}. illustration_prompt stays English.)`;
 
   if (beatIndex === 1) {
-    return 'Begin. Beat 1 of 6.';
+    return `Begin. Beat 1 of 6. ${remind}`;
   }
 
   const history = beatsSoFar
     .map((b, i) => {
       const n = i + 1;
       const chose = b.chosen
-        ? `\n[The reader chose ${b.chosen.toUpperCase()}: "${b.choices[b.chosen]}"]`
+        ? `\n[Reader chose ${b.chosen.toUpperCase()}: "${b.choices[b.chosen]}"]`
         : '';
       return `Beat ${n}: ${b.narration}${chose}`;
     })
@@ -96,14 +151,14 @@ export function beatUserPrompt(opts: {
 
   const lastChoice = beatsSoFar[beatsSoFar.length - 1]?.chosen;
   const lastChoiceLine = lastChoice
-    ? `The reader just chose ${lastChoice.toUpperCase()}.`
+    ? `Reader just chose ${lastChoice.toUpperCase()}.`
     : '';
 
   if (beatIndex === 6) {
-    return `So far:\n\n${history}\n\nNow the FINAL beat (6 of 6). ${lastChoiceLine} Resolve the story. Return the beat-6 JSON shape (narration, title, illustration_prompt).`;
+    return `Story so far:\n\n${history}\n\nNow the FINAL beat (6 of 6). ${lastChoiceLine} Resolve the story. Return the beat-6 JSON shape (narration, title, illustration_prompt). ${remind}`;
   }
 
-  return `So far:\n\n${history}\n\nNow beat ${beatIndex} of 6. ${lastChoiceLine} Escalate.`;
+  return `Story so far:\n\n${history}\n\nNow beat ${beatIndex} of 6. ${lastChoiceLine} Escalate. ${remind}`;
 }
 
 /** Strip any markdown fences and try to parse the LLM's reply as JSON. */
