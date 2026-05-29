@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import type { WallEntry } from '../types';
 import { getCover } from '../utils/covers';
+import { storyHeroArt } from '../utils/storyArt';
 import { t, locale } from '../i18n';
 import { useTranslateStory, storySourceLocale } from '../hooks/useTranslateStory';
 
@@ -63,7 +64,7 @@ export default function StoryViewer({ entry, onClose }: Props) {
         <div className="ph-viewer__scroll">
           <div
             className="ph-viewer__hero"
-            style={{ backgroundImage: `url(${ending.illustrationUrl || cover.imageUrl})` }}
+            style={{ backgroundImage: `url(${storyHeroArt(entry.story, cover)})` }}
           />
           <div className="ph-viewer__title">{showEnding.title}</div>
           <div className="ph-viewer__byline">
@@ -92,7 +93,7 @@ export default function StoryViewer({ entry, onClose }: Props) {
               <div
                 className="ph-viewer__beat-art"
                 style={{
-                  backgroundImage: `url(${ending.illustrationUrl || cover.imageUrl})`,
+                  backgroundImage: `url(${storyHeroArt(entry.story, cover)})`,
                 }}
               />
               <p className="ph-viewer__beat-text">{showEnding.narration}</p>

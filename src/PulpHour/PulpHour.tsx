@@ -160,6 +160,20 @@ export default function PulpHour() {
     });
   }
 
+  async function retryEndingIllustration() {
+    if (!activeCoverId || !ending?.illustrationPrompt) return;
+    try {
+      const url = await generateIllustration({
+        prompt: ending.illustrationPrompt,
+        refUrl: me?.avatarUrl || coverPublicRef(activeCoverId),
+      });
+      setEnding(prev => prev ? { ...prev, illustrationUrl: url } as Ending : prev);
+    } catch {
+      /* leave ending.illustrationUrl undefined; fallback chain still
+         shows the last beat or the cover */
+    }
+  }
+
   function retryPanelIllustration(idx: number) {
     if (!activeCoverId) return;
     const beat = beats[idx];
@@ -401,6 +415,7 @@ export default function PulpHour() {
           authorAvatarUrl={me?.avatarUrl}
           onShare={shareEnding}
           onBack={goWall}
+          onRetryEnding={retryEndingIllustration}
         />
       )}
 

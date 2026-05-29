@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { Cover, Ending, Story } from '../types';
 import { t } from '../i18n';
 import CookingPlaceholder from './CookingPlaceholder';
+import { storyHeroArt } from '../utils/storyArt';
 
 interface Props {
   cover: Cover;
@@ -13,10 +14,12 @@ interface Props {
   authorAvatarUrl?: string;
   onShare: () => void;
   onBack: () => void;
+  onRetryEnding?: () => void;
 }
 
 export default function EndingScreen({
-  cover, ending, loading, loadingStage, authorName, authorAvatarUrl, onShare, onBack,
+  cover, ending, story, loading, loadingStage,
+  authorName, authorAvatarUrl, onShare, onBack, onRetryEnding,
 }: Props) {
   const [stamped, setStamped] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -38,10 +41,21 @@ export default function EndingScreen({
           <div
             className="ph-ending__art"
             style={{
-              backgroundImage: `url(${ending.illustrationUrl || cover.imageUrl})`,
+              backgroundImage: `url(${storyHeroArt(story, cover)})`,
             }}
           />
           <div className="ph-ending__art-tint" aria-hidden />
+          {!loading && !ending.illustrationUrl && onRetryEnding && (
+            <button
+              type="button"
+              className="ph-bp__failstamp ph-bp__failstamp--btn"
+              onPointerDown={onRetryEnding}
+              aria-label={t('cook_retry')}
+            >
+              <span className="ph-bp__failstamp-line">{t('cook_failed').toUpperCase()}</span>
+              <span className="ph-bp__failstamp-sub">{t('cook_retry')}</span>
+            </button>
+          )}
         </div>
         <div className="ph-ending__title">{ending.title}</div>
         <p className="ph-ending__narration">{ending.narration}</p>

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import type { Reaction, Story, WallEntry } from '../types';
 import { REACTIONS } from '../types';
 import { getCover, COVERS, coverText } from '../utils/covers';
+import { storyHeroArt } from '../utils/storyArt';
 import { REACTION_GLYPH, fallbackCount } from '../utils/reactions';
 import { openAigramProfile } from '@shared/runtime/bridge';
 import { t } from '../i18n';
@@ -256,7 +257,9 @@ function WallCard({
 }) {
   const cover = getCover(entry.story.coverId);
   const ending = entry.story.ending;
-  const bg = ending.illustrationUrl || cover.imageUrl;
+  // ending illustration is the most fragile — fall back to the latest
+  // beat that succeeded before going all the way to the static cover.
+  const bg = storyHeroArt(entry.story, cover);
 
   return (
     <div className="ph-wall-card" style={{ ['--ph-ink' as string]: cover.ink }}>
