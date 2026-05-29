@@ -48,6 +48,13 @@ export default function PulpHour() {
     return new URLSearchParams(window.location.search).get('demo');
   }, []);
 
+  // Dev escape hatch: `?nolimit=1` bypasses the 1-story-per-day quota so
+  // we can iterate on the engine without burning a day each round.
+  const noLimit = useMemo(() => {
+    if (typeof window === 'undefined') return false;
+    return new URLSearchParams(window.location.search).get('nolimit') === '1';
+  }, []);
+
   // ── Persistence ────────────────────────────────────────────────────────
   const { savedData, persist } = useGameSave<PulpSave>('pulp-hour');
   const myStories = savedData?.stories ?? [];
@@ -330,7 +337,7 @@ export default function PulpHour() {
           loaded={wallLoaded}
           isInAigram={isInAigram}
           myStories={wallSelfStories}
-          lockedToday={lockedToday && demo !== 'wall' && demo !== 'viewer'}
+          lockedToday={lockedToday && !noLimit && demo !== 'wall' && demo !== 'viewer'}
           streakDays={stats.continuous_days}
           onPickNewIssue={goNewsstand}
           onOpenStory={setViewerEntry}
