@@ -27,6 +27,7 @@
 @marker: 'Permanent Marker', 'Bangers', cursive;
 @prose:  'Inter', system-ui, -apple-system, sans-serif;
 @prose-strong: 'Archivo Black', 'Inter', sans-serif;
+@mono:   'Courier New', 'Special Elite', ui-monospace, monospace;
 
 // ─── Root ────────────────────────────────────────────────────────────────
 
@@ -841,29 +842,135 @@
   }
 }
 
-.ph-beat__loader {
-  margin-top: 22px;
+// ─── WritingPlaceholder (between-beat LLM wait) ──────────────────────
+
+.ph-writing {
+  position: relative;
+  min-height: 360px;
+  margin: 20px auto 30px;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 30px 24px;
+  overflow: hidden;
+}
+.ph-writing__banner {
+  font-family: @head;
+  font-size: 32px;
+  letter-spacing: 0.04em;
+  color: @ink;
+  background: @yellow;
+  border: 4px solid @ink;
+  box-shadow: @shadow-loud;
+  padding: 8px 22px 4px;
+  transform: rotate(-3deg);
+  z-index: 2;
+}
+.ph-writing__paper {
+  position: relative;
+  background: @paper-light;
+  border: 3px solid @ink;
+  box-shadow: @shadow-hard;
+  padding: 12px 18px 10px;
+  font-family: @mono;
+  font-size: 16px;
+  color: @ink;
+  letter-spacing: 0.02em;
+  min-width: 240px;
+  max-width: 88%;
+  text-align: center;
+  transform: rotate(1deg);
+  z-index: 2;
+  &::before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 50%;
+    width: 32px;
+    height: 8px;
+    background: @ink-soft;
+    transform: translateX(-50%);
+    border-radius: 0 0 2px 2px;
+  }
+}
+.ph-writing__line {
+  display: inline-block;
+  vertical-align: middle;
+  animation: ph-writing-line-in 0.4s ease-out;
+}
+@keyframes ph-writing-line-in {
+  from { opacity: 0.3; transform: translateY(2px); }
+  to   { opacity: 1;   transform: translateY(0); }
+}
+.ph-writing__caret {
+  display: inline-block;
+  width: 9px;
+  height: 18px;
+  background: @ink;
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: ph-writing-caret 0.85s steps(2) infinite;
+}
+@keyframes ph-writing-caret {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+.ph-writing__keys {
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+.ph-writing__key {
+  width: 38px;
+  height: 38px;
+  background: @paper-light;
+  border: 3px solid @ink;
+  box-shadow: 3px 3px 0 @ink;
+  font-family: @head;
+  font-size: 22px;
+  color: @ink;
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: @ink;
-  font-family: @head;
-  font-size: 16px;
+  justify-content: center;
+  padding-top: 2px;
+  animation: ph-writing-keypress 0.6s ease-in-out infinite;
 }
-
-.ph-beat__loader-dot {
-  width: 10px;
-  height: 10px;
-  background: @it;
-  border: 2px solid @ink;
-  border-radius: 50%;
-  animation: ph-loader 1.1s ease-in-out infinite;
-  &:nth-child(2) { animation-delay: 0.18s; background: @cool; }
-  &:nth-child(3) { animation-delay: 0.36s; background: @pink; }
+.ph-writing__key--y { background: @yellow; }
+.ph-writing__key--c { background: @cool; color: @paper-light; animation-delay: 0.15s; }
+.ph-writing__key--p { background: @pink; animation-delay: 0.3s; }
+@keyframes ph-writing-keypress {
+  0%, 100% { transform: translateY(0); box-shadow: 3px 3px 0 @ink; }
+  40%      { transform: translateY(3px); box-shadow: 1px 1px 0 @ink; }
 }
-@keyframes ph-loader {
-  0%, 100% { opacity: 0.45; transform: scale(0.8); }
-  50%      { opacity: 1;    transform: scale(1.15); }
+.ph-writing__scraps {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.ph-writing__scrap {
+  position: absolute;
+  width: 58px;
+  height: 74px;
+  background: @paper-light;
+  border: 2.5px solid @ink;
+  box-shadow: 2px 2px 0 @ink;
+  opacity: 0;
+  animation: ph-writing-scrap 4.4s ease-in-out infinite;
+}
+.ph-writing__scrap--0 { left: 6%;  top: 14%;    transform: rotate(-12deg); }
+.ph-writing__scrap--1 { right: 8%; top: 22%;    transform: rotate(8deg);   animation-delay: 1.1s; }
+.ph-writing__scrap--2 { left: 14%; bottom: 16%; transform: rotate(-7deg);  animation-delay: 2.2s; }
+.ph-writing__scrap--3 { right: 6%; bottom: 22%; transform: rotate(4deg);   animation-delay: 3.3s; }
+@keyframes ph-writing-scrap {
+  0%, 100%  { opacity: 0; }
+  20%, 80%  { opacity: 0.55; }
 }
 
 .ph-beat__choices {

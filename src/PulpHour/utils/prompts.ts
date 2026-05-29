@@ -96,6 +96,7 @@ PERSONA / SETTING (English reference — render the actual story in ${lang.name}
 ${cover.persona}
 
 OUTPUT FORMAT — strict JSON only, no markdown fences, no commentary.
+Return EXACTLY ONE JSON object. Do not concatenate beats, do not return arrays, do not append the next beat — only this beat.
 
 For beats 1–5:
 {"narration":"<${lang.name} text, 2–4 sentences, second-person present tense, noir tone>","illustration_prompt":"<English only, ends with the tail below>","choices":{"defy":"<${lang.name}, 3–7 words>","yield":"<${lang.name}, 3–7 words>","lie":"<${lang.name}, 3–7 words>"}}
@@ -161,16 +162,43 @@ export function beatUserPrompt(opts: {
   return `Story so far:\n\n${history}\n\nNow beat ${beatIndex} of 6. ${lastChoiceLine} Escalate. ${remind}`;
 }
 
-/** Strip any markdown fences and try to parse the LLM's reply as JSON. */
+/** Extract the first complete `{ ... }` block from the LLM's reply via
+ *  brace-balancing (skipping over string contents + escape characters).
+ *  Returns null if no balanced object found. */
+function extractFirstJSONObject(s: string): string | null {
+  let depth = 0;
+  let start = -1;
+  let inString = false;
+  let escape = false;
+  for (let i = 0; i < s.length; i++) {
+    const c = s[i];
+    if (escape) { escape = false; continue; }
+    if (inString) {
+      if (c === '\\') { escape = true; continue; }
+      if (c === '"') inString = false;
+      continue;
+    }
+    if (c === '"') { inString = true; continue; }
+    if (c === '{') {
+      if (depth === 0) start = i;
+      depth++;
+    } else if (c === '}') {
+      depth--;
+      if (depth === 0 && start >= 0) return s.slice(start, i + 1);
+    }
+  }
+  return null;
+}
+
+/** Strip markdown fences, isolate the FIRST complete JSON object (the
+ *  model occasionally concatenates beat-N + beat-N+1 in a single reply),
+ *  and parse. Throws if no balanced object can be found. */
 export function parseBeatJSON<T = unknown>(raw: string): T {
   let s = raw.trim();
   s = s.replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/i, '').trim();
-  const first = s.indexOf('{');
-  const last = s.lastIndexOf('}');
-  if (first >= 0 && last > first) {
-    s = s.slice(first, last + 1);
-  }
-  return JSON.parse(s) as T;
+  const obj = extractFirstJSONObject(s);
+  if (!obj) throw new Error('parseBeatJSON: no balanced object');
+  return JSON.parse(obj) as T;
 }
 
 export const ILLUSTRATION_FALLBACK = ILLUSTRATION_TAIL;

@@ -3,6 +3,7 @@ import type { Axis, Beat, Cover } from '../types';
 import { AXES } from '../types';
 import { t } from '../i18n';
 import BeatPanel from './BeatPanel';
+import WritingPlaceholder from './WritingPlaceholder';
 
 interface Props {
   cover: Cover;
@@ -16,7 +17,7 @@ interface Props {
 }
 
 export default function BeatScreen({
-  cover, beats, index, loading, loadingStage, onChoose, onBack, onRetryPanel,
+  cover, beats, index, loading, onChoose, onBack, onRetryPanel,
 }: Props) {
   const current = beats[beats.length - 1];
   const articleRef = useRef<HTMLDivElement>(null);
@@ -72,18 +73,7 @@ export default function BeatScreen({
             onRetry={b.illustrationFailed ? () => onRetryPanel(i) : undefined}
           />
         ))}
-        {loading && (
-          <div className="ph-beat__loader">
-            <span className="ph-beat__loader-dot" />
-            <span className="ph-beat__loader-dot" />
-            <span className="ph-beat__loader-dot" />
-            <span className="ph-beat__loader-text">
-              {loadingStage === 'closing'
-                ? t('loading_illustrating')
-                : t('loading_narrating')}
-            </span>
-          </div>
-        )}
+        {loading && <WritingPlaceholder />}
       </div>
 
       <div className="ph-beat__choices">

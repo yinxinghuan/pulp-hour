@@ -101,53 +101,45 @@ const FALLBACK_CHOICES: Record<Axis, string> = {
 };
 
 function safeBeat(raw: string): Beat {
-  try {
-    const j = parseBeatJSON<{
-      narration?: string;
-      choices?: Partial<Record<Axis, string>>;
-      illustration_prompt?: string;
-    }>(raw);
-    const choices: Record<Axis, string> = {
-      defy:  j.choices?.defy?.trim()  || FALLBACK_CHOICES.defy,
-      yield: j.choices?.yield?.trim() || FALLBACK_CHOICES.yield,
-      lie:   j.choices?.lie?.trim()   || FALLBACK_CHOICES.lie,
-    };
-    return {
-      narration: j.narration?.trim() || raw.trim(),
-      choices,
-      illustrationPrompt:
-        j.illustration_prompt?.trim() ||
-        `${ILLUSTRATION_FALLBACK}`,
-    };
-  } catch {
-    return {
-      narration: raw.trim(),
-      choices: { ...FALLBACK_CHOICES },
-      illustrationPrompt: ILLUSTRATION_FALLBACK,
-    };
-  }
+  // Parse failure here is a hard error — the previous fallback (raw text
+  // as narration) leaked raw JSON wrappers into the rendered narration
+  // when the model concatenated two beats in one reply. Better to throw
+  // and let the outer catch surface a 'story jammed' toast so the player
+  // can retry cleanly.
+  const j = parseBeatJSON<{
+    narration?: string;
+    choices?: Partial<Record<Axis, string>>;
+    illustration_prompt?: string;
+  }>(raw);
+  const narration = j.narration?.trim();
+  if (!narration) throw new Error('safeBeat: missing narration');
+  const choices: Record<Axis, string> = {
+    defy:  j.choices?.defy?.trim()  || FALLBACK_CHOICES.defy,
+    yield: j.choices?.yield?.trim() || FALLBACK_CHOICES.yield,
+    lie:   j.choices?.lie?.trim()   || FALLBACK_CHOICES.lie,
+  };
+  return {
+    narration,
+    choices,
+    illustrationPrompt:
+      j.illustration_prompt?.trim() || `${ILLUSTRATION_FALLBACK}`,
+  };
 }
 
 function safeEnding(raw: string): Omit<Ending, 'illustrationUrl'> {
-  try {
-    const j = parseBeatJSON<{
-      narration?: string;
-      title?: string;
-      illustration_prompt?: string;
-    }>(raw);
-    return {
-      narration: j.narration?.trim() || raw.trim(),
-      title: (j.title?.trim() || 'An Unfinished Story').replace(/^["']|["']$/g, ''),
-      illustrationPrompt:
-        j.illustration_prompt?.trim() || ILLUSTRATION_FALLBACK,
-    };
-  } catch {
-    return {
-      narration: raw.trim(),
-      title: 'An Unfinished Story',
-      illustrationPrompt: ILLUSTRATION_FALLBACK,
-    };
-  }
+  const j = parseBeatJSON<{
+    narration?: string;
+    title?: string;
+    illustration_prompt?: string;
+  }>(raw);
+  const narration = j.narration?.trim();
+  if (!narration) throw new Error('safeEnding: missing narration');
+  return {
+    narration,
+    title: (j.title?.trim() || 'An Unfinished Story').replace(/^["']|["']$/g, ''),
+    illustrationPrompt:
+      j.illustration_prompt?.trim() || ILLUSTRATION_FALLBACK,
+  };
 }
 
 export function useBeatEngine(): UseBeatEngine {
