@@ -47,7 +47,7 @@ async function chatOnce(system: string, user: string): Promise<string> {
   return json.choices?.[0]?.message?.content ?? '';
 }
 
-export async function generateIllustration(opts: {
+async function generateIllustrationOnce(opts: {
   prompt: string;
   refUrl?: string;
 }): Promise<string> {
@@ -62,6 +62,27 @@ export async function generateIllustration(opts: {
   const json = (await res.json()) as { url?: string };
   if (!json.url) throw new Error('gen-image: no url');
   return json.url;
+}
+
+/**
+ * Try gen-image up to 2 times (with a 4s gap). Wall-clock per attempt is
+ * already ~200s, so we cap at 2 attempts — anything more punishes the
+ * player. Caller catches the final rejection and shows the fallback.
+ */
+export async function generateIllustration(opts: {
+  prompt: string;
+  refUrl?: string;
+}): Promise<string> {
+  try {
+    return await generateIllustrationOnce(opts);
+  } catch (first) {
+    await new Promise(res => setTimeout(res, 4000));
+    try {
+      return await generateIllustrationOnce(opts);
+    } catch {
+      throw first;
+    }
+  }
 }
 
 export interface UseBeatEngine {

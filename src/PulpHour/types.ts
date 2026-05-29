@@ -21,6 +21,7 @@ export interface Beat {
   choices: Record<Axis, string>;     // contextual labels per axis
   illustrationPrompt: string;         // returned by every beat (1–5)
   illustrationUrl?: string;           // filled in async as gen-image lands
+  illustrationFailed?: boolean;       // set after all retries exhausted
   chosen?: Axis;
 }
 

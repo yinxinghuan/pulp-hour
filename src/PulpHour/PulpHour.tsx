@@ -137,7 +137,9 @@ export default function PulpHour() {
   // ── Helpers ────────────────────────────────────────────────────────────
   function startBeatIllustration(coverId: CoverId, idx: number, prompt: string) {
     // Kick off a per-beat splash. Store the promise; when it resolves,
-    // patch the beat in state. Failures leave the URL undefined.
+    // patch the beat in state. On final failure (after the retry inside
+    // generateIllustration) mark illustrationFailed so the choice row
+    // can unlock and the panel can fall back to the cover image.
     const ref = coverPublicRef(coverId);
     const p = generateIllustration({ prompt, refUrl: ref })
       .then(url => {
@@ -148,7 +150,14 @@ export default function PulpHour() {
         });
         return url;
       })
-      .catch(() => undefined);
+      .catch(() => {
+        setBeats(prev => {
+          const next = [...prev];
+          if (next[idx]) next[idx] = { ...next[idx], illustrationFailed: true };
+          return next;
+        });
+        return undefined;
+      });
     illustrationPromisesRef.current.set(idx, p);
   }
 

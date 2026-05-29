@@ -1,14 +1,13 @@
 import { useEffect, useRef } from 'react';
 import type { Axis, Beat, Cover } from '../types';
 import { AXES } from '../types';
-import { coverText } from '../utils/covers';
 import { t } from '../i18n';
-import CookingPlaceholder from './CookingPlaceholder';
+import BeatPanel from './BeatPanel';
 
 interface Props {
   cover: Cover;
   beats: Beat[];
-  index: number;
+  index: number;        // current beat # (1..5)
   loading: boolean;
   loadingStage: '' | 'narrating' | 'closing';
   onChoose: (axis: Axis) => void;
@@ -16,27 +15,37 @@ interface Props {
 }
 
 export default function BeatScreen({
-  cover,
-  beats,
-  index,
-  loading,
-  loadingStage,
-  onChoose,
-  onBack,
+  cover, beats, index, loading, loadingStage, onChoose, onBack,
 }: Props) {
   const current = beats[beats.length - 1];
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const ready = !!current && (!!current.illustrationUrl || !!current.illustrationFailed);
+  const articleRef = useRef<HTMLDivElement>(null);
+  const lastBeatCount = useRef(0);
 
+  // Scroll the latest panel into view when a new beat arrives — but only
+  // for new beats, so the player can scroll up freely without being yanked
+  // back down on every state tick (image arrival, etc).
   useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    el.scrollTo({ top: 0, behavior: 'smooth' });
+    if (!articleRef.current) return;
+    if (beats.length > lastBeatCount.current) {
+      lastBeatCount.current = beats.length;
+      // tiny delay so layout settles
+      const id = window.setTimeout(() => {
+        const panels = articleRef.current?.querySelectorAll('.ph-bp');
+        const last = panels?.[panels.length - 1] as HTMLElement | undefined;
+        last?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 60);
+      return () => window.clearTimeout(id);
+    }
+    return;
   }, [beats.length]);
 
   return (
     <div className="ph-beat" style={{ ['--ph-ink' as string]: cover.ink }}>
       <div className="ph-beat__bar">
-        <button className="ph-link" onPointerDown={onBack} disabled={loading}>← {t('wall_title')}</button>
+        <button className="ph-link" onPointerDown={onBack} disabled={loading}>
+          ← {t('wall_title')}
+        </button>
         <span className="ph-beat__progress">
           {Array.from({ length: 6 }).map((_, i) => (
             <span
@@ -52,29 +61,16 @@ export default function BeatScreen({
         <span className="ph-beat__count">{t('beat_of', { n: index })}</span>
       </div>
 
-      <div className="ph-beat__article" ref={scrollRef}>
-        <div className="ph-beat__masthead">{coverText(cover, 'title').toUpperCase()}</div>
-
-        {current && (
-          <div className="ph-beat__splash">
-            {current.illustrationUrl ? (
-              <div
-                className="ph-beat__splash-art"
-                style={{ backgroundImage: `url(${current.illustrationUrl})` }}
-              />
-            ) : (
-              <div className="ph-beat__splash-art ph-beat__splash-art--pending">
-                <CookingPlaceholder seed={index} />
-              </div>
-            )}
-            <span className="ph-beat__splash-no">PANEL {index}</span>
-          </div>
-        )}
-
-        {current ? (
-          <p className="ph-beat__narration">{current.narration}</p>
-        ) : null}
-
+      <div className="ph-beat__article" ref={articleRef}>
+        {beats.map((b, i) => (
+          <BeatPanel
+            key={i}
+            beat={b}
+            cover={cover}
+            index={i + 1}
+            isPast={i < beats.length - 1}
+          />
+        ))}
         {loading && (
           <div className="ph-beat__loader">
             <span className="ph-beat__loader-dot" />
@@ -89,7 +85,10 @@ export default function BeatScreen({
         )}
       </div>
 
-      <div className="ph-beat__choices">
+      <div className={`ph-beat__choices ${!ready ? 'ph-beat__choices--locked' : ''}`}>
+        {!ready && current && (
+          <div className="ph-beat__lockbar">{t('wait_for_panel')}</div>
+        )}
         {AXES.map(axis => {
           const label = current?.choices[axis];
           const axisLabel = t(`axis_${axis}` as 'axis_defy');
@@ -98,7 +97,7 @@ export default function BeatScreen({
               key={axis}
               className={`ph-choice ph-choice--${axis}`}
               onPointerDown={() => onChoose(axis)}
-              disabled={loading || !current}
+              disabled={loading || !current || !ready}
             >
               <span className="ph-choice__axis">{axisLabel}</span>
               <span className="ph-choice__label">{label || '…'}</span>

@@ -576,6 +576,140 @@
   overflow: hidden;
 }
 
+// ─── Beat panel (stacked reader; multiple per session) ──────────────────
+
+.ph-bp {
+  margin: 0 auto 28px;
+  width: 100%;
+  max-width: 480px;
+  transition: opacity 240ms ease;
+}
+.ph-bp--past {
+  opacity: 0.72;
+}
+.ph-bp--past:hover {
+  opacity: 1;
+}
+
+.ph-bp__splash {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: @paper-dark;
+  border: @border-chunky;
+  box-shadow: @shadow-loud;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+.ph-bp__art {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+.ph-bp__art--fallback {
+  filter: contrast(1.05) saturate(0.55) sepia(0.15);
+}
+.ph-bp__art--pending {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      @paper-dark 0 12px,
+      @paper 12px 24px
+    );
+}
+.ph-bp__no {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-family: @head;
+  font-size: 14px;
+  color: @paper-light;
+  background: @cool;
+  border: 2.5px solid @ink;
+  padding: 1px 8px 0;
+  box-shadow: 2px 2px 0 @ink;
+  transform: rotate(-3deg);
+  z-index: 3;
+}
+.ph-bp__failstamp {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  font-family: @head;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  color: @ink;
+  background: @yellow;
+  border: 3px solid @ink;
+  box-shadow: 3px 3px 0 @ink;
+  padding: 4px 12px 2px;
+  transform: rotate(-6deg);
+  z-index: 3;
+}
+
+.ph-bp__narration {
+  font-family: @prose;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.55;
+  color: @ink;
+  background: @paper-light;
+  border: @border-chunky;
+  box-shadow: @shadow-hard;
+  padding: 16px 18px;
+  margin: 0;
+  position: relative;
+  &::before {
+    content: 'MEANWHILE…';
+    position: absolute;
+    top: -13px;
+    left: 12px;
+    font-family: @head;
+    font-size: 14px;
+    color: @paper-light;
+    background: @it;
+    border: 2.5px solid @ink;
+    padding: 2px 10px 0;
+    transform: rotate(-3deg);
+    letter-spacing: 0.04em;
+  }
+  &::first-letter {
+    font-family: @head;
+    font-size: 44px;
+    line-height: 0.9;
+    color: @it;
+    float: left;
+    padding: 4px 6px 0 0;
+    text-shadow: 2px 2px 0 @ink;
+  }
+}
+
+.ph-bp__chose {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: @prose-strong;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: @ink;
+  background: @paper-light;
+  border: 2.5px solid @ink;
+  padding: 4px 10px 3px;
+  box-shadow: 2px 2px 0 @ink;
+  text-transform: uppercase;
+  strong { color: var(--axis-ink, @cool); font-family: @head; font-size: 15px; }
+  em { font-family: @marker; font-style: normal; font-weight: 400; text-transform: none; color: @ink-soft; font-size: 13px; }
+}
+.ph-bp__chose--defy  { --axis-ink: @it; }
+.ph-bp__chose--yield { --axis-ink: @cool; }
+.ph-bp__chose--lie   { --axis-ink: @pink; }
+.ph-bp__chose-glyph {
+  font-family: @head;
+  font-size: 18px;
+  color: var(--axis-ink, @ink);
+}
+
 // ─── Beat screen ────────────────────────────────────────────────────────
 
 .ph-beat {
@@ -711,15 +845,36 @@
 }
 
 .ph-beat__choices {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
-  padding: 18px 14px 22px;
+  padding: 22px 14px 22px;
   max-width: 640px;
   width: 100%;
   margin: 0 auto;
   border-top: @border-chunky;
   background: @paper-light;
+}
+.ph-beat__choices--locked {
+  background:
+    repeating-linear-gradient(45deg, @paper-light 0 16px, @paper 16px 32px);
+  .ph-choice { opacity: 0.55; }
+}
+.ph-beat__lockbar {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-family: @head;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: @paper-light;
+  background: @ink;
+  border: 2.5px solid @yellow;
+  box-shadow: 3px 3px 0 @ink;
+  padding: 6px 14px 4px;
+  margin: -4px auto 10px;
+  max-width: 90%;
+  transform: rotate(-1deg);
 }
 
 .ph-choice {

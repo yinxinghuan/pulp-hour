@@ -249,6 +249,27 @@ const STRINGS = {
     ko: '갓 인쇄!',
     es: '¡recién impreso!',
   },
+  cook_failed: {
+    en: 'press ran out of ink',
+    zh: '印刷机墨用光了',
+    ja: 'インクが切れた',
+    ko: '잉크가 떨어졌다',
+    es: 'la prensa se quedó sin tinta',
+  },
+  chose_label: {
+    en: 'you chose',
+    zh: '你选了',
+    ja: 'あなたの選択',
+    ko: '당신의 선택',
+    es: 'elegiste',
+  },
+  wait_for_panel: {
+    en: 'waiting for the panel to develop…',
+    zh: '等画面显影…',
+    ja: 'パネルの現像待ち…',
+    ko: '패널 현상 대기…',
+    es: 'esperando que la viñeta se revele…',
+  },
 
   // ── footer (new) ────────────────────────────────────────────────────
   footer_fin: {
