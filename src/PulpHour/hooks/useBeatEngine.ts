@@ -1,15 +1,15 @@
-// Stateless beat engine: each call composes the full prompt and POSTs to
-// game-chat. We do not use useChat because the platform's chat endpoint is
-// stateless anyway and we want exact, replayable control of the history we
-// inject (with the chosen axes spelled out).
+// Stateless beat engine. Each LLM call composes the full history with
+// stamped axes. Gen-image is wrapped in a parallel-safe helper because we
+// fire 5+ generations per session and the bundled useGenImage hook has
+// shared loading state we don't want.
 
 import { useCallback, useRef, useState } from 'react';
-import { useGenImage } from '@shared/runtime/useGenImage';
 import { getCover } from '../utils/covers';
 import {
   beatSystemPrompt,
   beatUserPrompt,
   parseBeatJSON,
+  ILLUSTRATION_FALLBACK,
 } from '../utils/prompts';
 import type {
   Axis,
@@ -20,6 +20,14 @@ import type {
 } from '../types';
 
 const CHAT_URL = 'https://chat.aiwaves.tech/aigram/api/game-chat';
+const IMAGE_URL = 'https://chat.aiwaves.tech/aigram/api/gen-image';
+
+// Production-hosted covers — used as ref_url for the per-beat splashes so
+// every illustration in a story shares the cover's color anchor.
+const COVER_PUBLIC_BASE = 'https://yinxinghuan.github.io/pulp-hour/covers';
+export function coverPublicRef(id: CoverId): string {
+  return `${COVER_PUBLIC_BASE}/${id}.jpg`;
+}
 
 async function chatOnce(system: string, user: string): Promise<string> {
   const res = await fetch(CHAT_URL, {
@@ -39,23 +47,29 @@ async function chatOnce(system: string, user: string): Promise<string> {
   return json.choices?.[0]?.message?.content ?? '';
 }
 
+export async function generateIllustration(opts: {
+  prompt: string;
+  refUrl?: string;
+}): Promise<string> {
+  const body: { prompt: string; ref_url?: string } = { prompt: opts.prompt };
+  if (opts.refUrl) body.ref_url = opts.refUrl;
+  const res = await fetch(IMAGE_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) throw new Error(`gen-image failed: HTTP ${res.status}`);
+  const json = (await res.json()) as { url?: string };
+  if (!json.url) throw new Error('gen-image: no url');
+  return json.url;
+}
+
 export interface UseBeatEngine {
-  /** Generate the next mid-beat (1..5). beatsSoFar is the array of beats
-   *  already rendered; on first call pass []. The caller must mutate the
-   *  prior beat's `chosen` before invoking this. */
-  nextBeat: (
-    coverId: CoverId,
-    beatsSoFar: Beat[],
-  ) => Promise<Beat>;
-  /** Generate the closing beat. Calls LLM for narration+title+prompt, then
-   *  gen-image for the illustration. */
-  finishStory: (
-    coverId: CoverId,
-    beatsSoFar: Beat[],
-  ) => Promise<Ending>;
+  nextBeat: (coverId: CoverId, beatsSoFar: Beat[]) => Promise<Beat>;
+  finishStory: (coverId: CoverId, beatsSoFar: Beat[]) => Promise<Ending>;
   loading: boolean;
-  /** 'narrating' while LLM in flight, 'illustrating' while gen-image in flight, '' idle */
-  stage: '' | 'narrating' | 'illustrating';
+  /** 'narrating' while LLM in flight, 'closing' while final image waits, '' idle */
+  stage: '' | 'narrating' | 'closing';
   error: Error | null;
 }
 
@@ -70,20 +84,26 @@ function safeBeat(raw: string): Beat {
     const j = parseBeatJSON<{
       narration?: string;
       choices?: Partial<Record<Axis, string>>;
+      illustration_prompt?: string;
     }>(raw);
     const choices: Record<Axis, string> = {
-      defy: j.choices?.defy?.trim() || FALLBACK_CHOICES.defy,
+      defy:  j.choices?.defy?.trim()  || FALLBACK_CHOICES.defy,
       yield: j.choices?.yield?.trim() || FALLBACK_CHOICES.yield,
-      lie: j.choices?.lie?.trim() || FALLBACK_CHOICES.lie,
+      lie:   j.choices?.lie?.trim()   || FALLBACK_CHOICES.lie,
     };
     return {
       narration: j.narration?.trim() || raw.trim(),
       choices,
+      illustrationPrompt:
+        j.illustration_prompt?.trim() ||
+        `${ILLUSTRATION_FALLBACK}`,
     };
   } catch {
-    // Last-ditch: dump the raw model output as narration so the player
-    // sees *something*. The three fallback choices keep the game playable.
-    return { narration: raw.trim(), choices: { ...FALLBACK_CHOICES } };
+    return {
+      narration: raw.trim(),
+      choices: { ...FALLBACK_CHOICES },
+      illustrationPrompt: ILLUSTRATION_FALLBACK,
+    };
   }
 }
 
@@ -98,21 +118,18 @@ function safeEnding(raw: string): Omit<Ending, 'illustrationUrl'> {
       narration: j.narration?.trim() || raw.trim(),
       title: (j.title?.trim() || 'An Unfinished Story').replace(/^["']|["']$/g, ''),
       illustrationPrompt:
-        j.illustration_prompt?.trim() ||
-        '1950s pulp magazine illustration, heavy halftone, cobalt blue and tomato red on cream paper, dramatic lighting.',
+        j.illustration_prompt?.trim() || ILLUSTRATION_FALLBACK,
     };
   } catch {
     return {
       narration: raw.trim(),
       title: 'An Unfinished Story',
-      illustrationPrompt:
-        '1950s pulp magazine illustration, heavy halftone, cobalt blue and tomato red on cream paper, dramatic lighting.',
+      illustrationPrompt: ILLUSTRATION_FALLBACK,
     };
   }
 }
 
 export function useBeatEngine(): UseBeatEngine {
-  const { generate: genImg } = useGenImage();
   const [loading, setLoading] = useState(false);
   const [stage, setStage] = useState<UseBeatEngine['stage']>('');
   const [error, setError] = useState<Error | null>(null);
@@ -160,12 +177,15 @@ export function useBeatEngine(): UseBeatEngine {
         const user = beatUserPrompt({ beatIndex: 6, beatsSoFar });
         const raw = await chatOnce(sys, user);
         const base = safeEnding(raw);
-        setStage('illustrating');
+        setStage('closing');
         let illustrationUrl: string | undefined;
         try {
-          illustrationUrl = await genImg({ prompt: base.illustrationPrompt });
+          illustrationUrl = await generateIllustration({
+            prompt: base.illustrationPrompt,
+            refUrl: coverPublicRef(coverId),
+          });
         } catch {
-          /* keep undefined — wall will fall back to cover */
+          /* leave undefined */
         }
         return { ...base, illustrationUrl };
       } catch (e) {
@@ -178,7 +198,7 @@ export function useBeatEngine(): UseBeatEngine {
         setStage('');
       }
     },
-    [genImg],
+    [],
   );
 
   return { nextBeat, finishStory, loading, stage, error };

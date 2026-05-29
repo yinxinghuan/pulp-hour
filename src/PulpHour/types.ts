@@ -16,7 +16,9 @@ export interface Cover {
 
 export interface Beat {
   narration: string;
-  choices: Record<Axis, string>; // contextual labels per axis
+  choices: Record<Axis, string>;     // contextual labels per axis
+  illustrationPrompt: string;         // returned by every beat (1–5)
+  illustrationUrl?: string;           // filled in async as gen-image lands
   chosen?: Axis;
 }
 

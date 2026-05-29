@@ -1,25 +1,40 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { Reaction, Story, WallEntry } from '../types';
 import { REACTIONS } from '../types';
-import { getCover } from '../utils/covers';
+import { getCover, COVERS } from '../utils/covers';
 import { REACTION_GLYPH, fallbackCount } from '../utils/reactions';
 import { openAigramProfile } from '@shared/runtime/bridge';
 import { t } from '../i18n';
+import Burst from './Burst';
 
 interface Props {
   entries: WallEntry[];
   loaded: boolean;
   isInAigram: boolean;
   myStories: Story[];
+  lockedToday: boolean;
+  streakDays: number;
   onPickNewIssue: () => void;
   onOpenStory: (entry: WallEntry) => void;
 }
 
+const INTRO_HIDDEN_KEY = 'pulp-hour-intro-hidden';
+
 export default function Wall({
-  entries, loaded, isInAigram, myStories, onPickNewIssue, onOpenStory,
+  entries, loaded, isInAigram, myStories,
+  lockedToday, streakDays,
+  onPickNewIssue, onOpenStory,
 }: Props) {
-  // If real platform feed is empty / off-platform, blend the player's own
-  // stories in so the rack never reads as dead.
+  // Intro collapse state — sticky in localStorage.
+  const [introHidden, setIntroHidden] = useState<boolean>(() => {
+    try { return localStorage.getItem(INTRO_HIDDEN_KEY) === '1'; } catch { return false; }
+  });
+  function toggleIntro() {
+    const next = !introHidden;
+    setIntroHidden(next);
+    try { localStorage.setItem(INTRO_HIDDEN_KEY, next ? '1' : '0'); } catch { /* ignore */ }
+  }
+
   const displayed = useMemo<WallEntry[]>(() => {
     if (entries.length > 0) return entries;
     return myStories.slice(0, 6).map(s => ({
@@ -31,21 +46,36 @@ export default function Wall({
 
   return (
     <div className="ph-wall">
+      <Hero streakDays={streakDays} />
+
+      {introHidden ? (
+        <div className="ph-wall__intro-toggle">
+          <button className="ph-link" onPointerDown={toggleIntro}>
+            ▾ {t('how_show')}
+          </button>
+        </div>
+      ) : (
+        <HowItWorks onHide={toggleIntro} />
+      )}
+
       <div className="ph-wall__head">
-        <div className="ph-wall__masthead">PULP HOUR</div>
         <div className="ph-wall__title">{t('wall_title')}</div>
         <div className="ph-wall__subtitle">{t('wall_subtitle')}</div>
       </div>
 
       <div className="ph-wall__cta-bar">
-        <button className="ph-btn ph-btn--ink" onPointerDown={onPickNewIssue}>
-          {t('wall_open')}
-        </button>
+        {lockedToday ? (
+          <LockedCta />
+        ) : (
+          <button className="ph-cta-burst" onPointerDown={onPickNewIssue}>
+            <Burst fill="#e63946" outer={48} inner={36} points={18}>
+              <span className="ph-cta-burst__label">{t('wall_open')}</span>
+            </Burst>
+          </button>
+        )}
       </div>
 
-      {!loaded && (
-        <div className="ph-wall__loading">…</div>
-      )}
+      {!loaded && <div className="ph-wall__loading">…</div>}
 
       {loaded && displayed.length === 0 && (
         <div className="ph-wall__empty">
@@ -66,9 +96,130 @@ export default function Wall({
           ))}
         </div>
       )}
+
+      <PrintFooter />
     </div>
   );
 }
+
+// ─── Hero ─────────────────────────────────────────────────────────────
+
+function Hero({ streakDays }: { streakDays: number }) {
+  return (
+    <div className="ph-hero">
+      <div className="ph-hero__masthead">PULP HOUR</div>
+      <div className="ph-hero__tagline">{t('hero_tagline')}</div>
+      <div className="ph-hero__subline">{t('hero_subline')}</div>
+      {streakDays >= 2 && (
+        <div className="ph-hero__streak">
+          <Burst fill="#ffd60a" outer={46} inner={34} points={14}>
+            <span className="ph-hero__streak-label">
+              {streakDays} DAYS<br/>RUNNING
+            </span>
+          </Burst>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── How It Works ─────────────────────────────────────────────────────
+
+function HowItWorks({ onHide }: { onHide: () => void }) {
+  const operatorCover = COVERS[0];
+  return (
+    <div className="ph-how">
+      <div className="ph-how__head">
+        <span className="ph-how__title">{t('how_title')}</span>
+        <button className="ph-link ph-how__hide" onPointerDown={onHide}>
+          ✕ {t('how_hide')}
+        </button>
+      </div>
+      <div className="ph-how__panels">
+        <HowPanel
+          n="1"
+          label={t('how_step1_label')}
+          body={t('how_step1_body')}
+          accent="#2c6df4"
+        >
+          <div
+            className="ph-how__panel-art"
+            style={{ backgroundImage: `url(${operatorCover.imageUrl})` }}
+          />
+        </HowPanel>
+        <HowPanel
+          n="2"
+          label={t('how_step2_label')}
+          body={t('how_step2_body')}
+          accent="#ffd60a"
+        >
+          <div className="ph-how__axes">
+            <span className="ph-how__axis ph-how__axis--defy">D</span>
+            <span className="ph-how__axis ph-how__axis--yield">Y</span>
+            <span className="ph-how__axis ph-how__axis--lie">L</span>
+          </div>
+        </HowPanel>
+        <HowPanel
+          n="3"
+          label={t('how_step3_label')}
+          body={t('how_step3_body')}
+          accent="#e63946"
+        >
+          <div className="ph-how__panel-icon">
+            <svg viewBox="0 0 40 40" width="40" height="40">
+              <rect x="6" y="6" width="28" height="28" fill="#fbf4dd" stroke="#111" strokeWidth="3" />
+              <rect x="3" y="3" width="28" height="28" fill="none" stroke="#111" strokeWidth="3" />
+              <text x="20" y="26" fontFamily="Bangers" fontSize="14" textAnchor="middle" fill="#111">FIN</text>
+            </svg>
+          </div>
+        </HowPanel>
+      </div>
+    </div>
+  );
+}
+
+function HowPanel({
+  n, label, body, accent, children,
+}: {
+  n: string; label: string; body: string; accent: string; children: React.ReactNode;
+}) {
+  return (
+    <div className="ph-how__panel">
+      <span className="ph-how__panel-num" style={{ background: accent }}>{n}</span>
+      <div className="ph-how__panel-art-frame">{children}</div>
+      <div className="ph-how__panel-label">{label}</div>
+      <div className="ph-how__panel-body">{body}</div>
+    </div>
+  );
+}
+
+// ─── Locked CTA ───────────────────────────────────────────────────────
+
+function LockedCta() {
+  const [now, setNow] = useState(Date.now());
+  useEffect(() => {
+    const id = window.setInterval(() => setNow(Date.now()), 30_000);
+    return () => window.clearInterval(id);
+  }, []);
+  const tomorrow = new Date(now);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  tomorrow.setHours(0, 0, 0, 0);
+  const remainMs = Math.max(0, tomorrow.getTime() - now);
+  const hours = Math.floor(remainMs / 3_600_000);
+  const minutes = Math.floor((remainMs % 3_600_000) / 60_000);
+
+  return (
+    <div className="ph-locked">
+      <div className="ph-locked__stamp">FILED TODAY</div>
+      <div className="ph-locked__body">
+        Come back in <strong>{hours}h {minutes}m</strong>.<br/>
+        Until then — read what the others filed.
+      </div>
+    </div>
+  );
+}
+
+// ─── Wall card ────────────────────────────────────────────────────────
 
 function WallCard({
   entry, isInAigram, onOpen,
@@ -129,7 +280,6 @@ function WallCard({
 function ReactionRow({ storyId }: { storyId: string }) {
   const [mine, setMine] = useState<Set<Reaction>>(new Set());
 
-  // Load own reactions from localStorage (per-story).
   useEffect(() => {
     try {
       const raw = localStorage.getItem(`ph-react-${storyId}`);
@@ -141,13 +291,9 @@ function ReactionRow({ storyId }: { storyId: string }) {
     setMine(prev => {
       const next = new Set(prev);
       if (next.has(kind)) {
-        // Platform rule: reactions are increment-only. We DO allow local
-        // un-glow for affordance, but we do NOT decrement the platform
-        // counter. Once tapped, it stays counted server-side.
         next.delete(kind);
       } else {
         next.add(kind);
-        // Persist + fire platform event (handled by parent via custom event).
         window.dispatchEvent(new CustomEvent('ph-react', { detail: { storyId, kind } }));
       }
       try { localStorage.setItem(`ph-react-${storyId}`, JSON.stringify([...next])); } catch {/* ignore */}
@@ -163,7 +309,7 @@ function ReactionRow({ storyId }: { storyId: string }) {
         return (
           <button
             key={kind}
-            className={`ph-react-btn ${has ? 'ph-react-btn--on' : ''}`}
+            className={`ph-react-btn ph-react-btn--${kind} ${has ? 'ph-react-btn--on' : ''}`}
             onPointerDown={() => toggle(kind)}
             aria-label={t(`reactions_${kind}` as 'reactions_riveted')}
           >
@@ -172,6 +318,32 @@ function ReactionRow({ storyId }: { storyId: string }) {
           </button>
         );
       })}
+    </div>
+  );
+}
+
+// ─── Print footer (the user's bigger / colored Ben-Day band) ─────────
+
+function PrintFooter() {
+  return (
+    <div className="ph-printfoot" aria-hidden>
+      <svg className="ph-printfoot__band" width="100%" height="100%" preserveAspectRatio="none">
+        <defs>
+          <pattern id="ph-pf-y" x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse">
+            <circle cx="9" cy="9" r="4.5" fill="#ffd60a" />
+          </pattern>
+          <pattern id="ph-pf-r" x="3" y="3" width="18" height="18" patternUnits="userSpaceOnUse">
+            <circle cx="9" cy="9" r="4" fill="#e63946" />
+          </pattern>
+          <pattern id="ph-pf-b" x="9" y="6" width="18" height="18" patternUnits="userSpaceOnUse">
+            <circle cx="9" cy="9" r="3.6" fill="#2c6df4" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#ph-pf-y)" />
+        <rect width="100%" height="100%" fill="url(#ph-pf-r)" />
+        <rect width="100%" height="100%" fill="url(#ph-pf-b)" />
+      </svg>
+      <div className="ph-printfoot__stamp">{t('footer_fin')}</div>
     </div>
   );
 }

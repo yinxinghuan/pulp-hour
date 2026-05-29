@@ -6,8 +6,11 @@ const AXIS_DESC: Record<Axis, string> = {
   lie: 'pretend, hide identity, deflect, perform a different self',
 };
 
+const ILLUSTRATION_TAIL =
+  '1960s American pulp horror comic book panel, heavy black ink outlines, Ben-Day halftone dots, lurid spot colors, dramatic high-contrast shadows, hand-drawn comic book style, no text, no letters, no logos';
+
 export function beatSystemPrompt(cover: Cover): string {
-  return `You are the ghostwriter of a 6-beat pulp short story for the magazine "Pulp Hour".
+  return `You are the ghostwriter of a 6-beat illustrated pulp short story for the comic-book magazine "Pulp Hour".
 
 This issue's story:
 TITLE: ${cover.title}
@@ -19,7 +22,7 @@ ${cover.persona}
 OUTPUT FORMAT — strict JSON only, no markdown fences, no commentary.
 
 For beats 1–5:
-{"narration":"...","choices":{"defy":"...","yield":"...","lie":"..."}}
+{"narration":"...","illustration_prompt":"...","choices":{"defy":"...","yield":"...","lie":"..."}}
 
 For beat 6 (FINAL):
 {"narration":"...","title":"...","illustration_prompt":"..."}
@@ -33,7 +36,16 @@ WRITING RULES
     yield = ${AXIS_DESC.yield}
     lie   = ${AXIS_DESC.lie}
   Each label must be different enough that picking feels like a decision, not a coin flip.
-- Beat 6 returns a single resolving paragraph (3–5 sentences), a 4–7 word title in Title Case (no quotes), and an "illustration_prompt" describing the climactic moment as a 1950s pulp magazine illustration. End the illustration_prompt with the phrase: "1950s pulp magazine illustration, heavy halftone, cobalt blue and tomato red on cream paper, dramatic lighting."
+
+ILLUSTRATION RULES — every beat (including 1–5) returns its own "illustration_prompt".
+- Describe ONE arrested cinematic moment from THIS beat — a single readable image.
+- Subject-agnostic: name objects, mood, lighting, composition. Do NOT describe specific faces / clothing details.
+- End every illustration_prompt with this exact tail (verbatim, including punctuation): "${ILLUSTRATION_TAIL}".
+
+BEAT 6 SPECIFICS
+- "narration" resolves the story in a single paragraph (3–5 sentences).
+- "title" is a punchy 4–7 word pulp story title in Title Case, no quotes.
+- "illustration_prompt" describes the climactic moment and ends with the same tail above.
 
 Keep narration TIGHT. No throat-clearing. No "you find yourself" openers.`;
 }
@@ -73,9 +85,7 @@ export function beatUserPrompt(opts: {
 /** Strip any markdown fences and try to parse the LLM's reply as JSON. */
 export function parseBeatJSON<T = unknown>(raw: string): T {
   let s = raw.trim();
-  // Strip ```json ... ``` fences if present.
   s = s.replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/i, '').trim();
-  // Sometimes the model prepends a stray "Beat 3:" or similar — pick the first {...}
   const first = s.indexOf('{');
   const last = s.lastIndexOf('}');
   if (first >= 0 && last > first) {
@@ -83,3 +93,5 @@ export function parseBeatJSON<T = unknown>(raw: string): T {
   }
   return JSON.parse(s) as T;
 }
+
+export const ILLUSTRATION_FALLBACK = ILLUSTRATION_TAIL;

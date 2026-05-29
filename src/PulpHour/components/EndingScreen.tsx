@@ -7,7 +7,7 @@ interface Props {
   ending: Ending;
   story: Story;
   loading: boolean;
-  loadingStage: '' | 'narrating' | 'illustrating';
+  loadingStage: '' | 'narrating' | 'closing';
   authorName?: string;
   authorAvatarUrl?: string;
   onShare: () => void;
@@ -61,7 +61,7 @@ export default function EndingScreen({
           <div className="ph-ending__overlay">
             <div className="ph-ending__overlay-spinner" />
             <div className="ph-ending__overlay-text">
-              {loadingStage === 'illustrating'
+              {loadingStage === 'closing'
                 ? t('loading_illustrating')
                 : t('loading_narrating')}
             </div>

@@ -5,10 +5,10 @@ import { t } from '../i18n';
 
 interface Props {
   cover: Cover;
-  beats: Beat[];        // beats so far (current = beats[beats.length-1])
-  index: number;        // 1..5 — which beat is showing
+  beats: Beat[];
+  index: number;
   loading: boolean;
-  loadingStage: '' | 'narrating' | 'illustrating';
+  loadingStage: '' | 'narrating' | 'closing';
   onChoose: (axis: Axis) => void;
   onBack: () => void;
 }
@@ -25,7 +25,6 @@ export default function BeatScreen({
   const current = beats[beats.length - 1];
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Scroll the narration into view whenever a new beat lands.
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
@@ -53,18 +52,34 @@ export default function BeatScreen({
 
       <div className="ph-beat__article" ref={scrollRef}>
         <div className="ph-beat__masthead">{cover.title.toUpperCase()}</div>
+
+        {current && (
+          <div className="ph-beat__splash">
+            {current.illustrationUrl ? (
+              <div
+                className="ph-beat__splash-art"
+                style={{ backgroundImage: `url(${current.illustrationUrl})` }}
+              />
+            ) : (
+              <div className="ph-beat__splash-art ph-beat__splash-art--pending">
+                <span className="ph-beat__splash-stamp">DEVELOPING…</span>
+              </div>
+            )}
+            <span className="ph-beat__splash-no">PANEL {index}</span>
+          </div>
+        )}
+
         {current ? (
-          <p className="ph-beat__narration">
-            {current.narration}
-          </p>
+          <p className="ph-beat__narration">{current.narration}</p>
         ) : null}
+
         {loading && (
           <div className="ph-beat__loader">
             <span className="ph-beat__loader-dot" />
             <span className="ph-beat__loader-dot" />
             <span className="ph-beat__loader-dot" />
             <span className="ph-beat__loader-text">
-              {loadingStage === 'illustrating'
+              {loadingStage === 'closing'
                 ? t('loading_illustrating')
                 : t('loading_narrating')}
             </span>

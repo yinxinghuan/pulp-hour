@@ -33,7 +33,13 @@ export default function StoryViewer({ entry, onClose }: Props) {
           <div className="ph-viewer__beats">
             {beats.map((b, i) => (
               <div key={i} className="ph-viewer__beat">
-                <div className="ph-viewer__beat-no">BEAT {i + 1}</div>
+                <div className="ph-viewer__beat-no">PANEL {i + 1}</div>
+                {b.illustrationUrl && (
+                  <div
+                    className="ph-viewer__beat-art"
+                    style={{ backgroundImage: `url(${b.illustrationUrl})` }}
+                  />
+                )}
                 <p className="ph-viewer__beat-text">{b.narration}</p>
                 {b.chosen && (
                   <div className="ph-viewer__chose">
@@ -44,7 +50,7 @@ export default function StoryViewer({ entry, onClose }: Props) {
               </div>
             ))}
             <div className="ph-viewer__beat">
-              <div className="ph-viewer__beat-no">BEAT 6 · FINAL</div>
+              <div className="ph-viewer__beat-no">PANEL 6 · FINALE</div>
               <p className="ph-viewer__beat-text">{ending.narration}</p>
             </div>
           </div>

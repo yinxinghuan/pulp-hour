@@ -2,8 +2,14 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useGameSave } from '@shared/save';
 import { isInAigram } from '@shared/runtime';
 import { useGameEvent } from '@shared/runtime/useGameEvent';
+import { useGameStats } from '@shared/runtime/useGameStats';
 import { getCover } from './utils/covers';
-import { useBeatEngine, assembleStory } from './hooks/useBeatEngine';
+import {
+  useBeatEngine,
+  assembleStory,
+  coverPublicRef,
+  generateIllustration,
+} from './hooks/useBeatEngine';
 import { useWall } from './hooks/useWall';
 import { fetchMe, type MeInfo } from './utils/me';
 import { reactionEvent } from './utils/reactions';
@@ -15,6 +21,7 @@ import BeatScreen from './components/BeatScreen';
 import EndingScreen from './components/EndingScreen';
 import StoryViewer from './components/StoryViewer';
 import Watermark from './components/Watermark';
+import LangSwitcher from './components/LangSwitcher';
 import { t } from './i18n';
 import type {
   Axis, Beat, CoverId, Ending, Phase, PulpSave, Reaction, Story, WallEntry,
@@ -23,6 +30,17 @@ import './PulpHour.less';
 
 const MAX_STORIES = 20;
 const MID_BEATS = 5;
+const PUBLISH_WAIT_MS = 60_000;
+
+function isSameLocalDay(a: number, b: number): boolean {
+  const da = new Date(a);
+  const db = new Date(b);
+  return (
+    da.getFullYear() === db.getFullYear() &&
+    da.getMonth() === db.getMonth() &&
+    da.getDate() === db.getDate()
+  );
+}
 
 export default function PulpHour() {
   const demo = useMemo(() => {
@@ -40,6 +58,7 @@ export default function PulpHour() {
   // ── Engine ─────────────────────────────────────────────────────────────
   const engine = useBeatEngine();
   const { trigger } = useGameEvent();
+  const { stats } = useGameStats('publish-story');
 
   // ── Author ─────────────────────────────────────────────────────────────
   const [me, setMe] = useState<MeInfo | null>(null);
@@ -52,8 +71,10 @@ export default function PulpHour() {
   const [ending, setEnding] = useState<Ending | null>(null);
   const [error, setError] = useState<Error | null>(null);
   const [viewerEntry, setViewerEntry] = useState<WallEntry | null>(null);
+  const [publishing, setPublishing] = useState(false);
 
-  // For the ending byline + save, fix the current story id once committed.
+  // Track per-beat illustration promises so shareEnding can await them.
+  const illustrationPromisesRef = useRef<Map<number, Promise<string | undefined>>>(new Map());
   const pendingStoryRef = useRef<Story | null>(null);
 
   // ── Boot effects ───────────────────────────────────────────────────────
@@ -101,14 +122,50 @@ export default function PulpHour() {
     return () => window.removeEventListener('ph-react', onReact);
   }, [trigger]);
 
-  // ── Flow handlers ──────────────────────────────────────────────────────
-  function goWall() {
-    setPhase('wall');
+  // ── Locale change → force re-render ────────────────────────────────────
+  const [, setLocaleTick] = useState(0);
+  useEffect(() => {
+    function onLocale() { setLocaleTick(n => n + 1); }
+    window.addEventListener('ph-locale', onLocale);
+    return () => window.removeEventListener('ph-locale', onLocale);
+  }, []);
+
+  // ── Daily quota: my newest story today → locked ───────────────────────
+  const filedTodayAt = myStories[0]?.createdAt;
+  const lockedToday = !!filedTodayAt && isSameLocalDay(filedTodayAt, Date.now());
+
+  // ── Helpers ────────────────────────────────────────────────────────────
+  function startBeatIllustration(coverId: CoverId, idx: number, prompt: string) {
+    // Kick off a per-beat splash. Store the promise; when it resolves,
+    // patch the beat in state. Failures leave the URL undefined.
+    const ref = coverPublicRef(coverId);
+    const p = generateIllustration({ prompt, refUrl: ref })
+      .then(url => {
+        setBeats(prev => {
+          const next = [...prev];
+          if (next[idx]) next[idx] = { ...next[idx], illustrationUrl: url };
+          return next;
+        });
+        return url;
+      })
+      .catch(() => undefined);
+    illustrationPromisesRef.current.set(idx, p);
+  }
+
+  function resetSession() {
     setActiveCoverId(null);
     setBeats([]);
     setEnding(null);
     setError(null);
+    setPublishing(false);
     pendingStoryRef.current = null;
+    illustrationPromisesRef.current = new Map();
+  }
+
+  // ── Flow handlers ──────────────────────────────────────────────────────
+  function goWall() {
+    setPhase('wall');
+    resetSession();
   }
 
   function goNewsstand() {
@@ -116,14 +173,16 @@ export default function PulpHour() {
   }
 
   async function pickCover(coverId: CoverId) {
+    resetSession();
     setActiveCoverId(coverId);
-    setBeats([]);
-    setEnding(null);
-    setError(null);
     setPhase('beat');
     try {
       const first = await engine.nextBeat(coverId, []);
       setBeats([first]);
+      // Kick off illustration for beat 1 in the background.
+      if (first.illustrationPrompt) {
+        startBeatIllustration(coverId, 0, first.illustrationPrompt);
+      }
     } catch (e) {
       setError(e instanceof Error ? e : new Error(String(e)));
     }
@@ -133,7 +192,6 @@ export default function PulpHour() {
     if (!activeCoverId) return;
     if (engine.loading) return;
 
-    // Stamp the current beat with the chosen axis.
     const stamped = [...beats];
     stamped[stamped.length - 1] = { ...stamped[stamped.length - 1], chosen: axis };
     setBeats(stamped);
@@ -141,9 +199,15 @@ export default function PulpHour() {
     try {
       if (stamped.length < MID_BEATS) {
         const next = await engine.nextBeat(activeCoverId, stamped);
-        setBeats([...stamped, next]);
+        const newBeats = [...stamped, next];
+        setBeats(newBeats);
+        // Kick off illustration for this beat (async; player advances anyway).
+        if (next.illustrationPrompt) {
+          startBeatIllustration(activeCoverId, newBeats.length - 1, next.illustrationPrompt);
+        }
       } else {
-        // Beat 5 just answered → generate the closing beat.
+        // Beat 5 just answered → generate the closing beat (sync wait — needs
+        // its illustration before publish).
         setPhase('ending');
         const end = await engine.finishStory(activeCoverId, stamped);
         setEnding(end);
@@ -156,8 +220,6 @@ export default function PulpHour() {
   async function retryBeat() {
     if (!activeCoverId) return;
     setError(null);
-    // If we have N beats, the last one may be a stub; regenerate from
-    // beats[0..N-1] (i.e. drop the last and try again).
     const trimmed = beats.slice(0, -1);
     try {
       if (phase === 'ending') {
@@ -165,33 +227,53 @@ export default function PulpHour() {
         setEnding(end);
       } else {
         const next = await engine.nextBeat(activeCoverId, trimmed);
-        setBeats([...trimmed, next]);
+        const newBeats = [...trimmed, next];
+        setBeats(newBeats);
+        if (next.illustrationPrompt) {
+          startBeatIllustration(activeCoverId, newBeats.length - 1, next.illustrationPrompt);
+        }
       }
     } catch (e) {
       setError(e instanceof Error ? e : new Error(String(e)));
     }
   }
 
-  function shareEnding() {
+  async function shareEnding() {
     if (!activeCoverId || !ending) return;
+    setPublishing(true);
+
+    // Wait for any pending beat illustrations to land (with a hard timeout
+    // so failures don't lock the publish flow).
+    const pendings = Array.from(illustrationPromisesRef.current.values());
+    if (pendings.length) {
+      const timeout = new Promise(res => setTimeout(res, PUBLISH_WAIT_MS));
+      await Promise.race([Promise.allSettled(pendings), timeout]);
+    }
+
+    // Snapshot the latest beats array (with any URLs that arrived).
+    let snapshot: Beat[] = [];
+    setBeats(prev => { snapshot = prev; return prev; });
+    // setBeats with an identity returner is the cleanest way to read latest
+    // state synchronously without restructuring; equivalent to a ref read.
+    const finalBeats = snapshot.length ? snapshot : beats;
+
     const story = assembleStory({
       coverId: activeCoverId,
-      beats,
+      beats: finalBeats,
       ending,
       authorName: me?.name,
     });
     pendingStoryRef.current = story;
 
-    // Save: prepend to stories (newest-first), cap.
     const nextSave: PulpSave = {
       stories: [story, ...myStories].slice(0, MAX_STORIES),
     };
     persist(nextSave);
 
-    // Fire publish event (drives platform stats + notifications).
     trigger('publish-story', { story_id: story.id, cover_id: story.coverId });
 
     refreshWall();
+    setPublishing(false);
     goWall();
   }
 
@@ -216,6 +298,8 @@ export default function PulpHour() {
           loaded={wallLoaded}
           isInAigram={isInAigram}
           myStories={wallSelfStories}
+          lockedToday={lockedToday && demo !== 'wall' && demo !== 'viewer'}
+          streakDays={stats.continuous_days}
           onPickNewIssue={goNewsstand}
           onOpenStory={setViewerEntry}
         />
@@ -250,8 +334,8 @@ export default function PulpHour() {
               narration: '', title: '', illustrationPrompt: '',
             }, createdAt: Date.now(),
           }}
-          loading={engine.loading || !ending}
-          loadingStage={engine.stage}
+          loading={engine.loading || !ending || publishing}
+          loadingStage={publishing ? 'closing' : engine.stage}
           authorName={me?.name}
           authorAvatarUrl={me?.avatarUrl}
           onShare={shareEnding}
@@ -270,6 +354,7 @@ export default function PulpHour() {
         </div>
       )}
 
+      <LangSwitcher />
       <Watermark />
     </div>
   );

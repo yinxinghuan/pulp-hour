@@ -23,6 +23,8 @@ function makeBeats(cover: Cover): Beat[] {
       yield: 'Stay on the line',
       lie: 'Pretend you misdialed',
     },
+    illustrationPrompt: '',
+    illustrationUrl: cover.imageUrl,
     chosen: n === 1 ? 'yield' as const : n === 2 ? 'lie' as const : 'defy' as const,
   });
   void cover;
@@ -68,6 +70,8 @@ export function demoBeats(coverId: CoverId = 'operator'): { beats: Beat[]; cover
         yield: 'Say nothing, just listen',
         lie: 'Say you have the wrong number',
       },
+      illustrationPrompt: '',
+      illustrationUrl: cover.imageUrl,
       chosen: 'yield',
     },
     {
@@ -78,6 +82,8 @@ export function demoBeats(coverId: CoverId = 'operator'): { beats: Beat[]; cover
         yield: 'Read off your phone number',
         lie: 'Recite a stranger\'s social security number',
       },
+      illustrationPrompt: '',
+      illustrationUrl: cover.imageUrl,
       chosen: 'lie',
     },
     {
@@ -88,6 +94,8 @@ export function demoBeats(coverId: CoverId = 'operator'): { beats: Beat[]; cover
         yield: 'Ask what the appointment was for',
         lie: 'Apologize and offer to reschedule',
       },
+      illustrationPrompt: '',
+      illustrationUrl: cover.imageUrl,
     },
   ];
   return { beats, cover };
