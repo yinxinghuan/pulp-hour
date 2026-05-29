@@ -645,6 +645,28 @@
   padding: 4px 12px 2px;
   transform: rotate(-6deg);
   z-index: 3;
+  text-align: center;
+}
+.ph-bp__failstamp--btn {
+  cursor: pointer;
+  transition: transform 70ms;
+  &:active {
+    transform: rotate(-6deg) translate(2px, 2px);
+    box-shadow: 1px 1px 0 @ink;
+  }
+}
+.ph-bp__failstamp-line {
+  display: block;
+  line-height: 1.05;
+}
+.ph-bp__failstamp-sub {
+  display: block;
+  font-family: @marker;
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: @it;
+  margin-top: 2px;
 }
 
 .ph-bp__narration {

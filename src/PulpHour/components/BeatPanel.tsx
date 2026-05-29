@@ -14,11 +14,12 @@ interface Props {
   cover: Cover;
   index: number;          // 1-based panel number
   isPast: boolean;        // already chosen, read-only
+  onRetry?: () => void;   // re-kick gen-image for this panel
 }
 
 const AXIS_GLYPH = { defy: '↺', yield: '↓', lie: '↹' } as const;
 
-export default function BeatPanel({ beat, cover, index, isPast }: Props) {
+export default function BeatPanel({ beat, cover, index, isPast, onRetry }: Props) {
   const showImage = !!beat.illustrationUrl;
   const showFallback = !showImage && beat.illustrationFailed;
   const showCooking = !showImage && !beat.illustrationFailed;
@@ -41,9 +42,21 @@ export default function BeatPanel({ beat, cover, index, isPast }: Props) {
               className="ph-bp__art ph-bp__art--fallback"
               style={{ backgroundImage: `url(${fallbackArt})` }}
             />
-            <div className="ph-bp__failstamp" aria-label="illustration failed">
-              {t('cook_failed').toUpperCase()}
-            </div>
+            {onRetry ? (
+              <button
+                type="button"
+                className="ph-bp__failstamp ph-bp__failstamp--btn"
+                onPointerDown={onRetry}
+                aria-label={t('cook_retry')}
+              >
+                <span className="ph-bp__failstamp-line">{t('cook_failed').toUpperCase()}</span>
+                <span className="ph-bp__failstamp-sub">{t('cook_retry')}</span>
+              </button>
+            ) : (
+              <div className="ph-bp__failstamp" aria-label="illustration failed">
+                {t('cook_failed').toUpperCase()}
+              </div>
+            )}
           </>
         )}
         {showCooking && (

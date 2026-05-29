@@ -135,6 +135,19 @@ export default function PulpHour() {
   const lockedToday = !!filedTodayAt && isSameLocalDay(filedTodayAt, Date.now());
 
   // ── Helpers ────────────────────────────────────────────────────────────
+  function retryPanelIllustration(idx: number) {
+    if (!activeCoverId) return;
+    const beat = beats[idx];
+    if (!beat?.illustrationPrompt) return;
+    // Clear failed flag so the panel re-enters the cooking state immediately.
+    setBeats(prev => {
+      const next = [...prev];
+      if (next[idx]) next[idx] = { ...next[idx], illustrationFailed: false };
+      return next;
+    });
+    startBeatIllustration(activeCoverId, idx, beat.illustrationPrompt);
+  }
+
   function startBeatIllustration(coverId: CoverId, idx: number, prompt: string) {
     // Kick off a per-beat splash. Store the promise; when it resolves,
     // patch the beat in state. On final failure (after the retry inside
@@ -327,6 +340,7 @@ export default function PulpHour() {
           loadingStage={engine.stage}
           onChoose={chooseAxis}
           onBack={goWall}
+          onRetryPanel={retryPanelIllustration}
         />
       )}
 

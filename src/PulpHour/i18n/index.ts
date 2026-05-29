@@ -256,6 +256,13 @@ const STRINGS = {
     ko: '잉크가 떨어졌다',
     es: 'la prensa se quedó sin tinta',
   },
+  cook_retry: {
+    en: 'tap to reprint',
+    zh: '点这里重印',
+    ja: 'タップで再印刷',
+    ko: '눌러서 다시 인쇄',
+    es: 'tocar para reimprimir',
+  },
   chose_label: {
     en: 'you chose',
     zh: '你选了',
