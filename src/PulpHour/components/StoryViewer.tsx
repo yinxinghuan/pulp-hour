@@ -44,7 +44,11 @@ export default function StoryViewer({ entry, onClose }: Props) {
       <div className="ph-viewer__sheet" style={{ ['--ph-ink' as string]: cover.ink }}>
         <div className="ph-viewer__bar">
           <span className="ph-viewer__masthead">PULP HOUR</span>
-          <button className="ph-link" onPointerDown={onClose}>{t('story_close')} ✕</button>
+          {/* onClick (not onPointerDown) — if we unmount on pointerdown,
+              the subsequent pointerup fires its 'click' event on whatever
+              element is now at the touch position, which lands on the
+              wall card behind and reopens the same story. */}
+          <button className="ph-link" onClick={onClose}>{t('story_close')} ✕</button>
         </div>
 
         {canTranslate && (
