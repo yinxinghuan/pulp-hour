@@ -47,47 +47,70 @@ async function chatOnce(system: string, user: string): Promise<string> {
   return json.choices?.[0]?.message?.content ?? '';
 }
 
+// Backend wall-clock is ~200s. Mobile webviews (especially iOS Safari
+// inside Aigram) can be stingy with long-running fetches — give them an
+// explicit 280s ceiling so we know exactly when we abort, instead of
+// trusting whatever the OS decides.
+const IMAGE_FETCH_TIMEOUT_MS = 280_000;
+
 async function generateIllustrationOnce(opts: {
   prompt: string;
   refUrl?: string;
 }): Promise<string> {
   const body: { prompt: string; ref_url?: string } = { prompt: opts.prompt };
   if (opts.refUrl) body.ref_url = opts.refUrl;
-  const res = await fetch(IMAGE_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
-  if (!res.ok) throw new Error(`gen-image failed: HTTP ${res.status}`);
-  const json = (await res.json()) as { url?: string };
-  if (!json.url) throw new Error('gen-image: no url');
-  return json.url;
+
+  const ctl = new AbortController();
+  const tid = window.setTimeout(() => ctl.abort(), IMAGE_FETCH_TIMEOUT_MS);
+  try {
+    const res = await fetch(IMAGE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+      signal: ctl.signal,
+    });
+    if (!res.ok) throw new Error(`gen-image: HTTP ${res.status}`);
+    const json = (await res.json()) as { url?: string };
+    if (!json.url) throw new Error('gen-image: no url');
+    return json.url;
+  } finally {
+    window.clearTimeout(tid);
+  }
 }
 
 /**
- * Try gen-image up to 2 times (with a 4s gap). Wall-clock per attempt is
- * already ~200s, so we cap at 2 attempts — anything more punishes the
- * player. Caller catches the final rejection and shows the fallback.
+ * Try gen-image up to 3 times. Wall-clock per attempt is ~200s, capped
+ * at 280s by AbortController. Backoff 3s / 6s between attempts. Only
+ * after all three fail does the panel fall back. Mobile webviews drop
+ * long-running fetches inconsistently — extra retries soak that up.
  */
 export async function generateIllustration(opts: {
   prompt: string;
   refUrl?: string;
 }): Promise<string> {
-  try {
-    return await generateIllustrationOnce(opts);
-  } catch (first) {
-    await new Promise(res => setTimeout(res, 4000));
+  const delays = [3000, 6000];
+  let lastErr: unknown;
+  for (let attempt = 0; attempt < 3; attempt++) {
     try {
       return await generateIllustrationOnce(opts);
-    } catch {
-      throw first;
+    } catch (e) {
+      lastErr = e;
+      if (attempt < delays.length) {
+        await new Promise(res => setTimeout(res, delays[attempt]));
+      }
     }
   }
+  throw lastErr instanceof Error ? lastErr : new Error('gen-image: all attempts failed');
+}
+
+export interface FinishOpts {
+  /** Optional public HTTPS URL for the gen-image ref. Defaults to cover. */
+  refUrl?: string;
 }
 
 export interface UseBeatEngine {
   nextBeat: (coverId: CoverId, beatsSoFar: Beat[]) => Promise<Beat>;
-  finishStory: (coverId: CoverId, beatsSoFar: Beat[]) => Promise<Ending>;
+  finishStory: (coverId: CoverId, beatsSoFar: Beat[], opts?: FinishOpts) => Promise<Ending>;
   loading: boolean;
   /** 'narrating' while LLM in flight, 'closing' while final image waits, '' idle */
   stage: '' | 'narrating' | 'closing';
@@ -178,7 +201,7 @@ export function useBeatEngine(): UseBeatEngine {
   );
 
   const finishStory = useCallback<UseBeatEngine['finishStory']>(
-    async (coverId, beatsSoFar) => {
+    async (coverId, beatsSoFar, opts) => {
       if (inFlight.current) throw new Error('beat-engine: in flight');
       inFlight.current = true;
       setLoading(true);
@@ -195,7 +218,7 @@ export function useBeatEngine(): UseBeatEngine {
         try {
           illustrationUrl = await generateIllustration({
             prompt: base.illustrationPrompt,
-            refUrl: coverPublicRef(coverId),
+            refUrl: opts?.refUrl || coverPublicRef(coverId),
           });
         } catch {
           /* leave undefined */

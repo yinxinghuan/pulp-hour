@@ -153,7 +153,12 @@ export default function PulpHour() {
     // patch the beat in state. On final failure (after the retry inside
     // generateIllustration) mark illustrationFailed so the choice row
     // can unlock and the panel can fall back to the cover image.
-    const ref = coverPublicRef(coverId);
+    //
+    // Ref strategy: prefer the player's Aigram avatar so the protagonist
+    // in each panel inherits their likeness (subject-as-ref pattern from
+    // Mugshot Booth). Fall back to the cached cover when the player has
+    // no avatar (off-platform or new account).
+    const ref = me?.avatarUrl || coverPublicRef(coverId);
     const p = generateIllustration({ prompt, refUrl: ref })
       .then(url => {
         setBeats(prev => {
@@ -229,9 +234,12 @@ export default function PulpHour() {
         }
       } else {
         // Beat 5 just answered → generate the closing beat (sync wait — needs
-        // its illustration before publish).
+        // its illustration before publish). Use the player's avatar as ref
+        // so the closing panel matches the per-beat splashes' protagonist.
         setPhase('ending');
-        const end = await engine.finishStory(activeCoverId, stamped);
+        const end = await engine.finishStory(activeCoverId, stamped, {
+          refUrl: me?.avatarUrl,
+        });
         setEnding(end);
       }
     } catch (e) {
@@ -245,7 +253,9 @@ export default function PulpHour() {
     const trimmed = beats.slice(0, -1);
     try {
       if (phase === 'ending') {
-        const end = await engine.finishStory(activeCoverId, beats);
+        const end = await engine.finishStory(activeCoverId, beats, {
+          refUrl: me?.avatarUrl,
+        });
         setEnding(end);
       } else {
         const next = await engine.nextBeat(activeCoverId, trimmed);

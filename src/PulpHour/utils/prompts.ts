@@ -116,7 +116,8 @@ WRITING RULES
 
 ILLUSTRATION RULES — every beat returns its own "illustration_prompt".
 - Describe ONE arrested cinematic moment from THIS beat.
-- Subject-agnostic: name objects, mood, lighting, composition. Do not describe specific faces / clothing details.
+- Each illustration MUST feature "the protagonist" as a visible figure in the scene — peering at something, gripping a phone, turning over their shoulder, lit by lurid light. Their face will be referenced from a separate portrait, so do NOT describe facial features, skin tone, hair color, or specific clothing. Just place them meaningfully in the scene.
+- Name objects, mood, lighting, composition around them.
 - End every illustration_prompt with this exact tail (verbatim): "${ILLUSTRATION_TAIL}".
 
 BEAT 6 SPECIFICS
