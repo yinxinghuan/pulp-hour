@@ -1,0 +1,22 @@
+[
+  {
+    "ref": "https://yinxinghuan.github.io/pulp-hour/covers/operator.jpg",
+    "prompt": "vintage 1960s American pulp horror comic book cover illustration, EC Comics era, heavy black ink outlines, Ben-Day halftone dot fill, dramatic high-contrast shadows, lurid cobalt blue and tomato red and cream spot colors, ominous hotline noir atmosphere, hand-drawn comic book style, no text, no letters, no logos, the composition matches the reference",
+    "out": "/Users/yin/code/games/pulp-hour/public/covers/operator.jpg"
+  },
+  {
+    "ref": "https://yinxinghuan.github.io/pulp-hour/covers/tenant.jpg",
+    "prompt": "vintage 1960s American pulp horror comic book cover illustration, EC Comics era, heavy black ink outlines, Ben-Day halftone dot fill, dramatic high-contrast shadows, lurid amber-yellow and deep purple spot colors, haunted apartment dread atmosphere, hand-drawn comic book style, no text, no letters, no logos, the composition matches the reference",
+    "out": "/Users/yin/code/games/pulp-hour/public/covers/tenant.jpg"
+  },
+  {
+    "ref": "https://yinxinghuan.github.io/pulp-hour/covers/voyager.jpg",
+    "prompt": "vintage 1960s American pulp horror comic book cover illustration, EC Comics era, heavy black ink outlines, Ben-Day halftone dot fill, dramatic high-contrast shadows, lurid cobalt blue and forest green and tomato red spot colors, cosmic isolation horror atmosphere, hand-drawn comic book style, no text, no letters, no logos, the composition matches the reference",
+    "out": "/Users/yin/code/games/pulp-hour/public/covers/voyager.jpg"
+  },
+  {
+    "ref": "https://yinxinghuan.github.io/pulp-hour/covers/last-train.jpg",
+    "prompt": "vintage 1960s American pulp horror comic book cover illustration, EC Comics era, heavy black ink outlines, Ben-Day halftone dot fill, dramatic high-contrast shadows, lurid sodium orange and deep black and cream spot colors, midnight subway intimate menace atmosphere, hand-drawn comic book style, no text, no letters, no logos, the composition matches the reference",
+    "out": "/Users/yin/code/games/pulp-hour/public/covers/last-train.jpg"
+  }
+]
