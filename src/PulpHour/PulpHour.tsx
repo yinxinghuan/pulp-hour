@@ -57,7 +57,19 @@ export default function PulpHour() {
 
   // ── Persistence ────────────────────────────────────────────────────────
   const { savedData, persist, loaded: saveLoaded } = useGameSave<PulpSave>('pulp-hour');
-  const myStories = savedData?.stories ?? [];
+
+  // Local mirror — useGameSave.savedData does NOT update after persist().
+  // Without a mirror, every publish read savedData.stories (still pre-
+  // first-publish) → next save was [latestStory] → older stories silently
+  // dropped. See feedback_useGameSave_local_mirror.md + scroll-vs-click
+  // sibling skill useGameSave-mirror.
+  const [mirror, setMirror] = useState<PulpSave | undefined>(undefined);
+  useEffect(() => {
+    if (mirror === undefined && savedData !== undefined) {
+      setMirror(savedData ?? { stories: [] });
+    }
+  }, [savedData, mirror]);
+  const myStories = mirror?.stories ?? [];
 
   // ── Wall ───────────────────────────────────────────────────────────────
   const { entries: liveEntries, loaded: wallLoaded, refresh: refreshWall } = useWall();
@@ -340,6 +352,7 @@ export default function PulpHour() {
     const nextSave: PulpSave = {
       stories: [story, ...myStories].slice(0, MAX_STORIES),
     };
+    setMirror(nextSave);
     persist(nextSave);
 
     trigger('publish-story', { story_id: story.id, cover_id: story.coverId });
