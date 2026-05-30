@@ -23,7 +23,11 @@ export default function Newsstand({ onPick, onBack }: Props) {
           <button
             key={c.id}
             className="ph-newsstand__slot"
-            onPointerDown={() => onPick(c.id)}
+            // onClick (not onPointerDown) — the rack is a scrollable list
+            // and onPointerDown fires before the browser decides tap-vs-scroll,
+            // so swiping over a slot enters the cover instead of scrolling.
+            // See feedback_onclick_for_scrollable_lists.md.
+            onClick={() => onPick(c.id)}
             aria-label={coverText(c, 'title')}
           >
             <CoverArt cover={c} size="md" />

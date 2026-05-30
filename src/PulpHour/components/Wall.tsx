@@ -294,7 +294,11 @@ function WallCard({
       <div className="ph-wall-card__meta">
         <button
           className="ph-wall-card__author"
-          onPointerDown={e => {
+          // onClick (not onPointerDown) — author sits inside a scrollable
+          // wall card grid; pointerdown fires immediately on touch start
+          // so swiping over the author chip would open the Aigram profile
+          // mid-scroll. See feedback_onclick_for_scrollable_lists.md.
+          onClick={e => {
             e.stopPropagation();
             if (isInAigram && entry.userId !== 'self') {
               openAigramProfile(entry.userId);
