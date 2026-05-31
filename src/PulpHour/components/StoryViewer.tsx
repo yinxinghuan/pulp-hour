@@ -4,6 +4,7 @@ import { getCover } from '../utils/covers';
 import { storyHeroArt } from '../utils/storyArt';
 import { t, locale } from '../i18n';
 import { useTranslateStory, storySourceLocale } from '../hooks/useTranslateStory';
+import { isInAigram, openAigramProfile } from '@shared/runtime';
 
 interface Props {
   entry: WallEntry;
@@ -81,9 +82,32 @@ export default function StoryViewer({ entry, onClose }: Props) {
             style={{ backgroundImage: `url(${storyHeroArt(entry.story, cover)})` }}
           />
           <div className="ph-viewer__title">{showEnding.title}</div>
-          <div className="ph-viewer__byline">
-            {t('ending_byline')} <strong>{authorName || entry.userName || t('ending_anonymous')}</strong>
-          </div>
+          {/* Author chip — tap opens the author's Aigram profile.
+              cross-user-avatar + cross-user-profile-tap skills. */}
+          <button
+            type="button"
+            className="ph-viewer__byline"
+            onClick={(ev) => {
+              ev.stopPropagation();
+              if (isInAigram && entry.userId) openAigramProfile(entry.userId);
+            }}
+            disabled={!isInAigram || !entry.userId}
+            aria-label={`Open ${authorName || entry.userName || 'author'}'s profile`}
+          >
+            <span className="ph-viewer__byline-label">{t('ending_byline')}</span>
+            {entry.userAvatarUrl ? (
+              <span className="ph-viewer__byline-avatar" aria-hidden>
+                <img src={entry.userAvatarUrl} alt="" draggable={false} referrerPolicy="no-referrer" />
+              </span>
+            ) : (
+              <span className="ph-viewer__byline-avatar" aria-hidden>
+                <span className="ph-viewer__byline-letter">
+                  {((authorName || entry.userName || '?')[0] || '?').toUpperCase()}
+                </span>
+              </span>
+            )}
+            <strong>{authorName || entry.userName || t('ending_anonymous')}</strong>
+          </button>
 
           <div className="ph-viewer__beats">
             {beats.map((b, i) => (

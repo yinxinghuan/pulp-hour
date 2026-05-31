@@ -1382,14 +1382,50 @@ img.ph-bp__art--fallback,
   color: @ink-soft;
   padding: 0 18px 14px;
   border-bottom: 2.5px dashed @ink;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  touch-action: manipulation;
+  &:active { transform: scale(0.98); }
+  &:disabled { cursor: default; opacity: 1; }
   strong {
     font-family: @marker;
     font-weight: 400;
     color: @it;
-    margin-left: 6px;
     text-transform: none;
     font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 180px;
   }
+}
+.ph-viewer__byline-label { letter-spacing: 0.06em; }
+.ph-viewer__byline-avatar {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: @ink;
+  border: 1px solid @ink-soft;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  img { width: 100%; height: 100%; object-fit: cover; display: block; }
+}
+.ph-viewer__byline-letter {
+  font-family: @prose-strong;
+  font-size: 9px;
+  font-weight: 700;
+  color: @ink-soft;
 }
 
 .ph-viewer__beats {
