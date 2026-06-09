@@ -318,13 +318,23 @@ function WallCard({
           )}
           <span className="ph-wall-card__name">{entry.userName || 'Anonymous'}</span>
         </button>
-        <ReactionRow storyId={entry.story.id} />
+        <ReactionRow
+          storyId={entry.story.id}
+          authorId={entry.userId}
+          coverUrl={bg}
+        />
       </div>
     </div>
   );
 }
 
-function ReactionRow({ storyId }: { storyId: string }) {
+function ReactionRow({
+  storyId, authorId, coverUrl,
+}: {
+  storyId: string;
+  authorId: string;
+  coverUrl: string;
+}) {
   const [mine, setMine] = useState<Set<Reaction>>(new Set());
 
   useEffect(() => {
@@ -341,7 +351,9 @@ function ReactionRow({ storyId }: { storyId: string }) {
         next.delete(kind);
       } else {
         next.add(kind);
-        window.dispatchEvent(new CustomEvent('ph-react', { detail: { storyId, kind } }));
+        window.dispatchEvent(new CustomEvent('ph-react', {
+          detail: { storyId, kind, authorId, coverUrl },
+        }));
       }
       try { localStorage.setItem(`ph-react-${storyId}`, JSON.stringify([...next])); } catch {/* ignore */}
       return next;

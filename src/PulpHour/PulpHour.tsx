@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useGameSave } from '@shared/save';
-import { isInAigram } from '@shared/runtime';
+import { isInAigram, telegramId } from '@shared/runtime';
 import { useGameEvent } from '@shared/runtime/useGameEvent';
 import { useGameStats } from '@shared/runtime/useGameStats';
 import { getCover } from './utils/covers';
@@ -133,9 +133,38 @@ export default function PulpHour() {
   // ── Reaction custom event ──────────────────────────────────────────────
   useEffect(() => {
     function onReact(e: Event) {
-      const detail = (e as CustomEvent).detail as { storyId: string; kind: Reaction };
+      const detail = (e as CustomEvent).detail as {
+        storyId: string;
+        kind: Reaction;
+        authorId?: string;
+        coverUrl?: string;
+      };
       if (!detail) return;
-      trigger(reactionEvent(detail.storyId, detail.kind));
+      // Attach a platform notify action when reacting to someone else's
+      // story. The same record/play call handles counting + fan-out.
+      const isOther = !!detail.authorId
+        && detail.authorId !== 'self'
+        && detail.authorId !== (telegramId || 'self');
+      const tmpl =
+        detail.kind === 'riveted' ? '{sender_name} was riveted by your story.' :
+        detail.kind === 'spooked' ? '{sender_name} got spooked by your story.' :
+        '{sender_name} called your story cursed.';
+      const config = (isOther && detail.coverUrl)
+        ? {
+            actions: [
+              {
+                type: 'notify',
+                target_user_id: detail.authorId!,
+                image: {
+                  ref_url: detail.coverUrl,
+                  prompt: 'pulp magazine cover, Pulp Hour newsstand',
+                },
+                message: { template: tmpl, variables: ['sender_name'] },
+              },
+            ],
+          }
+        : undefined;
+      trigger(reactionEvent(detail.storyId, detail.kind), config);
     }
     window.addEventListener('ph-react', onReact);
     return () => window.removeEventListener('ph-react', onReact);
