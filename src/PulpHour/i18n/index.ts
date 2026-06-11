@@ -99,6 +99,42 @@ const STRINGS = {
   },
   read_now: { en: 'Read Now', zh: '翻开', ja: '読む', ko: '읽기', es: 'Leer' },
 
+  // ── countdown / coming-next preview ─────────────────────────────────
+  next_issue_in: {
+    en: 'NEXT ISSUE DROPS IN',
+    zh: '下一刊还有',
+    ja: '次号配信まで',
+    ko: '다음 호까지',
+    es: 'PRÓXIMA EDICIÓN EN',
+  },
+  coming_next: {
+    en: 'COMING NEXT',
+    zh: '即将上刊',
+    ja: '近日配信',
+    ko: '곧 발행',
+    es: 'PRÓXIMAMENTE',
+  },
+  sealed_until_drop: {
+    en: 'Sealed until drop',
+    zh: '封蜡至上刊日',
+    ja: '配信日まで封印',
+    ko: '발행일까지 봉인',
+    es: 'Sellado hasta el lanzamiento',
+  },
+  new_issue_dot: {
+    en: 'NEW',
+    zh: '新',
+    ja: '新刊',
+    ko: 'NEW',
+    es: 'NUEVO',
+  },
+  // Compact time-unit suffixes for the countdown. Kept terse so the
+  // chip fits on a phone — `1d 14h 22m 03s` etc.
+  unit_days:    { en: 'd', zh: '天', ja: '日', ko: '일', es: 'd' },
+  unit_hours:   { en: 'h', zh: '小时', ja: '時', ko: '시', es: 'h' },
+  unit_minutes: { en: 'm', zh: '分', ja: '分', ko: '분', es: 'm' },
+  unit_seconds: { en: 's', zh: '秒', ja: '秒', ko: '초', es: 's' },
+
   // ── beat ────────────────────────────────────────────────────────────
   beat_of: {
     en: 'Beat {n} of 6',

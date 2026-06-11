@@ -4,3 +4,4 @@ dist
 *.log
 scripts/_tmp
 scripts/_out
+_qa

@@ -469,6 +469,134 @@
   transform: rotate(-2deg);
 }
 
+// ─── Countdown chip ────────────────────────────────────────────────────
+// Sticky red banner at the top of the rack — every-second tick to the
+// next issue drop. Visually loud so a scroll-feed encounter can identify
+// "this game has new content cooking" in under a second.
+
+.ph-countdown-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin: 6px auto 10px;
+  padding: 8px 18px 6px;
+  background: @it;
+  color: @paper-light;
+  border: @border-chunky;
+  box-shadow: @shadow-hard;
+  max-width: 340px;
+  transform: rotate(-1deg);
+}
+.ph-countdown-chip__label {
+  font-family: @head;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.ph-countdown-chip__time {
+  font-family: @prose-strong;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  // Tabular numerals so the chip doesn't jitter as digits flip every second.
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+// ─── Sealed "COMING NEXT" slot ─────────────────────────────────────────
+// First slot in the rack when a future cover is queued. Renders the real
+// cover art beneath a dark veil + wax-style stamp so the user can preview
+// what's coming without giving away the hook. Not a button — non-tappable.
+
+.ph-newsstand__slot--sealed {
+  cursor: default;
+  &:active { transform: none; }
+}
+
+.ph-sealed {
+  position: relative;
+  display: block;
+}
+
+.ph-sealed__veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, fade(@ink, 65%) 0%, fade(@ink, 80%) 100%);
+  mix-blend-mode: multiply;
+}
+
+.ph-sealed__stamp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-6deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 14px 6px;
+  background: @it;
+  color: @paper-light;
+  border: 3px solid @ink;
+  box-shadow: 3px 3px 0 @ink;
+  pointer-events: none;
+  text-align: center;
+  min-width: 120px;
+}
+.ph-sealed__stamp-label {
+  font-family: @head;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.ph-sealed__stamp-time {
+  font-family: @prose-strong;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.ph-sealed__caption {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  font-family: @marker;
+  font-size: 13px;
+  text-align: center;
+  color: @paper-light;
+  pointer-events: none;
+}
+
+// ─── NEW dot on the freshest live cover ────────────────────────────────
+
+.ph-newsstand__slot-cover {
+  position: relative;
+}
+
+.ph-new-dot {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: 2;
+  display: inline-block;
+  font-family: @head;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  color: @paper-light;
+  background: @it;
+  border: 3px solid @ink;
+  box-shadow: 3px 3px 0 @ink;
+  padding: 6px 10px 4px;
+  transform: rotate(8deg);
+  pointer-events: none;
+}
+
 // ─── Cover (used in newsstand) ──────────────────────────────────────────
 
 .ph-cover {
