@@ -2,7 +2,9 @@ export type Axis = 'defy' | 'yield' | 'lie';
 
 export const AXES: Axis[] = ['defy', 'yield', 'lie'];
 
-export type CoverId = 'operator' | 'tenant' | 'voyager' | 'last-train';
+// Cover IDs are open-ended — a new one drops every 2 days, so we treat the
+// id as a free-form slug instead of a closed union. Keep ids kebab-case.
+export type CoverId = string;
 
 export type CoverLocale = 'en' | 'zh' | 'ja' | 'ko' | 'es';
 
@@ -14,6 +16,11 @@ export interface Cover {
   persona: string;                          // injected into LLM system prompt (English)
   imageUrl: string;
   ink: string;
+  // ISO8601 UTC instant the issue goes live in the newsstand. Covers with
+  // a future releasedOn render as the sealed "coming next" preview slot;
+  // covers with a past releasedOn become readable issues. Cadence: one new
+  // issue every 2 days, dropping at 00:00 UTC.
+  releasedOn: string;
 }
 
 export interface Beat {
