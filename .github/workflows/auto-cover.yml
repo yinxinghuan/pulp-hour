@@ -1,0 +1,61 @@
+name: Auto Cover Drop
+
+# Every 2 days at 00:05 UTC. GitHub cron is "best-effort" — high-load
+# windows may delay by 5-15 minutes, which is fine for a 2-day cadence.
+#
+# Also exposed via workflow_dispatch so you can hand-trigger a drop from
+# the Actions tab when iterating or testing.
+on:
+  schedule:
+    - cron: '5 0 */2 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write   # so we can trigger deploy.yml after pushing
+
+concurrency:
+  group: auto-cover
+  cancel-in-progress: false
+
+jobs:
+  drop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Pillow
+        run: pip install --quiet Pillow
+
+      - name: Generate next cover
+        id: drop
+        run: |
+          slug=$(python3 scripts/auto_cover_drop.py)
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+          echo "Dropped cover: $slug"
+
+      - name: Commit + push
+        run: |
+          if git diff --quiet src/PulpHour/data/covers.manifest.json public/covers/; then
+            echo "No changes — script did not produce a new cover."
+            exit 1
+          fi
+          git config user.name "pulp-hour-bot"
+          git config user.email "noreply@github.com"
+          git add src/PulpHour/data/covers.manifest.json public/covers/${{ steps.drop.outputs.slug }}.jpg
+          git commit -m "auto: drop cover '${{ steps.drop.outputs.slug }}'"
+          git push
+
+      # The deploy.yml workflow listens for `push` events, but pushes
+      # authored by GITHUB_TOKEN do not trigger workflows. Fire it
+      # explicitly via gh CLI so the new cover ships to Pages.
+      - name: Trigger Pages deploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref master
