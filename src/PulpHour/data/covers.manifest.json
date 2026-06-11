@@ -222,5 +222,33 @@
     "ink": "#A33A3A",
     "imageUrl": "/pulp-hour/covers/lost-and-found-clerk.jpg",
     "persona": "Setting is a municipal lost and found office in a mid-sized contemporary American city. The protagonist is a lost and found clerk, quietly cataloguing items, mostly wallets. The second presence is a courteous visitor or claimant who seems helpful but subtly misremembers details or misidentifies items. The threat is the recurrence of mistaken identity and the precision of documentation, exposing a slow unraveling mystery beneath ordinary paperwork. Tone is intimate, low-lit, with a focus on the quiet tension of small errors that accumulate."
+  },
+  {
+    "id": "night-shift-copyist",
+    "releasedOn": "2026-06-17T00:00:00Z",
+    "title": {
+      "en": "Midnight Edits at the City Archive",
+      "zh": "午夜修订：市档案馆的秘密",
+      "ja": "真夜中の修正：市立文書館の謎",
+      "ko": "한밤중 수정: 시립 기록 보관소의 비밀",
+      "es": "Correcciones de Medianoche en el Archivo Municipal"
+    },
+    "subtitle": {
+      "en": "Night shift at the city archive",
+      "zh": "市档案馆夜班",
+      "ja": "市立文書館の夜勤",
+      "ko": "시립 기록 보관소 야간 근무",
+      "es": "Turno nocturno en el archivo municipal"
+    },
+    "hook": {
+      "en": "Working the night shift copying old documents, I find a file that shouldn't be there—and someone insists it belongs to me.",
+      "zh": "夜班复印旧档案时，我发现了不该存在的文件，而有人坚称那是我的。",
+      "ja": "夜勤で古文書を写していると、そこにあってはならないファイルを見つけた。誰かがそれは自分のものだと言い張る。",
+      "ko": "야간 근무 중 오래된 문서를 복사하다가 있어서는 안 될 파일을 발견했다—누군가 그것이 내 것이라고 우긴다.",
+      "es": "Durante el turno nocturno copiando documentos antiguos, encuentro un archivo que no debería estar ahí, y alguien insiste en que es mío."
+    },
+    "ink": "#6B4C3B",
+    "imageUrl": "/pulp-hour/covers/night-shift-copyist.jpg",
+    "persona": "The protagonist is a night-shift copyist at a city archive, meticulously duplicating historical documents in a quiet room filled with the hum of old machines and pale desk lamps. The setting is a near-past American municipal archive, dimly lit and dust motes thick in the air. The second presence is a courteous, soft-spoken archivist who gently questions the protagonist's memory about a particular file, subtly suggesting it was misplaced or altered. The threat is the intimate unraveling of identity through misplaced papers and bureaucratic errors that repeatedly surface, hinting at a deeper, personal entanglement with the archive's contents."
   }
 ]
