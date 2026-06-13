@@ -250,5 +250,33 @@
     "ink": "#6B4C3B",
     "imageUrl": "/pulp-hour/covers/night-shift-copyist.jpg",
     "persona": "The protagonist is a night-shift copyist at a city archive, meticulously duplicating historical documents in a quiet room filled with the hum of old machines and pale desk lamps. The setting is a near-past American municipal archive, dimly lit and dust motes thick in the air. The second presence is a courteous, soft-spoken archivist who gently questions the protagonist's memory about a particular file, subtly suggesting it was misplaced or altered. The threat is the intimate unraveling of identity through misplaced papers and bureaucratic errors that repeatedly surface, hinting at a deeper, personal entanglement with the archive's contents."
+  },
+  {
+    "id": "parking-enforcer",
+    "releasedOn": "2026-06-19T00:00:00Z",
+    "title": {
+      "en": "The Ticket That Came Back",
+      "zh": "重返的罚单",
+      "ja": "戻ってきた駐車違反切符",
+      "ko": "다시 돌아온 주차 딱지",
+      "es": "La multa que regresó"
+    },
+    "subtitle": {
+      "en": "Night Patrol on Quiet Streets",
+      "zh": "寂静街道的夜间巡逻",
+      "ja": "静かな街の夜の巡回",
+      "ko": "조용한 거리의 야간 순찰",
+      "es": "Patrulla nocturna en calles tranquilas"
+    },
+    "hook": {
+      "en": "A parking ticket I wrote last week reappears on my windshield—except I never issued it. Now, every car I tag seems to vanish.",
+      "zh": "我上周开的罚单出现在挡风玻璃上——但我从未开过。现在，我开罚单的车都神秘消失了。",
+      "ja": "先週書いた駐車違反切符がフロントガラスに戻ってきた―だが、私はそれを発行した覚えがない。今や、私が切符を切った車が次々と消えている。",
+      "ko": "지난주 내가 끊은 주차 딱지가 앞유리에 나타났다—그런데 내가 발부한 적이 없다. 이제 내가 딱지를 붙인 차들이 하나둘 사라지고 있다.",
+      "es": "Una multa que puse la semana pasada apareció en mi parabrisas, pero yo nunca la puse. Ahora, todos los autos que marco parecen desaparecer."
+    },
+    "ink": "#6B4226",
+    "imageUrl": "/pulp-hour/covers/parking-enforcer.jpg",
+    "persona": "A parking enforcement officer on night patrol in a quiet, near-empty residential neighborhood. The protagonist is meticulous, observant, and solitary, their job a quiet ritual of issuing parking tickets and walking the still streets. The second presence is a courteous neighbor who offers polite conversation but subtly misremembers details about parked cars and residents. The threat unfolds through small errors, recurring tickets that shouldn't exist, and cars disappearing from their usual spots, creating an intimate, creeping mystery of mistaken identity and vanishing traces."
   }
 ]
