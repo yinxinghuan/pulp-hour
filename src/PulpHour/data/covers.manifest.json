@@ -278,5 +278,33 @@
     "ink": "#6B4226",
     "imageUrl": "/pulp-hour/covers/parking-enforcer.jpg",
     "persona": "A parking enforcement officer on night patrol in a quiet, near-empty residential neighborhood. The protagonist is meticulous, observant, and solitary, their job a quiet ritual of issuing parking tickets and walking the still streets. The second presence is a courteous neighbor who offers polite conversation but subtly misremembers details about parked cars and residents. The threat unfolds through small errors, recurring tickets that shouldn't exist, and cars disappearing from their usual spots, creating an intimate, creeping mystery of mistaken identity and vanishing traces."
+  },
+  {
+    "id": "librarian-after-hours",
+    "releasedOn": "2026-06-21T00:00:00Z",
+    "title": {
+      "en": "Whispers Between the Stacks",
+      "zh": "书架间的低语",
+      "ja": "書棚の間のささやき",
+      "ko": "서가 사이의 속삭임",
+      "es": "Susurros entre los estantes"
+    },
+    "subtitle": {
+      "en": "Late Shift at the City Library",
+      "zh": "市立图书馆的夜班",
+      "ja": "市立図書館の深夜勤務",
+      "ko": "시립도서관 야간 근무",
+      "es": "Turno nocturno en la biblioteca"
+    },
+    "hook": {
+      "en": "The quiet hum of fluorescent lights hides a secret visitor in the stacks. But who’s really checking out more than books?",
+      "zh": "荧光灯的安静嗡鸣隐藏着书架间的神秘访客。到底是谁借走了不只是书？",
+      "ja": "蛍光灯の静かなざわめきが書棚の中の秘密の訪問者を隠す。誰が本以上のものを借りているのか？",
+      "ko": "형광등의 조용한 윙윙거림이 서가 사이의 비밀 방문객을 숨긴다. 진짜로 책 외에 무엇을 빌려가는 사람은 누구일까?",
+      "es": "El suave zumbido de las luces fluorescentes oculta a un visitante secreto entre los estantes. ¿Quién está llevando prestado más que libros?"
+    },
+    "ink": "#4B6F9B",
+    "imageUrl": "/pulp-hour/covers/librarian-after-hours.jpg",
+    "persona": "The setting is a contemporary city public library during the late evening shift. The protagonist is a solitary librarian responsible for overseeing the quiet stacks after hours. The tone is intimate and quietly unsettling, as the protagonist notices subtle, repeated disturbances suggesting a polite but persistent presence among the bookshelves. The threat is mistaken identity and the precision of fragmented clues left behind in the catalog and shelving. The secondary presence is courteous, almost ghostlike, never overtly threatening but quietly wrong in their intentions or identity."
   }
 ]
