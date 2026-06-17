@@ -306,5 +306,33 @@
     "ink": "#4B6F9B",
     "imageUrl": "/pulp-hour/covers/librarian-after-hours.jpg",
     "persona": "The setting is a contemporary city public library during the late evening shift. The protagonist is a solitary librarian responsible for overseeing the quiet stacks after hours. The tone is intimate and quietly unsettling, as the protagonist notices subtle, repeated disturbances suggesting a polite but persistent presence among the bookshelves. The threat is mistaken identity and the precision of fragmented clues left behind in the catalog and shelving. The secondary presence is courteous, almost ghostlike, never overtly threatening but quietly wrong in their intentions or identity."
+  },
+  {
+    "id": "vending-machine-servicer",
+    "releasedOn": "2026-06-23T00:00:00Z",
+    "title": {
+      "en": "The Coins That Never Leave",
+      "zh": "永不离开的硬币",
+      "ja": "決して去らぬ硬貨",
+      "ko": "떠나지 않는 동전들",
+      "es": "Las Monedas Que Nunca Se Van"
+    },
+    "subtitle": {
+      "en": "Late Night Vending Machine Rounds",
+      "zh": "深夜自动售货机巡查",
+      "ja": "深夜の自動販売機巡回",
+      "ko": "심야 자판기 점검",
+      "es": "Rondas Nocturnas de Máquinas Expendedoras"
+    },
+    "hook": {
+      "en": "Each night, the same coin remains trapped in the slot. The machine’s polite voice offers change, but the pattern never breaks.",
+      "zh": "每晚，硬币总滞留在投币口。机器礼貌地找零，但规律从未改变。",
+      "ja": "毎晩、同じ硬貨が投入口に残る。機械の丁寧な声はお釣りを渡すが、パターンは崩れない。",
+      "ko": "매일 밤 같은 동전이 투입구에 갇혀 있다. 기계의 공손한 음성은 잔돈을 제안하지만 패턴은 변하지 않는다.",
+      "es": "Cada noche, la misma moneda queda atrapada en la ranura. La voz cortés de la máquina ofrece cambio, pero el patrón nunca cambia."
+    },
+    "ink": "#7A5C3C",
+    "imageUrl": "/pulp-hour/covers/vending-machine-servicer.jpg",
+    "persona": "Setting is a near-past suburban strip mall at night with flickering neon. The protagonist is a vending machine servicer, moving from machine to machine on late shifts. The threat is a pattern of precision and repetition: coins that never fall through, machines that politely refuse to complete transactions, and a quiet presence hinting at a subtle, unshakable error in the system. The narrative explores the intimacy of small routines disturbed by an uncanny glitch, where the courteous machine voice is always just a little off."
   }
 ]
