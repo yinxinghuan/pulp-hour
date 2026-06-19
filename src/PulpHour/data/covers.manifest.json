@@ -334,5 +334,33 @@
     "ink": "#7A5C3C",
     "imageUrl": "/pulp-hour/covers/vending-machine-servicer.jpg",
     "persona": "Setting is a near-past suburban strip mall at night with flickering neon. The protagonist is a vending machine servicer, moving from machine to machine on late shifts. The threat is a pattern of precision and repetition: coins that never fall through, machines that politely refuse to complete transactions, and a quiet presence hinting at a subtle, unshakable error in the system. The narrative explores the intimacy of small routines disturbed by an uncanny glitch, where the courteous machine voice is always just a little off."
+  },
+  {
+    "id": "dry-cleaner-mislabel",
+    "releasedOn": "2026-06-25T00:00:00Z",
+    "title": {
+      "en": "The Garment Tag That Lied",
+      "zh": "谎言衣标的秘密",
+      "ja": "嘘をつく洗濯タグ",
+      "ko": "거짓말하는 옷 태그",
+      "es": "La Etiqueta de Prenda Que Mintió"
+    },
+    "subtitle": {
+      "en": "Midnight Shift at the Dry Cleaner",
+      "zh": "干洗店的午夜班",
+      "ja": "クリーニング店の深夜シフト",
+      "ko": "세탁소의 심야 근무",
+      "es": "Turno de Medianoche en la Tintorería"
+    },
+    "hook": {
+      "en": "A misplaced tag sends the quiet dry-cleaner into a spiral of subtle errors and mistaken identities, revealing more than just stained suits.",
+      "zh": "一张错放的衣标让安静的干洗店陷入细微错误与身份错认，揭露远超污渍的秘密。",
+      "ja": "一枚の間違ったタグが静かなクリーニング店を微細な誤りと誤認の渦に巻き込み、ただの汚れたスーツ以上のものを明かす。",
+      "ko": "잘못 붙은 태그가 조용한 세탁소를 미묘한 실수와 오해의 소용돌이로 몰아넣으며, 얼룩진 정장 이상의 것을 드러낸다.",
+      "es": "Una etiqueta mal colocada lleva la tranquila tintorería a un torbellino de errores sutiles e identidades equivocadas, revelando más que simples trajes manchados."
+    },
+    "ink": "#6B4C3B",
+    "imageUrl": "/pulp-hour/covers/dry-cleaner-mislabel.jpg",
+    "persona": "The protagonist works the late-night shift at a small-town dry cleaning shop. The setting is the back room with racks of waiting garments, the scent of solvents faint in the air. They notice a recurring mislabeling of clothing tags that leads to quiet but unsettling mix-ups between clients — subtle shifts in who’s wearing what, and when. The second presence is the polite but inscrutable store manager who insists everything is 'just a simple mistake,' even as the protagonist uncovers a pattern suggesting otherwise. The threat emerges from intimacy and recurrence, a quiet unraveling of identities and trust through paperwork and labels."
   }
 ]
