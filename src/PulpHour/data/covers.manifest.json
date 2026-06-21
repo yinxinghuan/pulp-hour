@@ -362,5 +362,33 @@
     "ink": "#6B4C3B",
     "imageUrl": "/pulp-hour/covers/dry-cleaner-mislabel.jpg",
     "persona": "The protagonist works the late-night shift at a small-town dry cleaning shop. The setting is the back room with racks of waiting garments, the scent of solvents faint in the air. They notice a recurring mislabeling of clothing tags that leads to quiet but unsettling mix-ups between clients — subtle shifts in who’s wearing what, and when. The second presence is the polite but inscrutable store manager who insists everything is 'just a simple mistake,' even as the protagonist uncovers a pattern suggesting otherwise. The threat emerges from intimacy and recurrence, a quiet unraveling of identities and trust through paperwork and labels."
+  },
+  {
+    "id": "night-shift-dentist",
+    "releasedOn": "2026-06-27T00:00:00Z",
+    "title": {
+      "en": "The Patient Who Never Left the Chair",
+      "zh": "永远坐在椅子上的病人",
+      "ja": "椅子から離れない患者",
+      "ko": "의자에서 떠나지 않는 환자",
+      "es": "El Paciente Que Nunca Se Levantó"
+    },
+    "subtitle": {
+      "en": "After-Hours Dental Clinic Mystery",
+      "zh": "下班后的牙科诊所迷案",
+      "ja": "時間外歯科クリニックの謎",
+      "ko": "야간 치과 진료소 미스터리",
+      "es": "Misterio en la Clínica Dental Nocturna"
+    },
+    "hook": {
+      "en": "On the graveyard shift, when the last patient leaves, one chair remains oddly occupied—by a presence that never blinks.",
+      "zh": "深夜班，当最后一个病人离开时，有一把椅子奇怪地占着——一个永不眨眼的存在。",
+      "ja": "深夜勤務、最後の患者が去った後、一つの椅子が奇妙に占められている—瞬きしない存在に。",
+      "ko": "야간 근무, 마지막 환자가 떠난 후 한 의자가 이상하게도 차지되어 있다—결코 눈을 깜빡이지 않는 존재가.",
+      "es": "En el turno nocturno, cuando el último paciente se va, una silla queda extrañamente ocupada—por una presencia que nunca parpadea."
+    },
+    "ink": "#4B6F8C",
+    "imageUrl": "/pulp-hour/covers/night-shift-dentist.jpg",
+    "persona": "Set in a small-town dental clinic during the quiet late-night shift, the protagonist is the sole dentist finishing paperwork and sterilizing tools. The tone is intimate and unsettling, as the protagonist notices something off about a patient who supposedly left hours ago but whose chair remains occupied. The second presence is polite and calm, but their story subtly conflicts with reality, triggering a slow unraveling of mistaken identity and recurring encounters. The threat is precision and recurrence rather than overt horror, focusing on the protagonist’s growing doubt about what is really in the chair."
   }
 ]
