@@ -390,5 +390,33 @@
     "ink": "#4B6F8C",
     "imageUrl": "/pulp-hour/covers/night-shift-dentist.jpg",
     "persona": "Set in a small-town dental clinic during the quiet late-night shift, the protagonist is the sole dentist finishing paperwork and sterilizing tools. The tone is intimate and unsettling, as the protagonist notices something off about a patient who supposedly left hours ago but whose chair remains occupied. The second presence is polite and calm, but their story subtly conflicts with reality, triggering a slow unraveling of mistaken identity and recurring encounters. The threat is precision and recurrence rather than overt horror, focusing on the protagonist’s growing doubt about what is really in the chair."
+  },
+  {
+    "id": "elevator-attendant",
+    "releasedOn": "2026-06-29T00:00:00Z",
+    "title": {
+      "en": "The Passenger Who Pressed Every Floor",
+      "zh": "按下每层楼的乘客",
+      "ja": "すべての階を押した乗客",
+      "ko": "모든 층을 누른 승객",
+      "es": "El pasajero que pulsó todos los pisos"
+    },
+    "subtitle": {
+      "en": "Midnight Elevator Watch",
+      "zh": "午夜电梯守夜",
+      "ja": "深夜のエレベーター監視",
+      "ko": "한밤중 엘리베이터 감시",
+      "es": "Vigilancia nocturna del ascensor"
+    },
+    "hook": {
+      "en": "I work the late shift as an elevator attendant in a downtown office tower. Tonight, a polite passenger’s button presses seem to map a secret I’m not meant to see.",
+      "zh": "我在市中心办公楼当夜班电梯员。今晚，一位彬彬有礼的乘客按下的按钮似乎暗示着我不该看到的秘密。",
+      "ja": "ダウンタウンのオフィスタワーで夜勤のエレベーター係をしています。今夜、礼儀正しい乗客のボタン操作が、見てはいけない秘密を示しているようです。",
+      "ko": "나는 도심 사무실 타워에서 야간 근무하는 엘리베이터 안내원이다. 오늘 밤, 정중한 승객의 버튼 누름이 내가 보지 말아야 할 비밀을 드러내는 것 같다.",
+      "es": "Trabajo de noche como operador de ascensor en una torre de oficinas. Esta noche, las pulsaciones del cortés pasajero parecen revelar un secreto que no debo conocer."
+    },
+    "ink": "#3A2F4B",
+    "imageUrl": "/pulp-hour/covers/elevator-attendant.jpg",
+    "persona": "The setting is a downtown commercial high-rise elevator lobby during the quiet late-night shift. The protagonist is the elevator attendant, a courteous but increasingly puzzled listener to the subtle signals of button presses by a lone passenger. The threat is an intimate puzzle of repeated floor selections that hints at mistaken identity or an unseen message. Tone is quiet, precise, and claustrophobic, with emphasis on the confined space and the sound of buttons and elevator hum."
   }
 ]
