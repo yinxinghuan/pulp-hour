@@ -418,5 +418,33 @@
     "ink": "#3A2F4B",
     "imageUrl": "/pulp-hour/covers/elevator-attendant.jpg",
     "persona": "The setting is a downtown commercial high-rise elevator lobby during the quiet late-night shift. The protagonist is the elevator attendant, a courteous but increasingly puzzled listener to the subtle signals of button presses by a lone passenger. The threat is an intimate puzzle of repeated floor selections that hints at mistaken identity or an unseen message. Tone is quiet, precise, and claustrophobic, with emphasis on the confined space and the sound of buttons and elevator hum."
+  },
+  {
+    "id": "hotel-night-auditor",
+    "releasedOn": "2026-07-01T00:00:00Z",
+    "title": {
+      "en": "The Guest Who Checked In Twice",
+      "zh": "重复入住的客人",
+      "ja": "二度チェックインした客",
+      "ko": "두 번 체크인한 손님",
+      "es": "El huésped que hizo check-in dos veces"
+    },
+    "subtitle": {
+      "en": "Night Auditor's Quiet Dilemma",
+      "zh": "夜审的静默难题",
+      "ja": "夜勤監査員の静かなジレンマ",
+      "ko": "야간 감사원의 조용한 딜레마",
+      "es": "El dilema silencioso del auditor nocturno"
+    },
+    "hook": {
+      "en": "Balancing ledgers by night, I spotted a guest who’d already left — but his room key still worked.",
+      "zh": "夜间核对账目时，我发现一位客人已经离开——但他的房卡仍然有效。",
+      "ja": "夜の帳簿を照らし合わせていると、すでに出て行ったはずの客のルームキーがまだ使えた。",
+      "ko": "밤새 장부를 맞추다가 이미 떠난 손님의 객실 열쇠가 여전히 작동하는 걸 발견했다.",
+      "es": "Revisando cuentas por la noche, vi a un huésped que ya se había ido, pero su llave aún funcionaba."
+    },
+    "ink": "#7A4A3E",
+    "imageUrl": "/pulp-hour/covers/hotel-night-auditor.jpg",
+    "persona": "Setting is the quiet late-night shift at a modest downtown hotel. The protagonist is a night auditor tasked with balancing accounts and verifying guest activity. The tone is intimate and unnervingly precise, as the auditor notices discrepancies that suggest a guest’s presence beyond their recorded stay. The second presence is a courteous hotel manager who gently dismisses concerns with polite but misleading reassurances. The threat is a subtle intrusion into the ledger of reality — a recurring, mistaken identity that blurs the line between checked-out and still checked-in. The narrative explores the quiet tension between paperwork and presence in a space where shadows lengthen after hours."
   }
 ]
