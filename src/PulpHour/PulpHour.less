@@ -212,7 +212,7 @@
 
 .ph-wall__rack {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
   max-width: 720px;
   margin: 0 auto;
@@ -434,7 +434,7 @@
 
 .ph-newsstand__rack {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
   max-width: 720px;
   margin: 0 auto;
@@ -1112,7 +1112,7 @@ img.ph-bp__art--fallback,
 .ph-beat__choices {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   gap: 10px;
   padding: 22px 14px 22px;
   max-width: 640px;
@@ -1731,7 +1731,7 @@ img.ph-bp__art--fallback,
 }
 .ph-how__panels {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   gap: 8px;
 }
 .ph-how__panel {
