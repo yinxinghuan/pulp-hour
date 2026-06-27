@@ -446,5 +446,33 @@
     "ink": "#7A4A3E",
     "imageUrl": "/pulp-hour/covers/hotel-night-auditor.jpg",
     "persona": "Setting is the quiet late-night shift at a modest downtown hotel. The protagonist is a night auditor tasked with balancing accounts and verifying guest activity. The tone is intimate and unnervingly precise, as the auditor notices discrepancies that suggest a guest’s presence beyond their recorded stay. The second presence is a courteous hotel manager who gently dismisses concerns with polite but misleading reassurances. The threat is a subtle intrusion into the ledger of reality — a recurring, mistaken identity that blurs the line between checked-out and still checked-in. The narrative explores the quiet tension between paperwork and presence in a space where shadows lengthen after hours."
+  },
+  {
+    "id": "mailroom-mystery",
+    "releasedOn": "2026-07-03T00:00:00Z",
+    "title": {
+      "en": "The Letter That Came Back Wrong",
+      "zh": "寄错的回信谜案",
+      "ja": "戻ってきた間違いの手紙",
+      "ko": "잘못 돌아온 편지",
+      "es": "La carta que volvió equivocada"
+    },
+    "subtitle": {
+      "en": "Late Shift at the Office Mailroom",
+      "zh": "办公室邮件室深夜班",
+      "ja": "オフィス郵便室の深夜勤務",
+      "ko": "사무실 우편실 야근 근무",
+      "es": "Turno nocturno en la oficina de correo"
+    },
+    "hook": {
+      "en": "Sorting envelopes in a quiet mailroom, a returned letter carries a name no one remembers.",
+      "zh": "在寂静的邮件室分拣信件，一封退回的信载着无人记得的名字。",
+      "ja": "静かな郵便室で仕分け中、戻ってきた手紙に誰も知らない名前があった。",
+      "ko": "조용한 우편실에서 편지를 분류하던 중, 아무도 기억하지 못하는 이름이 적힌 반송 편지가 도착했다.",
+      "es": "Clasificando sobres en un correo silencioso, una carta devuelta lleva un nombre que nadie recuerda."
+    },
+    "ink": "#6A4A3C",
+    "imageUrl": "/pulp-hour/covers/mailroom-mystery.jpg",
+    "persona": "The protagonist works the late shift in a bustling office mailroom, surrounded by the quiet shuffle of envelopes and parcels. They notice a returned letter addressed to a former employee who supposedly left months ago, but no one can confirm it. The knowing second presence is a courteous, calm coworker who insists the name is a mistake, but subtle slips in paperwork and the recurrence of that name in unexpected places hint at an intimate, bureaucratic puzzle. The threat is precision in address, mistaken identity, and the unravelling of forgotten office histories."
   }
 ]
