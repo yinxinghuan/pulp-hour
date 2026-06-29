@@ -474,5 +474,33 @@
     "ink": "#6A4A3C",
     "imageUrl": "/pulp-hour/covers/mailroom-mystery.jpg",
     "persona": "The protagonist works the late shift in a bustling office mailroom, surrounded by the quiet shuffle of envelopes and parcels. They notice a returned letter addressed to a former employee who supposedly left months ago, but no one can confirm it. The knowing second presence is a courteous, calm coworker who insists the name is a mistake, but subtle slips in paperwork and the recurrence of that name in unexpected places hint at an intimate, bureaucratic puzzle. The threat is precision in address, mistaken identity, and the unravelling of forgotten office histories."
+  },
+  {
+    "id": "subway-cleaner-shift",
+    "releasedOn": "2026-07-05T00:00:00Z",
+    "title": {
+      "en": "The Cleaner Who Found the Same Shoes",
+      "zh": "清洁工发现相同的鞋子",
+      "ja": "同じ靴を見つけた清掃員",
+      "ko": "같은 신발을 발견한 청소부",
+      "es": "El limpiador que encontró los mismos zapatos"
+    },
+    "subtitle": {
+      "en": "Midnight subway cleaning rounds",
+      "zh": "地铁午夜清洁巡逻",
+      "ja": "深夜の地下鉄清掃巡回",
+      "ko": "지하철 심야 청소 순찰",
+      "es": "Rondas de limpieza en el metro a medianoche"
+    },
+    "hook": {
+      "en": "On the lone tracks beneath the city, a recurring pair of shoes appears where none should be.",
+      "zh": "在城市地下孤独的轨道上，一双不该出现的鞋子反复出现。",
+      "ja": "街の地下、誰もいない線路に繰り返し現れる靴の一足。",
+      "ko": "도시 아래 외로운 선로에, 있어서는 안 될 신발 한 켤레가 반복해서 나타난다.",
+      "es": "En las solitarias vías bajo la ciudad, aparece una pareja de zapatos donde no debería haber."
+    },
+    "ink": "#6B8E23",
+    "imageUrl": "/pulp-hour/covers/subway-cleaner-shift.jpg",
+    "persona": "The protagonist is a late-night subway cleaner working alone in the empty tunnels after service hours. The setting is a modern urban underground transit system, dimly lit by flickering fluorescent bulbs and the occasional emergency exit glow. The protagonist notices a pair of shoes appearing at different spots on the tracks during each cleaning round, though no one else should be there. The second presence is an unseen, polite voice over the radio or intercom, offering calm but incorrect explanations about the shoes' origin. The threat is the precision and recurrence of this intimate, unexplained anomaly, blending isolation with subtle mystery."
   }
 ]
