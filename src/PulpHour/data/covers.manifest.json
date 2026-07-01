@@ -502,5 +502,33 @@
     "ink": "#6B8E23",
     "imageUrl": "/pulp-hour/covers/subway-cleaner-shift.jpg",
     "persona": "The protagonist is a late-night subway cleaner working alone in the empty tunnels after service hours. The setting is a modern urban underground transit system, dimly lit by flickering fluorescent bulbs and the occasional emergency exit glow. The protagonist notices a pair of shoes appearing at different spots on the tracks during each cleaning round, though no one else should be there. The second presence is an unseen, polite voice over the radio or intercom, offering calm but incorrect explanations about the shoes' origin. The threat is the precision and recurrence of this intimate, unexplained anomaly, blending isolation with subtle mystery."
+  },
+  {
+    "id": "newsstand-attendant",
+    "releasedOn": "2026-07-07T00:00:00Z",
+    "title": {
+      "en": "The Paper That Never Sold Out",
+      "zh": "永不售罄的报纸",
+      "ja": "売り切れない新聞",
+      "ko": "결코 매진되지 않는 신문",
+      "es": "El periódico que nunca se agotó"
+    },
+    "subtitle": {
+      "en": "Late Shift at the Corner Newsstand",
+      "zh": "街角报亭的深夜班",
+      "ja": "角の新聞売店の深夜シフト",
+      "ko": "모퉁이 뉴스스탠드 야간 근무",
+      "es": "Turno nocturno en el quiosco de la esquina"
+    },
+    "hook": {
+      "en": "Every night a paper appears that no one buys, but someone always reads.",
+      "zh": "每晚都有一份无人购买却总被人翻阅的报纸。",
+      "ja": "毎晩、誰も買わないのに誰かが必ず読む新聞が現れる。",
+      "ko": "매일 밤 아무도 사지 않는 신문이 누군가 항상 읽힌다.",
+      "es": "Cada noche aparece un periódico que nadie compra, pero alguien siempre lee."
+    },
+    "ink": "#C1440E",
+    "imageUrl": "/pulp-hour/covers/newsstand-attendant.jpg",
+    "persona": "The setting is a small, cluttered city newsstand on a quiet street corner, where the protagonist works the late-night shift. The protagonist notices a recurring paper edition that never sells but is always read by an unseen presence. The second presence is polite, insightful, yet quietly off in its understanding of the newsstand's true nature. The threat is the precision of unnoticed transactions, mistaken identity of customers, and the intimacy of shared secrets between the protagonist and the silent reader. The tone is subtle, introspective, and atmospheric, evoking the quiet hum of a city that never quite sleeps."
   }
 ]
