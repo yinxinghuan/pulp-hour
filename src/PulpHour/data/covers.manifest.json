@@ -530,5 +530,33 @@
     "ink": "#C1440E",
     "imageUrl": "/pulp-hour/covers/newsstand-attendant.jpg",
     "persona": "The setting is a small, cluttered city newsstand on a quiet street corner, where the protagonist works the late-night shift. The protagonist notices a recurring paper edition that never sells but is always read by an unseen presence. The second presence is polite, insightful, yet quietly off in its understanding of the newsstand's true nature. The threat is the precision of unnoticed transactions, mistaken identity of customers, and the intimacy of shared secrets between the protagonist and the silent reader. The tone is subtle, introspective, and atmospheric, evoking the quiet hum of a city that never quite sleeps."
+  },
+  {
+    "id": "coin-laundry-watcher",
+    "releasedOn": "2026-07-09T00:00:00Z",
+    "title": {
+      "en": "The Washer That Never Finished",
+      "zh": "永不停止的洗衣机",
+      "ja": "終わらない洗濯機",
+      "ko": "끝나지 않는 세탁기",
+      "es": "La Lavadora Que Nunca Terminó"
+    },
+    "subtitle": {
+      "en": "Midnight Watch at the Coin Laundry",
+      "zh": "午夜投币洗衣守望",
+      "ja": "コインランドリーの深夜見守り",
+      "ko": "자정의 코인 세탁소 감시",
+      "es": "Guardia de Medianoche en la Lavandería"
+    },
+    "hook": {
+      "en": "I work the late shift watching over the coin laundry. Tonight, a machine started on its own and never stopped — and the clothes inside weren’t mine.",
+      "zh": "我在投币洗衣店值夜班。今晚，有台洗衣机自己启动且永不停歇，里面的衣服却不是我的。",
+      "ja": "私は深夜のコインランドリーを見守る仕事だ。今夜、洗濯機が勝手に動き出し、止まらなかった。中の服は私のものではなかった。",
+      "ko": "나는 코인 세탁소 야간 근무자다. 오늘 밤, 세탁기가 혼자 켜져 멈추지 않았다. 안에 든 옷은 내 것이 아니었다.",
+      "es": "Trabajo el turno nocturno vigilando la lavandería automática. Esta noche, una máquina arrancó sola y no paró — y la ropa dentro no era mía."
+    },
+    "ink": "#6A4C3B",
+    "imageUrl": "/pulp-hour/covers/coin-laundry-watcher.jpg",
+    "persona": "The setting is a small coin laundry open late in a quiet neighborhood. The protagonist is the overnight attendant, responsible for monitoring machines and customers, alone amid humming washers and dryers. The quiet threat is a persistent, inexplicable machine cycle that seems to have a will of its own, disrupting routines and raising questions about unseen presence or mistaken identity. The second presence is a courteous regular customer who gently challenges the protagonist’s observations with plausible but incorrect explanations. The tone is intimate, meticulous, and quietly unsettling, capturing the strange familiarity of late-night work in an empty laundromat."
   }
 ]
