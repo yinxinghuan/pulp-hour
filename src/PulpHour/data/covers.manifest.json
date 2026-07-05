@@ -558,5 +558,33 @@
     "ink": "#6A4C3B",
     "imageUrl": "/pulp-hour/covers/coin-laundry-watcher.jpg",
     "persona": "The setting is a small coin laundry open late in a quiet neighborhood. The protagonist is the overnight attendant, responsible for monitoring machines and customers, alone amid humming washers and dryers. The quiet threat is a persistent, inexplicable machine cycle that seems to have a will of its own, disrupting routines and raising questions about unseen presence or mistaken identity. The second presence is a courteous regular customer who gently challenges the protagonist’s observations with plausible but incorrect explanations. The tone is intimate, meticulous, and quietly unsettling, capturing the strange familiarity of late-night work in an empty laundromat."
+  },
+  {
+    "id": "park-ranger-quiet-watch",
+    "releasedOn": "2026-07-11T00:00:00Z",
+    "title": {
+      "en": "The Silent Steps in Ranger’s Watchtower",
+      "zh": "护林员瞭望塔中的无声脚步",
+      "ja": "レンジャーの見張り塔に響く静かな足音",
+      "ko": "순찰탑에서 들리는 조용한 발걸음",
+      "es": "Los pasos silenciosos en la torre de guardabosques"
+    },
+    "subtitle": {
+      "en": "Late Night Watch at the Park Tower",
+      "zh": "公园瞭望塔的深夜守望",
+      "ja": "公園見張り塔の深夜警戒",
+      "ko": "공원 순찰탑의 심야 감시",
+      "es": "Vigilia nocturna en la torre del parque"
+    },
+    "hook": {
+      "en": "Alone in the forest watchtower, the ranger notes footsteps that echo but leave no trace.",
+      "zh": "孤身守望林中瞭望塔，护林员记录下无迹的回声脚步。",
+      "ja": "森の見張り塔で一人、レンジャーは足跡なき響きを記録する。",
+      "ko": "숲속 순찰탑에 혼자, 레인저는 자국 없는 발자국 소리를 기록한다.",
+      "es": "Solo en la torre del bosque, el guardabosques escucha pasos que resuenan sin dejar rastro."
+    },
+    "ink": "#3A4F41",
+    "imageUrl": "/pulp-hour/covers/park-ranger-quiet-watch.jpg",
+    "persona": "The setting is a remote forest watchtower used by a park ranger during late-night shifts. The protagonist is a solitary ranger responsible for monitoring the forest and reporting disturbances. The tone is quiet, intimate, and tense with a recurring presence that is courteous yet subtly off — footsteps echoing without origin, sounds of movement with no visible source. The threat is precision in the unseen repetition, subtle mistaken identity between natural sounds and something else, and the intimacy of isolation in the dark woods."
   }
 ]
