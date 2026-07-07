@@ -74,7 +74,7 @@ OUTPUT — must be a single strict JSON object, no prose around it, no markdown 
   "title":    {"en":"…","zh":"…","ja":"…","ko":"…","es":"…"},  // 4-9 word pulp headline per locale
   "subtitle": {"en":"…","zh":"…","ja":"…","ko":"…","es":"…"},  // 3-7 word dek/category per locale
   "hook":     {"en":"…","zh":"…","ja":"…","ko":"…","es":"…"},  // 1-2 sentence opening hook per locale
-  "persona":  "…",                                // English. 3-6 sentences. Describes Setting / Voice / Threat. Injected into the per-story LLM system prompt for this cover, so it must give the per-story LLM enough to invent 6 beats of branching narration.
+  "persona":  "…",                                // English. 3-6 sentences. Describes Setting / Voice / Threat. Injected into the per-story LLM system prompt for this cover, so it must give the per-story LLM enough to sustain variable-length branching narration.
   "ink":      "#RRGGBB",                          // hex matching the cover palette below
   "palette":  "lurid <two-or-three color words> spot colors",  // matches existing covers' palette style — see back-catalogue
   "composition": "…"                              // 1-3 sentences describing the single illustrated scene on the cover. Specific objects, lighting, focal silhouette. Will be combined with the style suffix and sent to gen-image.

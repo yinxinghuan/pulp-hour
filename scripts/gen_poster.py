@@ -82,13 +82,13 @@ def draw_fan():
 
     # Tagline — Georgia italic
     sub = load_font(42, F_ITAL)
-    tag = 'Six beats. One sitting. One night.'
+    tag = 'No fixed pages. One bad night.'
     tw2 = d.textlength(tag, font=sub)
     d.text(((W - tw2) / 2, 280), tag, font=sub, fill=CHARC)
 
     # Bottom strip — Courier kicker + tomato underline
     kick = load_font(30, F_MONO)
-    kicker = 'A 6-BEAT NOIR · ALTERU AFTER DARK'
+    kicker = 'A VARIABLE-LENGTH NOIR · ALTERU AFTER DARK'
     kw = d.textlength(kicker, font=kick)
     d.text(((W - kw) / 2, W - 100), kicker, font=kick, fill=COBALT)
     d.rectangle([(W - kw) / 2, W - 60, (W + kw) / 2, W - 54], fill=TOMATO)
