@@ -586,5 +586,33 @@
     "ink": "#3A4F41",
     "imageUrl": "/pulp-hour/covers/park-ranger-quiet-watch.jpg",
     "persona": "The setting is a remote forest watchtower used by a park ranger during late-night shifts. The protagonist is a solitary ranger responsible for monitoring the forest and reporting disturbances. The tone is quiet, intimate, and tense with a recurring presence that is courteous yet subtly off — footsteps echoing without origin, sounds of movement with no visible source. The threat is precision in the unseen repetition, subtle mistaken identity between natural sounds and something else, and the intimacy of isolation in the dark woods."
+  },
+  {
+    "id": "after-hours-chemist",
+    "releasedOn": "2026-07-13T00:00:00Z",
+    "title": {
+      "en": "The Formula That Never Mixed Right",
+      "zh": "永远调不对的配方",
+      "ja": "決して合わない調合式",
+      "ko": "절대 맞지 않는 조제법",
+      "es": "La fórmula que nunca salió bien"
+    },
+    "subtitle": {
+      "en": "Late Shift at the Pharmacy Lab",
+      "zh": "药房实验室深夜班",
+      "ja": "薬局ラボの深夜勤務",
+      "ko": "약국 실험실 야간 근무",
+      "es": "Turno nocturno en el laboratorio"
+    },
+    "hook": {
+      "en": "Working alone at the pharmacy lab, I find a prescription that refuses to compound, no matter how carefully I measure.",
+      "zh": "独自在药房实验室，我发现一张无论如何都调不出的处方。",
+      "ja": "薬局のラボで一人、どんなに慎重に計っても調合できない処方箋を見つけた。",
+      "ko": "약국 실험실에서 혼자 일하며 아무리 정밀하게 계량해도 조제되지 않는 처방전을 발견했다.",
+      "es": "Trabajando solo en el laboratorio de la farmacia, encuentro una receta que se niega a mezclarse, sin importar cuán preciso sea."
+    },
+    "ink": "#6B8E23",
+    "imageUrl": "/pulp-hour/covers/after-hours-chemist.jpg",
+    "persona": "The setting is a contemporary American pharmacy lab during the late-night shift, sterile and quiet except for the faint hum of refrigeration units. The protagonist is a pharmacist’s assistant responsible for compounding prescriptions, meticulous and methodical but increasingly unsettled by a formula that defies logic and routine. The second presence is a courteous pharmacist supervisor, calm and polite, who insists there is no error, quietly dismissing the protagonist’s concerns. The threat is the recurring failure of a seemingly simple mixture, precision and paperwork errors, and the intimacy of chemical formulas that never come together. The tone is hushed, clinical, and quietly unnerving, like a secret that will not yield its truth."
   }
 ]
