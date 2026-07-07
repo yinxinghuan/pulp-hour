@@ -2,7 +2,7 @@
 // fallback chain: ending → last beat with art → cover.
 //
 // The ending illustration is the one that most commonly fails (it's
-// the 6th gen-image in a single session — rate limits and platform
+// the final gen-image in a single session — rate limits and platform
 // load hit hardest at the tail). Without this chain the wall card +
 // viewer's final panel both collapse to the cached cover, making
 // every author's story look interchangeable.
@@ -19,6 +19,6 @@ export function storyHeroArt(story: Story, cover: Cover): string {
   return cover.imageUrl;
 }
 
-/** Image for the "PANEL 6 · FINALE" block specifically (story viewer
+/** Image for the finale panel block specifically (story viewer
  *  bottom panel). Same fallback chain. */
 export const finalePanelArt = storyHeroArt;

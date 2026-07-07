@@ -1,5 +1,7 @@
 import type { Axis, Beat, Cover } from '../types';
 import { locale } from '../i18n';
+import type { StoryScore } from './scoring';
+import { scorePromptLine } from './scoring';
 
 const AXIS_DESC: Record<Axis, string> = {
   defy: 'refuse / fight / leave / hang up / push back',
@@ -75,7 +77,7 @@ export function beatSystemPrompt(cover: Cover): string {
   const lang = activeLang();
   return `🌐 LANGUAGE RULE — READ FIRST, OVERRIDES EVERYTHING BELOW 🌐
 You will write in ${lang.name} for THIS ENTIRE CONVERSATION.
-Every "narration", every "choices" label, and (in beat 6) the "title" field MUST be written in ${lang.name}.
+Every "narration", every "choices" label, and (in the final beat) the "title" field MUST be written in ${lang.name}.
 Example tone in ${lang.name}: "${lang.sample}"
 Example choice phrasing in ${lang.name}:
   defy  → "${lang.sampleChoices.defy}"
@@ -86,7 +88,7 @@ If you slip into English in narration or choices, you have failed the task.
 
 ────────────────────────────────────────
 
-You are the ghostwriter of a 6-beat illustrated pulp short story for the comic-book magazine "Pulp Hour".
+You are the ghostwriter of a variable-length illustrated pulp short story for the comic-book magazine "Pulp Hour".
 
 This issue's story (titled in English for reference — your output will be in ${lang.name}):
 TITLE: ${cover.title.en}
@@ -98,16 +100,17 @@ ${cover.persona}
 OUTPUT FORMAT — strict JSON only, no markdown fences, no commentary.
 Return EXACTLY ONE JSON object. Do not concatenate beats, do not return arrays, do not append the next beat — only this beat.
 
-For beats 1–5:
+For ordinary non-final beats:
 {"narration":"<${lang.name} text, 2–4 sentences, second-person present tense, noir tone>","illustration_prompt":"<English only, ends with the tail below>","choices":{"defy":"<${lang.name}, 3–7 words>","yield":"<${lang.name}, 3–7 words>","lie":"<${lang.name}, 3–7 words>"}}
 
-For beat 6 (FINAL):
+For the FINAL beat:
 {"narration":"<${lang.name} resolving paragraph, 3–5 sentences>","title":"<${lang.name}, 4–7 word pulp title>","illustration_prompt":"<English, ends with the tail below>"}
 
 WRITING RULES
 - Narration: present tense, second person ("you" / its ${lang.name} equivalent), pulp-noir voice.
 - Each beat ends on tension — a stare, a door cracking, a question half-asked.
-- Each beat escalates. Beat 5 must be uncomfortable enough to demand a real ending.
+- Each beat escalates. Early death can happen once the trap is hot; otherwise keep adding concrete reversals, clues, and pressure until the final prompt tells you to resolve.
+- Do not assume a fixed length. Page 4 may be the end; page 10 may still be the middle.
 - The three choices are specific, in-scene actions tagged by axis:
     defy  intent = ${AXIS_DESC.defy}
     yield intent = ${AXIS_DESC.yield}
@@ -120,25 +123,27 @@ ILLUSTRATION RULES — every beat returns its own "illustration_prompt".
 - Name objects, mood, lighting, composition around them.
 - End every illustration_prompt with this exact tail (verbatim): "${ILLUSTRATION_TAIL}".
 
-BEAT 6 SPECIFICS
+FINAL BEAT SPECIFICS
 - narration: a single resolving paragraph, 3–5 sentences, in ${lang.name}.
 - title: punchy 4–7 word pulp story title in ${lang.name}, no quotes.
 - illustration_prompt: the climactic moment in English, ending with the same tail above.
+- You may receive a hidden SUCCESS/FAILURE result in the user prompt. Obey it. Never mention scores, stats, game rules, or hidden mechanics.
 
-🌐 FINAL REMINDER: narration + every choice label + beat-6 title are in ${lang.name}. illustration_prompt is English. Do not mix. 🌐`;
+🌐 FINAL REMINDER: narration + every choice label + final title are in ${lang.name}. illustration_prompt is English. Do not mix. 🌐`;
 }
 
 export function beatUserPrompt(opts: {
-  beatIndex: number; // 1..6
+  beatIndex: number;
   beatsSoFar: Beat[];
+  score?: StoryScore;
 }): string {
-  const { beatIndex, beatsSoFar } = opts;
+  const { beatIndex, beatsSoFar, score } = opts;
   const lang = activeLang();
 
   const remind = `(Reminder: narration and choices must be in ${lang.name}. illustration_prompt stays English.)`;
 
   if (beatIndex === 1) {
-    return `Begin. Beat 1 of 6. ${remind}`;
+    return `Begin. Beat 1. ${remind}`;
   }
 
   const history = beatsSoFar
@@ -156,11 +161,12 @@ export function beatUserPrompt(opts: {
     ? `Reader just chose ${lastChoice.toUpperCase()}.`
     : '';
 
-  if (beatIndex === 6) {
-    return `Story so far:\n\n${history}\n\nNow the FINAL beat (6 of 6). ${lastChoiceLine} Resolve the story. Return the beat-6 JSON shape (narration, title, illustration_prompt). ${remind}`;
+  if (score) {
+    const scoreLine = score ? `\n\n${scorePromptLine(score)}` : '';
+    return `Story so far:\n\n${history}\n\nNow the FINAL beat (page ${beatIndex}). ${lastChoiceLine}${scoreLine}\n\nResolve the story according to that result. Return the final JSON shape (narration, title, illustration_prompt). ${remind}`;
   }
 
-  return `Story so far:\n\n${history}\n\nNow beat ${beatIndex} of 6. ${lastChoiceLine} Escalate. ${remind}`;
+  return `Story so far:\n\n${history}\n\nNow beat ${beatIndex}. ${lastChoiceLine} Escalate without resolving the mystery yet. ${remind}`;
 }
 
 /** Extract the first complete `{ ... }` block from the LLM's reply via

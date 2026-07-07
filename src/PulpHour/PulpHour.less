@@ -1385,6 +1385,14 @@ img.ph-bp__art--fallback,
   padding: 6px 18px 2px;
   animation: ph-stamp 280ms cubic-bezier(.5, 1.7, .6, 1) both;
 }
+.ph-ending__stamp--failure {
+  color: @paper-light;
+  background: @it;
+  text-shadow: 2px 2px 0 @ink;
+}
+.ph-ending__stamp--success {
+  background: @yellow;
+}
 @keyframes ph-stamp {
   0%   { transform: rotate(-12deg) scale(2.6); opacity: 0; }
   60%  { opacity: 1; }

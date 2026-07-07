@@ -21,11 +21,11 @@ const STRINGS = {
 
   // ── hero (new) ──────────────────────────────────────────────────────
   hero_tagline: {
-    en: '6 beats. one noir. yours in 3 minutes.',
-    zh: '6 拍 · 一桩黑色故事 · 3 分钟一本。',
-    ja: '6ビート、一夜のノワール、3分で完成。',
-    ko: '여섯 박자, 한 편의 누아르, 3분이면 끝.',
-    es: '6 ritmos. un noir. listo en 3 minutos.',
+    en: 'one noir. no fixed page count. fate keeps score.',
+    zh: '一桩黑色故事 · 页数不定 · 命运偷偷计分。',
+    ja: '一夜のノワール。ページ数は未定。運命が密かに採点する。',
+    ko: '한 편의 누아르. 정해진 페이지는 없다. 운명은 몰래 점수를 매긴다.',
+    es: 'un noir. sin páginas fijas. el destino lleva la cuenta.',
   },
   hero_subline: {
     en: "AI ghost-writes. you decide. file it for the rest of us.",
@@ -51,13 +51,13 @@ const STRINGS = {
     ko: '네 가지 노와르 오프닝. 한 권 골라 펼친다.',
     es: '4 inicios noir. elige uno y ábrelo.',
   },
-  how_step2_label: { en: 'CHOOSE × 6', zh: '6 拍选择', ja: '6回選ぶ', ko: '여섯 번 선택', es: 'ELIGE × 6' },
+  how_step2_label: { en: 'CHOOSE UNTIL IT BREAKS', zh: '选到故事断裂', ja: '壊れるまで選ぶ', ko: '무너질 때까지 선택', es: 'ELIGE HASTA QUE SE ROMPA' },
   how_step2_body: {
-    en: 'every beat: defy, yield, or lie. AI writes the rest.',
-    zh: '每拍三选一：抗 / 从 / 骗。AI 接着写。',
-    ja: '毎ビート：抗う・従う・偽る。続きはAIが書く。',
-    ko: '매 박자마다: 거역 · 굴복 · 거짓. 나머지는 AI가.',
-    es: 'cada ritmo: desafía, cede o miente. la IA hace el resto.',
+    en: 'defy, yield, or lie. some stories die early; some keep going.',
+    zh: '抗 / 从 / 骗。有人第四页就死，有人第十页还没完。',
+    ja: '抗う・従う・偽る。早く終わる物語も、長く続く物語もある。',
+    ko: '거역 · 굴복 · 거짓. 어떤 이야기는 일찍 죽고, 어떤 이야기는 계속된다.',
+    es: 'desafía, cede o miente. algunas historias mueren pronto; otras siguen.',
   },
   how_step3_label: { en: 'FILE IT', zh: '送进杂志架', ja: '掲示板へ', ko: '가판대로', es: 'ARCHÍVALO' },
   how_step3_body: {
@@ -137,11 +137,11 @@ const STRINGS = {
 
   // ── beat ────────────────────────────────────────────────────────────
   beat_of: {
-    en: 'Beat {n} of 6',
-    zh: '节拍 {n} / 6',
-    ja: 'ビート {n} / 6',
-    ko: '박자 {n} / 6',
-    es: 'Ritmo {n} de 6',
+    en: 'Beat {n}',
+    zh: '节拍 {n}',
+    ja: 'ビート {n}',
+    ko: '박자 {n}',
+    es: 'Ritmo {n}',
   },
   axis_defy:  { en: 'Defy',  zh: '抗', ja: '抗', ko: '거역', es: 'Desafía' },
   axis_yield: { en: 'Yield', zh: '从', ja: '従', ko: '굴복', es: 'Cede' },
@@ -178,6 +178,20 @@ const STRINGS = {
     ja: '一覧へ戻る',
     ko: '목록으로',
     es: 'Volver al sumario',
+  },
+  ending_case_closed: {
+    en: 'CASE CLOSED',
+    zh: '脱身',
+    ja: '解決',
+    ko: '해결',
+    es: 'CASO CERRADO',
+  },
+  ending_case_lost: {
+    en: 'CASE LOST',
+    zh: '沉没',
+    ja: '失踪',
+    ko: '실패',
+    es: 'CASO PERDIDO',
   },
 
   // ── wall ────────────────────────────────────────────────────────────

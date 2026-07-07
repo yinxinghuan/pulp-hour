@@ -87,7 +87,12 @@ export default function EndingScreen({
           </div>
         )}
         {!loading && stamped && (
-          <div className="ph-ending__stamp" aria-hidden>FILED</div>
+          <div
+            className={`ph-ending__stamp ph-ending__stamp--${ending.outcome === 'failure' ? 'failure' : 'success'}`}
+            aria-hidden
+          >
+            {ending.outcome === 'failure' ? t('ending_case_lost') : t('ending_case_closed')}
+          </div>
         )}
       </div>
 

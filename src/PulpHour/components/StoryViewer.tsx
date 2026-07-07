@@ -127,7 +127,7 @@ export default function StoryViewer({ entry, onClose }: Props) {
               </div>
             ))}
             <div className="ph-viewer__beat">
-              <div className="ph-viewer__beat-no">PANEL 6 · FINALE</div>
+              <div className="ph-viewer__beat-no">PANEL {beats.length + 1} · FINALE</div>
               <div
                 className="ph-viewer__beat-art"
                 style={{

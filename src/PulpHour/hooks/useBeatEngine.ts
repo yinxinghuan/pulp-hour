@@ -11,6 +11,7 @@ import {
   parseBeatJSON,
   ILLUSTRATION_FALLBACK,
 } from '../utils/prompts';
+import { judgeStory } from '../utils/scoring';
 import type {
   Axis,
   Beat,
@@ -210,7 +211,8 @@ export function useBeatEngine(): UseBeatEngine {
       try {
         const cover = getCover(coverId);
         const sys = beatSystemPrompt(cover);
-        const user = beatUserPrompt({ beatIndex: 6, beatsSoFar });
+        const score = judgeStory(beatsSoFar).score;
+        const user = beatUserPrompt({ beatIndex: beatsSoFar.length + 1, beatsSoFar, score });
         const raw = await chatOnce(sys, user);
         const base = safeEnding(raw);
         setStage('closing');
@@ -223,7 +225,12 @@ export function useBeatEngine(): UseBeatEngine {
         } catch {
           /* leave undefined */
         }
-        return { ...base, illustrationUrl };
+        return {
+          ...base,
+          illustrationUrl,
+          outcome: score.outcome,
+          failureReason: score.failureReason,
+        };
       } catch (e) {
         const err = e instanceof Error ? e : new Error(String(e));
         setError(err);
@@ -258,6 +265,8 @@ export function assembleStory(opts: {
     coverId: opts.coverId,
     beats: opts.beats,
     ending: opts.ending,
+    outcome: opts.ending.outcome,
+    failureReason: opts.ending.failureReason,
     authorName: opts.authorName,
     authorLocale: opts.authorLocale,
     createdAt: Date.now(),

@@ -1,6 +1,9 @@
 export type Axis = 'defy' | 'yield' | 'lie';
 
 export const AXES: Axis[] = ['defy', 'yield', 'lie'];
+export const MIN_STORY_BEAT_COUNT = 3;
+export const MIN_FINALE_PAGE = MIN_STORY_BEAT_COUNT + 1;
+export const MAX_STORY_BEAT_COUNT = 12;
 
 // Cover IDs are open-ended — a new one drops every 2 days, so we treat the
 // id as a free-form slug instead of a closed union. Keep ids kebab-case.
@@ -26,24 +29,31 @@ export interface Cover {
 export interface Beat {
   narration: string;
   choices: Record<Axis, string>;     // contextual labels per axis
-  illustrationPrompt: string;         // returned by every beat (1–5)
+  illustrationPrompt: string;         // returned by every non-final beat
   illustrationUrl?: string;           // filled in async as gen-image lands
   illustrationFailed?: boolean;       // set after all retries exhausted
   chosen?: Axis;
 }
+
+export type StoryOutcome = 'success' | 'failure';
+export type FailureReason = 'burned' | 'lost' | 'unmasked' | 'doomed';
 
 export interface Ending {
   narration: string;
   title: string;
   illustrationPrompt: string;
   illustrationUrl?: string;
+  outcome?: StoryOutcome;
+  failureReason?: FailureReason;
 }
 
 export interface Story {
   id: string;
   coverId: CoverId;
-  beats: Beat[];        // five mid beats (1-5)
-  ending: Ending;       // beat 6
+  beats: Beat[];        // mid beats before the finale
+  ending: Ending;       // final beat
+  outcome?: StoryOutcome;
+  failureReason?: FailureReason;
   authorName?: string;  // captured at write-time (real-name byline)
   authorLocale?: string; // 'en' | 'zh' | 'ja' | 'ko' | 'es' — language the
                         // story body was written in. Drives the translate

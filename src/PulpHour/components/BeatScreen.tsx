@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import type { Axis, Beat, Cover } from '../types';
-import { AXES } from '../types';
+import { AXES, MIN_FINALE_PAGE } from '../types';
 import { t } from '../i18n';
 import BeatPanel from './BeatPanel';
 import WritingPlaceholder from './WritingPlaceholder';
@@ -21,6 +21,7 @@ export default function BeatScreen({
   cover, beats, index, loading, onChoose, onBack, onRetryPanel, onLoadFailPanel,
 }: Props) {
   const current = beats[beats.length - 1];
+  const pipCount = Math.max(MIN_FINALE_PAGE, index);
   const articleRef = useRef<HTMLDivElement>(null);
   const lastBeatCount = useRef(0);
 
@@ -49,7 +50,7 @@ export default function BeatScreen({
           ← {t('wall_title')}
         </button>
         <span className="ph-beat__progress">
-          {Array.from({ length: 6 }).map((_, i) => (
+          {Array.from({ length: pipCount }).map((_, i) => (
             <span
               key={i}
               className={[

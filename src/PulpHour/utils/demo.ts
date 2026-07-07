@@ -10,6 +10,7 @@ function s(coverId: CoverId): Story {
     coverId,
     beats: makeBeats(cover),
     ending: makeEnding(cover),
+    outcome: 'success',
     authorName: 'algram',
     createdAt: Date.now(),
   };
@@ -28,7 +29,7 @@ function makeBeats(cover: Cover): Beat[] {
     chosen: n === 1 ? 'yield' as const : n === 2 ? 'lie' as const : 'defy' as const,
   });
   void cover;
-  return [seed(1), seed(2), seed(3), seed(4), seed(5)];
+  return Array.from({ length: 7 }, (_, i) => seed(i + 1));
 }
 
 function makeEnding(cover: Cover): Ending {
@@ -38,6 +39,7 @@ function makeEnding(cover: Cover): Ending {
     title: cover.title.en.split(/[:—]/)[0].trim().slice(0, 40) || 'Last Call',
     illustrationPrompt: '',
     illustrationUrl: cover.imageUrl,
+    outcome: 'success',
   };
 }
 

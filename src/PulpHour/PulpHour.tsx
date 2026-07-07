@@ -26,10 +26,10 @@ import { t, locale } from './i18n';
 import type {
   Axis, Beat, CoverId, Ending, Phase, PulpSave, Reaction, Story, WallEntry,
 } from './types';
+import { judgeStory } from './utils/scoring';
 import './PulpHour.less';
 
 const MAX_STORIES = 20;
-const MID_BEATS = 5;
 const PUBLISH_WAIT_MS = 60_000;
 
 function isSameLocalDay(a: number, b: number): boolean {
@@ -119,6 +119,7 @@ export default function PulpHour() {
         title: 'The Account Held in Your Name',
         illustrationPrompt: '',
         illustrationUrl: cover.imageUrl,
+        outcome: 'success',
       });
       setPhase('ending');
     } else if (demo === 'wall') {
@@ -304,7 +305,8 @@ export default function PulpHour() {
     setBeats(stamped);
 
     try {
-      if (stamped.length < MID_BEATS) {
+      const decision = judgeStory(stamped);
+      if (!decision.shouldEnd) {
         const next = await engine.nextBeat(activeCoverId, stamped);
         const newBeats = [...stamped, next];
         setBeats(newBeats);
@@ -313,9 +315,8 @@ export default function PulpHour() {
           startBeatIllustration(activeCoverId, newBeats.length - 1, next.illustrationPrompt);
         }
       } else {
-        // Beat 5 just answered → generate the closing beat (sync wait — needs
-        // its illustration before publish). Use the player's avatar as ref
-        // so the closing panel matches the per-beat splashes' protagonist.
+        // The hidden story judge decided this issue has reached its natural
+        // break: early death, earned escape, collapse, or hard cap.
         setPhase('ending');
         const end = await engine.finishStory(activeCoverId, stamped, {
           refUrl: me?.avatarUrl,

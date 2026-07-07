@@ -85,7 +85,7 @@ function buildTranslationPrompt(story: Story, targetLocale: string): {
       title: story.ending.title,
     },
   };
-  const system = `You are translating a 6-beat pulp short story into ${targetLang}.
+  const system = `You are translating a variable-length pulp short story into ${targetLang}.
 
 Keep the noir tone: second-person, present tense, sparse, sinister. Do not paraphrase or summarize — translate every sentence. Do not localize names of streets, brands, or proper nouns; translate everything else.
 
@@ -94,7 +94,7 @@ OUTPUT FORMAT — strict JSON only, no markdown fences, no commentary. Return EX
 {
   "beats": [
     { "narration": "<${targetLang}>", "choices": { "defy": "<${targetLang}>", "yield": "<${targetLang}>", "lie": "<${targetLang}>" } },
-    ... (5 beats)
+    ... (all beats before the finale)
   ],
   "ending": { "narration": "<${targetLang}>", "title": "<${targetLang}>" }
 }`;
