@@ -614,5 +614,33 @@
     "ink": "#6B8E23",
     "imageUrl": "/pulp-hour/covers/after-hours-chemist.jpg",
     "persona": "The setting is a contemporary American pharmacy lab during the late-night shift, sterile and quiet except for the faint hum of refrigeration units. The protagonist is a pharmacist’s assistant responsible for compounding prescriptions, meticulous and methodical but increasingly unsettled by a formula that defies logic and routine. The second presence is a courteous pharmacist supervisor, calm and polite, who insists there is no error, quietly dismissing the protagonist’s concerns. The threat is the recurring failure of a seemingly simple mixture, precision and paperwork errors, and the intimacy of chemical formulas that never come together. The tone is hushed, clinical, and quietly unnerving, like a secret that will not yield its truth."
+  },
+  {
+    "id": "city-parking-garage-attendant",
+    "releasedOn": "2026-07-15T00:00:00Z",
+    "title": {
+      "en": "The Car That Never Left The Garage",
+      "zh": "从未离开车库的车",
+      "ja": "ガレージを出なかった車",
+      "ko": "차고를 떠나지 않은 차",
+      "es": "El coche que nunca salió del garaje"
+    },
+    "subtitle": {
+      "en": "Night Shift at the City Parking Garage",
+      "zh": "城市停车场的夜班",
+      "ja": "市営駐車場の夜勤",
+      "ko": "도시 주차장 야간 근무",
+      "es": "Turno nocturno en el garaje de la ciudad"
+    },
+    "hook": {
+      "en": "Every night the same car sits in the same spot, but the ticket says it left hours ago. The garage attendant must unravel the quiet mistake before the morning rush.",
+      "zh": "每天晚上，同一辆车停在同一位置，但停车票却显示它几个小时前离开了。值班员必须在早高峰前解开这静默的谜团。",
+      "ja": "毎晩同じ車が同じ場所にあるのに、チケットは数時間前に出たと示す。係員は朝のラッシュ前にこの静かな間違いを解かなければならない。",
+      "ko": "매일 밤 같은 차가 같은 자리에 있지만, 주차권은 몇 시간 전에 떠난 것으로 되어 있다. 주차장 직원은 아침 출근 시간 전에 이 조용한 실수를 풀어야 한다.",
+      "es": "Cada noche el mismo coche está en el mismo lugar, pero el ticket dice que se fue hace horas. El vigilante debe resolver el silencioso error antes de la hora punta."
+    },
+    "ink": "#6A5D4D",
+    "imageUrl": "/pulp-hour/covers/city-parking-garage-attendant.jpg",
+    "persona": "The setting is a dimly lit city parking garage during the late-night shift. The protagonist is a solitary parking garage attendant responsible for monitoring vehicles and tickets. The tone is quiet and introspective, with a subtle, recurring puzzle: a car that appears physically present but whose paperwork insists it has left. The second presence is the dispassionate garage computer system that quietly contradicts the attendant's observations. The threat is a slow, intimate unraveling of mistaken identity and paperwork errors, revealing a deeper pattern in the routine."
   }
 ]
