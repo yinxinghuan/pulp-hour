@@ -642,5 +642,33 @@
     "ink": "#6A5D4D",
     "imageUrl": "/pulp-hour/covers/city-parking-garage-attendant.jpg",
     "persona": "The setting is a dimly lit city parking garage during the late-night shift. The protagonist is a solitary parking garage attendant responsible for monitoring vehicles and tickets. The tone is quiet and introspective, with a subtle, recurring puzzle: a car that appears physically present but whose paperwork insists it has left. The second presence is the dispassionate garage computer system that quietly contradicts the attendant's observations. The threat is a slow, intimate unraveling of mistaken identity and paperwork errors, revealing a deeper pattern in the routine."
+  },
+  {
+    "id": "night-shift-keymaster",
+    "releasedOn": "2026-07-17T00:00:00Z",
+    "title": {
+      "en": "The Master Key That Opened Nothing",
+      "zh": "打不开的万能钥匙",
+      "ja": "何も開けないマスターキー",
+      "ko": "아무것도 열리지 않는 마스터키",
+      "es": "La llave maestra que no abría nada"
+    },
+    "subtitle": {
+      "en": "Night Shift at a Downtown Office Tower",
+      "zh": "市中心办公楼夜班",
+      "ja": "ダウンタウンオフィスタワーの夜勤",
+      "ko": "도심 오피스 타워 야간 근무",
+      "es": "Turno nocturno en torre de oficinas"
+    },
+    "hook": {
+      "en": "As the night-shift keymaster, I hold every door’s secret—except the one that shouldn’t unlock at all.",
+      "zh": "作为夜班钥匙管理员，我掌握每扇门的秘密——除了那扇本不该开锁的门。",
+      "ja": "夜勤のキーマスターとして、すべての扉の秘密を握っている―開けてはいけない扉を除いて。",
+      "ko": "야간 열쇠 관리자로서 모든 문을 열 수 있지만, 열려서는 안 될 문도 있다.",
+      "es": "Como maestro de llaves nocturno, controlo todos los secretos de las puertas, menos la que no debería abrirse jamás."
+    },
+    "ink": "#7B5E57",
+    "imageUrl": "/pulp-hour/covers/night-shift-keymaster.jpg",
+    "persona": "The setting is a sleek but aging downtown office tower during the late-night hours, where the protagonist works as a keymaster responsible for managing and securing every door and lock. The voice is introspective and quietly observant, noting the small anomalies and overlooked details in the building's rhythms. The threat is a subtle puzzle: a door that inexplicably unlocks with the master key at night, revealing a presence or truth the protagonist is unsure they want to confront. The atmosphere is intimate and claustrophobic, with the hum of fluorescent lights and the faint echo of footsteps that may or may not be real."
   }
 ]
