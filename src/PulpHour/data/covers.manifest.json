@@ -670,5 +670,33 @@
     "ink": "#7B5E57",
     "imageUrl": "/pulp-hour/covers/night-shift-keymaster.jpg",
     "persona": "The setting is a sleek but aging downtown office tower during the late-night hours, where the protagonist works as a keymaster responsible for managing and securing every door and lock. The voice is introspective and quietly observant, noting the small anomalies and overlooked details in the building's rhythms. The threat is a subtle puzzle: a door that inexplicably unlocks with the master key at night, revealing a presence or truth the protagonist is unsure they want to confront. The atmosphere is intimate and claustrophobic, with the hum of fluorescent lights and the faint echo of footsteps that may or may not be real."
+  },
+  {
+    "id": "ticket-booth-watcher",
+    "releasedOn": "2026-07-19T00:00:00Z",
+    "title": {
+      "en": "The Ticket Booth That Sold No Tickets",
+      "zh": "无人售票亭的秘密",
+      "ja": "切符売り場で売れない切符",
+      "ko": "판매되지 않는 매표소",
+      "es": "La taquilla que no vendió boletos"
+    },
+    "subtitle": {
+      "en": "Late Shift at the Fairground Entrance",
+      "zh": "游乐场入口的深夜值班",
+      "ja": "遊園地入口の深夜勤務",
+      "ko": "놀이공원 입구 심야 근무",
+      "es": "Turno nocturno en la entrada de la feria"
+    },
+    "hook": {
+      "en": "I watch the empty fairground gates from my booth, yet every hour a ticket prints for a visitor who never arrives.",
+      "zh": "我在售票亭守望空无一人的游乐场门口，每小时都会打印出无人的票。",
+      "ja": "私は切符売り場で空の遊園地の門を見守る、だが毎時、来ない客のために切符が印刷される。",
+      "ko": "나는 매표소에서 빈 놀이공원 입구를 지켜보지만, 매시간 도착하지 않는 방문객을 위한 티켓이 인쇄된다.",
+      "es": "Vigilo las puertas vacías de la feria desde mi caseta, pero cada hora se imprime un boleto para un visitante que nunca llega."
+    },
+    "ink": "#FF6F61",
+    "imageUrl": "/pulp-hour/covers/ticket-booth-watcher.jpg",
+    "persona": "The setting is a small ticket booth at the entrance to a fairground, late at night after closing. The protagonist quietly observes from behind the glass, a lone attendant watching the empty grounds under dim neon lights. The second presence is the ticket machine, courteous and precise, issuing tickets inexplicably for no visitors. The threat is a subtle, recurring anomaly of mistaken arrival and presence — a precision of absence that unsettles the quiet vigil."
   }
 ]
