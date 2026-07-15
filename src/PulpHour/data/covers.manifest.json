@@ -698,5 +698,33 @@
     "ink": "#FF6F61",
     "imageUrl": "/pulp-hour/covers/ticket-booth-watcher.jpg",
     "persona": "The setting is a small ticket booth at the entrance to a fairground, late at night after closing. The protagonist quietly observes from behind the glass, a lone attendant watching the empty grounds under dim neon lights. The second presence is the ticket machine, courteous and precise, issuing tickets inexplicably for no visitors. The threat is a subtle, recurring anomaly of mistaken arrival and presence — a precision of absence that unsettles the quiet vigil."
+  },
+  {
+    "id": "late-shift-bakery",
+    "releasedOn": "2026-07-21T00:00:00Z",
+    "title": {
+      "en": "The Loaf That Never Cooled",
+      "zh": "永不冷却的面包",
+      "ja": "冷めないパン",
+      "ko": "절대 식지 않는 빵",
+      "es": "La barra que nunca enfrió"
+    },
+    "subtitle": {
+      "en": "Late Shift at the Corner Bakery",
+      "zh": "街角面包店的深夜班",
+      "ja": "角のパン屋の深夜シフト",
+      "ko": "구석 빵집의 야간 근무",
+      "es": "Turno nocturno en la panadería"
+    },
+    "hook": {
+      "en": "On the late shift, the oven timer rings—but the bread stays warm, never cooling as it should.",
+      "zh": "深夜班时，烤箱计时结束，但面包依旧温热，未曾冷却。",
+      "ja": "深夜シフト、オーブンのタイマーが鳴るが、パンは冷めずに温かいままだ。",
+      "ko": "야간 근무 중 오븐 타이머가 울리지만 빵은 식지 않고 따뜻하게 남아있다.",
+      "es": "En el turno nocturno, el temporizador suena, pero el pan no se enfría, permaneciendo tibio como si fuera eterno."
+    },
+    "ink": "#C2583E",
+    "imageUrl": "/pulp-hour/covers/late-shift-bakery.jpg",
+    "persona": "The protagonist works the graveyard shift as a baker in a small neighborhood bakery that stays open late. The setting is a warmly lit kitchen with the hum of refrigeration and the faint scent of yeast. The threat is a quiet, inexplicable recurrence: freshly baked loaves that never cool down, disrupting the rhythm of closing and opening. A courteous coworker or delivery person appears, gently suggesting explanations that don’t quite fit, deepening the protagonist’s unease about the intimate, everyday mystery unfolding in this small, familiar space."
   }
 ]
