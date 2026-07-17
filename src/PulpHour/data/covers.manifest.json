@@ -726,5 +726,33 @@
     "ink": "#C2583E",
     "imageUrl": "/pulp-hour/covers/late-shift-bakery.jpg",
     "persona": "The protagonist works the graveyard shift as a baker in a small neighborhood bakery that stays open late. The setting is a warmly lit kitchen with the hum of refrigeration and the faint scent of yeast. The threat is a quiet, inexplicable recurrence: freshly baked loaves that never cool down, disrupting the rhythm of closing and opening. A courteous coworker or delivery person appears, gently suggesting explanations that don’t quite fit, deepening the protagonist’s unease about the intimate, everyday mystery unfolding in this small, familiar space."
+  },
+  {
+    "id": "phone-booth-operator",
+    "releasedOn": "2026-07-23T00:00:00Z",
+    "title": {
+      "en": "The Call That Wasn't Meant To Ring",
+      "zh": "不该响起的电话铃声",
+      "ja": "鳴るはずのなかった電話",
+      "ko": "울지 말아야 할 전화벨",
+      "es": "La llamada que no debía sonar"
+    },
+    "subtitle": {
+      "en": "Late Night Phone Booth Operator",
+      "zh": "深夜电话亭值班员",
+      "ja": "深夜の電話ボックスオペレーター",
+      "ko": "심야 전화 부스 관리인",
+      "es": "Operador nocturno de cabina telefónica"
+    },
+    "hook": {
+      "en": "On the graveyard shift, the city’s last phone booth rings with a voice I don’t recognize—but the number’s mine.",
+      "zh": "夜班时，城市最后一个电话亭响起陌生的声音，但那号码却是我的。",
+      "ja": "深夜シフト中、街で最後の電話ボックスが鳴る。知らない声だが、番号は私のものだった。",
+      "ko": "야간 근무 중 도시의 마지막 공중전화 부스가 울린다. 낯선 목소리지만 번호는 내 것이다.",
+      "es": "En el turno nocturno, la última cabina telefónica de la ciudad suena con una voz desconocida, pero el número es mío."
+    },
+    "ink": "#B22222",
+    "imageUrl": "/pulp-hour/covers/phone-booth-operator.jpg",
+    "persona": "Set in a near-past American city, the protagonist works as the late-night phone booth operator, a solitary job monitoring a relic in a world of cellphones. The quiet presence is a courteous, persistent caller whose identity and intent are quietly wrong, haunting the line with calls that unsettle through mistaken identity and unseen connections. The threat is intimacy twisted by distance and recurrence, where every call blurs reality and paperwork logs the impossible."
   }
 ]
