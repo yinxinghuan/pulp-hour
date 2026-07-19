@@ -754,5 +754,33 @@
     "ink": "#B22222",
     "imageUrl": "/pulp-hour/covers/phone-booth-operator.jpg",
     "persona": "Set in a near-past American city, the protagonist works as the late-night phone booth operator, a solitary job monitoring a relic in a world of cellphones. The quiet presence is a courteous, persistent caller whose identity and intent are quietly wrong, haunting the line with calls that unsettle through mistaken identity and unseen connections. The threat is intimacy twisted by distance and recurrence, where every call blurs reality and paperwork logs the impossible."
+  },
+  {
+    "id": "night-shift-archive-cleaner",
+    "releasedOn": "2026-07-25T00:00:00Z",
+    "title": {
+      "en": "The Dust That Settled Twice",
+      "zh": "落尘落了两次",
+      "ja": "二度降り積もる埃",
+      "ko": "두 번 쌓인 먼지",
+      "es": "El Polvo Que Se Posó Dos Veces"
+    },
+    "subtitle": {
+      "en": "Night Custodian of the City Archives",
+      "zh": "城市档案馆夜间清洁工",
+      "ja": "市立記録館の夜間清掃員",
+      "ko": "도시 기록보관소 야간 청소원",
+      "es": "Conserje Nocturno de Archivos"
+    },
+    "hook": {
+      "en": "Every night I sweep the same floor, but some dust never disappears—and sometimes it forms shapes I swear I didn’t disturb.",
+      "zh": "每晚我打扫同一楼层，但有些尘埃永不消散，有时它们还会形成我发誓没碰过的形状。",
+      "ja": "毎晩同じ階を掃くが、消えない埃があり、時に触れていないはずの形を作る。",
+      "ko": "매일 밤 같은 층을 청소하지만, 사라지지 않는 먼지가 가끔 내가 건드리지 않은 모양을 만든다.",
+      "es": "Cada noche barro el mismo piso, pero hay polvo que nunca desaparece, y a veces forma figuras que juro no toqué."
+    },
+    "ink": "#6B5B3B",
+    "imageUrl": "/pulp-hour/covers/night-shift-archive-cleaner.jpg",
+    "persona": "Setting is a dimly lit municipal city archive’s basement floor during the late-night custodial shift. The protagonist is a night custodian who moves quietly among rows of metal shelves packed with old files and artifacts. The voice is calm, observant, quietly puzzled by recurring patterns in dust and misplaced objects that suggest a presence just out of full understanding. The threat is an intimate, subtle recurrence of anomalies in a place meant for order and preservation, where the protagonist’s own identity and role quietly shift under the weight of small confusions and paperwork errors."
   }
 ]
