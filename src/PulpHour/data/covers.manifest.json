@@ -782,5 +782,33 @@
     "ink": "#6B5B3B",
     "imageUrl": "/pulp-hour/covers/night-shift-archive-cleaner.jpg",
     "persona": "Setting is a dimly lit municipal city archive’s basement floor during the late-night custodial shift. The protagonist is a night custodian who moves quietly among rows of metal shelves packed with old files and artifacts. The voice is calm, observant, quietly puzzled by recurring patterns in dust and misplaced objects that suggest a presence just out of full understanding. The threat is an intimate, subtle recurrence of anomalies in a place meant for order and preservation, where the protagonist’s own identity and role quietly shift under the weight of small confusions and paperwork errors."
+  },
+  {
+    "id": "parking-garage-valet",
+    "releasedOn": "2026-07-27T00:00:00Z",
+    "title": {
+      "en": "The Keys That Never Left the Lot",
+      "zh": "从未离开停车场的钥匙",
+      "ja": "駐車場を離れなかった鍵",
+      "ko": "주차장을 떠나지 않은 열쇠",
+      "es": "Las Llaves Que Nunca Salieron del Estacionamiento"
+    },
+    "subtitle": {
+      "en": "Late Shift at the Downtown Valet Stand",
+      "zh": "市中心代客泊车晚班",
+      "ja": "ダウンタウンのバレット駐車場深夜勤務",
+      "ko": "도심 발렛 파킹 심야 근무",
+      "es": "Turno Nocturno en el Valet del Centro"
+    },
+    "hook": {
+      "en": "I parked cars for a living, but tonight the keys vanished — and the cars kept returning, one by one.",
+      "zh": "我以代客泊车为生，但今晚钥匙消失了——车子却一辆接一辆地回来。",
+      "ja": "車を預かる仕事だが、今夜は鍵が消え、車が次々と戻ってきた。",
+      "ko": "차를 맡기는 일이지만 오늘 밤 열쇠가 사라졌고 차들이 하나씩 돌아왔다.",
+      "es": "Trabajo estacionando autos, pero esta noche las llaves desaparecieron — y los autos seguían volviendo, uno a uno."
+    },
+    "ink": "#7D4A3E",
+    "imageUrl": "/pulp-hour/covers/parking-garage-valet.jpg",
+    "persona": "Setting is a near-past American downtown parking garage valet stand during the late-night shift. The protagonist is a valet attendant responsible for keys and cars, working alone in quiet under dim fluorescent lights. The second presence is a regular customer, polite but subtly off, who questions the identity of cars and keys. The threat is a recursive pattern of cars returning without keys, blurring identity and paperwork, with an intimacy of lost trust and precision mistakes."
   }
 ]
