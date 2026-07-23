@@ -810,5 +810,33 @@
     "ink": "#7D4A3E",
     "imageUrl": "/pulp-hour/covers/parking-garage-valet.jpg",
     "persona": "Setting is a near-past American downtown parking garage valet stand during the late-night shift. The protagonist is a valet attendant responsible for keys and cars, working alone in quiet under dim fluorescent lights. The second presence is a regular customer, polite but subtly off, who questions the identity of cars and keys. The threat is a recursive pattern of cars returning without keys, blurring identity and paperwork, with an intimacy of lost trust and precision mistakes."
+  },
+  {
+    "id": "coin-op-photobooth",
+    "releasedOn": "2026-07-29T00:00:00Z",
+    "title": {
+      "en": "The Faces That Stayed in Frame",
+      "zh": "定格中的面孔",
+      "ja": "フレームに残った顔たち",
+      "ko": "프레임에 머문 얼굴들",
+      "es": "Las Caras Que Quedaron en el Marco"
+    },
+    "subtitle": {
+      "en": "Late Shift at the Coin-Op Photobooth",
+      "zh": "投币式照相亭的深夜班",
+      "ja": "コイン式証明写真機の夜勤",
+      "ko": "동전식 사진 부스 야간 근무",
+      "es": "Turno Nocturno en la Cabina Fotográfica"
+    },
+    "hook": {
+      "en": "Working alone inside a coin-operated photobooth, I notice the same faces appearing on film rolls I never took.",
+      "zh": "独自在投币照相亭内工作，我发现胶卷上出现了我从未拍过的相同面孔。",
+      "ja": "コイン式証明写真機の中で一人働くと、撮っていない同じ顔がフィルムに映っているのに気づいた。",
+      "ko": "동전식 사진 부스 안에서 혼자 일하는데, 내가 찍지 않은 같은 얼굴들이 필름에 나타난다.",
+      "es": "Trabajando solo dentro de una cabina fotográfica de monedas, noto las mismas caras en rollos de película que nunca tomé."
+    },
+    "ink": "#B84C3B",
+    "imageUrl": "/pulp-hour/covers/coin-op-photobooth.jpg",
+    "persona": "Set inside a cramped coin-operated photobooth on a quiet city street corner, the protagonist works the late-night maintenance and film development shift. The voice is introspective, quietly observing subtle shifts in the photobooth’s images—faces that should not appear, repeated frames, and misplaced smiles. The threat is a slow, recurring intrusion into personal identity and memory, revealed through the intimate, precise medium of the photobooth’s film strips. The atmosphere is claustrophobic yet faintly luminous, with the hum of the street and the faint click of the camera shutter underscoring a quiet mystery."
   }
 ]
