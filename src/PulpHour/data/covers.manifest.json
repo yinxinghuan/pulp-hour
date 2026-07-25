@@ -838,5 +838,33 @@
     "ink": "#B84C3B",
     "imageUrl": "/pulp-hour/covers/coin-op-photobooth.jpg",
     "persona": "Set inside a cramped coin-operated photobooth on a quiet city street corner, the protagonist works the late-night maintenance and film development shift. The voice is introspective, quietly observing subtle shifts in the photobooth’s images—faces that should not appear, repeated frames, and misplaced smiles. The threat is a slow, recurring intrusion into personal identity and memory, revealed through the intimate, precise medium of the photobooth’s film strips. The atmosphere is claustrophobic yet faintly luminous, with the hum of the street and the faint click of the camera shutter underscoring a quiet mystery."
+  },
+  {
+    "id": "silent-subtitle-reader",
+    "releasedOn": "2026-07-31T00:00:00Z",
+    "title": {
+      "en": "The Subtitle That Played On",
+      "zh": "持续播放的字幕",
+      "ja": "流れ続ける字幕",
+      "ko": "계속 재생되는 자막",
+      "es": "Los subtítulos que siguieron"
+    },
+    "subtitle": {
+      "en": "Late-Night Cinema Captionist",
+      "zh": "深夜影院字幕员",
+      "ja": "深夜映画館字幕係",
+      "ko": "심야 영화관 자막 담당",
+      "es": "Subtitulador nocturno de cine"
+    },
+    "hook": {
+      "en": "Working alone in the projection booth, the captions won’t stop—even though the film ended hours ago.",
+      "zh": "孤身一人在放映室，字幕不停——尽管电影早已结束数小时。",
+      "ja": "映写室で一人、映画は終わったのに字幕が止まらない。",
+      "ko": "상영실에서 혼자 일하는데, 영화가 끝난 지 몇 시간인데도 자막이 멈추지 않는다.",
+      "es": "Solo en la cabina de proyección, los subtítulos no paran, aunque la película terminó hace horas."
+    },
+    "ink": "#7F4F24",
+    "imageUrl": "/pulp-hour/covers/silent-subtitle-reader.jpg",
+    "persona": "The setting is a small-town independent movie theater's projection booth during the late-night shift. The protagonist is the subtitle captionist, a solitary worker responsible for ensuring the accessibility captions are accurate and timed. The booth is cramped and dimly lit by the faint glow of the captioning monitor and projector light. The second presence is a courteous, quiet projectionist who insists everything is normal, yet the captions continue repeating lines well past the film's end. The threat is the surreal recurrence of the captions, intimate and precise, unsettling the protagonist's grasp on time and reality."
   }
 ]
