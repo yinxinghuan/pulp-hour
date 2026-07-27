@@ -866,5 +866,33 @@
     "ink": "#7F4F24",
     "imageUrl": "/pulp-hour/covers/silent-subtitle-reader.jpg",
     "persona": "The setting is a small-town independent movie theater's projection booth during the late-night shift. The protagonist is the subtitle captionist, a solitary worker responsible for ensuring the accessibility captions are accurate and timed. The booth is cramped and dimly lit by the faint glow of the captioning monitor and projector light. The second presence is a courteous, quiet projectionist who insists everything is normal, yet the captions continue repeating lines well past the film's end. The threat is the surreal recurrence of the captions, intimate and precise, unsettling the protagonist's grasp on time and reality."
+  },
+  {
+    "id": "night-shift-vet-receptionist",
+    "releasedOn": "2026-08-02T00:00:00Z",
+    "title": {
+      "en": "The Appointment That Never Arrived",
+      "zh": "从未到来的预约",
+      "ja": "来なかった予約",
+      "ko": "오지 않은 예약",
+      "es": "La cita que nunca llegó"
+    },
+    "subtitle": {
+      "en": "Late Shift at the Animal Clinic",
+      "zh": "动物诊所夜班",
+      "ja": "動物クリニックの深夜勤務",
+      "ko": "동물 병원 야간 근무",
+      "es": "Turno nocturno en la clínica veterinaria"
+    },
+    "hook": {
+      "en": "On the quiet night shift as a vet receptionist, the unanswered calls and empty waiting chairs start to feel like someone is watching.",
+      "zh": "作为兽医接待员的安静夜班，未接来电和空荡荡的候诊椅让人感觉有人在注视。",
+      "ja": "獣医受付の静かな夜勤、応答のない電話と空の待合椅子に誰かが見ている気配がする。",
+      "ko": "조용한 야간 근무 중인 수의사 접수처에서 답 없는 전화와 빈 대기 의자가 누군가 지켜보는 듯한 느낌을 준다.",
+      "es": "En el turno nocturno tranquilo como recepcionista veterinaria, las llamadas sin respuesta y las sillas vacías parecen indicar que alguien observa."
+    },
+    "ink": "#6F4E37",
+    "imageUrl": "/pulp-hour/covers/night-shift-vet-receptionist.jpg",
+    "persona": "Set in a small-town animal clinic during the late-night reception shift, the protagonist manages calls, appointments, and patient records alone. The quiet hum of fluorescent lights and the faint rustle of animal beds contrast with the subtle, recurring misplacements of files and phantom phone rings. The second presence is a courteous, patient voice on the line or a fellow staff member’s misplaced items, always calm but slightly off, suggesting a quiet unraveling of trust and identity through paperwork and unseen watchers."
   }
 ]
