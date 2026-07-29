@@ -894,5 +894,33 @@
     "ink": "#6F4E37",
     "imageUrl": "/pulp-hour/covers/night-shift-vet-receptionist.jpg",
     "persona": "Set in a small-town animal clinic during the late-night reception shift, the protagonist manages calls, appointments, and patient records alone. The quiet hum of fluorescent lights and the faint rustle of animal beds contrast with the subtle, recurring misplacements of files and phantom phone rings. The second presence is a courteous, patient voice on the line or a fellow staff member’s misplaced items, always calm but slightly off, suggesting a quiet unraveling of trust and identity through paperwork and unseen watchers."
+  },
+  {
+    "id": "urban-beekeeper-quiet-hive",
+    "releasedOn": "2026-08-04T00:00:00Z",
+    "title": {
+      "en": "The Hum That Never Left the Hive",
+      "zh": "蜂巢中永不消失的嗡嗡声",
+      "ja": "巣箱に消えない羽音",
+      "ko": "벌통을 떠나지 않는 윙윙 소리",
+      "es": "El zumbido que nunca abandonó la colmena"
+    },
+    "subtitle": {
+      "en": "Late Night Keeps the City Buzzing",
+      "zh": "深夜守护城市的嗡鸣",
+      "ja": "深夜に街を守る養蜂",
+      "ko": "도시를 지키는 밤의 양봉",
+      "es": "La apicultura nocturna que mantiene la ciudad viva"
+    },
+    "hook": {
+      "en": "As the city's lights dim, the beekeeper tends to a rooftop hive where the quiet hum hides a secret visitor who knows more than they say.",
+      "zh": "当城市灯光暗淡，养蜂人在屋顶蜂巢中忙碌，嗡鸣中藏着一个比言语更多知晓的秘密访客。",
+      "ja": "街の灯が消えると、養蜂家は屋上の巣箱を手入れする。静かな羽音の中には、言葉より多くを知る訪問者がいる。",
+      "ko": "도시 불빛이 어두워질 때, 양봉가는 옥상 벌통을 돌본다. 조용한 윙윙 소리 속에는 말보다 많은 것을 아는 방문자가 숨어 있다.",
+      "es": "Cuando las luces de la ciudad se apagan, el apicultor cuida una colmena en la azotea donde el zumbido silencioso oculta a un visitante que sabe más de lo que dice."
+    },
+    "ink": "#DCA14B",
+    "imageUrl": "/pulp-hour/covers/urban-beekeeper-quiet-hive.jpg",
+    "persona": "The protagonist is an urban beekeeper managing a small rooftop hive in a contemporary American city. They work late into the night, monitoring the bees and their delicate environment. A courteous, seemingly helpful visitor appears regularly, offering precise observations about the hive's condition, but their quiet knowledge subtly misleads, creating an intimate and recurring puzzle around the identity and intentions of this presence. The threat is not physical but a slow, meticulous unraveling of trust and identity within the confined rooftop space."
   }
 ]
