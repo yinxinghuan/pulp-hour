@@ -922,5 +922,33 @@
     "ink": "#DCA14B",
     "imageUrl": "/pulp-hour/covers/urban-beekeeper-quiet-hive.jpg",
     "persona": "The protagonist is an urban beekeeper managing a small rooftop hive in a contemporary American city. They work late into the night, monitoring the bees and their delicate environment. A courteous, seemingly helpful visitor appears regularly, offering precise observations about the hive's condition, but their quiet knowledge subtly misleads, creating an intimate and recurring puzzle around the identity and intentions of this presence. The threat is not physical but a slow, meticulous unraveling of trust and identity within the confined rooftop space."
+  },
+  {
+    "id": "ticket-counter-clerk",
+    "releasedOn": "2026-08-06T00:00:00Z",
+    "title": {
+      "en": "The Ticket Counter That Never Closed",
+      "zh": "永不关闭的售票柜台",
+      "ja": "閉まらないチケットカウンター",
+      "ko": "닫히지 않는 매표소",
+      "es": "La taquilla que nunca cerró"
+    },
+    "subtitle": {
+      "en": "Late Night Station Duty",
+      "zh": "深夜车站值守",
+      "ja": "深夜の駅勤務",
+      "ko": "심야 역 근무",
+      "es": "Turno nocturno en estación"
+    },
+    "hook": {
+      "en": "Working the late shift at a small-town train station ticket counter, the clerk notices tickets sold to passengers who never board.",
+      "zh": "在小镇火车站的售票柜台值夜班，职员发现卖出的车票乘客却从未登车。",
+      "ja": "小さな町の駅のチケットカウンターで深夜勤務中、乗車しない乗客に売られた切符に気づく。",
+      "ko": "작은 마을 기차역 매표소에서 심야 근무 중, 탑승하지 않는 승객에게 판매된 표를 발견한다.",
+      "es": "Trabajando en el turno nocturno de la taquilla de un pueblo, el empleado nota billetes vendidos a pasajeros que nunca suben."
+    },
+    "ink": "#8A2B2B",
+    "imageUrl": "/pulp-hour/covers/ticket-counter-clerk.jpg",
+    "persona": "The protagonist is a late-night ticket counter clerk at a small-town train station. They handle ticket sales, reservations, and occasional inquiries in a quiet, dimly lit space. The second presence is a courteous regular passenger or station staff member who gently points out oddities in the ticket logs or passenger lists, but their observations are subtly mistaken. The threat revolves around recurring, unexplained ticket transactions and the mystery of passengers who never appear to board, creating an intimate puzzle of mistaken identity and administrative anomaly."
   }
 ]
