@@ -950,5 +950,33 @@
     "ink": "#8A2B2B",
     "imageUrl": "/pulp-hour/covers/ticket-counter-clerk.jpg",
     "persona": "The protagonist is a late-night ticket counter clerk at a small-town train station. They handle ticket sales, reservations, and occasional inquiries in a quiet, dimly lit space. The second presence is a courteous regular passenger or station staff member who gently points out oddities in the ticket logs or passenger lists, but their observations are subtly mistaken. The threat revolves around recurring, unexplained ticket transactions and the mystery of passengers who never appear to board, creating an intimate puzzle of mistaken identity and administrative anomaly."
+  },
+  {
+    "id": "late-night-pharmacy-deliverer",
+    "releasedOn": "2026-08-08T00:00:00Z",
+    "title": {
+      "en": "The Package That Never Arrived",
+      "zh": "永远未送达的包裹",
+      "ja": "届かなかった小包",
+      "ko": "결코 도착하지 않은 소포",
+      "es": "El paquete que nunca llegó"
+    },
+    "subtitle": {
+      "en": "Late-Night Pharmacy Delivery Route",
+      "zh": "深夜药房送货路线",
+      "ja": "深夜の薬局配達ルート",
+      "ko": "심야 약국 배달 경로",
+      "es": "Ruta de entrega farmacéutica nocturna"
+    },
+    "hook": {
+      "en": "I drive the quiet streets delivering prescriptions, but tonight a package is missing—and a second delivery shows up at my door.",
+      "zh": "我在安静的街道上送药，今晚一个包裹不见了，第二次送货却出现在我门口。",
+      "ja": "静かな街を処方箋を届けながら走るが、今夜は荷物が行方不明で、二度目の配達が自宅に届いた。",
+      "ko": "조용한 거리를 다니며 처방전을 배달하는데, 오늘 밤 소포가 사라지고 두 번째 배달이 내 문 앞에 나타났다.",
+      "es": "Conduzco por calles tranquilas entregando recetas, pero esta noche falta un paquete y una segunda entrega llega a mi puerta."
+    },
+    "ink": "#9B4F3E",
+    "imageUrl": "/pulp-hour/covers/late-night-pharmacy-deliverer.jpg",
+    "persona": "The setting is a near-past American city at late night. The protagonist is a pharmacy delivery driver, tasked with transporting sensitive prescription packages along quiet residential streets. The narrative voice is introspective and observant, aware of small oddities that hint at a deeper problem. The second presence is a courteous dispatcher or neighbor who offers plausible but subtly mistaken explanations. The threat revolves around the precision and recurrence of misdelivered packages and mistaken identities, creating an intimate puzzle rather than overt danger."
   }
 ]
