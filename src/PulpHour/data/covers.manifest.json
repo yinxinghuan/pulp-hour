@@ -978,5 +978,33 @@
     "ink": "#9B4F3E",
     "imageUrl": "/pulp-hour/covers/late-night-pharmacy-deliverer.jpg",
     "persona": "The setting is a near-past American city at late night. The protagonist is a pharmacy delivery driver, tasked with transporting sensitive prescription packages along quiet residential streets. The narrative voice is introspective and observant, aware of small oddities that hint at a deeper problem. The second presence is a courteous dispatcher or neighbor who offers plausible but subtly mistaken explanations. The threat revolves around the precision and recurrence of misdelivered packages and mistaken identities, creating an intimate puzzle rather than overt danger."
+  },
+  {
+    "id": "late-shift-plant-sitter",
+    "releasedOn": "2026-08-10T00:00:00Z",
+    "title": {
+      "en": "The Plant That Waited in the Dark",
+      "zh": "黑暗中等待的植物",
+      "ja": "暗闇で待っていた植物",
+      "ko": "어둠 속에서 기다리는 식물",
+      "es": "La planta que esperó en la oscuridad"
+    },
+    "subtitle": {
+      "en": "Late Shift at the Office Plant Care",
+      "zh": "办公室植物护理夜班",
+      "ja": "オフィス植物管理の深夜勤務",
+      "ko": "사무실 식물 관리 야간 근무",
+      "es": "Turno nocturno en el cuidado de plantas de oficina"
+    },
+    "hook": {
+      "en": "Tending office plants after hours, I noticed one pot never seemed to grow. Then the whispered notes began, from a place no one else saw.",
+      "zh": "下班后照顾办公室植物，我注意到有个花盆似乎从未生长。然后，耳语般的笔记开始了，来自无人所见之地。",
+      "ja": "深夜にオフィスの植物を手入れしていると、ある鉢だけが育っていないことに気づいた。やがて誰も見ない場所から囁くようなメモが届く。",
+      "ko": "퇴근 후 사무실 식물을 돌보던 중, 한 화분은 자라지 않는 듯했다. 그러다 아무도 보지 않는 곳에서 속삭이는 메모가 시작되었다.",
+      "es": "Cuidando plantas de oficina después del horario, noté que una maceta nunca parecía crecer. Entonces comenzaron las notas susurradas, de un lugar que nadie más veía."
+    },
+    "ink": "#4A6F4A",
+    "imageUrl": "/pulp-hour/covers/late-shift-plant-sitter.jpg",
+    "persona": "The protagonist is a late-night office plant sitter, tasked with watering and monitoring the greenery in a quiet corporate office after hours. The setting is a contemporary American office building, dimly lit and mostly empty at night. The tone is intimate and quietly unsettling, with the recurring threat manifesting through subtle plant behaviors and mysterious notes left among the pots. A courteous coworker or security guard occasionally appears, offering polite but misinformed reassurances about the building and its plants. The story explores precision and mistaken identity in the quiet rhythm of the night shift."
   }
 ]
