@@ -1006,5 +1006,33 @@
     "ink": "#4A6F4A",
     "imageUrl": "/pulp-hour/covers/late-shift-plant-sitter.jpg",
     "persona": "The protagonist is a late-night office plant sitter, tasked with watering and monitoring the greenery in a quiet corporate office after hours. The setting is a contemporary American office building, dimly lit and mostly empty at night. The tone is intimate and quietly unsettling, with the recurring threat manifesting through subtle plant behaviors and mysterious notes left among the pots. A courteous coworker or security guard occasionally appears, offering polite but misinformed reassurances about the building and its plants. The story explores precision and mistaken identity in the quiet rhythm of the night shift."
+  },
+  {
+    "id": "night-shift-postal-inspector",
+    "releasedOn": "2026-08-12T00:00:00Z",
+    "title": {
+      "en": "The Package That Never Left the Sorting Room",
+      "zh": "从未离开分拣室的包裹",
+      "ja": "仕分け室を出なかった荷物",
+      "ko": "분류실을 떠나지 않은 소포",
+      "es": "El paquete que nunca salió de la sala de clasificación"
+    },
+    "subtitle": {
+      "en": "Late-Night Postal Inspector's Shift",
+      "zh": "深夜邮政检查员值班",
+      "ja": "深夜の郵便検査員の勤務",
+      "ko": "야간 우편 검사관 근무",
+      "es": "Turno nocturno de inspector postal"
+    },
+    "hook": {
+      "en": "Alone in the silent sorting room, a package appears again and again—never dispatched, never claimed.",
+      "zh": "孤身一人在寂静的分拣室，一只包裹反复出现——从未发出，也无人认领。",
+      "ja": "静かな仕分け室に一人、荷物が何度も現れる―発送されず、誰にも受け取られない。",
+      "ko": "조용한 분류실에 홀로, 소포가 반복해서 나타난다—발송되지 않고, 찾아가는 이도 없다.",
+      "es": "Solo en la silenciosa sala de clasificación, un paquete aparece una y otra vez—nunca despachado, nunca reclamado."
+    },
+    "ink": "#8B4513",
+    "imageUrl": "/pulp-hour/covers/night-shift-postal-inspector.jpg",
+    "persona": "The setting is a late-night postal sorting facility in a mid-sized American city. The protagonist is a postal inspector working the quiet graveyard shift, responsible for overseeing the flow and security of mail. The tone is intimate and quietly unsettling, focusing on recurring anomalies in paperwork and parcels that seem caught in limbo. A courteous coworker appears to offer explanations that subtly misdirect, adding to the protagonist’s growing unease about the accuracy and meaning of the mail they handle."
   }
 ]
