@@ -1034,5 +1034,33 @@
     "ink": "#8B4513",
     "imageUrl": "/pulp-hour/covers/night-shift-postal-inspector.jpg",
     "persona": "The setting is a late-night postal sorting facility in a mid-sized American city. The protagonist is a postal inspector working the quiet graveyard shift, responsible for overseeing the flow and security of mail. The tone is intimate and quietly unsettling, focusing on recurring anomalies in paperwork and parcels that seem caught in limbo. A courteous coworker appears to offer explanations that subtly misdirect, adding to the protagonist’s growing unease about the accuracy and meaning of the mail they handle."
+  },
+  {
+    "id": "late-shift-ice-cream-truck",
+    "releasedOn": "2026-08-14T00:00:00Z",
+    "title": {
+      "en": "The Ice Cream That Never Melted Away",
+      "zh": "那永不融化的冰淇淋",
+      "ja": "溶けないアイスクリームの夜",
+      "ko": "녹지 않는 아이스크림의 밤",
+      "es": "El helado que nunca se derritió"
+    },
+    "subtitle": {
+      "en": "Late-Night Ice Cream Truck Mystery",
+      "zh": "深夜冰淇淋车之谜",
+      "ja": "深夜のアイスクリームトラック事件",
+      "ko": "심야 아이스크림 트럭 미스터리",
+      "es": "Misterio del camión de helados nocturno"
+    },
+    "hook": {
+      "en": "Working the late shift in a quiet suburban neighborhood, the ice cream truck driver notices a frozen treat that never melts—and a customer who’s always just out of reach.",
+      "zh": "在安静的郊区深夜班工作，冰淇淋车司机发现有一份冰淇淋永远不融化，还有一个总是若隐若现的顾客。",
+      "ja": "静かな郊外での深夜勤務中、アイスクリームトラックの運転手は決して溶けない冷たいおやつと、いつも手の届かない客に気づく。",
+      "ko": "조용한 교외에서 심야 근무 중인 아이스크림 트럭 운전사는 절대 녹지 않는 아이스크림과 항상 닿지 않는 손님을 발견한다.",
+      "es": "Durante su turno nocturno en un vecindario tranquilo, el conductor del camión de helados nota un helado que nunca se derrite y un cliente que siempre está fuera de alcance."
+    },
+    "ink": "#A3D2CA",
+    "imageUrl": "/pulp-hour/covers/late-shift-ice-cream-truck.jpg",
+    "persona": "The setting is a quiet suburban neighborhood at night where the protagonist drives a late-shift ice cream truck. The voice is observant and introspective, noticing small details in the night’s stillness. The second presence is a polite but elusive customer who appears consistently but never engages fully. The threat is an intimate puzzle of recurrence and mistaken identity, something frozen in time amid the mundane route and the soft glow of street lamps."
   }
 ]
