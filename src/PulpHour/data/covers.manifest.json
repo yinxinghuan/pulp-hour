@@ -1062,5 +1062,33 @@
     "ink": "#A3D2CA",
     "imageUrl": "/pulp-hour/covers/late-shift-ice-cream-truck.jpg",
     "persona": "The setting is a quiet suburban neighborhood at night where the protagonist drives a late-shift ice cream truck. The voice is observant and introspective, noticing small details in the night’s stillness. The second presence is a polite but elusive customer who appears consistently but never engages fully. The threat is an intimate puzzle of recurrence and mistaken identity, something frozen in time amid the mundane route and the soft glow of street lamps."
+  },
+  {
+    "id": "parking-meter-reader",
+    "releasedOn": "2026-08-16T00:00:00Z",
+    "title": {
+      "en": "The Meter That Never Ticked Down",
+      "zh": "永不倒数的停车计时器",
+      "ja": "一度も減らないパーキングメーター",
+      "ko": "멈추지 않는 주차 미터기",
+      "es": "El medidor que nunca bajó"
+    },
+    "subtitle": {
+      "en": "Late Shift Parking Meter Reader",
+      "zh": "夜班停车计时器读数员",
+      "ja": "深夜のパーキングメーター読み取り",
+      "ko": "야간 주차 미터기 점검원",
+      "es": "Lector nocturno de parquímetros"
+    },
+    "hook": {
+      "en": "Every night the meters show the same time remaining. But tonight, the numbers start to change on their own.",
+      "zh": "每晚计时器显示相同剩余时间，但今晚数字开始自行变化。",
+      "ja": "毎晩メーターは同じ残り時間を示す。しかし今夜、その数字が自ら変わり始めた。",
+      "ko": "매일 밤 미터기는 같은 시간이 남았다고 표시한다. 하지만 오늘 밤 숫자가 스스로 바뀌기 시작했다.",
+      "es": "Cada noche los medidores muestran el mismo tiempo restante. Pero esta noche, los números comienzan a cambiar solos."
+    },
+    "ink": "#4A7C59",
+    "imageUrl": "/pulp-hour/covers/parking-meter-reader.jpg",
+    "persona": "The protagonist is a late-night parking meter reader in a quiet, near-past American downtown neighborhood. Their job is solitary, focused on checking and recording meter times under dim streetlights. The second presence is a courteous night security guard who offers polite observations but misunderstands the strange meter behavior. The threat is subtle and recurring, lodged in the intimacy of time and mistaken readings rather than overt alarm. The tone is quiet, watchful, and a little uncanny, like a lone figure tracing faint discrepancies in the usual rhythms of night."
   }
 ]
