@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useGameSave } from '@shared/save';
-import { isInAigram, telegramId } from '@shared/runtime';
+import { isInAigramNow, getTelegramId } from '@shared/runtime';
 import { useGameEvent } from '@shared/runtime/useGameEvent';
 import { useGameStats } from '@shared/runtime/useGameStats';
 import { getCover } from './utils/covers';
@@ -145,7 +145,7 @@ export default function PulpHour() {
       // story. The same record/play call handles counting + fan-out.
       const isOther = !!detail.authorId
         && detail.authorId !== 'self'
-        && detail.authorId !== (telegramId || 'self');
+        && detail.authorId !== (getTelegramId()! || 'self');
       const tmpl =
         detail.kind === 'riveted' ? '{sender_name} was riveted by your story.' :
         detail.kind === 'spooked' ? '{sender_name} got spooked by your story.' :
@@ -411,7 +411,7 @@ export default function PulpHour() {
         <Wall
           entries={wallEntries}
           loaded={wallLoaded}
-          isInAigram={isInAigram}
+          isInAigram={isInAigramNow()}
           myStories={wallSelfStories}
           saveLoaded={saveLoaded || demo === 'wall' || demo === 'viewer'}
           lockedToday={lockedToday && !noLimit && demo !== 'wall' && demo !== 'viewer'}

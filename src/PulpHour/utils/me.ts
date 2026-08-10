@@ -3,8 +3,8 @@
 
 import {
   callAigramAPI,
-  isInAigram,
-  telegramId,
+  isInAigramNow,
+  getTelegramId,
   type AigramResponse,
 } from '@shared/runtime/bridge';
 
@@ -17,7 +17,7 @@ let cache: MeInfo | null | undefined;
 
 export async function fetchMe(): Promise<MeInfo | null> {
   if (cache !== undefined) return cache;
-  if (!isInAigram || !telegramId) {
+  if (!isInAigramNow() || !getTelegramId()!) {
     cache = null;
     return null;
   }
@@ -25,7 +25,7 @@ export async function fetchMe(): Promise<MeInfo | null> {
     const res = await callAigramAPI<
       AigramResponse<{ name?: string; head_url?: string }>
     >(
-      `/note/telegram/user/get/info/by/telegram_id?telegram_id=${encodeURIComponent(telegramId)}`,
+      `/note/telegram/user/get/info/by/telegram_id?telegram_id=${encodeURIComponent(getTelegramId()!)}`,
       'GET',
     );
     const name = res?.data?.name?.trim();

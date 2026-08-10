@@ -4,7 +4,7 @@ import { getCover } from '../utils/covers';
 import { storyHeroArt } from '../utils/storyArt';
 import { t, locale } from '../i18n';
 import { useTranslateStory, storySourceLocale } from '../hooks/useTranslateStory';
-import { isInAigram, openAigramProfile } from '@shared/runtime';
+import { isInAigramNow, openAigramProfile } from '@shared/runtime';
 
 interface Props {
   entry: WallEntry;
@@ -89,9 +89,9 @@ export default function StoryViewer({ entry, onClose }: Props) {
             className="ph-viewer__byline"
             onClick={(ev) => {
               ev.stopPropagation();
-              if (isInAigram && entry.userId) openAigramProfile(entry.userId);
+              if (isInAigramNow() && entry.userId) openAigramProfile(entry.userId);
             }}
-            disabled={!isInAigram || !entry.userId}
+            disabled={!isInAigramNow() || !entry.userId}
             aria-label={`Open ${authorName || entry.userName || 'author'}'s profile`}
           >
             <span className="ph-viewer__byline-label">{t('ending_byline')}</span>
