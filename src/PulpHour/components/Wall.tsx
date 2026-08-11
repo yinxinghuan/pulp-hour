@@ -32,14 +32,14 @@ export default function Wall({
   saveLoaded, lockedToday, streakDays,
   onPickNewIssue, onOpenStory,
 }: Props) {
-  // Intro collapse state — sticky in localStorage.
+  // Intro collapse state — sticky in alteruLocalStorage.
   const [introHidden, setIntroHidden] = useState<boolean>(() => {
-    try { return localStorage.getItem(INTRO_HIDDEN_KEY) === '1'; } catch { return false; }
+    try { return alteruLocalStorage.getItem(INTRO_HIDDEN_KEY) === '1'; } catch { return false; }
   });
   function toggleIntro() {
     const next = !introHidden;
     setIntroHidden(next);
-    try { localStorage.setItem(INTRO_HIDDEN_KEY, next ? '1' : '0'); } catch { /* ignore */ }
+    try { alteruLocalStorage.setItem(INTRO_HIDDEN_KEY, next ? '1' : '0'); } catch { /* ignore */ }
   }
 
   // Optimistic merge: cloud write is debounced (~1s) + RTT, so a
@@ -339,7 +339,7 @@ function ReactionRow({
 
   useEffect(() => {
     try {
-      const raw = localStorage.getItem(`ph-react-${storyId}`);
+      const raw = alteruLocalStorage.getItem(`ph-react-${storyId}`);
       if (raw) setMine(new Set(JSON.parse(raw) as Reaction[]));
     } catch { /* ignore */ }
   }, [storyId]);
@@ -355,7 +355,7 @@ function ReactionRow({
           detail: { storyId, kind, authorId, coverUrl },
         }));
       }
-      try { localStorage.setItem(`ph-react-${storyId}`, JSON.stringify([...next])); } catch {/* ignore */}
+      try { alteruLocalStorage.setItem(`ph-react-${storyId}`, JSON.stringify([...next])); } catch {/* ignore */}
       return next;
     });
   }

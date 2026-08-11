@@ -411,7 +411,7 @@ type Key = keyof typeof STRINGS;
 function detectLocale(): Locale {
   if (typeof window === 'undefined') return 'en';
   try {
-    const override = localStorage.getItem('game_locale');
+    const override = alteruLocalStorage.getItem('game_locale');
     if (override && LOCALES.includes(override as Locale)) return override as Locale;
   } catch { /* ignore */ }
   const nav = navigator.language.toLowerCase();
@@ -430,7 +430,7 @@ export function locale(): Locale {
 
 export function setLocale(l: Locale) {
   _locale = l;
-  try { localStorage.setItem('game_locale', l); } catch { /* ignore */ }
+  try { alteruLocalStorage.setItem('game_locale', l); } catch { /* ignore */ }
   // Notify subscribers so React can re-render with the new strings.
   try { window.dispatchEvent(new CustomEvent('ph-locale', { detail: l })); } catch { /* ignore */ }
 }

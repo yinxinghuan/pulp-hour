@@ -19,11 +19,11 @@ function cacheKey(storyId: string, target: string): string {
 }
 
 function readCache(storyId: string, target: string): string | null {
-  try { return localStorage.getItem(cacheKey(storyId, target)); } catch { return null; }
+  try { return alteruLocalStorage.getItem(cacheKey(storyId, target)); } catch { return null; }
 }
 
 function writeCache(storyId: string, target: string, value: string): void {
-  try { localStorage.setItem(cacheKey(storyId, target), value); } catch { /* ignore */ }
+  try { alteruLocalStorage.setItem(cacheKey(storyId, target), value); } catch { /* ignore */ }
 }
 
 async function translateTitle(title: string, targetLocale: string): Promise<string> {

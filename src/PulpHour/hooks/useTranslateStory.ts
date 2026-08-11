@@ -54,7 +54,7 @@ function cacheKey(storyId: string, targetLocale: string): string {
 
 function readCache(storyId: string, targetLocale: string): TranslatedStory | null {
   try {
-    const raw = localStorage.getItem(cacheKey(storyId, targetLocale));
+    const raw = alteruLocalStorage.getItem(cacheKey(storyId, targetLocale));
     if (!raw) return null;
     return JSON.parse(raw) as TranslatedStory;
   } catch { return null; }
@@ -62,7 +62,7 @@ function readCache(storyId: string, targetLocale: string): TranslatedStory | nul
 
 function writeCache(storyId: string, targetLocale: string, value: TranslatedStory): void {
   try {
-    localStorage.setItem(cacheKey(storyId, targetLocale), JSON.stringify(value));
+    alteruLocalStorage.setItem(cacheKey(storyId, targetLocale), JSON.stringify(value));
   } catch { /* quota — ignore */ }
 }
 
