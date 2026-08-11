@@ -1090,5 +1090,33 @@
     "ink": "#4A7C59",
     "imageUrl": "/pulp-hour/covers/parking-meter-reader.jpg",
     "persona": "The protagonist is a late-night parking meter reader in a quiet, near-past American downtown neighborhood. Their job is solitary, focused on checking and recording meter times under dim streetlights. The second presence is a courteous night security guard who offers polite observations but misunderstands the strange meter behavior. The threat is subtle and recurring, lodged in the intimacy of time and mistaken readings rather than overt alarm. The tone is quiet, watchful, and a little uncanny, like a lone figure tracing faint discrepancies in the usual rhythms of night."
+  },
+  {
+    "id": "night-shift-aquarium-tender",
+    "releasedOn": "2026-08-18T00:00:00Z",
+    "title": {
+      "en": "The Tank That Refused to Settle",
+      "zh": "拒绝平静的水族箱",
+      "ja": "落ち着かない水槽",
+      "ko": "가라앉지 않는 수조",
+      "es": "La pecera que no se calmaba"
+    },
+    "subtitle": {
+      "en": "Late-Night Aquarium Keeper’s Unease",
+      "zh": "深夜水族馆管理员的忧虑",
+      "ja": "夜勤の水族館係の不安",
+      "ko": "심야 아쿠아리움 담당자의 불안",
+      "es": "La inquietud del cuidador nocturno"
+    },
+    "hook": {
+      "en": "I watch the water ripple when no one else is near, but the tank’s stillness keeps shifting beneath my gaze.",
+      "zh": "没人靠近时，我看着水面荡漾，可水族箱的平静却在我目光下不断变化。",
+      "ja": "誰もいない時、水のさざ波を見守るが、水槽の静けさは私の視線の下で揺れ動く。",
+      "ko": "아무도 없을 때 나는 물결을 바라보지만, 수조의 고요함은 내 시선 아래에서 계속 변한다.",
+      "es": "Observo cómo la superficie se ondula cuando nadie está cerca, pero la quietud del tanque sigue cambiando bajo mi mirada."
+    },
+    "ink": "#2E8B57",
+    "imageUrl": "/pulp-hour/covers/night-shift-aquarium-tender.jpg",
+    "persona": "The setting is a contemporary American city aquarium, quiet and dimly lit during the late-night caretaker shift. The protagonist is the solitary aquarium tender, responsible for monitoring water quality and feeding fish, alone with tanks that never quite stay still. The threat is the subtle, recurring disturbance in the water’s surface—something intimate, precise, and quietly wrong, like a presence just out of sync with reality. The tone is contemplative, watching ripples where none should be, the soft hum of filtration contradicting the unease beneath the glass."
   }
 ]
