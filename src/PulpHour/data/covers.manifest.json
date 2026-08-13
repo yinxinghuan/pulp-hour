@@ -1118,5 +1118,33 @@
     "ink": "#2E8B57",
     "imageUrl": "/pulp-hour/covers/night-shift-aquarium-tender.jpg",
     "persona": "The setting is a contemporary American city aquarium, quiet and dimly lit during the late-night caretaker shift. The protagonist is the solitary aquarium tender, responsible for monitoring water quality and feeding fish, alone with tanks that never quite stay still. The threat is the subtle, recurring disturbance in the water’s surface—something intimate, precise, and quietly wrong, like a presence just out of sync with reality. The tone is contemplative, watching ripples where none should be, the soft hum of filtration contradicting the unease beneath the glass."
+  },
+  {
+    "id": "late-shift-drywall-inspector",
+    "releasedOn": "2026-08-20T00:00:00Z",
+    "title": {
+      "en": "The Wall That Watched Me Work",
+      "zh": "凝视我的墙壁",
+      "ja": "私の仕事を見つめる壁",
+      "ko": "나를 지켜보는 벽",
+      "es": "La Pared Que Me Observaba"
+    },
+    "subtitle": {
+      "en": "Late Shift at Building Inspection",
+      "zh": "建筑检查的夜班",
+      "ja": "建築検査の夜勤",
+      "ko": "건물 점검 야간 근무",
+      "es": "Turno Nocturno en Inspección"
+    },
+    "hook": {
+      "en": "As a late-shift drywall inspector in a quiet new development, I find cracks that don’t belong—and walls that seem to remember more than they should.",
+      "zh": "作为新开发区的夜班石膏板检查员，我发现了不该有的裂缝，还有似乎记忆超出常理的墙壁。",
+      "ja": "静かな新興地区の夜勤ドライウォール検査員として、そこにあってはならないひび割れや、記憶を持つかのような壁に出会う。",
+      "ko": "조용한 신축 단지에서 야간 드라이월 검사원으로 일하면서 있어서는 안 될 균열과 지나치게 많은 것을 기억하는 듯한 벽을 발견한다.",
+      "es": "Como inspector de paneles de yeso en turno nocturno en un nuevo desarrollo, encuentro grietas que no deberían estar ahí y paredes que parecen recordar más de lo debido."
+    },
+    "ink": "#994433",
+    "imageUrl": "/pulp-hour/covers/late-shift-drywall-inspector.jpg",
+    "persona": "The setting is a contemporary American suburban construction site at night, where the protagonist works as a drywall inspector responsible for quality and safety checks. The atmosphere is quiet, punctuated by the subtle sounds of settling wood and distant machinery. The protagonist’s voice is reflective and wary, noticing little oddities in the walls—small cracks, strange textures—that suggest something precise and intimate is amiss. A second presence, perhaps the site foreman or a security guard, offers polite but misplaced reassurances, never outright hostile, just quietly wrong. The threat is the uncanny recurrence of imperfections in the walls that seem to watch and remember, creating a tension of mistaken identity between structure and observer."
   }
 ]
