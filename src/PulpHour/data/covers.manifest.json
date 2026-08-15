@@ -1146,5 +1146,33 @@
     "ink": "#994433",
     "imageUrl": "/pulp-hour/covers/late-shift-drywall-inspector.jpg",
     "persona": "The setting is a contemporary American suburban construction site at night, where the protagonist works as a drywall inspector responsible for quality and safety checks. The atmosphere is quiet, punctuated by the subtle sounds of settling wood and distant machinery. The protagonist’s voice is reflective and wary, noticing little oddities in the walls—small cracks, strange textures—that suggest something precise and intimate is amiss. A second presence, perhaps the site foreman or a security guard, offers polite but misplaced reassurances, never outright hostile, just quietly wrong. The threat is the uncanny recurrence of imperfections in the walls that seem to watch and remember, creating a tension of mistaken identity between structure and observer."
+  },
+  {
+    "id": "late-night-fuel-distributor",
+    "releasedOn": "2026-08-22T00:00:00Z",
+    "title": {
+      "en": "The Tanker That Never Drained",
+      "zh": "永不排空的油罐车",
+      "ja": "決して空にならないタンクローリー",
+      "ko": "절대 비지 않는 탱커 트럭",
+      "es": "El camión cisterna que nunca se vació"
+    },
+    "subtitle": {
+      "en": "Late-Night Fuel Delivery Mystery",
+      "zh": "深夜燃油配送之谜",
+      "ja": "深夜の燃料配送の謎",
+      "ko": "심야 연료 배달 미스터리",
+      "es": "Misterio de entrega de combustible nocturna"
+    },
+    "hook": {
+      "en": "As the lone fuel distributor on the night route, I swore the tanker emptied at every stop — but the meter says otherwise.",
+      "zh": "作为夜班唯一的燃油配送员，我发誓每站油罐都放空了——但仪表显示不对劲。",
+      "ja": "夜間の燃料配達員として、一つ一つの停留所でタンクは空になったはずだが、メーターは違うと言っている。",
+      "ko": "야간 연료 배달원으로서, 각 정차지에서 탱크를 비웠다고 확신했지만 계량기는 다르게 말하고 있다.",
+      "es": "Como el único distribuidor de combustible en la ruta nocturna, juré que el tanque se vaciaba en cada parada, pero el medidor dice lo contrario."
+    },
+    "ink": "#8B4513",
+    "imageUrl": "/pulp-hour/covers/late-night-fuel-distributor.jpg",
+    "persona": "The setting is a near-past American highway fuel distribution route during late night hours. The protagonist is the sole fuel tanker driver responsible for delivering fuel to gas stations under dim street lamps and quiet roadside stops. The voice is first-person, pragmatic yet quietly unsettled by the recurring anomaly in the fuel meter readings. There is a courteous, knowing dispatcher on the radio whose reassurances never quite align with the reality the protagonist observes. The threat is the intimate and precise mystery of a tanker that never fully empties, a problem that recurs with every delivery and suggests a mistake or presence unseen in the paperwork and gauges."
   }
 ]
