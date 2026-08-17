@@ -1174,5 +1174,33 @@
     "ink": "#8B4513",
     "imageUrl": "/pulp-hour/covers/late-night-fuel-distributor.jpg",
     "persona": "The setting is a near-past American highway fuel distribution route during late night hours. The protagonist is the sole fuel tanker driver responsible for delivering fuel to gas stations under dim street lamps and quiet roadside stops. The voice is first-person, pragmatic yet quietly unsettled by the recurring anomaly in the fuel meter readings. There is a courteous, knowing dispatcher on the radio whose reassurances never quite align with the reality the protagonist observes. The threat is the intimate and precise mystery of a tanker that never fully empties, a problem that recurs with every delivery and suggests a mistake or presence unseen in the paperwork and gauges."
+  },
+  {
+    "id": "night-shift-garbage-collector",
+    "releasedOn": "2026-08-24T00:00:00Z",
+    "title": {
+      "en": "The Bin That Never Emptied",
+      "zh": "永不清空的垃圾桶",
+      "ja": "決して空にならないゴミ箱",
+      "ko": "절대 비지 않는 쓰레기통",
+      "es": "El Contenedor Que Nunca Se Vació"
+    },
+    "subtitle": {
+      "en": "Midnight Route Mystery",
+      "zh": "午夜路线之谜",
+      "ja": "深夜の回収ルートの謎",
+      "ko": "한밤중 수거 노선의 미스터리",
+      "es": "Misterio de la Ruta Nocturna"
+    },
+    "hook": {
+      "en": "On the graveyard shift, the city sleeps—but one trash bin keeps filling, no matter how often I empty it.",
+      "zh": "深夜班时，城市沉睡——但无论我清空多少次，那个垃圾桶总是不断堆满。",
+      "ja": "夜勤中、街は眠るが、何度空にしてもゴミ箱は満ち続ける。",
+      "ko": "야간 근무 중 도시는 잠들지만, 내가 아무리 비워도 한 쓰레기통만 계속 가득 찬다.",
+      "es": "En el turno de noche, la ciudad duerme, pero un contenedor de basura no deja de llenarse, por más que lo vacíe."
+    },
+    "ink": "#4A3C31",
+    "imageUrl": "/pulp-hour/covers/night-shift-garbage-collector.jpg",
+    "persona": "A night-shift garbage collector working the quiet, near-empty city streets under dim streetlights. The protagonist navigates the intimacy of the city's refuse, alone with the hum of the truck and the shadows of endless bins. A single bin repeatedly fills despite being emptied, hinting at a precise, recurring, and quietly unsettling presence beyond simple waste."
   }
 ]
