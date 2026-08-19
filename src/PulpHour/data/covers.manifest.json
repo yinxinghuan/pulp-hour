@@ -1202,5 +1202,33 @@
     "ink": "#4A3C31",
     "imageUrl": "/pulp-hour/covers/night-shift-garbage-collector.jpg",
     "persona": "A night-shift garbage collector working the quiet, near-empty city streets under dim streetlights. The protagonist navigates the intimacy of the city's refuse, alone with the hum of the truck and the shadows of endless bins. A single bin repeatedly fills despite being emptied, hinting at a precise, recurring, and quietly unsettling presence beyond simple waste."
+  },
+  {
+    "id": "late-night-toll-collector",
+    "releasedOn": "2026-08-26T00:00:00Z",
+    "title": {
+      "en": "The Toll Booth That Never Closed",
+      "zh": "永不关闭的收费亭",
+      "ja": "閉まらない料金所",
+      "ko": "닫히지 않는 통행료 부스",
+      "es": "La caseta de peaje que nunca cerró"
+    },
+    "subtitle": {
+      "en": "Midnight shifts on the highway",
+      "zh": "公路午夜班次",
+      "ja": "高速道路の深夜勤務",
+      "ko": "고속도로 심야 근무",
+      "es": "Turnos nocturnos en la autopista"
+    },
+    "hook": {
+      "en": "The toll booth lights flicker, but no cars pass. Every night, the same exact transactions repeat—only I’m sure I didn’t collect those coins.",
+      "zh": "收费亭的灯光闪烁，却没有车辆经过。每晚，完全相同的交易重复——但我确定我没收过那些硬币。",
+      "ja": "料金所の明かりはちらつくが車は通らない。毎晩、まったく同じ取引が繰り返されている―でも、その硬貨は私が受け取ったものではない。",
+      "ko": "요금소 불빛은 깜빡이지만 차는 지나가지 않는다. 매일 밤, 똑같은 거래가 반복된다—하지만 내가 받은 동전이 아님을 확신한다.",
+      "es": "Las luces de la caseta parpadean, pero ningún coche pasa. Cada noche, las mismas transacciones se repiten—aunque sé que no cobré esas monedas."
+    },
+    "ink": "#DAA520",
+    "imageUrl": "/pulp-hour/covers/late-night-toll-collector.jpg",
+    "persona": "The setting is a lonely toll booth on a near-empty highway late at night. The protagonist, a toll collector, handles the quiet mechanical routine of collecting tolls and logging transactions. The second presence is a polite automated voice from the booth's intercom, calmly announcing toll amounts and acknowledging payments. The threat is a subtle recurrence—transactions that appear on the logs but were never physically completed, blurring the line between reality and paperwork. The tone is quietly unsettling, intimate, and precise, capturing the eerie stillness of the highway at night and the protagonist’s creeping doubt."
   }
 ]
