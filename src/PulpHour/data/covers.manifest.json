@@ -1230,5 +1230,33 @@
     "ink": "#DAA520",
     "imageUrl": "/pulp-hour/covers/late-night-toll-collector.jpg",
     "persona": "The setting is a lonely toll booth on a near-empty highway late at night. The protagonist, a toll collector, handles the quiet mechanical routine of collecting tolls and logging transactions. The second presence is a polite automated voice from the booth's intercom, calmly announcing toll amounts and acknowledging payments. The threat is a subtle recurrence—transactions that appear on the logs but were never physically completed, blurring the line between reality and paperwork. The tone is quietly unsettling, intimate, and precise, capturing the eerie stillness of the highway at night and the protagonist’s creeping doubt."
+  },
+  {
+    "id": "late-night-florist",
+    "releasedOn": "2026-08-28T00:00:00Z",
+    "title": {
+      "en": "The Bouquet That Never Left the Shop",
+      "zh": "永远留在店里的花束",
+      "ja": "店を離れなかった花束",
+      "ko": "가게를 떠나지 않은 꽃다발",
+      "es": "El Ramo Que Nunca Salió de la Floristería"
+    },
+    "subtitle": {
+      "en": "Midnight Shift at the Flower Shop",
+      "zh": "花店的午夜班",
+      "ja": "花屋の深夜勤務",
+      "ko": "꽃집의 심야 근무",
+      "es": "Turno de Medianoche en la Floristería"
+    },
+    "hook": {
+      "en": "The flowers were arranged, the order placed — but the bouquet never left the shop. Something waits beneath the petals in the quiet night.",
+      "zh": "花束已摆好，订单已下——但花束始终未离开店铺。夜深人静，花瓣下隐藏着什么。",
+      "ja": "花は整えられ、注文は入った——しかし花束は店を離れなかった。静かな夜に花びらの下で何かが待っている。",
+      "ko": "꽃은 준비되었고 주문도 들어왔지만, 꽃다발은 가게를 떠나지 않았다. 고요한 밤, 꽃잎 아래 무언가가 기다리고 있다.",
+      "es": "Las flores estaban arregladas, el pedido hecho, pero el ramo nunca salió de la floristería. Algo espera bajo los pétalos en la noche silenciosa."
+    },
+    "ink": "#B03060",
+    "imageUrl": "/pulp-hour/covers/late-night-florist.jpg",
+    "persona": "Set in a small, quiet flower shop during the late-night shift, the protagonist is the lone florist arranging bouquets and managing orders. The atmosphere is hushed, with the scent of fresh flowers and faint streetlight filtering through the windows. A courteous supplier occasionally drops by with deliveries, polite but subtly unsettling. The threat emerges as a mysterious recurring bouquet that appears perfectly arranged yet never leaves the shop, hinting at something quietly wrong beneath the surface. The narrative unfolds through introspective, intimate first-person observations, blending precision and subtle unease."
   }
 ]
