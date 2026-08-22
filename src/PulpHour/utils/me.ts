@@ -3,10 +3,9 @@
 
 import {
   callAigramAPI,
-  isInAigramNow,
-  getTelegramId,
   type AigramResponse,
 } from '@shared/runtime/bridge';
+import { waitForAigramIdentity } from '@shared/runtime/identity-ready';
 
 export interface MeInfo {
   name: string;
@@ -17,7 +16,8 @@ let cache: MeInfo | null | undefined;
 
 export async function fetchMe(): Promise<MeInfo | null> {
   if (cache !== undefined) return cache;
-  if (!isInAigramNow() || !getTelegramId()!) {
+  const telegramId = await waitForAigramIdentity();
+  if (!telegramId) {
     cache = null;
     return null;
   }
@@ -25,7 +25,7 @@ export async function fetchMe(): Promise<MeInfo | null> {
     const res = await callAigramAPI<
       AigramResponse<{ name?: string; head_url?: string }>
     >(
-      `/note/telegram/user/get/info/by/telegram_id?telegram_id=${encodeURIComponent(getTelegramId()!)}`,
+      `/note/telegram/user/get/info/by/telegram_id?telegram_id=${encodeURIComponent(telegramId)}`,
       'GET',
     );
     const name = res?.data?.name?.trim();

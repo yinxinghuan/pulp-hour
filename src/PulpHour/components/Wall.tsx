@@ -6,10 +6,11 @@ import { storyHeroArt } from '../utils/storyArt';
 import { locale } from '../i18n';
 import { storySourceLocale } from '../hooks/useTranslateStory';
 import { useTranslateTitle } from '../hooks/useTranslateTitle';
-import { REACTION_GLYPH, fallbackCount } from '../utils/reactions';
+import { fallbackCount } from '../utils/reactions';
 import { openAigramProfile } from '@shared/runtime/bridge';
 import { t } from '../i18n';
 import Burst from './Burst';
+import { CloseIcon, EmptyBurstIcon, ReactionIcon } from './PulpIcons';
 
 interface Props {
   entries: WallEntry[];
@@ -109,7 +110,7 @@ export default function Wall({
 
       {loaded && displayed.length === 0 && (
         <div className="ph-wall__empty">
-          <div className="ph-wall__empty-icon" aria-hidden>✶</div>
+          <div className="ph-wall__empty-icon" aria-hidden><EmptyBurstIcon /></div>
           <div className="ph-wall__empty-text">{t('wall_empty')}</div>
         </div>
       )}
@@ -162,7 +163,7 @@ function HowItWorks({ onHide }: { onHide: () => void }) {
       <div className="ph-how__head">
         <span className="ph-how__title">{t('how_title')}</span>
         <button className="ph-link ph-how__hide" onPointerDown={onHide}>
-          ✕ {t('how_hide')}
+          <CloseIcon /> {t('how_hide')}
         </button>
       </div>
       <div className="ph-how__panels">
@@ -372,7 +373,7 @@ function ReactionRow({
             onPointerDown={() => toggle(kind)}
             aria-label={t(`reactions_${kind}` as 'reactions_riveted')}
           >
-            <span className="ph-react-btn__glyph">{REACTION_GLYPH[kind]}</span>
+            <span className="ph-react-btn__glyph"><ReactionIcon kind={kind} /></span>
             <span className="ph-react-btn__count">{count}</span>
           </button>
         );

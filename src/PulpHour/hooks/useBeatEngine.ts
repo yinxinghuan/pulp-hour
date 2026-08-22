@@ -1,9 +1,14 @@
 // Stateless beat engine. Each LLM call composes the full history with
-// stamped axes. Gen-image is wrapped in a parallel-safe helper because we
-// fire 5+ generations per session and the bundled useGenImage hook has
-// shared loading state we don't want.
+// stamped axes. Image generation uses the parallel-safe AlterU media client
+// because one story can have several panel requests in flight at once.
 
 import { useCallback, useRef, useState } from 'react';
+import { getGameUuid } from '@shared/runtime/game-id';
+import {
+  createMediaRequestId,
+  generateImageMedia,
+  MediaServiceError,
+} from '@shared/runtime/media';
 import { getCover } from '../utils/covers';
 import {
   beatSystemPrompt,
@@ -21,13 +26,29 @@ import type {
 } from '../types';
 
 const CHAT_URL = 'https://chat.aiwaves.tech/aigram/api/game-chat';
-const IMAGE_URL = 'https://chat.aiwaves.tech/aigram/api/gen-image';
+const ILLUSTRATION_SIZE = { width: 768, height: 512 } as const;
+const IMAGE_FETCH_TIMEOUT_MS = 280_000;
+const referenceMode = 'edit' as const;
+export const PULP_IDENTITY_RELEASE = 'pulp-full-identity-20260823';
 
-// Production-hosted covers — used as ref_url for the per-beat splashes so
-// every illustration in a story shares the cover's color anchor.
-const COVER_PUBLIC_BASE = 'https://yinxinghuan.github.io/pulp-hour/covers';
-export function coverPublicRef(id: CoverId): string {
-  return `${COVER_PUBLIC_BASE}/${id}.jpg`;
+const PLAYER_IDENTITY_CONTRACT =
+  'HARD FULL-VISUAL-IDENTITY CAST MAP. REFERENCE IMAGE OVERRIDES ALL GENERIC CHARACTER WORDS. '
+  + 'SUBJECT A MUST keep the exact complete visible identity of the main foreground subject in the reference—not merely its face. '
+  + 'Preserve its silhouette, form or species, body proportions, material, head shape, face visibility, covering, mask, costume, colors, patterns and accessories. '
+  + 'Before composing, inventory and copy EVERY visible identity feature and accessory from the reference; none may be omitted, moved to another subject, recolored or replaced. '
+  + 'Keep SUBJECT A in the same pose, orientation and visible crop as the reference; depict the current event around it rather than making it perform a new body pose. '
+  + 'Never reinterpret a covering as clothing over a generic human body. Any face, skin, hair, hands, arms or legs not visible in the reference MUST remain hidden and MUST NOT be invented. '
+  + 'Keep the framing tight enough to hide every body part absent from the reference. If hands are absent, SUBJECT A does not touch anything: stage props beside or against it instead. '
+  + 'Do not transfer reference traits to other people, animals, reflections or objects. Named NPCs remain visually distinct. ';
+
+export function illustrationMediaPrompt(prompt: string, playerIdentity: boolean): string {
+  const scene = playerIdentity
+    ? prompt.replace(/\bthe protagonist\b/gi, 'SUBJECT A')
+    : prompt;
+  const combined = playerIdentity
+    ? `${PLAYER_IDENTITY_CONTRACT}LAYOUT CONTRACT: make a landscape 1960s pulp case-file collage. Reserve one large square identity photograph for SUBJECT A in the center, occupying roughly 68 percent of the canvas height. Keep the complete square inside the frame with margin on every side. Do not depict SUBJECT A anywhere outside that square. Render the current event only as an illustrated environment border around the square portrait; it may include props but no extra copy of SUBJECT A. CURRENT SCENE: ${scene}`
+    : scene;
+  return combined.slice(0, 2400);
 }
 
 async function chatOnce(system: string, user: string): Promise<string> {
@@ -48,64 +69,64 @@ async function chatOnce(system: string, user: string): Promise<string> {
   return json.choices?.[0]?.message?.content ?? '';
 }
 
-// Backend wall-clock is ~200s. Mobile webviews (especially iOS Safari
-// inside Aigram) can be stingy with long-running fetches — give them an
-// explicit 280s ceiling so we know exactly when we abort, instead of
-// trusting whatever the OS decides.
-const IMAGE_FETCH_TIMEOUT_MS = 280_000;
-
 async function generateIllustrationOnce(opts: {
   prompt: string;
   refUrl?: string;
-}): Promise<string> {
-  const body: { prompt: string; ref_url?: string } = { prompt: opts.prompt };
-  if (opts.refUrl) body.ref_url = opts.refUrl;
+  playerIdentity?: boolean;
+}, requestId: string): Promise<string> {
+  const sessionId = getGameUuid();
+  if (!sessionId) throw new Error('pulp media: game UUID is unavailable');
+  if (opts.refUrl && !/^https:\/\//i.test(opts.refUrl)) {
+    throw new Error('pulp media: reference must be public HTTPS');
+  }
 
   const ctl = new AbortController();
   const tid = window.setTimeout(() => ctl.abort(), IMAGE_FETCH_TIMEOUT_MS);
   try {
-    const res = await fetch(IMAGE_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
+    const task = await generateImageMedia({
+      sessionId,
+      requestId,
+      mode: opts.refUrl ? referenceMode : 'text',
+      prompt: illustrationMediaPrompt(opts.prompt, !!opts.refUrl && !!opts.playerIdentity),
+      referenceUrls: opts.refUrl ? [opts.refUrl] : [],
+      size: ILLUSTRATION_SIZE,
+    }, {
       signal: ctl.signal,
+      timeoutMs: IMAGE_FETCH_TIMEOUT_MS,
     });
-    if (!res.ok) throw new Error(`gen-image: HTTP ${res.status}`);
-    const json = (await res.json()) as { url?: string };
-    if (!json.url) throw new Error('gen-image: no url');
-    return json.url;
+    return task.media.url;
   } finally {
     window.clearTimeout(tid);
   }
 }
 
-/**
- * Try gen-image up to 3 times. Wall-clock per attempt is ~200s, capped
- * at 280s by AbortController. Backoff 3s / 6s between attempts. Only
- * after all three fail does the panel fall back. Mobile webviews drop
- * long-running fetches inconsistently — extra retries soak that up.
- */
 export async function generateIllustration(opts: {
   prompt: string;
   refUrl?: string;
+  playerIdentity?: boolean;
 }): Promise<string> {
-  const delays = [3000, 6000];
-  let lastErr: unknown;
-  for (let attempt = 0; attempt < 3; attempt++) {
-    try {
-      return await generateIllustrationOnce(opts);
-    } catch (e) {
-      lastErr = e;
-      if (attempt < delays.length) {
-        await new Promise(res => setTimeout(res, delays[attempt]));
-      }
+  const requestId = createMediaRequestId();
+  try {
+    return await generateIllustrationOnce(opts, requestId);
+  } catch (cause) {
+    if (cause instanceof MediaServiceError) {
+      if (!cause.retryable) throw cause;
+      await new Promise(resolve => window.setTimeout(
+        resolve,
+        Math.max(1, cause.retryAfterSeconds ?? 1) * 1000,
+      ));
+      // A service timeout is ambiguous, so reuse the idempotency key.
+      const retryId = cause.code === 'TIMEOUT' ? requestId : createMediaRequestId();
+      return generateIllustrationOnce(opts, retryId);
     }
+    // An interrupted transport may have submitted successfully; retry once
+    // with the same request ID so the service returns the original task.
+    return generateIllustrationOnce(opts, requestId);
   }
-  throw lastErr instanceof Error ? lastErr : new Error('gen-image: all attempts failed');
 }
 
 export interface FinishOpts {
-  /** Optional public HTTPS URL for the gen-image ref. Defaults to cover. */
+  /** Optional original player avatar used as the full identity reference. */
   refUrl?: string;
 }
 
@@ -220,7 +241,8 @@ export function useBeatEngine(): UseBeatEngine {
         try {
           illustrationUrl = await generateIllustration({
             prompt: base.illustrationPrompt,
-            refUrl: opts?.refUrl || coverPublicRef(coverId),
+            refUrl: opts?.refUrl,
+            playerIdentity: !!opts?.refUrl,
           });
         } catch {
           /* leave undefined */

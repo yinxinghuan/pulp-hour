@@ -8,6 +8,7 @@
 import type { Beat, Cover } from '../types';
 import { t } from '../i18n';
 import CookingPlaceholder from './CookingPlaceholder';
+import { AxisIcon } from './PulpIcons';
 
 interface Props {
   beat: Beat;
@@ -17,8 +18,6 @@ interface Props {
   onRetry?: () => void;   // re-kick gen-image for this panel
   onLoadFail?: () => void; // <img> failed to load the returned URL
 }
-
-const AXIS_GLYPH = { defy: '↺', yield: '↓', lie: '↹' } as const;
 
 export default function BeatPanel({
   beat, cover, index, isPast, onRetry, onLoadFail,
@@ -84,7 +83,7 @@ export default function BeatPanel({
 
       {isPast && beat.chosen && (
         <div className={`ph-bp__chose ph-bp__chose--${beat.chosen}`}>
-          <span className="ph-bp__chose-glyph">{AXIS_GLYPH[beat.chosen]}</span>
+          <span className="ph-bp__chose-glyph"><AxisIcon axis={beat.chosen} /></span>
           <span className="ph-bp__chose-text">
             {t('chose_label')} <strong>{t(`axis_${beat.chosen}` as 'axis_defy')}</strong>
             {' · '}<em>{beat.choices[beat.chosen]}</em>

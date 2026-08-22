@@ -7,7 +7,6 @@ import { getCover } from './utils/covers';
 import {
   useBeatEngine,
   assembleStory,
-  coverPublicRef,
   generateIllustration,
 } from './hooks/useBeatEngine';
 import { useWall } from './hooks/useWall';
@@ -81,7 +80,23 @@ export default function PulpHour() {
 
   // ── Author ─────────────────────────────────────────────────────────────
   const [me, setMe] = useState<MeInfo | null>(null);
-  useEffect(() => { fetchMe().then(setMe); }, []);
+  const meRef = useRef<MeInfo | null>(null);
+  const mePromiseRef = useRef<Promise<MeInfo | null> | null>(null);
+  useEffect(() => {
+    const pending = fetchMe();
+    mePromiseRef.current = pending;
+    pending.then(profile => {
+      meRef.current = profile;
+      setMe(profile);
+    });
+  }, []);
+
+  async function profileForIllustration(): Promise<MeInfo | null> {
+    if (meRef.current) return meRef.current;
+    const profile = await (mePromiseRef.current ?? fetchMe());
+    meRef.current = profile;
+    return profile;
+  }
 
   // ── Phase state ────────────────────────────────────────────────────────
   const [phase, setPhase] = useState<Phase>('wall');
@@ -205,9 +220,11 @@ export default function PulpHour() {
   async function retryEndingIllustration() {
     if (!activeCoverId || !ending?.illustrationPrompt) return;
     try {
+      const profile = await profileForIllustration();
       const url = await generateIllustration({
         prompt: ending.illustrationPrompt,
-        refUrl: me?.avatarUrl || coverPublicRef(activeCoverId),
+        refUrl: profile?.avatarUrl,
+        playerIdentity: !!profile?.avatarUrl,
       });
       setEnding(prev => prev ? { ...prev, illustrationUrl: url } as Ending : prev);
     } catch {
@@ -226,21 +243,25 @@ export default function PulpHour() {
       if (next[idx]) next[idx] = { ...next[idx], illustrationFailed: false };
       return next;
     });
-    startBeatIllustration(activeCoverId, idx, beat.illustrationPrompt);
+    startBeatIllustration(idx, beat.illustrationPrompt);
   }
 
-  function startBeatIllustration(coverId: CoverId, idx: number, prompt: string) {
+  function startBeatIllustration(idx: number, prompt: string) {
     // Kick off a per-beat splash. Store the promise; when it resolves,
     // patch the beat in state. On final failure (after the retry inside
     // generateIllustration) mark illustrationFailed so the choice row
     // can unlock and the panel can fall back to the cover image.
     //
-    // Ref strategy: prefer the player's Aigram avatar so the protagonist
-    // in each panel inherits their likeness (subject-as-ref pattern from
-    // Mugshot Booth). Fall back to the cached cover when the player has
-    // no avatar (off-platform or new account).
-    const ref = me?.avatarUrl || coverPublicRef(coverId);
-    const p = generateIllustration({ prompt, refUrl: ref })
+    // Wait for the bounded platform identity lookup before the first panel.
+    // With a real avatar, edit mode treats it as SUBJECT A's complete visible
+    // identity. Without one, text mode renders the current beat independently
+    // rather than copying the issue cover's composition.
+    const p = profileForIllustration()
+      .then(profile => generateIllustration({
+        prompt,
+        refUrl: profile?.avatarUrl,
+        playerIdentity: !!profile?.avatarUrl,
+      }))
       .then(url => {
         setBeats(prev => {
           const next = [...prev];
@@ -289,7 +310,7 @@ export default function PulpHour() {
       setBeats([first]);
       // Kick off illustration for beat 1 in the background.
       if (first.illustrationPrompt) {
-        startBeatIllustration(coverId, 0, first.illustrationPrompt);
+        startBeatIllustration(0, first.illustrationPrompt);
       }
     } catch (e) {
       setError(e instanceof Error ? e : new Error(String(e)));
@@ -312,14 +333,15 @@ export default function PulpHour() {
         setBeats(newBeats);
         // Kick off illustration for this beat (async; player advances anyway).
         if (next.illustrationPrompt) {
-          startBeatIllustration(activeCoverId, newBeats.length - 1, next.illustrationPrompt);
+          startBeatIllustration(newBeats.length - 1, next.illustrationPrompt);
         }
       } else {
         // The hidden story judge decided this issue has reached its natural
         // break: early death, earned escape, collapse, or hard cap.
         setPhase('ending');
+        const profile = await profileForIllustration();
         const end = await engine.finishStory(activeCoverId, stamped, {
-          refUrl: me?.avatarUrl,
+          refUrl: profile?.avatarUrl,
         });
         setEnding(end);
       }
@@ -334,8 +356,9 @@ export default function PulpHour() {
     const trimmed = beats.slice(0, -1);
     try {
       if (phase === 'ending') {
+        const profile = await profileForIllustration();
         const end = await engine.finishStory(activeCoverId, beats, {
-          refUrl: me?.avatarUrl,
+          refUrl: profile?.avatarUrl,
         });
         setEnding(end);
       } else {
@@ -343,7 +366,7 @@ export default function PulpHour() {
         const newBeats = [...trimmed, next];
         setBeats(newBeats);
         if (next.illustrationPrompt) {
-          startBeatIllustration(activeCoverId, newBeats.length - 1, next.illustrationPrompt);
+          startBeatIllustration(newBeats.length - 1, next.illustrationPrompt);
         }
       }
     } catch (e) {

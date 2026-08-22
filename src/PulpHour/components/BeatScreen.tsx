@@ -4,6 +4,7 @@ import { AXES, MIN_FINALE_PAGE } from '../types';
 import { t } from '../i18n';
 import BeatPanel from './BeatPanel';
 import WritingPlaceholder from './WritingPlaceholder';
+import { BackIcon } from './PulpIcons';
 
 interface Props {
   cover: Cover;
@@ -47,7 +48,7 @@ export default function BeatScreen({
     <div className="ph-beat" style={{ ['--ph-ink' as string]: cover.ink }}>
       <div className="ph-beat__bar">
         <button className="ph-link" onPointerDown={onBack} disabled={loading}>
-          ← {t('wall_title')}
+          <BackIcon /> {t('wall_title')}
         </button>
         <span className="ph-beat__progress">
           {Array.from({ length: pipCount }).map((_, i) => (

@@ -5,13 +5,12 @@ import { storyHeroArt } from '../utils/storyArt';
 import { t, locale } from '../i18n';
 import { useTranslateStory, storySourceLocale } from '../hooks/useTranslateStory';
 import { isInAigramNow, openAigramProfile } from '@shared/runtime';
+import { AxisIcon, CloseIcon } from './PulpIcons';
 
 interface Props {
   entry: WallEntry;
   onClose: () => void;
 }
-
-const AXIS_GLYPH = { defy: '↺', yield: '↓', lie: '↹' } as const;
 
 export default function StoryViewer({ entry, onClose }: Props) {
   const cover = getCover(entry.story.coverId);
@@ -49,7 +48,10 @@ export default function StoryViewer({ entry, onClose }: Props) {
               the subsequent pointerup fires its 'click' event on whatever
               element is now at the touch position, which lands on the
               wall card behind and reopens the same story. */}
-          <button className="ph-link" onClick={onClose}>{t('story_close')} ✕</button>
+          <button className="ph-link" onClick={onClose}>
+            {t('story_close')}
+            <CloseIcon />
+          </button>
         </div>
 
         {canTranslate && (
@@ -120,7 +122,7 @@ export default function StoryViewer({ entry, onClose }: Props) {
                 <p className="ph-viewer__beat-text">{showBeats[i]?.narration ?? b.narration}</p>
                 {b.chosen && (
                   <div className="ph-viewer__chose">
-                    <span className="ph-viewer__chose-glyph">{AXIS_GLYPH[b.chosen]}</span>
+                    <span className="ph-viewer__chose-glyph"><AxisIcon axis={b.chosen} /></span>
                     {t(`axis_${b.chosen}` as 'axis_defy')} · "{showBeats[i]?.choices?.[b.chosen] ?? b.choices[b.chosen]}"
                   </div>
                 )}

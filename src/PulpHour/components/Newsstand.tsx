@@ -4,6 +4,7 @@ import CoverArt from './CoverArt';
 import { useCountdown, type Countdown } from '../hooks/useCountdown';
 import { t } from '../i18n';
 import type { Cover, CoverId } from '../types';
+import { BackIcon } from './PulpIcons';
 
 interface Props {
   onPick: (id: CoverId) => void;
@@ -44,7 +45,7 @@ export default function Newsstand({ onPick, onBack }: Props) {
   return (
     <div className="ph-newsstand">
       <div className="ph-newsstand__bar">
-        <button className="ph-link" onPointerDown={onBack}>← {t('wall_title')}</button>
+        <button className="ph-link" onPointerDown={onBack}><BackIcon /> {t('wall_title')}</button>
       </div>
 
       {countdown && upcoming && (

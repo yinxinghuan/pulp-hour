@@ -108,6 +108,11 @@
 }
 
 .ph-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
   background: none;
   border: none;
   color: @ink;
@@ -119,6 +124,7 @@
   padding: 6px 4px;
   &:active { opacity: 0.55; }
   &:disabled { opacity: 0.3; }
+  svg { flex: 0 0 auto; }
 }
 
 // ─── Wall (landing) ─────────────────────────────────────────────────────
@@ -315,6 +321,7 @@
 
 .ph-wall-card__meta {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 6px;
@@ -324,14 +331,15 @@
 }
 
 .ph-wall-card__author {
-  flex: 1;
+  flex: 1 0 100%;
   min-width: 0;
   background: none;
   border: none;
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 0;
+  padding: 4px 0;
+  min-height: 44px;
   cursor: pointer;
   &:disabled { cursor: default; }
 }
@@ -362,10 +370,15 @@
 
 .ph-wall-card__reactions {
   display: flex;
+  width: 100%;
   gap: 4px;
 }
 
 .ph-react-btn {
+  flex: 1 1 44px;
+  min-width: 44px;
+  min-height: 44px;
+  justify-content: center;
   background: @paper-light;
   border: 2px solid @ink;
   padding: 2px 5px;
@@ -393,7 +406,10 @@
   &--spooked.ph-react-btn--on { background: @cool; }
   &--cursed.ph-react-btn--on  { background: @ink-soft; }
 }
-.ph-react-btn__glyph { font-size: 13px; }
+.ph-react-btn__glyph {
+  display: inline-flex;
+  svg { width: 14px; height: 14px; }
+}
 
 // ─── Newsstand ──────────────────────────────────────────────────────────
 
@@ -867,6 +883,8 @@ img.ph-bp__art--fallback,
   font-family: @head;
   font-size: 18px;
   color: var(--axis-ink, @ink);
+  display: inline-flex;
+  svg { width: 18px; height: 18px; }
 }
 
 // ─── Beat screen ────────────────────────────────────────────────────────
@@ -1277,7 +1295,7 @@ img.ph-bp__art--fallback,
 .ph-ending__narration {
   font-family: @prose;
   font-weight: 700;
-  font-size: 15.5px;
+  font-size: 16px;
   line-height: 1.55;
   color: @ink;
   margin: 0 0 16px;
@@ -1616,7 +1634,11 @@ img.ph-bp__art--fallback,
   padding: 3px 8px 2px;
   transform: rotate(-1deg);
 }
-.ph-viewer__chose-glyph { color: @yellow; font-size: 14px; }
+.ph-viewer__chose-glyph {
+  color: @yellow;
+  display: inline-flex;
+  svg { width: 14px; height: 14px; }
+}
 
 // ─── Toast (error) ──────────────────────────────────────────────────────
 
@@ -2104,7 +2126,8 @@ img.ph-bp__art--fallback,
   box-shadow: 2px 2px 0 @ink;
   padding: 2px 8px 0;
   cursor: pointer;
-  min-width: 32px;
+  min-width: 44px;
+  min-height: 44px;
   transform: rotate(-3deg);
   transition: transform 70ms;
   &:active { transform: rotate(-3deg) translate(1px, 1px); }
@@ -2126,7 +2149,13 @@ img.ph-bp__art--fallback,
   border: 2px solid @ink;
   padding: 2px 8px 0;
   cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
   &--on { background: @cool; color: @paper-light; }
+}
+
+@media (max-width: 340px) {
+  .ph-wall__rack { grid-template-columns: minmax(0, 1fr); }
 }
 
 // ─── Print Footer (NEW — user's "thicker / colored Ben-Day" ask) ──────

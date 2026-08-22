@@ -8,20 +8,20 @@ Pulp Hour 是一个移动端互动地摊杂志写作游戏：玩家挑选一本�
 
 - 页面尺寸：主容器占用 100vw x 100vh，杂志架、选刊、写作页和结局页都在 640 px 最大宽度内居中；移动端底部操作区保留 22 px 内边距和至少 80 px 安全滚动空间。
 - 配色：纸张底色 #fbf4dd，旧纸阴影 #f4ecd8，主墨色 #111111，成功/归档黄色 #ffd60a，失败红 #e63946，顺从蓝 #2c6df4，谎言粉 #ff6b9d；每本封面额外使用自己的 `ink` 色作为局部强调。
-- 字体：正文使用 Inter/system-ui 15.5 px、行高 1.55；大标题使用 Bangers/Knewave/Permanent Marker 风格字体 22-56 px；选择轴标签固定 26 px，大写，正文选择说明 12 px。
-- 写作页：顶部栏显示返回入口、随当前页增长的进度圆点和 “Beat n”；中部是可滚动漫画页堆叠，每个 panel 使用 4:3 插图区域、3 px 黑边、3-6 px 投影；底部三列选择按钮使用 `minmax(0, 1fr)` 防止长文撑开。
+- 字体：主要正文使用 Inter/system-ui 16–17 px、行高 1.55；大标题使用 Bangers/Knewave/Permanent Marker 风格字体 22-56 px；选择轴标签固定 26 px，大写，正文选择说明 12 px。
+- 写作页：顶部栏显示返回入口、随当前页增长的进度圆点和 “Beat n”；中部是可滚动漫画页堆叠，每个 panel 使用 4:3 插图视窗、3 px 黑边、3-6 px 投影，媒体服务直接输出匹配视窗的 768×512 图，避免裁掉完整身份；底部三列选择按钮使用 `minmax(0, 1fr)` 防止长文撑开。
 - 结局页：最终海报最大宽 520 px，插图 4:3，标题 34 px，结局正文有 3 px 黑边和 14 px 内边距；成功显示黄色 `CASE CLOSED` 印章，失败显示红色 `CASE LOST` 印章，印章动画 280 ms 弹入。
-- 美术素材：`poster.png` 用于平台封面；`alteru.svg` 用于水印；`public/covers/*.jpg` 是可选杂志封面和失败回退图；每个故事 panel 的 AI 插图使用封面或玩家头像作为 ref_url 生成。
+- 美术素材：`poster.png` 用于平台封面；`alteru.svg` 用于水印；`public/covers/*.jpg` 只作为可选杂志封面和生成失败后的视觉回退。玩家有公开头像时，故事 panel 通过 AlterU 媒体服务 `edit` 模式生成“案件档案拼贴”：中央方形身份框保持玩家完整可见身份，当前剧情成为周围的纸浆漫画现场；玩家无头像时使用 `text` 模式独立生成当前现场，不把封面当身份引用。
 
 ## 3. Game Mechanics
 
-- 初始值：`MAX_STORIES = 20`；`MIN_STORY_BEAT_COUNT = 3`；`MIN_FINALE_PAGE = 4`；`MAX_STORY_BEAT_COUNT = 12`；`PUBLISH_WAIT_MS = 60000`；`IMAGE_FETCH_TIMEOUT_MS = 280000`；每个 gen-image 失败后最多重试 3 次，间隔 3000 ms 和 6000 ms。
+- 初始值：`MAX_STORIES = 20`；`MIN_STORY_BEAT_COUNT = 3`；`MIN_FINALE_PAGE = 4`；`MAX_STORY_BEAT_COUNT = 12`；`PUBLISH_WAIT_MS = 60000`；`IMAGE_FETCH_TIMEOUT_MS = 280000`。每张图只做 1 次受控重试：服务明确返回可重试错误时遵守 `retry_after_seconds`；服务超时或网络中断这种结果不确定的情况复用同一 UUID 请求键，避免重复任务。
 - 动态叙事长度：玩家至少选择 3 次；第 4 页起隐藏判定可以让故事直接死亡或收束。若分值仍暧昧，故事继续生成下一页；第 10 页之后仍允许继续；第 12 次选择后强制生成终局，避免无限生成。
 - 隐藏分值：每次选择都累计不可见的 `insight`、`agency`、`cover`、`heat` 四项。第 1-2 页偏向建立线索，第 3-6 页偏向调查推进，第 7 页以后偏向终局压力；所有数值只影响结局和提示词，不在 UI 里显示。
 - 计分规则：第 1-2 页选择 `defy` 得 agency +2、heat +2；`yield` 得 insight +2；`lie` 得 cover +2、heat +1。第 3-6 页选择 `defy` 得 agency +2、heat +1；`yield` 得 insight +1、agency -1；`lie` 得 cover +1、heat +2、insight -1。第 7 页以后选择 `defy` 得 agency +3、heat +1；`yield` 得 insight +1、heat +1；`lie` 得 cover +1、heat +3、insight -2。
 - 基础成败公式：隐藏总分 `final = insight * 2 + agency * 2 + cover - heat * 2`。成功基础条件为 `final >= 8` 且 `insight + agency >= 8` 且 `heat <= 12`；失败原因分为 `burned`（heat >= 11）、`lost`（insight <= 2）、`unmasked`（cover >= agency + insight + 3）和 `doomed`（默认）。
 - 动态收束规则：第 3 次选择后若 `heat >= 6` 且 `final < 4`，第 4 页直接失败；第 4 次选择后若 `insight <= -2` 或伪装压过主动性与线索，直接失败；第 6 次选择后若 `final >= 14`、`insight + agency >= 9` 且 `heat <= 8`，可以成功收束；第 7 次选择后若 `final <= -4`，失败收束；第 10 次选择后只有 `final >= 18` 的强成功会提前收束，否则继续到最多 12 次选择。
-- AI 生成：中段提示词必须把故事控制在当前页，不可提前写结局；终局提示词会明确收到 `SUCCESS` 或 `FAILURE`，成功结尾需要付出代价但完成目标，失败结尾需要完整收束而不是突然中断。
+- AI 生成：中段提示词必须把故事控制在当前页，不可提前写结局；终局提示词会明确收到 `SUCCESS` 或 `FAILURE`，成功结尾需要付出代价但完成目标，失败结尾需要完整收束而不是突然中断。第一张玩家图最多等待 10 秒获取平台身份，避免平台桥接稍慢时永久错用匿名路径。
 - 反馈：每次选择在 200 ms 内进入下一页写作占位或终局占位；插图未完成时显示印刷机占位，失败时显示可点击重试章；最终成败用印章、结局文案和故事墙封面共同体现。
 
 ## 4. Controls
