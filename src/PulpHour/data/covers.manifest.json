@@ -1258,5 +1258,33 @@
     "ink": "#B03060",
     "imageUrl": "/pulp-hour/covers/late-night-florist.jpg",
     "persona": "Set in a small, quiet flower shop during the late-night shift, the protagonist is the lone florist arranging bouquets and managing orders. The atmosphere is hushed, with the scent of fresh flowers and faint streetlight filtering through the windows. A courteous supplier occasionally drops by with deliveries, polite but subtly unsettling. The threat emerges as a mysterious recurring bouquet that appears perfectly arranged yet never leaves the shop, hinting at something quietly wrong beneath the surface. The narrative unfolds through introspective, intimate first-person observations, blending precision and subtle unease."
+  },
+  {
+    "id": "late-shift-keyboard-repairer",
+    "releasedOn": "2026-08-30T00:00:00Z",
+    "title": {
+      "en": "The Keyboard That Typed Its Own Story",
+      "zh": "自写故事的键盘",
+      "ja": "自動で物語を打つキーボード",
+      "ko": "스스로 이야기를 타이핑하는 키보드",
+      "es": "El teclado que escribió su propia historia"
+    },
+    "subtitle": {
+      "en": "Late Night Keyboard Repair Shop",
+      "zh": "深夜键盘维修店",
+      "ja": "深夜のキーボード修理店",
+      "ko": "심야 키보드 수리점",
+      "es": "Taller nocturno de reparación de teclados"
+    },
+    "hook": {
+      "en": "Working late in a cramped keyboard repair shop, I noticed one keyboard typing messages I never pressed.",
+      "zh": "在狭小的键盘维修店加班时，我发现一把键盘在打出我未按下的讯息。",
+      "ja": "狭いキーボード修理店で深夜作業中、押していない文字が打たれるキーボードに気づいた。",
+      "ko": "좁은 키보드 수리점에서 야근하던 중, 내가 누르지 않은 글자를 타이핑하는 키보드를 발견했다.",
+      "es": "Trabajando hasta tarde en un pequeño taller de reparación, noté un teclado que escribía mensajes que yo nunca pulsé."
+    },
+    "ink": "#4B3A72",
+    "imageUrl": "/pulp-hour/covers/late-shift-keyboard-repairer.jpg",
+    "persona": "The protagonist is a quiet, meticulous keyboard repairer working the late shift in a small urban shop filled with vintage and modern keyboards. The setting is contemporary American cityscape, late night, with the faint hum of fluorescent lighting and the occasional sound of keys clicking elsewhere. The second presence is the quietly polite but subtly mistaken keyboard itself, which seems to communicate through typing messages unbidden. The threat is an intimate, recurring mystery of mistaken agency and precision: is the keyboard malfunctioning, or is something else at work? The tone is reflective, quietly eerie, and grounded in the tactile world of keys and wires."
   }
 ]
