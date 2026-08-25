@@ -1286,5 +1286,33 @@
     "ink": "#4B3A72",
     "imageUrl": "/pulp-hour/covers/late-shift-keyboard-repairer.jpg",
     "persona": "The protagonist is a quiet, meticulous keyboard repairer working the late shift in a small urban shop filled with vintage and modern keyboards. The setting is contemporary American cityscape, late night, with the faint hum of fluorescent lighting and the occasional sound of keys clicking elsewhere. The second presence is the quietly polite but subtly mistaken keyboard itself, which seems to communicate through typing messages unbidden. The threat is an intimate, recurring mystery of mistaken agency and precision: is the keyboard malfunctioning, or is something else at work? The tone is reflective, quietly eerie, and grounded in the tactile world of keys and wires."
+  },
+  {
+    "id": "late-night-parking-lot-attendant",
+    "releasedOn": "2026-09-01T00:00:00Z",
+    "title": {
+      "en": "The Car That Never Left the Lot",
+      "zh": "永不离开的停车场汽车",
+      "ja": "駐車場を離れない車",
+      "ko": "주차장을 떠나지 않는 차",
+      "es": "El coche que nunca salió del lote"
+    },
+    "subtitle": {
+      "en": "Late-Night Parking Lot Vigil",
+      "zh": "深夜停车场守望",
+      "ja": "深夜の駐車場警備",
+      "ko": "심야 주차장 감시",
+      "es": "Vigilia nocturna en el estacionamiento"
+    },
+    "hook": {
+      "en": "As the lone attendant in a dimly lit parking lot, I noticed the same car parked overnight, night after night. But no one ever came to claim it.",
+      "zh": "作为昏暗停车场的唯一值班员，我注意到同一辆车每晚都停在那里，却无人来认领。",
+      "ja": "薄暗い駐車場で一人きりの係員として、同じ車が夜ごと駐められているのに気づいた。誰も取りに来ないのに。",
+      "ko": "희미한 조명의 주차장에서 홀로 근무하는 나는 매일 밤 같은 차가 주차되어 있는데도 아무도 찾으러 오지 않는다는 걸 알았다.",
+      "es": "Como único asistente en un estacionamiento poco iluminado, noté el mismo coche estacionado noche tras noche. Pero nadie venía a reclamarlo."
+    },
+    "ink": "#4B3B3B",
+    "imageUrl": "/pulp-hour/covers/late-night-parking-lot-attendant.jpg",
+    "persona": "Setting is a near-past American urban parking lot late at night. The protagonist is a lone parking lot attendant responsible for overseeing parked vehicles and managing the lot after hours. The tone is quiet and observant, with a subtle recurring mystery around a single car that never leaves, suggesting mistaken identity or a silent presence that quietly challenges the protagonist's understanding of the space."
   }
 ]
