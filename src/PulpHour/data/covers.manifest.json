@@ -1314,5 +1314,33 @@
     "ink": "#4B3B3B",
     "imageUrl": "/pulp-hour/covers/late-night-parking-lot-attendant.jpg",
     "persona": "Setting is a near-past American urban parking lot late at night. The protagonist is a lone parking lot attendant responsible for overseeing parked vehicles and managing the lot after hours. The tone is quiet and observant, with a subtle recurring mystery around a single car that never leaves, suggesting mistaken identity or a silent presence that quietly challenges the protagonist's understanding of the space."
+  },
+  {
+    "id": "record-store-clerk",
+    "releasedOn": "2026-09-03T00:00:00Z",
+    "title": {
+      "en": "The Album That Played Backwards",
+      "zh": "倒放的唱片",
+      "ja": "逆回転したアルバム",
+      "ko": "거꾸로 재생된 앨범",
+      "es": "El Disco que Sonaba al Revés"
+    },
+    "subtitle": {
+      "en": "Late Shift at the Vinyl Shop",
+      "zh": "黑胶店的夜班",
+      "ja": "レコード店の深夜勤務",
+      "ko": "비닐 가게의 심야 근무",
+      "es": "Turno Nocturno en la Tienda de Vinilos"
+    },
+    "hook": {
+      "en": "I’m the last clerk in a quiet record store when a rare vinyl skips, playing something it shouldn’t — a message meant only for me.",
+      "zh": "我是这家安静唱片店的最后一名店员，一张罕见的黑胶唱片跳针，播放出不该有的声音——只有我能听懂的信息。",
+      "ja": "静かなレコード店で最後の店員をしていると、珍しいビニール盤がスキップし、私だけに向けられたメッセージが流れた。",
+      "ko": "조용한 레코드 가게의 마지막 점원인 내가, 희귀 비닐이 건너뛰며 나만을 위한 메시지를 재생하는 걸 들었다.",
+      "es": "Soy el último empleado en una tienda tranquila de vinilos cuando un disco raro se salta, reproduciendo un mensaje que sólo es para mí."
+    },
+    "ink": "#5B3A29",
+    "imageUrl": "/pulp-hour/covers/record-store-clerk.jpg",
+    "persona": "The setting is a small, independent vinyl record shop in a contemporary American town, quiet during the late-night closing shift. The protagonist is the lone clerk, immersed in cataloging and playing records. A second presence is felt through the records themselves — a courteous, knowing voice embedded in the music that guides yet misleads. The threat is a subtle dissonance in the familiar, a recurring anomaly in the playback that hints at mistaken identity or a hidden message in the grooves. The tone is intimate, contemplative, and quietly unsettling, like a whispered secret in a half-empty room of vinyl and memories."
   }
 ]
