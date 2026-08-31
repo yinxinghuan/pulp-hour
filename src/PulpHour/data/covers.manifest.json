@@ -1342,5 +1342,33 @@
     "ink": "#5B3A29",
     "imageUrl": "/pulp-hour/covers/record-store-clerk.jpg",
     "persona": "The setting is a small, independent vinyl record shop in a contemporary American town, quiet during the late-night closing shift. The protagonist is the lone clerk, immersed in cataloging and playing records. A second presence is felt through the records themselves — a courteous, knowing voice embedded in the music that guides yet misleads. The threat is a subtle dissonance in the familiar, a recurring anomaly in the playback that hints at mistaken identity or a hidden message in the grooves. The tone is intimate, contemplative, and quietly unsettling, like a whispered secret in a half-empty room of vinyl and memories."
+  },
+  {
+    "id": "silent-vending-machine-technician",
+    "releasedOn": "2026-09-05T00:00:00Z",
+    "title": {
+      "en": "The Vending Machine That Spoke in Silence",
+      "zh": "沉默中说话的自动售货机",
+      "ja": "沈黙で語る自動販売機",
+      "ko": "침묵 속에서 말하는 자판기",
+      "es": "La Máquina Expendedora Que Hablaba en Silencio"
+    },
+    "subtitle": {
+      "en": "Late-Night Vending Machine Repair",
+      "zh": "深夜自动售货机维修",
+      "ja": "深夜の自動販売機修理",
+      "ko": "심야 자판기 수리",
+      "es": "Reparación Nocturna de Máquinas Expendedoras"
+    },
+    "hook": {
+      "en": "A quiet technician fixes machines that never seem to dispense what you want, but tonight, one machine’s silence tells a different story.",
+      "zh": "一位安静的技师修理那些总是不出货的机器，但今晚，一台机器的沉默讲述了不同的故事。",
+      "ja": "静かな技術者が商品を出さない機械を修理するが、今夜は一台の機械の沈黙が別の物語を語る。",
+      "ko": "조용한 기술자가 원하는 것을 내주지 않는 자판기를 고치지만, 오늘 밤 한 대의 자판기 침묵이 다른 이야기를 전한다.",
+      "es": "Un técnico silencioso repara máquinas que nunca parecen dar lo que quieres, pero esta noche, el silencio de una máquina cuenta otra historia."
+    },
+    "ink": "#4B3B2B",
+    "imageUrl": "/pulp-hour/covers/silent-vending-machine-technician.jpg",
+    "persona": "Setting is a near-past American city, late-night shift. The protagonist is a solitary vending machine technician, maintaining and repairing machines in quiet office buildings and deserted hallways. The voice of a courteous, knowledgeable service dispatcher guides them remotely, but often misinterprets the subtle signs of the machines. The threat is the eerie precision of machines dispensing the wrong items or repeating the same error, suggesting a quiet persistence of something unresolved. The tone is intimate, quiet, with a creeping sense of mistaken identity and silent recurrence."
   }
 ]
