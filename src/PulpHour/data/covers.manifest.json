@@ -1370,5 +1370,33 @@
     "ink": "#4B3B2B",
     "imageUrl": "/pulp-hour/covers/silent-vending-machine-technician.jpg",
     "persona": "Setting is a near-past American city, late-night shift. The protagonist is a solitary vending machine technician, maintaining and repairing machines in quiet office buildings and deserted hallways. The voice of a courteous, knowledgeable service dispatcher guides them remotely, but often misinterprets the subtle signs of the machines. The threat is the eerie precision of machines dispensing the wrong items or repeating the same error, suggesting a quiet persistence of something unresolved. The tone is intimate, quiet, with a creeping sense of mistaken identity and silent recurrence."
+  },
+  {
+    "id": "night-shift-laundromat-attendant",
+    "releasedOn": "2026-09-07T00:00:00Z",
+    "title": {
+      "en": "The Cycle That Never Ended",
+      "zh": "永不停歇的洗衣机循环",
+      "ja": "終わらない洗濯サイクル",
+      "ko": "끝나지 않는 세탁 사이클",
+      "es": "El Ciclo Que Nunca Terminó"
+    },
+    "subtitle": {
+      "en": "Late Night Laundromat Watch",
+      "zh": "深夜洗衣店守望",
+      "ja": "深夜のコインランドリー監視",
+      "ko": "심야 세탁소 감시",
+      "es": "Vigilancia Nocturna en Lavandería"
+    },
+    "hook": {
+      "en": "Working the graveyard shift at a quiet laundromat, the cycles start anew — but this time, one never stops spinning.",
+      "zh": "在寂静的洗衣店守夜，洗衣机循环不断重启——但这一次，某台机器却停不下来。",
+      "ja": "静かなコインランドリーで夜勤中、サイクルは繰り返されるが、今回は終わらない回転があった。",
+      "ko": "조용한 세탁소에서 심야 근무 중, 사이클이 계속 시작되지만 이번에는 멈추지 않는 기계가 있다.",
+      "es": "Trabajando en el turno nocturno de una lavandería silenciosa, los ciclos se repiten, pero esta vez, uno nunca deja de girar."
+    },
+    "ink": "#5A4E3A",
+    "imageUrl": "/pulp-hour/covers/night-shift-laundromat-attendant.jpg",
+    "persona": "The setting is a small, near-past American laundromat at night, humming with the soft mechanical sounds of washers and dryers. The protagonist is the lone night-shift attendant, responsible for monitoring machines and customers who come and go in quiet, brief visits. The subtle threat is a single washing machine that cycles endlessly, defying normal operation and paperwork, suggesting a quiet recurrence or mistaken identity in the machines' rhythm. The tone is intimate, suspenseful, and quietly unsettling, with an undercurrent of precision in the routine tasks and the uncanny anomaly."
   }
 ]
