@@ -1398,5 +1398,33 @@
     "ink": "#5A4E3A",
     "imageUrl": "/pulp-hour/covers/night-shift-laundromat-attendant.jpg",
     "persona": "The setting is a small, near-past American laundromat at night, humming with the soft mechanical sounds of washers and dryers. The protagonist is the lone night-shift attendant, responsible for monitoring machines and customers who come and go in quiet, brief visits. The subtle threat is a single washing machine that cycles endlessly, defying normal operation and paperwork, suggesting a quiet recurrence or mistaken identity in the machines' rhythm. The tone is intimate, suspenseful, and quietly unsettling, with an undercurrent of precision in the routine tasks and the uncanny anomaly."
+  },
+  {
+    "id": "late-shift-ice-cream-truck-driver",
+    "releasedOn": "2026-09-09T00:00:00Z",
+    "title": {
+      "en": "The Route That Never Ended",
+      "zh": "永无止境的路线",
+      "ja": "終わらないルート",
+      "ko": "끝나지 않는 노선",
+      "es": "La ruta que nunca terminó"
+    },
+    "subtitle": {
+      "en": "Late-Night Ice Cream Truck Mystery",
+      "zh": "深夜冰淇淋车之谜",
+      "ja": "深夜のアイスクリームトラックの謎",
+      "ko": "심야 아이스크림 트럭 미스터리",
+      "es": "Misterio del camión de helados nocturno"
+    },
+    "hook": {
+      "en": "Driving the same quiet suburban streets, the ice cream truck's bell rings—but no one ever buys, yet the route never ends.",
+      "zh": "驶过同样安静的郊区街道，冰淇淋车铃声响起——无人购买，路线却从未结束。",
+      "ja": "同じ静かな郊外の通りを走り、アイスクリームトラックのベルが鳴るが、誰も買わずルートは終わらない。",
+      "ko": "조용한 교외 거리를 반복 운행하는 아이스크림 트럭의 종소리, 아무도 사지 않는데 노선은 끝나지 않는다.",
+      "es": "Conduciendo por las mismas calles suburbanas tranquilas, suena la campana del camión de helados, pero nadie compra y la ruta nunca termina."
+    },
+    "ink": "#F5A623",
+    "imageUrl": "/pulp-hour/covers/late-shift-ice-cream-truck-driver.jpg",
+    "persona": "The protagonist is a late-shift ice cream truck driver patrolling quiet suburban neighborhoods under streetlamp glow, their route repeating endlessly. They notice subtle changes—a house that shouldn't be there, a shadow that lingers too long—while a courteous, calm presence over the radio offers explanations that never quite fit. The threat is one of recursive disquiet and unnoticed patterns in the mundane, the uncanny feeling that the route itself is watching and waiting."
   }
 ]
