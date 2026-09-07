@@ -1426,5 +1426,33 @@
     "ink": "#F5A623",
     "imageUrl": "/pulp-hour/covers/late-shift-ice-cream-truck-driver.jpg",
     "persona": "The protagonist is a late-shift ice cream truck driver patrolling quiet suburban neighborhoods under streetlamp glow, their route repeating endlessly. They notice subtle changes—a house that shouldn't be there, a shadow that lingers too long—while a courteous, calm presence over the radio offers explanations that never quite fit. The threat is one of recursive disquiet and unnoticed patterns in the mundane, the uncanny feeling that the route itself is watching and waiting."
+  },
+  {
+    "id": "late-night-bicycle-repair",
+    "releasedOn": "2026-09-11T00:00:00Z",
+    "title": {
+      "en": "The Chain That Kept Turning",
+      "zh": "那条不断转动的链条",
+      "ja": "回り続けるチェーン",
+      "ko": "계속 도는 체인",
+      "es": "La cadena que no dejaba de girar"
+    },
+    "subtitle": {
+      "en": "Late-Night Bicycle Shop Mystery",
+      "zh": "深夜自行车店谜案",
+      "ja": "深夜の自転車店の謎",
+      "ko": "심야 자전거 가게 미스터리",
+      "es": "Misterio en taller nocturno"
+    },
+    "hook": {
+      "en": "Working the graveyard shift in a quiet bike repair shop, I noticed the same bicycle chain reappearing on the stand, though no one came to claim it.",
+      "zh": "在安静的自行车维修店值夜班，我注意到同一条自行车链多次出现在维修架上，却无人认领。",
+      "ja": "静かな自転車修理店で夜勤をしていると、誰も引き取りに来ない同じ自転車のチェーンが何度も修理台に戻ってきた。",
+      "ko": "조용한 자전거 수리점에서 야간 근무 중, 아무도 찾으러 오지 않는 같은 자전거 체인이 계속해서 작업대에 나타났다.",
+      "es": "Trabajando de noche en un taller de bicicletas, noté que la misma cadena reaparecía en el soporte, aunque nadie venía a reclamarla."
+    },
+    "ink": "#3A5F7D",
+    "imageUrl": "/pulp-hour/covers/late-night-bicycle-repair.jpg",
+    "persona": "The setting is a small, late-night bicycle repair shop in a quiet American town. The protagonist is the lone mechanic working the graveyard shift, surrounded by tools, spare parts, and the faint scent of grease. The quiet intimacy of the workshop contrasts with the recurring mystery of a bicycle chain repeatedly left for repair but never picked up. The second presence is a polite, well-meaning customer or courier who offers explanations that don't quite fit, deepening the quiet puzzle without alarm. The threat is the recurring enigma of misplaced trust and mistaken identity, a precision haunting that unfolds in the stillness."
   }
 ]
