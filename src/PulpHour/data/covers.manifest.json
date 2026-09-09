@@ -1454,5 +1454,33 @@
     "ink": "#3A5F7D",
     "imageUrl": "/pulp-hour/covers/late-night-bicycle-repair.jpg",
     "persona": "The setting is a small, late-night bicycle repair shop in a quiet American town. The protagonist is the lone mechanic working the graveyard shift, surrounded by tools, spare parts, and the faint scent of grease. The quiet intimacy of the workshop contrasts with the recurring mystery of a bicycle chain repeatedly left for repair but never picked up. The second presence is a polite, well-meaning customer or courier who offers explanations that don't quite fit, deepening the quiet puzzle without alarm. The threat is the recurring enigma of misplaced trust and mistaken identity, a precision haunting that unfolds in the stillness."
+  },
+  {
+    "id": "late-night-coin-collector",
+    "releasedOn": "2026-09-13T00:00:00Z",
+    "title": {
+      "en": "The Meter That Never Counted Out",
+      "zh": "永不结算的投币器",
+      "ja": "終わらないコインメーター",
+      "ko": "끝나지 않는 동전 계량기",
+      "es": "El contador que nunca contó"
+    },
+    "subtitle": {
+      "en": "Late Shift at the Arcade Arcade",
+      "zh": "街机厅的深夜班",
+      "ja": "アーケードの深夜勤務",
+      "ko": "오락실 심야 근무",
+      "es": "Turno nocturno en la sala de juegos"
+    },
+    "hook": {
+      "en": "Collecting coins from forgotten arcade machines, I noticed one meter that never seemed to count down. Someone—or something—was playing a game I couldn't see.",
+      "zh": "收集被遗忘的街机硬币时，我发现一个计数器永远不减。一场我看不见的游戏正在进行。",
+      "ja": "忘れられたアーケードの硬貨を回収中、減らないメーターに気づいた。見えない誰かがゲームをしている。",
+      "ko": "버려진 오락기에서 동전을 수거하던 중, 줄지 않는 계량기를 발견했다. 누군가 보이지 않는 게임을 하고 있었다.",
+      "es": "Recogiendo monedas de máquinas arcade olvidadas, noté un contador que nunca bajaba. Alguien—o algo—jugaba un juego que no podía ver."
+    },
+    "ink": "#8B0000",
+    "imageUrl": "/pulp-hour/covers/late-night-coin-collector.jpg",
+    "persona": "The protagonist works the late-night coin collection route for a small independent arcade in a quiet American city. The setting is dim, filled with the hum of idle machines and flickering neon lights. The protagonist notices a specific arcade meter that never registers coins removed, suggesting a subtle, recurring anomaly. The second presence is the courteous arcade manager who insists all machines are accounted for, but quietly misunderstands the strange meter's significance. The threat is a precise, recurring puzzle of mistaken count and unseen players, never overtly hostile but deeply unsettling."
   }
 ]
