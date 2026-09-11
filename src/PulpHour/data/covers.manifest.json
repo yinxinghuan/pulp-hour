@@ -1482,5 +1482,33 @@
     "ink": "#8B0000",
     "imageUrl": "/pulp-hour/covers/late-night-coin-collector.jpg",
     "persona": "The protagonist works the late-night coin collection route for a small independent arcade in a quiet American city. The setting is dim, filled with the hum of idle machines and flickering neon lights. The protagonist notices a specific arcade meter that never registers coins removed, suggesting a subtle, recurring anomaly. The second presence is the courteous arcade manager who insists all machines are accounted for, but quietly misunderstands the strange meter's significance. The threat is a precise, recurring puzzle of mistaken count and unseen players, never overtly hostile but deeply unsettling."
+  },
+  {
+    "id": "late-shift-water-plant-tender",
+    "releasedOn": "2026-09-15T00:00:00Z",
+    "title": {
+      "en": "The Plant That Drank The Night",
+      "zh": "夜晚饮水的植物",
+      "ja": "夜を飲み込む植物",
+      "ko": "밤을 마신 식물",
+      "es": "La Planta Que Bebió La Noche"
+    },
+    "subtitle": {
+      "en": "Late Shift at the Water Treatment Facility",
+      "zh": "水处理厂的深夜班",
+      "ja": "浄水施設の深夜勤務",
+      "ko": "정수장 야간 근무",
+      "es": "Turno Nocturno en Planta de Agua"
+    },
+    "hook": {
+      "en": "I tend the city’s water purification tanks alone, but tonight the water’s reflection shows a face I don’t remember meeting.",
+      "zh": "我独自看守城市净水池，但今晚水面映出一张我不记得见过的脸。",
+      "ja": "一人で市の浄水槽を管理しているが、今夜、水面に見知らぬ顔が映っていた。",
+      "ko": "나는 홀로 도시 정수조를 돌보는데, 오늘 밤 물에 내가 본 적 없는 얼굴이 비쳤다.",
+      "es": "Cuido solo los tanques de purificación de agua de la ciudad, pero esta noche el reflejo muestra un rostro que no recuerdo haber visto."
+    },
+    "ink": "#004D40",
+    "imageUrl": "/pulp-hour/covers/late-shift-water-plant-tender.jpg",
+    "persona": "Setting is a near-past American city water treatment plant during a quiet late-night shift. The protagonist is the lone water plant tender responsible for monitoring filtration tanks and water quality reports. The voice is introspective, quietly observant, and slightly unsettled by subtle, repeated disturbances in the water’s surface and paperwork inconsistencies. The second presence is a courteous but oddly misplaced maintenance technician who offers polite, offhand remarks that don’t quite fit the situation. The threat is a recurring, intimate mystery focused on the reflection in the water and the slow unraveling of mistaken identity within routine paperwork."
   }
 ]
