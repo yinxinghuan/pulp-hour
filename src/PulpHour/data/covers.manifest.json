@@ -1510,5 +1510,33 @@
     "ink": "#004D40",
     "imageUrl": "/pulp-hour/covers/late-shift-water-plant-tender.jpg",
     "persona": "Setting is a near-past American city water treatment plant during a quiet late-night shift. The protagonist is the lone water plant tender responsible for monitoring filtration tanks and water quality reports. The voice is introspective, quietly observant, and slightly unsettled by subtle, repeated disturbances in the water’s surface and paperwork inconsistencies. The second presence is a courteous but oddly misplaced maintenance technician who offers polite, offhand remarks that don’t quite fit the situation. The threat is a recurring, intimate mystery focused on the reflection in the water and the slow unraveling of mistaken identity within routine paperwork."
+  },
+  {
+    "id": "night-shift-dry-cleaner-delivery",
+    "releasedOn": "2026-09-17T00:00:00Z",
+    "title": {
+      "en": "The Bag That Returned Unclaimed",
+      "zh": "未领取的送货袋",
+      "ja": "受取人不明のバッグ",
+      "ko": "찾아가지 않은 배달 가방",
+      "es": "La bolsa que volvió sin reclamar"
+    },
+    "subtitle": {
+      "en": "Late Shift Dry Cleaner Delivery Run",
+      "zh": "干洗店夜班送货",
+      "ja": "深夜のドライクリーニング配達",
+      "ko": "심야 드라이클리닝 배달 근무",
+      "es": "Reparto nocturno de tintorería"
+    },
+    "hook": {
+      "en": "Each night I deliver the same bag to addresses that don’t answer. Tonight, the lockbox clicks open by itself.",
+      "zh": "每晚我送同一个袋子到无人应答的地址。今晚，锁箱自己咔嗒一声开了。",
+      "ja": "毎晩同じ袋を返答のない住所に届ける。今夜、ロックボックスが勝手に開いた。",
+      "ko": "매일 밤 같은 가방을 응답 없는 주소로 배달한다. 오늘 밤, 자물쇠 상자가 저절로 열렸다.",
+      "es": "Cada noche entrego la misma bolsa en direcciones que no responden. Esta noche, el buzón se abrió solo."
+    },
+    "ink": "#8B5E3C",
+    "imageUrl": "/pulp-hour/covers/night-shift-dry-cleaner-delivery.jpg",
+    "persona": "Set in a contemporary American city, the protagonist works the night-shift delivery route for a small dry-cleaning shop, responsible for dropping off cleaned garments to customers who never seem to be home. The voice is quiet, observant, and slightly weary. The second presence is a courteous automated lockbox on the doorstep, always polite but increasingly behaving in ways that unsettle the protagonist. The threat unfolds as recurring unexplained access to locked deliveries, mistaken identities in recipient addresses, and the precision of lost possessions — never overtly violent, but deeply intimate and unsettling."
   }
 ]
