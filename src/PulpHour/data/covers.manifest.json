@@ -1538,5 +1538,33 @@
     "ink": "#8B5E3C",
     "imageUrl": "/pulp-hour/covers/night-shift-dry-cleaner-delivery.jpg",
     "persona": "Set in a contemporary American city, the protagonist works the night-shift delivery route for a small dry-cleaning shop, responsible for dropping off cleaned garments to customers who never seem to be home. The voice is quiet, observant, and slightly weary. The second presence is a courteous automated lockbox on the doorstep, always polite but increasingly behaving in ways that unsettle the protagonist. The threat unfolds as recurring unexplained access to locked deliveries, mistaken identities in recipient addresses, and the precision of lost possessions — never overtly violent, but deeply intimate and unsettling."
+  },
+  {
+    "id": "late-night-park-maintenance",
+    "releasedOn": "2026-09-19T00:00:00Z",
+    "title": {
+      "en": "The Bench That Never Got Restored",
+      "zh": "那张永远未修复的长椅",
+      "ja": "決して修復されないベンチ",
+      "ko": "절대 복원되지 않는 벤치",
+      "es": "El Banco Que Nunca Fue Reparado"
+    },
+    "subtitle": {
+      "en": "Late-Night Park Maintenance Mystery",
+      "zh": "深夜公园维护之谜",
+      "ja": "深夜の公園整備の謎",
+      "ko": "심야 공원 관리 미스터리",
+      "es": "Misterio del Mantenimiento Nocturno en el Parque"
+    },
+    "hook": {
+      "en": "Working the quiet night shift in the city park, I find the same broken bench always untouched — but someone insists it’s been fixed.",
+      "zh": "在市公园的宁静夜班，我发现那张破损的长椅总是未被修复——但有人坚持说它已经修好了。",
+      "ja": "静かな夜間シフトで公園を見回ると、いつも壊れたベンチがそのままだが、誰かは直ったと言い張る。",
+      "ko": "조용한 야간 근무 중 공원에서 항상 고장 난 벤치가 그대로 있지만, 누군가는 고쳐졌다고 주장한다.",
+      "es": "Trabajando el turno nocturno en el parque, encuentro el mismo banco roto siempre intacto, pero alguien insiste en que ya fue reparado."
+    },
+    "ink": "#6B8E23",
+    "imageUrl": "/pulp-hour/covers/late-night-park-maintenance.jpg",
+    "persona": "Set in a contemporary American city park during late-night maintenance hours, the protagonist is a solitary park maintenance worker tasked with minor repairs and upkeep. Their voice is observant, weary, and quietly puzzled. The second presence is a fellow city employee or park ranger, polite and confident but subtly mistaken about the condition of equipment or the park's history. The threat is the eerie recurrence of an unresolved maintenance task, precision lost in paperwork and memory, blurring what is real and what is claimed."
   }
 ]
