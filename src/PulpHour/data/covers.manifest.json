@@ -1566,5 +1566,33 @@
     "ink": "#6B8E23",
     "imageUrl": "/pulp-hour/covers/late-night-park-maintenance.jpg",
     "persona": "Set in a contemporary American city park during late-night maintenance hours, the protagonist is a solitary park maintenance worker tasked with minor repairs and upkeep. Their voice is observant, weary, and quietly puzzled. The second presence is a fellow city employee or park ranger, polite and confident but subtly mistaken about the condition of equipment or the park's history. The threat is the eerie recurrence of an unresolved maintenance task, precision lost in paperwork and memory, blurring what is real and what is claimed."
+  },
+  {
+    "id": "late-night-water-plant-tender",
+    "releasedOn": "2026-09-21T00:00:00Z",
+    "title": {
+      "en": "The Plant That Drank The Night",
+      "zh": "饮尽黑夜的水厂守护者",
+      "ja": "夜を飲み込む水処理施設の守り手",
+      "ko": "밤을 삼킨 정수장 담당자",
+      "es": "La Planta Que Bebió La Noche"
+    },
+    "subtitle": {
+      "en": "Midnight Shift at the Water Treatment Plant",
+      "zh": "水厂午夜值守",
+      "ja": "浄水場の深夜シフト",
+      "ko": "정수장의 심야 근무",
+      "es": "Turno de medianoche en la planta de agua"
+    },
+    "hook": {
+      "en": "The quiet hum of pumps and filters is broken only by footsteps that shouldn’t be there, tracing the flow of water through endless pipes.",
+      "zh": "泵和过滤器的静默嗡鸣被不该出现的脚步声打破，沿着无尽的水管流动。",
+      "ja": "ポンプとフィルターの静かな唸りを、そこにいるはずのない足音が破り、果てしないパイプを水が流れる。",
+      "ko": "펌프와 필터의 고요한 윙윙거림이 있어서는 안 될 발걸음 소리에 깨지고, 끝없이 이어진 배관을 따라 물이 흐른다.",
+      "es": "El silencioso zumbido de bombas y filtros se rompe solo por pasos que no deberían estar, siguiendo el flujo del agua por tuberías sin fin."
+    },
+    "ink": "#4A6B8A",
+    "imageUrl": "/pulp-hour/covers/late-night-water-plant-tender.jpg",
+    "persona": "The protagonist is a solitary late-night water treatment plant tender responsible for monitoring the flow, filtration, and chemical balance in a dimly lit industrial facility. The setting is a near-past American municipal water treatment plant during the graveyard shift. The atmosphere is filled with low mechanical hums, faint fluorescent flickers, and the endless maze of pipes and valves. The secondary presence is a courteous, quiet maintenance supervisor who insists nothing is amiss despite repeated anomalies in water readings and the protagonist’s unsettling sense of recurring footsteps where no one should be. The threat is precise, intimate, and bureaucratic—an unseen error or identity confusion in system logs or chemical balance that risks contamination or shutdown without overt menace or spectacle."
   }
 ]
