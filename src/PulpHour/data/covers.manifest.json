@@ -1594,5 +1594,33 @@
     "ink": "#4A6B8A",
     "imageUrl": "/pulp-hour/covers/late-night-water-plant-tender.jpg",
     "persona": "The protagonist is a solitary late-night water treatment plant tender responsible for monitoring the flow, filtration, and chemical balance in a dimly lit industrial facility. The setting is a near-past American municipal water treatment plant during the graveyard shift. The atmosphere is filled with low mechanical hums, faint fluorescent flickers, and the endless maze of pipes and valves. The secondary presence is a courteous, quiet maintenance supervisor who insists nothing is amiss despite repeated anomalies in water readings and the protagonist’s unsettling sense of recurring footsteps where no one should be. The threat is precise, intimate, and bureaucratic—an unseen error or identity confusion in system logs or chemical balance that risks contamination or shutdown without overt menace or spectacle."
+  },
+  {
+    "id": "late-night-newspaper-delivery",
+    "releasedOn": "2026-09-23T00:00:00Z",
+    "title": {
+      "en": "The Paperboy Who Never Finished His Route",
+      "zh": "那个从未完成派送的报童",
+      "ja": "配達を終えなかった新聞配達員",
+      "ko": "끝내지 못한 신문배달부",
+      "es": "El repartidor que nunca terminó la ruta"
+    },
+    "subtitle": {
+      "en": "Late-Night Newspaper Delivery Mystery",
+      "zh": "深夜报纸派送之谜",
+      "ja": "深夜新聞配達の謎",
+      "ko": "심야 신문 배달 미스터리",
+      "es": "Misterio en la entrega nocturna de periódicos"
+    },
+    "hook": {
+      "en": "As the city sleeps, the late-night paperboy finds his usual route repeating, each doorstep bearing the same unread headline.",
+      "zh": "当城市沉睡时，深夜报童发现他的常规路线不断重复，每个门口都有相同未读的头条。",
+      "ja": "街が眠る中、深夜の新聞配達員はいつものルートが繰り返され、同じ見出しが各戸に届くのを見つける。",
+      "ko": "도시가 잠든 사이, 심야 신문배달부는 익숙한 배달 경로가 반복되고, 각 문 앞에는 같은 읽히지 않은 헤드라인이 놓여 있음을 발견한다.",
+      "es": "Mientras la ciudad duerme, el repartidor nocturno descubre que su ruta habitual se repite, y cada puerta tiene el mismo titular sin leer."
+    },
+    "ink": "#B7410E",
+    "imageUrl": "/pulp-hour/covers/late-night-newspaper-delivery.jpg",
+    "persona": "Set in a near-past American city, the protagonist is a late-night newspaper delivery person navigating empty streets and dim porch lights. The voice is quietly observant, noticing subtle shifts in the familiar routine. The threat is an uncanny recurrence—the delivery route loops back inexplicably, headlines repeat unread, and the protagonist senses an intimate but precise distortion of time and place, never overtly supernatural but deeply unsettling."
   }
 ]
