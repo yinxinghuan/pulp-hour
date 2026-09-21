@@ -1622,5 +1622,33 @@
     "ink": "#B7410E",
     "imageUrl": "/pulp-hour/covers/late-night-newspaper-delivery.jpg",
     "persona": "Set in a near-past American city, the protagonist is a late-night newspaper delivery person navigating empty streets and dim porch lights. The voice is quietly observant, noticing subtle shifts in the familiar routine. The threat is an uncanny recurrence—the delivery route loops back inexplicably, headlines repeat unread, and the protagonist senses an intimate but precise distortion of time and place, never overtly supernatural but deeply unsettling."
+  },
+  {
+    "id": "midnight-janitor",
+    "releasedOn": "2026-09-25T00:00:00Z",
+    "title": {
+      "en": "The Floor That Kept Reappearing",
+      "zh": "不断重现的地板",
+      "ja": "繰り返す床の謎",
+      "ko": "계속 나타나는 바닥",
+      "es": "El Piso Que No Desaparecía"
+    },
+    "subtitle": {
+      "en": "Midnight Janitor's Quiet Vigil",
+      "zh": "午夜清洁工的静默守护",
+      "ja": "深夜清掃員の静かな見守り",
+      "ko": "자정 청소원의 조용한 감시",
+      "es": "La Vigilia Silenciosa del Conserje"
+    },
+    "hook": {
+      "en": "Working alone in the empty high school halls, I noticed the same scuff marks reappearing despite my nightly cleaning.",
+      "zh": "独自在空荡荡的高中走廊工作，我发现每晚清理过的擦痕竟反复出现。",
+      "ja": "誰もいない高校の廊下で働いていると、毎晩掃除しても同じ擦り傷が繰り返し現れた。",
+      "ko": "빈 고등학교 복도를 혼자 청소하는데, 매일 밤 닦아도 같은 자국이 다시 나타났다.",
+      "es": "Trabajando solo en los pasillos vacíos de la secundaria, noté que las mismas marcas reaparecían pese a mi limpieza nocturna."
+    },
+    "ink": "#5B3A29",
+    "imageUrl": "/pulp-hour/covers/midnight-janitor.jpg",
+    "persona": "The setting is a contemporary American suburban high school late at night. The protagonist is the lone janitor working the midnight shift, tasked with cleaning and maintenance in empty, fluorescent-lit hallways, classrooms, and common areas. Their voice is quiet, observant, and weary, noticing subtle, repeated anomalies in the environment—scuff marks, misplaced objects, or faint sounds—that suggest a quiet, intimate recurrence or mistaken presence. The secondary presence is a courteous but subtly incorrect school administrator communicating via radio or intercom, offering reassurances that do not fully align with the protagonist's growing unease."
   }
 ]
