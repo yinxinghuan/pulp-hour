@@ -1650,5 +1650,33 @@
     "ink": "#5B3A29",
     "imageUrl": "/pulp-hour/covers/midnight-janitor.jpg",
     "persona": "The setting is a contemporary American suburban high school late at night. The protagonist is the lone janitor working the midnight shift, tasked with cleaning and maintenance in empty, fluorescent-lit hallways, classrooms, and common areas. Their voice is quiet, observant, and weary, noticing subtle, repeated anomalies in the environment—scuff marks, misplaced objects, or faint sounds—that suggest a quiet, intimate recurrence or mistaken presence. The secondary presence is a courteous but subtly incorrect school administrator communicating via radio or intercom, offering reassurances that do not fully align with the protagonist's growing unease."
+  },
+  {
+    "id": "night-shift-embalmer",
+    "releasedOn": "2026-09-27T00:00:00Z",
+    "title": {
+      "en": "The Body That Refused to Rest",
+      "zh": "拒绝安息的遗体",
+      "ja": "安らぐことを拒む遺体",
+      "ko": "쉬려 하지 않는 시신",
+      "es": "El Cuerpo Que No Quiso Descansar"
+    },
+    "subtitle": {
+      "en": "Late Hours in the Embalming Room",
+      "zh": "防腐室的深夜时分",
+      "ja": "防腐室の深夜勤務",
+      "ko": "방부 처리실의 밤 근무",
+      "es": "Horas Tardes en la Sala de Embalsamamiento"
+    },
+    "hook": {
+      "en": "Working alone in the embalming room, the body on my table keeps shifting—and the assistant’s quiet confidence masks a troubling truth.",
+      "zh": "独自在防腐室工作，桌上的遗体不断移动，助理的沉默自信掩盖着不安的真相。",
+      "ja": "防腐室で一人作業中、遺体が動き続け、静かな助手の自信に不穏な秘密が隠れている。",
+      "ko": "방부 처리실에서 혼자 일하는 중, 시신이 계속 움직이고 조용한 조수의 자신감 뒤에 불안한 진실이 숨어 있다.",
+      "es": "Trabajando solo en la sala de embalsamamiento, el cuerpo en mi mesa no deja de moverse, y la tranquila confianza del asistente oculta una verdad inquietante."
+    },
+    "ink": "#704838",
+    "imageUrl": "/pulp-hour/covers/night-shift-embalmer.jpg",
+    "persona": "The setting is a modest embalming room in a small-town funeral home during the quiet late-night shift. The protagonist is a meticulous embalmer performing delicate preparation and preservation work on the deceased. The atmosphere is sterile and dimly lit, with the hum of refrigeration and faint chemical odors. The second presence is a courteous, soft-spoken assistant whose calm demeanor belies subtle errors and misjudgments. The threat emerges from intimate recurrence and mistaken identities, as the embalmed body seems not to settle, and paperwork discrepancies hint at a deeper mystery."
   }
 ]
