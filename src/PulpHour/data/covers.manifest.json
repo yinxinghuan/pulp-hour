@@ -1678,5 +1678,33 @@
     "ink": "#704838",
     "imageUrl": "/pulp-hour/covers/night-shift-embalmer.jpg",
     "persona": "The setting is a modest embalming room in a small-town funeral home during the quiet late-night shift. The protagonist is a meticulous embalmer performing delicate preparation and preservation work on the deceased. The atmosphere is sterile and dimly lit, with the hum of refrigeration and faint chemical odors. The second presence is a courteous, soft-spoken assistant whose calm demeanor belies subtle errors and misjudgments. The threat emerges from intimate recurrence and mistaken identities, as the embalmed body seems not to settle, and paperwork discrepancies hint at a deeper mystery."
+  },
+  {
+    "id": "late-night-locksmith",
+    "releasedOn": "2026-09-29T00:00:00Z",
+    "title": {
+      "en": "The Door That Never Opened",
+      "zh": "永远打不开的门",
+      "ja": "決して開かない扉",
+      "ko": "절대 열리지 않는 문",
+      "es": "La puerta que nunca se abrió"
+    },
+    "subtitle": {
+      "en": "Midnight Calls to Unlocked Secrets",
+      "zh": "午夜解锁的秘密",
+      "ja": "真夜中に解かれる秘密",
+      "ko": "한밤중에 풀리는 비밀",
+      "es": "Llamadas nocturnas a secretos"
+    },
+    "hook": {
+      "en": "A late-night locksmith finds a door that won’t open—yet the key fits perfectly. Who’s waiting behind it, and why won’t the lock release?",
+      "zh": "一位深夜锁匠遇到无法打开的门，钥匙却完美契合。门后是谁，为什么锁头不松？",
+      "ja": "深夜の鍵師が開かない扉に遭遇。鍵は合うのに、なぜか錠は外れない。扉の向こうには誰が？",
+      "ko": "늦은 밤 자물쇠 수리공이 열리지 않는 문을 만난다. 열쇠는 딱 맞는데 왜 잠금장치는 풀리지 않는 걸까?",
+      "es": "Un cerrajero nocturno encuentra una puerta que no se abre, aunque la llave encaja. ¿Quién espera detrás y por qué no cede la cerradura?"
+    },
+    "ink": "#8B4513",
+    "imageUrl": "/pulp-hour/covers/late-night-locksmith.jpg",
+    "persona": "Set in a quiet urban neighborhood after midnight, the protagonist is a late-night locksmith called to unlock doors that refuse to yield. Using precise tools and subtle intuition, they confront intimate puzzles of locks and keys that seem to defy their expertise. The second presence is a courteous but subtly mistaken client, whose calm explanations only deepen the mystery. The threat is the recurring failure of a lock that should open, entwining the locksmith in a quiet, personal enigma about boundaries and secrets behind closed doors."
   }
 ]
