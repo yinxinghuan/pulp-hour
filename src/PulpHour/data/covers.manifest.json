@@ -1706,5 +1706,33 @@
     "ink": "#8B4513",
     "imageUrl": "/pulp-hour/covers/late-night-locksmith.jpg",
     "persona": "Set in a quiet urban neighborhood after midnight, the protagonist is a late-night locksmith called to unlock doors that refuse to yield. Using precise tools and subtle intuition, they confront intimate puzzles of locks and keys that seem to defy their expertise. The second presence is a courteous but subtly mistaken client, whose calm explanations only deepen the mystery. The threat is the recurring failure of a lock that should open, entwining the locksmith in a quiet, personal enigma about boundaries and secrets behind closed doors."
+  },
+  {
+    "id": "late-night-coin-operated-car-wash",
+    "releasedOn": "2026-10-01T00:00:00Z",
+    "title": {
+      "en": "The Car That Never Finished Rinsing",
+      "zh": "永不冲洗干净的汽车",
+      "ja": "終わらない洗車の車",
+      "ko": "끝나지 않는 세차하는 차",
+      "es": "El Coche que Nunca Terminó de Enjuagar"
+    },
+    "subtitle": {
+      "en": "Late Shift at the Coin-Operated Car Wash",
+      "zh": "投币洗车场夜班",
+      "ja": "コイン式洗車場の深夜勤務",
+      "ko": "코인 세차장 야간 근무",
+      "es": "Turno nocturno en autolavado de monedas"
+    },
+    "hook": {
+      "en": "Every night, the same car cycles through the wash but never finishes rinsing — and the attendant is the only one who notices.",
+      "zh": "每晚同样的汽车反复洗刷，却始终冲不干净，只有值班员注意到了。",
+      "ja": "毎晩、同じ車が洗車を繰り返すが、すすぎが終わらない。気づくのは係員だけ。",
+      "ko": "매일 밤 같은 차가 세차를 반복하지만 헹굼은 끝나지 않는다. 알아채는 건 담당자뿐이다.",
+      "es": "Cada noche, el mismo coche pasa por el lavado pero nunca termina de enjuagarse, y solo el encargado lo nota."
+    },
+    "ink": "#D94F4F",
+    "imageUrl": "/pulp-hour/covers/late-night-coin-operated-car-wash.jpg",
+    "persona": "The setting is a near-past American suburban coin-operated car wash late at night. The protagonist is the lone late-shift attendant, quietly monitoring the machines and the empty lot under flickering neon. The recurring threat is intimate and precise: a single car that cycles endlessly through incomplete wash cycles, a quiet mystery that hints at mistaken identity or a paperwork error. The tone is subdued, contemplative, and quietly unsettling, evoking the stillness of a place caught between routine and something unspoken."
   }
 ]
