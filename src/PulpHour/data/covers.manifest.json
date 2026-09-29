@@ -1734,5 +1734,33 @@
     "ink": "#D94F4F",
     "imageUrl": "/pulp-hour/covers/late-night-coin-operated-car-wash.jpg",
     "persona": "The setting is a near-past American suburban coin-operated car wash late at night. The protagonist is the lone late-shift attendant, quietly monitoring the machines and the empty lot under flickering neon. The recurring threat is intimate and precise: a single car that cycles endlessly through incomplete wash cycles, a quiet mystery that hints at mistaken identity or a paperwork error. The tone is subdued, contemplative, and quietly unsettling, evoking the stillness of a place caught between routine and something unspoken."
+  },
+  {
+    "id": "night-shift-telephone-repairer",
+    "releasedOn": "2026-10-03T00:00:00Z",
+    "title": {
+      "en": "The Line That Never Rang",
+      "zh": "永不响起的电话线",
+      "ja": "鳴り止まぬ電話線",
+      "ko": "울리지 않는 전화선",
+      "es": "La línea que nunca sonó"
+    },
+    "subtitle": {
+      "en": "A Late-Night Telephone Repair Mystery",
+      "zh": "深夜电话维修之谜",
+      "ja": "深夜の電話修理ミステリー",
+      "ko": "심야 전화 수리 미스터리",
+      "es": "Un misterio de reparación telefónica nocturna"
+    },
+    "hook": {
+      "en": "Working alone in the silence of a small-town telephone exchange, a repairer traces a fault line that leads nowhere but deeper into forgotten calls.",
+      "zh": "独自在小镇电话交换局的寂静中，维修工追踪一条通向无处的故障线路，深入遗忘的通话。",
+      "ja": "小さな町の電話局で一人作業する修理工は、どこにも繋がらない故障線を辿り、忘れられた電話に潜む謎へと深く入っていく。",
+      "ko": "작은 마을 전화 교환국에서 홀로 일하는 수리공은 아무데도 닿지 않는 고장선을 따라 잊힌 통화의 심연으로 들어간다.",
+      "es": "Trabajando solo en la silenciosa central telefónica de un pequeño pueblo, un reparador sigue una línea defectuosa que no conduce a ningún lado, sino más profundo en llamadas olvidadas."
+    },
+    "ink": "#4B3A72",
+    "imageUrl": "/pulp-hour/covers/night-shift-telephone-repairer.jpg",
+    "persona": "The protagonist is a night-shift telephone repairer working alone in a small-town telephone exchange. The setting is a dimly lit, cluttered room filled with old switchboards, tangled wires, and the faint hum of aging equipment. The protagonist’s voice is quiet, attentive, and slightly weary, tracing precise circuits and calls that seem to loop endlessly or vanish without answer. The second presence is a polite but subtly off technician’s manual or recorded message, offering calm instructions that conflict with the eerie persistence of a fault that cannot be fixed. The threat is the recurring, intangible mystery of a line that never rings, a call that never connects, a signal that repeats its silence—a quiet puzzle of mistaken connections and forgotten voices."
   }
 ]
