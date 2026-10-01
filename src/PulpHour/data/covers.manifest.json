@@ -1762,5 +1762,33 @@
     "ink": "#4B3A72",
     "imageUrl": "/pulp-hour/covers/night-shift-telephone-repairer.jpg",
     "persona": "The protagonist is a night-shift telephone repairer working alone in a small-town telephone exchange. The setting is a dimly lit, cluttered room filled with old switchboards, tangled wires, and the faint hum of aging equipment. The protagonist’s voice is quiet, attentive, and slightly weary, tracing precise circuits and calls that seem to loop endlessly or vanish without answer. The second presence is a polite but subtly off technician’s manual or recorded message, offering calm instructions that conflict with the eerie persistence of a fault that cannot be fixed. The threat is the recurring, intangible mystery of a line that never rings, a call that never connects, a signal that repeats its silence—a quiet puzzle of mistaken connections and forgotten voices."
+  },
+  {
+    "id": "late-night-lighthouse-keeper",
+    "releasedOn": "2026-10-05T00:00:00Z",
+    "title": {
+      "en": "The Light That Never Went Out",
+      "zh": "永不熄灭的灯光",
+      "ja": "消えない灯台の光",
+      "ko": "꺼지지 않는 등대 불빛",
+      "es": "La luz que nunca se apagó"
+    },
+    "subtitle": {
+      "en": "Midnight Watch at the Coast",
+      "zh": "午夜海岸守望",
+      "ja": "深夜の海岸監視",
+      "ko": "한밤중 해안 감시",
+      "es": "Vigilia nocturna en la costa"
+    },
+    "hook": {
+      "en": "The solitary lighthouse keeper notices the beam skips its usual sweep. Someone—or something—has changed the rhythm of the night.",
+      "zh": "孤独的灯塔守护者发现灯光扫过时忽快忽慢。有人——或某物——改变了夜晚的节奏。",
+      "ja": "孤独な灯台守は光の旋回がいつもと違うことに気づく。誰か、あるいは何かが夜のリズムを変えたのだ。",
+      "ko": "외로운 등대 관리인은 빛이 평소와 다르게 스캔하는 것을 알아챈다. 누군가, 아니면 무언가가 밤의 리듬을 바꿨다.",
+      "es": "El solitario guardián del faro nota que el haz de luz salta su barrido habitual. Alguien—o algo—ha cambiado el ritmo de la noche."
+    },
+    "ink": "#1A2B3C",
+    "imageUrl": "/pulp-hour/covers/late-night-lighthouse-keeper.jpg",
+    "persona": "Set in a solitary coastal lighthouse in contemporary America, the protagonist is the overnight lighthouse keeper responsible for monitoring the light's precise rotation and maintaining the quiet beacon. The voice is reflective and measured, observing subtle shifts in the familiar routine. The second presence is a courteous but subtly misguided visitor who insists the light is fine as is, unaware of the creeping change. The threat is an intimate disturbance of rhythm and timing, a precision unsettlement that recurs each night, blurring the line between human error and something more inscrutable."
   }
 ]
