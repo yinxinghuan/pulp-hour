@@ -1790,5 +1790,33 @@
     "ink": "#1A2B3C",
     "imageUrl": "/pulp-hour/covers/late-night-lighthouse-keeper.jpg",
     "persona": "Set in a solitary coastal lighthouse in contemporary America, the protagonist is the overnight lighthouse keeper responsible for monitoring the light's precise rotation and maintaining the quiet beacon. The voice is reflective and measured, observing subtle shifts in the familiar routine. The second presence is a courteous but subtly misguided visitor who insists the light is fine as is, unaware of the creeping change. The threat is an intimate disturbance of rhythm and timing, a precision unsettlement that recurs each night, blurring the line between human error and something more inscrutable."
+  },
+  {
+    "id": "late-night-bakery-deliverer",
+    "releasedOn": "2026-10-07T00:00:00Z",
+    "title": {
+      "en": "The Crate That Came Back Empty",
+      "zh": "空箱归来的深夜面包配送员",
+      "ja": "深夜配送で戻った空の箱",
+      "ko": "빈 상자가 돌아온 심야 빵 배달원",
+      "es": "La Caja Que Regresó Vacía"
+    },
+    "subtitle": {
+      "en": "Late-Night Bakery Delivery Mystery",
+      "zh": "深夜面包配送之谜",
+      "ja": "深夜のパン配達ミステリー",
+      "ko": "심야 빵 배달 미스터리",
+      "es": "Misterio en la entrega nocturna de panadería"
+    },
+    "hook": {
+      "en": "After every delivery, the crate returns empty — but today, something waits inside.",
+      "zh": "每次送货后，箱子都是空的——但今天，里面似乎藏着什么。",
+      "ja": "配達のたびに箱は空だが、今日は中に何かがあった。",
+      "ko": "배달 후 항상 빈 상자가 돌아오지만 오늘은 뭔가가 안에 있었다.",
+      "es": "Tras cada entrega, la caja vuelve vacía — pero hoy algo espera dentro."
+    },
+    "ink": "#8B4513",
+    "imageUrl": "/pulp-hour/covers/late-night-bakery-deliverer.jpg",
+    "persona": "The setting is a quiet, small-town bakery delivery route during the late-night hours. The protagonist is the delivery person tasked with transporting freshly baked goods to local shops before dawn. Their voice is weary but attentive, caught between routine and subtle unease. A courteous, knowing presence appears in conversations—perhaps a shop owner or fellow worker—who offers calm but subtly misleading observations. The threat is the recurrence of an unexplained discrepancy in the delivery crate’s contents, a quiet puzzle of something present but unseen, intimate and persistent, never overtly sinister but deeply unsettling."
   }
 ]
