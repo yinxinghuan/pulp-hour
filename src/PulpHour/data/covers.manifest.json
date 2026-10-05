@@ -1818,5 +1818,33 @@
     "ink": "#8B4513",
     "imageUrl": "/pulp-hour/covers/late-night-bakery-deliverer.jpg",
     "persona": "The setting is a quiet, small-town bakery delivery route during the late-night hours. The protagonist is the delivery person tasked with transporting freshly baked goods to local shops before dawn. Their voice is weary but attentive, caught between routine and subtle unease. A courteous, knowing presence appears in conversations—perhaps a shop owner or fellow worker—who offers calm but subtly misleading observations. The threat is the recurrence of an unexplained discrepancy in the delivery crate’s contents, a quiet puzzle of something present but unseen, intimate and persistent, never overtly sinister but deeply unsettling."
+  },
+  {
+    "id": "late-night-courier",
+    "releasedOn": "2026-10-09T00:00:00Z",
+    "title": {
+      "en": "The Package That Returned Unsent",
+      "zh": "未寄出的包裹归来",
+      "ja": "発送されなかった小包が戻る",
+      "ko": "발송되지 않은 소포가 돌아왔다",
+      "es": "El paquete que volvió sin enviarse"
+    },
+    "subtitle": {
+      "en": "Late-Night Courier's Quiet Route",
+      "zh": "夜晚快递员的静谧路线",
+      "ja": "深夜宅配便の静かな巡回",
+      "ko": "심야 택배원의 고요한 경로",
+      "es": "La ruta tranquila del mensajero nocturno"
+    },
+    "hook": {
+      "en": "Delivering silence through empty streets, the courier finds a package that never left its origin — again.",
+      "zh": "穿过空无街道的快递员，再次发现一份从未寄出的包裹。",
+      "ja": "静かな街を配達する中、発送されなかった小包がまた見つかった。",
+      "ko": "빈 거리를 달리던 택배원이 또다시 출발하지 않은 소포를 발견했다.",
+      "es": "Repartiendo en calles vacías, el mensajero encuentra un paquete que nunca salió de su origen — otra vez."
+    },
+    "ink": "#5A3E36",
+    "imageUrl": "/pulp-hour/covers/late-night-courier.jpg",
+    "persona": "The story is set in a near-past contemporary American city. The protagonist is a late-night bicycle courier responsible for delivering small packages and documents through quiet streets. The atmosphere is hushed, with only occasional streetlights and distant sounds. A recurring anomaly is the same undelivered package that appears on their route repeatedly, challenging their sense of reality and the precision of their work. The courier’s voice is reflective, solitary, and quietly determined, while a second presence—perhaps a dispatcher or colleague—offers polite but subtly flawed reassurances. The threat is meticulous and intimate: the cycle of the undelivered package, the paperwork that never clears, and the courier’s struggle to break the loop."
   }
 ]
