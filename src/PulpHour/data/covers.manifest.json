@@ -1846,5 +1846,33 @@
     "ink": "#5A3E36",
     "imageUrl": "/pulp-hour/covers/late-night-courier.jpg",
     "persona": "The story is set in a near-past contemporary American city. The protagonist is a late-night bicycle courier responsible for delivering small packages and documents through quiet streets. The atmosphere is hushed, with only occasional streetlights and distant sounds. A recurring anomaly is the same undelivered package that appears on their route repeatedly, challenging their sense of reality and the precision of their work. The courier’s voice is reflective, solitary, and quietly determined, while a second presence—perhaps a dispatcher or colleague—offers polite but subtly flawed reassurances. The threat is meticulous and intimate: the cycle of the undelivered package, the paperwork that never clears, and the courier’s struggle to break the loop."
+  },
+  {
+    "id": "night-shift-urban-subway-musician",
+    "releasedOn": "2026-10-11T00:00:00Z",
+    "title": {
+      "en": "The Tune That Played Itself Again",
+      "zh": "反复响起的旋律",
+      "ja": "繰り返し流れるメロディー",
+      "ko": "스스로 연주되는 곡",
+      "es": "La melodía que se repetía sola"
+    },
+    "subtitle": {
+      "en": "Midnight Subway Musician's Quiet Watch",
+      "zh": "午夜地铁音乐家的静谧守望",
+      "ja": "深夜地下鉄音楽家の静かな見守り",
+      "ko": "한밤중 지하철 음악가의 조용한 감시",
+      "es": "La silenciosa vigilia del músico del metro"
+    },
+    "hook": {
+      "en": "As the last train fades away, the street musician’s notes repeat without end—yet no one else seems to hear the echo.",
+      "zh": "当最后一列列车远去，街头音乐家的音符无尽重复——却无人听见回声。",
+      "ja": "終電が去ると、路上ミュージシャンの音色が終わりなく繰り返されるが、誰もその残響に気づかない。",
+      "ko": "마지막 열차가 사라지자, 거리 음악가의 선율이 끝없이 반복되지만 아무도 그 메아리를 듣지 못한다.",
+      "es": "Cuando el último tren se va, las notas del músico callejero se repiten sin cesar, pero nadie parece oír el eco."
+    },
+    "ink": "#5A3E36",
+    "imageUrl": "/pulp-hour/covers/night-shift-urban-subway-musician.jpg",
+    "persona": "Set in a near-past American city’s subway platform after midnight, the protagonist is a small-time street musician who plays the last shift before the tunnels close. The atmosphere is hushed, empty except for distant train rumbles and flickering station lights. A polite, watchful transit worker appears with quiet corrections about schedules and rules, but their information subtly conflicts with the musician’s experience. The threat is an eerie recurrence of the same melody playing without source, blurring reality and echo in an intimate, precise way."
   }
 ]
