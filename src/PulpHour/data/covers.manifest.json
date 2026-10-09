@@ -1874,5 +1874,33 @@
     "ink": "#5A3E36",
     "imageUrl": "/pulp-hour/covers/night-shift-urban-subway-musician.jpg",
     "persona": "Set in a near-past American city’s subway platform after midnight, the protagonist is a small-time street musician who plays the last shift before the tunnels close. The atmosphere is hushed, empty except for distant train rumbles and flickering station lights. A polite, watchful transit worker appears with quiet corrections about schedules and rules, but their information subtly conflicts with the musician’s experience. The threat is an eerie recurrence of the same melody playing without source, blurring reality and echo in an intimate, precise way."
+  },
+  {
+    "id": "late-night-print-shop-operator",
+    "releasedOn": "2026-10-13T00:00:00Z",
+    "title": {
+      "en": "The Print That Came Out Twice",
+      "zh": "复印了两次的印件",
+      "ja": "二度印刷されたプリント",
+      "ko": "두 번 나온 인쇄물",
+      "es": "La impresión que salió dos veces"
+    },
+    "subtitle": {
+      "en": "Midnight in the Print Shop",
+      "zh": "打印店的午夜时分",
+      "ja": "深夜の印刷所",
+      "ko": "인쇄소의 한밤중",
+      "es": "Medianoche en la imprenta"
+    },
+    "hook": {
+      "en": "Working alone on the late shift, I noticed a printout reappearing in the tray — but no job was sent twice. Someone else is printing secrets.",
+      "zh": "深夜独自工作时，我发现托盘里多了一份印件——但没有重复的任务。有人在打印秘密。",
+      "ja": "夜勤で一人作業中、プリントトレイにもう一枚が現れた。二重注文はないはず。誰かが秘密を印刷している。",
+      "ko": "늦은 교대 근무 중 혼자 인쇄물을 보는데, 트레이에 인쇄물이 다시 나왔다—두 번 인쇄한 작업은 없었다. 누군가 비밀을 인쇄하고 있다.",
+      "es": "Trabajando solo en el turno nocturno, noté una impresión reaparecer en la bandeja, pero ningún trabajo fue enviado dos veces. Alguien imprime secretos."
+    },
+    "ink": "#9B2B2E",
+    "imageUrl": "/pulp-hour/covers/late-night-print-shop-operator.jpg",
+    "persona": "Set in a near-past American urban print shop during the graveyard shift, the protagonist operates an aging offset press and digital printer combo. They notice subtle irregularities in the print jobs—a paper left in the tray, a duplicate page that wasn't ordered. The second presence is the quiet, polite night manager on call, who insists there is no error. The threat emerges from precision and recurrence: a mysterious printout that recurs despite no new orders, suggesting someone else is quietly printing confidential documents in the dead hours. Tone is intimate, understated, with a sense of quiet unease and paper-thin secrets."
   }
 ]
