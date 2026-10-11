@@ -1902,5 +1902,33 @@
     "ink": "#9B2B2E",
     "imageUrl": "/pulp-hour/covers/late-night-print-shop-operator.jpg",
     "persona": "Set in a near-past American urban print shop during the graveyard shift, the protagonist operates an aging offset press and digital printer combo. They notice subtle irregularities in the print jobs—a paper left in the tray, a duplicate page that wasn't ordered. The second presence is the quiet, polite night manager on call, who insists there is no error. The threat emerges from precision and recurrence: a mysterious printout that recurs despite no new orders, suggesting someone else is quietly printing confidential documents in the dead hours. Tone is intimate, understated, with a sense of quiet unease and paper-thin secrets."
+  },
+  {
+    "id": "night-shift-keyboard-tuner",
+    "releasedOn": "2026-10-15T00:00:00Z",
+    "title": {
+      "en": "The Piano That Played Its Own Tune",
+      "zh": "自己演奏的钢琴",
+      "ja": "勝手に奏でるピアノ",
+      "ko": "스스로 연주하는 피아노",
+      "es": "El piano que tocaba solo"
+    },
+    "subtitle": {
+      "en": "Late Night Piano Tuning Mystery",
+      "zh": "深夜钢琴调音之谜",
+      "ja": "深夜のピアノ調律の謎",
+      "ko": "심야 피아노 조율 미스터리",
+      "es": "Misterio del afinador nocturno"
+    },
+    "hook": {
+      "en": "Alone in the silent concert hall, the piano began playing—but no one was at the keys. Every note was just slightly off.",
+      "zh": "一个人独自在寂静的音乐厅，钢琴开始自弹——却无人触键。每个音符都微微错位。",
+      "ja": "誰も弾いていないのに、静かなホールでピアノが鳴り始めた。すべての音がわずかに狂っている。",
+      "ko": "아무도 치지 않았는데 고요한 공연장에서 피아노가 연주되기 시작했다. 음 하나하나가 살짝 어긋났다.",
+      "es": "Solo en la sala de conciertos silenciosa, el piano empezó a sonar, pero nadie estaba en las teclas. Cada nota estaba ligeramente desafinada."
+    },
+    "ink": "#5A3E36",
+    "imageUrl": "/pulp-hour/covers/night-shift-keyboard-tuner.jpg",
+    "persona": "The protagonist works the late-night shift as a piano tuner in a small urban concert hall. The setting is a near-past American city, where the quiet intimacy of the empty hall and the delicate mechanics of the piano create a space for subtle disturbances. The threat is a recurring, precise misalignment in the instrument’s sound, suggesting a presence that is courteous yet quietly mistaken. The narrative voice is introspective, caught between technical attention and growing unease, reflecting on the uncanny recurrence of imperfect notes that never resolve."
   }
 ]
