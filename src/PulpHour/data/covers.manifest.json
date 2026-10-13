@@ -1930,5 +1930,33 @@
     "ink": "#5A3E36",
     "imageUrl": "/pulp-hour/covers/night-shift-keyboard-tuner.jpg",
     "persona": "The protagonist works the late-night shift as a piano tuner in a small urban concert hall. The setting is a near-past American city, where the quiet intimacy of the empty hall and the delicate mechanics of the piano create a space for subtle disturbances. The threat is a recurring, precise misalignment in the instrument’s sound, suggesting a presence that is courteous yet quietly mistaken. The narrative voice is introspective, caught between technical attention and growing unease, reflecting on the uncanny recurrence of imperfect notes that never resolve."
+  },
+  {
+    "id": "late-night-grocery-stockman",
+    "releasedOn": "2026-10-17T00:00:00Z",
+    "title": {
+      "en": "The Aisle That Refilled Itself",
+      "zh": "自动补货的货架",
+      "ja": "夜勤の棚が勝手に補充された",
+      "ko": "스스로 채워지는 야간 진열대",
+      "es": "El Pasillo Que Se Reabastecía Solo"
+    },
+    "subtitle": {
+      "en": "Late-Night Grocery Stockman Mystery",
+      "zh": "深夜杂货架补货之谜",
+      "ja": "深夜の食料品棚の謎",
+      "ko": "심야 식료품 진열 미스터리",
+      "es": "Misterio del Reponedor Nocturno"
+    },
+    "hook": {
+      "en": "On the quiet graveyard shift, the shelves restocked themselves. But the inventory never matched the orders, and the manager’s smile felt too knowing.",
+      "zh": "在寂静的深夜班，货架自动补货。但库存总与订单不符，经理的微笑意味深长。",
+      "ja": "静かな夜勤中、棚は勝手に補充された。しかし在庫は注文と合わず、店長の微笑みは何かを知っているようだった。",
+      "ko": "조용한 야간 근무 중 진열대가 스스로 채워졌다. 그러나 재고는 주문과 맞지 않았고, 매니저의 미소는 은근히 아는 듯했다.",
+      "es": "En el tranquilo turno nocturno, los estantes se reabastecían solos. Pero el inventario nunca coincidía con los pedidos, y la sonrisa del encargado parecía demasiado sabia."
+    },
+    "ink": "#A63E3E",
+    "imageUrl": "/pulp-hour/covers/late-night-grocery-stockman.jpg",
+    "persona": "The protagonist is a late-night stockman working alone in a small neighborhood grocery store's dimly lit aisles. Inventory is precise, but inexplicably shifting — products appear or vanish, restocked without explanation. The manager is courteous, calm, but subtly misleading, hinting at knowledge beyond what is spoken. The threat is one of quiet recurrence and mistaken identity among identical products and shifting stock, a puzzle of paperwork, counts, and aisles that never quite settle. The tone is intimate, precise, and quietly unsettling in a familiar American late-night retail setting."
   }
 ]
