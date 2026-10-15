@@ -1958,5 +1958,33 @@
     "ink": "#A63E3E",
     "imageUrl": "/pulp-hour/covers/late-night-grocery-stockman.jpg",
     "persona": "The protagonist is a late-night stockman working alone in a small neighborhood grocery store's dimly lit aisles. Inventory is precise, but inexplicably shifting — products appear or vanish, restocked without explanation. The manager is courteous, calm, but subtly misleading, hinting at knowledge beyond what is spoken. The threat is one of quiet recurrence and mistaken identity among identical products and shifting stock, a puzzle of paperwork, counts, and aisles that never quite settle. The tone is intimate, precise, and quietly unsettling in a familiar American late-night retail setting."
+  },
+  {
+    "id": "late-night-parking-meter-repairer",
+    "releasedOn": "2026-10-19T00:00:00Z",
+    "title": {
+      "en": "The Meter That Counted No Coins",
+      "zh": "不计币的停车表",
+      "ja": "コインを数えない駐車メーター",
+      "ko": "동전을 세지 않는 주차 미터기",
+      "es": "El Parquímetro Que No Contaba Monedas"
+    },
+    "subtitle": {
+      "en": "Late Shift at City Parking Meter Repair",
+      "zh": "城市停车表维修夜班",
+      "ja": "市営駐車メーター修理の深夜勤務",
+      "ko": "도시 주차 미터기 야간 수리 근무",
+      "es": "Turno Nocturno en Reparación de Parquímetros"
+    },
+    "hook": {
+      "en": "Every meter I fix counts down, but one keeps holding onto coins that never drop.",
+      "zh": "每个我修的表都会计时，但有一个始终扣留着永不掉落的硬币。",
+      "ja": "修理するメーターはすべてカウントダウンするが、一つだけ硬貨が落ちないまま残っている。",
+      "ko": "수리하는 모든 미터기가 카운트다운하지만, 하나는 동전을 떨어뜨리지 않고 계속 잡고 있다.",
+      "es": "Cada parquímetro que reparo cuenta, pero uno retiene monedas que nunca caen."
+    },
+    "ink": "#D94F4F",
+    "imageUrl": "/pulp-hour/covers/late-night-parking-meter-repairer.jpg",
+    "persona": "Setting is a near-past American city at night. The protagonist is a late-night parking meter repairer, working alone on quiet streets where the hum of distant traffic fades into silence. The voice is first-person, pragmatic yet introspective, noticing the subtle irregularities of the meters. The second presence is the city itself—courteous, familiar, but subtly off in its repetitive patterns. The threat is the recurring anomaly of one meter that never releases coins, a quiet precision that unsettles the routine and suggests unnoticed cycles of unseen watchers or errors."
   }
 ]
