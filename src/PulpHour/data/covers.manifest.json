@@ -1986,5 +1986,33 @@
     "ink": "#D94F4F",
     "imageUrl": "/pulp-hour/covers/late-night-parking-meter-repairer.jpg",
     "persona": "Setting is a near-past American city at night. The protagonist is a late-night parking meter repairer, working alone on quiet streets where the hum of distant traffic fades into silence. The voice is first-person, pragmatic yet introspective, noticing the subtle irregularities of the meters. The second presence is the city itself—courteous, familiar, but subtly off in its repetitive patterns. The threat is the recurring anomaly of one meter that never releases coins, a quiet precision that unsettles the routine and suggests unnoticed cycles of unseen watchers or errors."
+  },
+  {
+    "id": "late-night-portrait-restorer",
+    "releasedOn": "2026-10-21T00:00:00Z",
+    "title": {
+      "en": "The Portrait That Never Looked Away",
+      "zh": "永远不回头的画像",
+      "ja": "決して目を逸らさない肖像画",
+      "ko": "절대 시선을 피하지 않는 초상화",
+      "es": "El Retrato Que Nunca Apartó La Mirada"
+    },
+    "subtitle": {
+      "en": "Late-Night Portrait Restoration",
+      "zh": "深夜肖像修复",
+      "ja": "深夜の肖像画修復",
+      "ko": "심야 초상화 복원 작업",
+      "es": "Restauración de Retratos Nocturna"
+    },
+    "hook": {
+      "en": "Working alone in a dim studio, a portrait refuses to stay still — its eyes follow every move, and the varnish peels only to reveal something new beneath.",
+      "zh": "独自在昏暗的工作室里，一幅肖像画拒绝静止——它的眼睛追随每一个动作，清漆剥落后露出新的秘密。",
+      "ja": "薄暗い工房で一人作業する肖像画はじっとしていない。目が動きを追い、ニスの剥がれが新たな謎を示す。",
+      "ko": "어두운 작업실에서 홀로 작업하는 초상화가 가만히 있지 않는다—눈이 움직임을 따라가고, 바니시가 벗겨지면 새로운 무언가가 드러난다.",
+      "es": "Trabajando solo en un estudio tenue, un retrato se niega a quedarse quieto: sus ojos siguen cada movimiento y el barniz se despega para revelar algo nuevo."
+    },
+    "ink": "#8B5E3C",
+    "imageUrl": "/pulp-hour/covers/late-night-portrait-restorer.jpg",
+    "persona": "The protagonist is a meticulous late-night portrait restorer working alone in a small art restoration studio. The setting is quiet, dimly lit by a single adjustable lamp over a worn wooden table strewn with brushes and solvents. The protagonist notices subtle changes in the painting's expression and varnish that seem to reveal hidden layers or messages. The second presence is a polite art collector who visits occasionally, commenting kindly but misunderstanding the significance of the changes. The threat is the intimate recurrence of the painting’s shifting gaze and the precision of restoration that uncovers unsettling secrets beneath the surface, creating a subtle tension of mistaken perception and quiet revelation."
   }
 ]
