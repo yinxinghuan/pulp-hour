@@ -2014,5 +2014,33 @@
     "ink": "#8B5E3C",
     "imageUrl": "/pulp-hour/covers/late-night-portrait-restorer.jpg",
     "persona": "The protagonist is a meticulous late-night portrait restorer working alone in a small art restoration studio. The setting is quiet, dimly lit by a single adjustable lamp over a worn wooden table strewn with brushes and solvents. The protagonist notices subtle changes in the painting's expression and varnish that seem to reveal hidden layers or messages. The second presence is a polite art collector who visits occasionally, commenting kindly but misunderstanding the significance of the changes. The threat is the intimate recurrence of the painting’s shifting gaze and the precision of restoration that uncovers unsettling secrets beneath the surface, creating a subtle tension of mistaken perception and quiet revelation."
+  },
+  {
+    "id": "night-shift-bicycle-delivery",
+    "releasedOn": "2026-10-23T00:00:00Z",
+    "title": {
+      "en": "The Package That Returned on Two Wheels",
+      "zh": "那件骑回来的包裹",
+      "ja": "二輪で戻った荷物",
+      "ko": "두 바퀴로 돌아온 소포",
+      "es": "El paquete que volvió en dos ruedas"
+    },
+    "subtitle": {
+      "en": "Late Night Bicycle Courier Mystery",
+      "zh": "深夜自行车快递之谜",
+      "ja": "深夜の自転車配達ミステリー",
+      "ko": "심야 자전거 배달 미스터리",
+      "es": "Misterio del mensajero nocturno"
+    },
+    "hook": {
+      "en": "On quiet city streets, the night-shift bicycle courier finds a package that keeps returning—no matter where it’s delivered.",
+      "zh": "在寂静的城市街道上，夜班自行车快递员发现一个无论送到哪里都会回来的包裹。",
+      "ja": "静かな街路で、夜間配達の自転車便がどこへ届けても戻ってくる荷物を見つけた。",
+      "ko": "조용한 도시 거리에서 야간 자전거 배달원이 어디로 보내도 돌아오는 소포를 발견한다.",
+      "es": "En calles tranquilas, el mensajero nocturno en bici encuentra un paquete que siempre regresa, sin importar dónde lo entregue."
+    },
+    "ink": "#D94F4F",
+    "imageUrl": "/pulp-hour/covers/night-shift-bicycle-delivery.jpg",
+    "persona": "The protagonist is a solitary late-night bicycle courier navigating near-empty city streets under streetlamp glow. They face a quietly unsettling recurrence: a package that returns to them despite every delivery attempt. The tone is intimate and precise, capturing the eerie normalcy of urban night work, with a courteous, knowing contact who gently misleads about the package’s origin. The setting is contemporary American city streets, dimly lit and whisper-quiet, emphasizing the strange intimacy of repeated failure and mistaken destination."
   }
 ]
