@@ -2042,5 +2042,33 @@
     "ink": "#D94F4F",
     "imageUrl": "/pulp-hour/covers/night-shift-bicycle-delivery.jpg",
     "persona": "The protagonist is a solitary late-night bicycle courier navigating near-empty city streets under streetlamp glow. They face a quietly unsettling recurrence: a package that returns to them despite every delivery attempt. The tone is intimate and precise, capturing the eerie normalcy of urban night work, with a courteous, knowing contact who gently misleads about the package’s origin. The setting is contemporary American city streets, dimly lit and whisper-quiet, emphasizing the strange intimacy of repeated failure and mistaken destination."
+  },
+  {
+    "id": "late-night-coin-operator",
+    "releasedOn": "2026-10-25T00:00:00Z",
+    "title": {
+      "en": "The Slot That Never Paid Out",
+      "zh": "永不派彩的老虎机",
+      "ja": "払い出しのないスロットマシン",
+      "ko": "한 번도 당첨되지 않은 슬롯머신",
+      "es": "La Máquina Tragaperras Que Nunca Pagó"
+    },
+    "subtitle": {
+      "en": "Late Shift at a Small Casino",
+      "zh": "小型赌场的深夜班",
+      "ja": "小さなカジノの深夜勤務",
+      "ko": "작은 카지노의 야간 근무",
+      "es": "Turno Nocturno en un Pequeño Casino"
+    },
+    "hook": {
+      "en": "Working the graveyard shift as a coin operator, I noticed one slot machine that never paid out, no matter how many coins it swallowed.",
+      "zh": "作为硬币管理员的深夜班，我发现一台老虎机无论吞多少硬币都从未派彩。",
+      "ja": "コインオペレーターの深夜勤務で、何度コインを入れても一度も払い出さないスロットマシンに気づいた。",
+      "ko": "야간 근무 중 동전 관리자로 일하면서, 아무리 동전을 넣어도 한 번도 당첨되지 않는 슬롯머신을 발견했다.",
+      "es": "Trabajando de noche como operador de monedas, noté una máquina tragaperras que nunca pagaba, no importa cuántas monedas tragaba."
+    },
+    "ink": "#8B0000",
+    "imageUrl": "/pulp-hour/covers/late-night-coin-operator.jpg",
+    "persona": "Set in a small, dimly lit casino during a late-night shift, the protagonist works as the coin operator responsible for collecting and maintaining the slot machines. The atmosphere is thick with cigarette smoke haze and the occasional chime of distant machines. A particular slot machine refuses to yield any payout despite repeated plays, creating a quiet but persistent tension. The second presence is a courteous casino host who offers polite explanations that never quite add up, deepening the protagonist's unease. The threat is subtle and mechanical: a precision failure in the machine's cycle, a recurrence of silent loss, and a growing suspicion of mistaken trust in the casino's fairness."
   }
 ]
