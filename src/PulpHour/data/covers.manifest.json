@@ -2070,5 +2070,33 @@
     "ink": "#8B0000",
     "imageUrl": "/pulp-hour/covers/late-night-coin-operator.jpg",
     "persona": "Set in a small, dimly lit casino during a late-night shift, the protagonist works as the coin operator responsible for collecting and maintaining the slot machines. The atmosphere is thick with cigarette smoke haze and the occasional chime of distant machines. A particular slot machine refuses to yield any payout despite repeated plays, creating a quiet but persistent tension. The second presence is a courteous casino host who offers polite explanations that never quite add up, deepening the protagonist's unease. The threat is subtle and mechanical: a precision failure in the machine's cycle, a recurrence of silent loss, and a growing suspicion of mistaken trust in the casino's fairness."
+  },
+  {
+    "id": "late-night-dry-wall-inspector",
+    "releasedOn": "2026-10-27T00:00:00Z",
+    "title": {
+      "en": "The Wall That Watched Me Work",
+      "zh": "凝视我工作的墙",
+      "ja": "私の作業を見つめる壁",
+      "ko": "내 작업을 지켜본 벽",
+      "es": "La Pared Que Me Observó Trabajar"
+    },
+    "subtitle": {
+      "en": "Late-Shift Drywall Inspector",
+      "zh": "深夜石膏板检查员",
+      "ja": "深夜の石膏ボード検査員",
+      "ko": "심야 석고보드 검사원",
+      "es": "Inspector de Tablaroca en Turno Nocturno"
+    },
+    "hook": {
+      "en": "Working alone on a suburban construction site, every wall seems to hold a secret — and one won’t stop watching.",
+      "zh": "独自在郊区工地工作，每面墙似乎都藏着秘密——有一面墙一直在注视。",
+      "ja": "郊外の建設現場で一人作業、どの壁も秘密を抱えているようで、一つは見つめ続けている。",
+      "ko": "교외 건설 현장에서 혼자 일하며, 모든 벽이 비밀을 품고 있고 한 벽은 계속 지켜보고 있다.",
+      "es": "Trabajando solo en una obra suburbana, cada pared parece guardar un secreto, y una no deja de observar."
+    },
+    "ink": "#B04C3D",
+    "imageUrl": "/pulp-hour/covers/late-night-dry-wall-inspector.jpg",
+    "persona": "Setting is a quiet suburban construction site late at night, where the protagonist works as a drywall inspector checking for flaws and safety. The voice is contemplative and methodical, focused on details in the stillness. The second presence is a polite but subtly unsettling awareness in the environment—walls that seem to shift or observe. The threat is a creeping intimacy and persistent unnoticed observation, never overt but deeply disquieting."
   }
 ]
