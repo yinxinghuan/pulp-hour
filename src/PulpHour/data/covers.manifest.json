@@ -2098,5 +2098,33 @@
     "ink": "#B04C3D",
     "imageUrl": "/pulp-hour/covers/late-night-dry-wall-inspector.jpg",
     "persona": "Setting is a quiet suburban construction site late at night, where the protagonist works as a drywall inspector checking for flaws and safety. The voice is contemplative and methodical, focused on details in the stillness. The second presence is a polite but subtly unsettling awareness in the environment—walls that seem to shift or observe. The threat is a creeping intimacy and persistent unnoticed observation, never overt but deeply disquieting."
+  },
+  {
+    "id": "late-night-document-shredder",
+    "releasedOn": "2026-10-29T00:00:00Z",
+    "title": {
+      "en": "The Papers That Came Back to Life",
+      "zh": "重生的碎纸片",
+      "ja": "再び現れた書類の亡霊",
+      "ko": "다시 살아난 문서들",
+      "es": "Los Papeles Que Volvieron a Vivir"
+    },
+    "subtitle": {
+      "en": "Late Shift at the Document Shredding Center",
+      "zh": "文件销毁中心夜班",
+      "ja": "書類裁断センター深夜勤務",
+      "ko": "문서 파쇄 센터 야간 근무",
+      "es": "Turno Nocturno en el Centro de Destrucción"
+    },
+    "hook": {
+      "en": "As the shredder devours the files, some pages seem to slip away, only to reappear when no one's watching.",
+      "zh": "当碎纸机吞噬文件时，有些页码仿佛逃脱，悄悄在无人注视时重现。",
+      "ja": "シュレッダーが書類を飲み込むと、見えないところでページがこっそり戻ってくる。",
+      "ko": "파쇄기가 문서를 삼킬 때, 몇 장은 몰래 빠져나와 아무도 없을 때 다시 나타난다.",
+      "es": "Mientras la trituradora devora los archivos, algunas páginas parecen escaparse para reaparecer cuando nadie las ve."
+    },
+    "ink": "#5A2E2E",
+    "imageUrl": "/pulp-hour/covers/late-night-document-shredder.jpg",
+    "persona": "You are a late-night document shredder operator in a small, dimly lit shredding facility on the industrial edge of town. The hum of the shredder is your constant companion as you feed endless stacks of files and papers through it. Quietly, you notice that some documents seem to evade destruction, reassembling or appearing anew without explanation. The second presence is a courteous, calm quality control inspector who insists everything is normal, even as you sense subtle, recurring errors in the logs and shredded remnants. The threat is one of precision and repetition — you face a quiet puzzle of paperwork that refuses to be destroyed, hinting at unseen forces or errors lurking beneath the routine work."
   }
 ]
