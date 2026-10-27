@@ -2126,5 +2126,33 @@
     "ink": "#5A2E2E",
     "imageUrl": "/pulp-hour/covers/late-night-document-shredder.jpg",
     "persona": "You are a late-night document shredder operator in a small, dimly lit shredding facility on the industrial edge of town. The hum of the shredder is your constant companion as you feed endless stacks of files and papers through it. Quietly, you notice that some documents seem to evade destruction, reassembling or appearing anew without explanation. The second presence is a courteous, calm quality control inspector who insists everything is normal, even as you sense subtle, recurring errors in the logs and shredded remnants. The threat is one of precision and repetition — you face a quiet puzzle of paperwork that refuses to be destroyed, hinting at unseen forces or errors lurking beneath the routine work."
+  },
+  {
+    "id": "late-night-parked-bus-driver",
+    "releasedOn": "2026-10-31T00:00:00Z",
+    "title": {
+      "en": "The Bus That Never Started Its Route",
+      "zh": "永远未发车的公交车",
+      "ja": "一度も出発しなかったバス",
+      "ko": "출발하지 않은 버스",
+      "es": "El autobús que nunca inició ruta"
+    },
+    "subtitle": {
+      "en": "Midnight Route at the City Bus Depot",
+      "zh": "城市公交车场的午夜路线",
+      "ja": "深夜のバス車庫勤務",
+      "ko": "도시 버스 차고지의 심야 근무",
+      "es": "Ruta nocturna en la cochería urbana"
+    },
+    "hook": {
+      "en": "As the overnight driver, I wait for a route that never arrives, the depot silent but for soft engine hums and a knowing dispatcher’s polite insistence.",
+      "zh": "作为夜班司机，我等待一趟永远不会到来的线路，车场静谧，只有引擎的轻微嗡鸣和调度员礼貌而笃定的坚持。",
+      "ja": "深夜の運転手として、決して来ない路線を待つ。車庫は静まり返り、エンジンの微かな音と、知ったかぶりの調整員の丁寧な押し問答だけが響く。",
+      "ko": "야간 운전사로서 결코 시작하지 않는 노선을 기다린다. 차고지는 조용하고, 부드러운 엔진 소리와 아는 체하는 교통관리자의 공손한 권유만이 존재한다.",
+      "es": "Como conductor nocturno, espero una ruta que nunca llega, el depósito silencioso salvo por el suave zumbido del motor y la insistencia cortés de un despachador conocedor."
+    },
+    "ink": "#8B4513",
+    "imageUrl": "/pulp-hour/covers/late-night-parked-bus-driver.jpg",
+    "persona": "You are a late-night city bus driver stationed at a quiet depot from midnight until dawn. The usual clatter of passengers is absent; instead, the threat is the uncanny repetition of a route that never begins, and a dispatcher who calmly insists on departures that never happen. The setting is dim garage lights, the faint glow of instrument panels, and the slow shifting of shadows across idle buses. Your voice is weary, observant, and quietly questioning the strange persistence of routine in the face of absence."
   }
 ]
