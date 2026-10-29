@@ -2154,5 +2154,33 @@
     "ink": "#8B4513",
     "imageUrl": "/pulp-hour/covers/late-night-parked-bus-driver.jpg",
     "persona": "You are a late-night city bus driver stationed at a quiet depot from midnight until dawn. The usual clatter of passengers is absent; instead, the threat is the uncanny repetition of a route that never begins, and a dispatcher who calmly insists on departures that never happen. The setting is dim garage lights, the faint glow of instrument panels, and the slow shifting of shadows across idle buses. Your voice is weary, observant, and quietly questioning the strange persistence of routine in the face of absence."
+  },
+  {
+    "id": "late-night-parking-garage-security",
+    "releasedOn": "2026-11-02T00:00:00Z",
+    "title": {
+      "en": "The Shadow That Checked My Rounds",
+      "zh": "在巡逻中跟随的影子",
+      "ja": "巡回中に現れた影",
+      "ko": "순찰 중 따라온 그림자",
+      "es": "La sombra que siguió mis rondas"
+    },
+    "subtitle": {
+      "en": "Late-Night Parking Garage Watchman",
+      "zh": "深夜停车场守夜人",
+      "ja": "深夜の駐車場警備員",
+      "ko": "심야 주차장 경비원",
+      "es": "Vigilante nocturno en estacionamiento"
+    },
+    "hook": {
+      "en": "On my rounds through the near-empty parking garage, a shadow moves where no one should be. It never speaks, but it’s always just behind me.",
+      "zh": "在几乎空无一人的停车场巡逻时，有个影子出现在不该有人的地方。它从未说话，却总是紧跟其后。",
+      "ja": "ほとんど誰もいない駐車場を巡回中、誰もいないはずの場所に影が動く。言葉はないが、いつもすぐ後ろにいる。",
+      "ko": "거의 빈 주차장을 순찰할 때, 아무도 없을 곳에서 그림자가 움직인다. 말은 없지만 항상 내 바로 뒤에 있다.",
+      "es": "En mis rondas por el estacionamiento casi vacío, una sombra se mueve donde nadie debería estar. Nunca habla, pero siempre está justo detrás de mí."
+    },
+    "ink": "#4A4A4A",
+    "imageUrl": "/pulp-hour/covers/late-night-parking-garage-security.jpg",
+    "persona": "You are the overnight security watchman in a near-empty urban parking garage, responsible for quiet patrols and monitoring cameras. The setting is dimly lit with flickering fluorescent lights and endless rows of parked cars. The voice you encounter is courteous and calm but subtly disorients your sense of space and time, making you question if the shadow you follow is real or a trick of the lonely night. The threat is the precision of presence—something recurring just out of sight, a silent companion who never leaves, never speaks, never harms, but always watches."
   }
 ]
