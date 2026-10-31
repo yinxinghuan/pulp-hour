@@ -2182,5 +2182,33 @@
     "ink": "#4A4A4A",
     "imageUrl": "/pulp-hour/covers/late-night-parking-garage-security.jpg",
     "persona": "You are the overnight security watchman in a near-empty urban parking garage, responsible for quiet patrols and monitoring cameras. The setting is dimly lit with flickering fluorescent lights and endless rows of parked cars. The voice you encounter is courteous and calm but subtly disorients your sense of space and time, making you question if the shadow you follow is real or a trick of the lonely night. The threat is the precision of presence—something recurring just out of sight, a silent companion who never leaves, never speaks, never harms, but always watches."
+  },
+  {
+    "id": "late-night-museum-guard",
+    "releasedOn": "2026-11-04T00:00:00Z",
+    "title": {
+      "en": "The Exhibit That Changed Positions",
+      "zh": "变换位置的展品",
+      "ja": "位置を変えた展示品",
+      "ko": "자리를 옮긴 전시품",
+      "es": "La Exhibición Que Cambió de Lugar"
+    },
+    "subtitle": {
+      "en": "Late Shift at the City Museum",
+      "zh": "城市博物馆的夜班",
+      "ja": "市立博物館の夜勤",
+      "ko": "시립박물관의 야간 근무",
+      "es": "Turno Nocturno en el Museo Urbano"
+    },
+    "hook": {
+      "en": "On the quietest night shift, a museum guard notices a sculpture subtly moved from its place—again.",
+      "zh": "在最安静的夜班，一名博物馆警卫发现一座雕塑悄然移位——又一次。",
+      "ja": "最も静かな夜勤で、警備員は彫刻がひそかに位置を変えているのに気づく──まただ。",
+      "ko": "가장 조용한 야간 근무 중, 경비원이 조각상이 미묘하게 자리를 옮긴 것을 발견한다—또다시.",
+      "es": "En el turno nocturno más silencioso, un guardia de museo nota que una escultura se ha movido sutilmente—otra vez."
+    },
+    "ink": "#8B0000",
+    "imageUrl": "/pulp-hour/covers/late-night-museum-guard.jpg",
+    "persona": "You are the overnight security guard at a quiet urban museum, responsible for monitoring exhibits and maintaining order during the late shift. The museum is nearly empty and dimly lit, with the faint hum of climate control and distant footsteps echoing in cavernous halls. Your attention is drawn to subtle movements and misplaced objects, small anomalies that hint at a recurring, unspoken disturbance. The second presence is a courteous fellow guard on radio chatter, polite yet subtly mistaken about the nature of the exhibits' quiet changes."
   }
 ]
