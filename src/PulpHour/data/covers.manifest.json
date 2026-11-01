@@ -2210,5 +2210,33 @@
     "ink": "#8B0000",
     "imageUrl": "/pulp-hour/covers/late-night-museum-guard.jpg",
     "persona": "You are the overnight security guard at a quiet urban museum, responsible for monitoring exhibits and maintaining order during the late shift. The museum is nearly empty and dimly lit, with the faint hum of climate control and distant footsteps echoing in cavernous halls. Your attention is drawn to subtle movements and misplaced objects, small anomalies that hint at a recurring, unspoken disturbance. The second presence is a courteous fellow guard on radio chatter, polite yet subtly mistaken about the nature of the exhibits' quiet changes."
+  },
+  {
+    "id": "late-night-urban-bench-painter",
+    "releasedOn": "2026-11-06T00:00:00Z",
+    "title": {
+      "en": "The Bench That Never Stayed Painted",
+      "zh": "那张从未干透的长椅",
+      "ja": "塗ったはずのベンチが消えた夜",
+      "ko": "끝없이 다시 칠해지는 벤치",
+      "es": "El Banco Que Nunca Permaneció Pintado"
+    },
+    "subtitle": {
+      "en": "Late Shift at the City Park",
+      "zh": "城市公园深夜班",
+      "ja": "都会公園の深夜シフト",
+      "ko": "도시 공원 야간 근무",
+      "es": "Turno Nocturno en el Parque Urbano"
+    },
+    "hook": {
+      "en": "Every night I paint the same bench, but at dawn it’s like I never touched it. The park’s quiet whispers hint at a secret erased by daylight.",
+      "zh": "每晚我都涂刷那张长椅，天亮时却仿佛未曾动过。公园的寂静低语，似乎隐藏着被晨光抹去的秘密。",
+      "ja": "毎晩同じベンチを塗り直すが、夜明けにはまるで触れていないかのようだ。公園の静かな囁きが、朝日に消された秘密を示唆する。",
+      "ko": "매일 밤 같은 벤치를 칠하지만 새벽이 되면 아무도 칠하지 않은 듯하다. 공원의 조용한 속삭임이 낮에 지워진 비밀을 암시한다.",
+      "es": "Todas las noches pinto el mismo banco, pero al amanecer parece intacto. Los susurros callados del parque esconden un secreto borrado por la luz del día."
+    },
+    "ink": "#5C3A21",
+    "imageUrl": "/pulp-hour/covers/late-night-urban-bench-painter.jpg",
+    "persona": "You are the late-night urban park maintenance worker tasked with repainting benches under dim streetlamps and scattered overhead park lights. The park is nearly empty and silent, except for occasional distant sounds. The protagonist notices a recurring phenomenon: the bench you paint each night appears untouched by morning, as if your work is undone. The subtle threat is an intimate, precise puzzle of recurrence and erasure, challenging your grasp on reality and the quiet park’s hidden truths. The tone is subdued, with a quiet, knowing presence encountered in fleeting park visitors or distant voices, who offer polite hints that never fully explain the anomaly."
   }
 ]
