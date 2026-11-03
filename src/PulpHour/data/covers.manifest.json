@@ -2238,5 +2238,33 @@
     "ink": "#5C3A21",
     "imageUrl": "/pulp-hour/covers/late-night-urban-bench-painter.jpg",
     "persona": "You are the late-night urban park maintenance worker tasked with repainting benches under dim streetlamps and scattered overhead park lights. The park is nearly empty and silent, except for occasional distant sounds. The protagonist notices a recurring phenomenon: the bench you paint each night appears untouched by morning, as if your work is undone. The subtle threat is an intimate, precise puzzle of recurrence and erasure, challenging your grasp on reality and the quiet park’s hidden truths. The tone is subdued, with a quiet, knowing presence encountered in fleeting park visitors or distant voices, who offer polite hints that never fully explain the anomaly."
+  },
+  {
+    "id": "late-night-keyboard-tuner",
+    "releasedOn": "2026-11-08T00:00:00Z",
+    "title": {
+      "en": "The Piano That Played Its Own Tune",
+      "zh": "自弹自唱的钢琴",
+      "ja": "独りで奏でるピアノ",
+      "ko": "스스로 연주하는 피아노",
+      "es": "El piano que tocaba solo"
+    },
+    "subtitle": {
+      "en": "Late Shift at the Concert Hall",
+      "zh": "音乐厅的深夜班",
+      "ja": "音楽ホールの深夜勤務",
+      "ko": "콘서트홀의 야간 근무",
+      "es": "Turno nocturno en la sala de conciertos"
+    },
+    "hook": {
+      "en": "Tonight, the grand piano plays a melody no one else hears. I’m tuning strings that refuse to stay silent.",
+      "zh": "今晚，三角钢琴弹奏着无人听见的旋律。我调音的琴弦拒绝沉默。",
+      "ja": "今夜、グランドピアノが誰も聞こえないメロディーを奏でる。調律する弦は沈黙を拒む。",
+      "ko": "오늘 밤, 그랜드 피아노가 아무도 듣지 못하는 멜로디를 연주한다. 나는 침묵하지 않는 현을 조율한다.",
+      "es": "Esta noche, el piano de cola toca una melodía que nadie escucha. Ajusto cuerdas que se niegan a callar."
+    },
+    "ink": "#5B3A29",
+    "imageUrl": "/pulp-hour/covers/late-night-keyboard-tuner.jpg",
+    "persona": "You are a late-night piano tuner working alone in a dimly lit urban concert hall. The weight of silence is thick, but the grand piano sometimes plays faint, unexpected notes on its own. The second presence is a courteous stage manager who insists the piano is fine, quietly dismissing your concerns. The threat is the intimate recurrence of the piano’s mysterious melodies, blurring the boundary between machine and memory, tuning and something unspoken."
   }
 ]
