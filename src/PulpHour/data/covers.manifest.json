@@ -2266,5 +2266,33 @@
     "ink": "#5B3A29",
     "imageUrl": "/pulp-hour/covers/late-night-keyboard-tuner.jpg",
     "persona": "You are a late-night piano tuner working alone in a dimly lit urban concert hall. The weight of silence is thick, but the grand piano sometimes plays faint, unexpected notes on its own. The second presence is a courteous stage manager who insists the piano is fine, quietly dismissing your concerns. The threat is the intimate recurrence of the piano’s mysterious melodies, blurring the boundary between machine and memory, tuning and something unspoken."
+  },
+  {
+    "id": "late-night-coin-sorter",
+    "releasedOn": "2026-11-10T00:00:00Z",
+    "title": {
+      "en": "The Coins That Counted Twice at Dawn",
+      "zh": "黎明时分双重计算的硬币",
+      "ja": "夜明けに二度数えられた硬貨",
+      "ko": "새벽에 두 번 세어진 동전들",
+      "es": "Las monedas que contaron dos veces al amanecer"
+    },
+    "subtitle": {
+      "en": "Late Shift at the Bank Coin Sorting Room",
+      "zh": "银行硬币分拣室的夜班",
+      "ja": "銀行硬貨仕分け室の深夜勤務",
+      "ko": "은행 동전 분류실 야간 근무",
+      "es": "Turno nocturno en la sala de clasificación de monedas"
+    },
+    "hook": {
+      "en": "Counting coins after hours, I found the totals never quite added up — and the quiet hum of the sorter whispered secrets no one else heard.",
+      "zh": "深夜数硬币时，我发现总数总是不对，而分拣机的轻鸣声似乎在低语无人听见的秘密。",
+      "ja": "営業時間外に硬貨を数えると、合計がどうしても合わず、仕分け機の静かな音が誰にも聞こえない秘密をささやいていた。",
+      "ko": "근무 시간이 지난 후 동전을 세었더니 총액이 맞지 않았고, 분류기의 조용한 윙윙거림이 아무도 듣지 못하는 비밀을 속삭였다.",
+      "es": "Contando monedas fuera de horario, noté que las cantidades nunca cuadraban; el zumbido silencioso del clasificador susurraba secretos que nadie más escuchaba."
+    },
+    "ink": "#5B3A29",
+    "imageUrl": "/pulp-hour/covers/late-night-coin-sorter.jpg",
+    "persona": "The setting is a dimly lit bank coin sorting room during the late-night shift. The protagonist is the solitary coin sorter, responsible for processing and counting hundreds of pounds of loose change. The hum and clink of the sorting machine fill the space with a steady rhythm. A courteous night supervisor calls in occasionally over the radio, always politely suggesting the counts are correct, but the sorter suspects otherwise. The threat is an intimate and recurring discrepancy in the coin totals that no paperwork or recount can resolve, a quiet puzzle unfolding in the shadows where precision and patience meet."
   }
 ]
