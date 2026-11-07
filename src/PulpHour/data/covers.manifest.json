@@ -2294,5 +2294,33 @@
     "ink": "#5B3A29",
     "imageUrl": "/pulp-hour/covers/late-night-coin-sorter.jpg",
     "persona": "The setting is a dimly lit bank coin sorting room during the late-night shift. The protagonist is the solitary coin sorter, responsible for processing and counting hundreds of pounds of loose change. The hum and clink of the sorting machine fill the space with a steady rhythm. A courteous night supervisor calls in occasionally over the radio, always politely suggesting the counts are correct, but the sorter suspects otherwise. The threat is an intimate and recurring discrepancy in the coin totals that no paperwork or recount can resolve, a quiet puzzle unfolding in the shadows where precision and patience meet."
+  },
+  {
+    "id": "night-shift-greenhouse-tender",
+    "releasedOn": "2026-11-12T00:00:00Z",
+    "title": {
+      "en": "The Plant That Whispered at Midnight",
+      "zh": "午夜低语的植物",
+      "ja": "真夜中に囁く植物",
+      "ko": "한밤중에 속삭인 식물",
+      "es": "La planta que susurró a medianoche"
+    },
+    "subtitle": {
+      "en": "Night Shift at the Urban Greenhouse",
+      "zh": "城市温室夜班",
+      "ja": "都市温室の夜勤",
+      "ko": "도시 온실의 야간 근무",
+      "es": "Turno nocturno en el invernadero urbano"
+    },
+    "hook": {
+      "en": "Tending rare plants alone after hours, I heard a voice only they could know—soft, courteous, and perfectly wrong.",
+      "zh": "下班后独自照料稀有植物，我听到了只有它们知道的声音——轻柔、有礼，却完全错误。",
+      "ja": "閉館後、珍しい植物を一人で世話していると、彼らだけが知る声が聞こえた―穏やかで礼儀正しいが、完全に間違っている。",
+      "ko": "퇴근 후 희귀 식물을 홀로 돌보던 중 그들만 아는 목소리가 들렸다—부드럽고 예의 바르지만 완전히 틀렸다.",
+      "es": "Cuidando plantas raras a solas después del horario, escuché una voz que solo ellas podrían conocer: suave, cortés y perfectamente equivocada."
+    },
+    "ink": "#4B6F44",
+    "imageUrl": "/pulp-hour/covers/night-shift-greenhouse-tender.jpg",
+    "persona": "Set in a quiet urban greenhouse filled with rare and exotic plants, the protagonist works the night shift tending to fragile greenery under dim grow lights. The voice they encounter is gentle and polite, an unseen presence offering guidance that subtly misleads. The threat is an intimate puzzle of mistaken identity and whispered secrets among the leaves, never overt or violent, evoking a solitary, contemplative mood akin to a last-train stranger or the tenant in 4B."
   }
 ]
