@@ -2322,5 +2322,33 @@
     "ink": "#4B6F44",
     "imageUrl": "/pulp-hour/covers/night-shift-greenhouse-tender.jpg",
     "persona": "Set in a quiet urban greenhouse filled with rare and exotic plants, the protagonist works the night shift tending to fragile greenery under dim grow lights. The voice they encounter is gentle and polite, an unseen presence offering guidance that subtly misleads. The threat is an intimate puzzle of mistaken identity and whispered secrets among the leaves, never overt or violent, evoking a solitary, contemplative mood akin to a last-train stranger or the tenant in 4B."
+  },
+  {
+    "id": "late-night-post-office-clerk",
+    "releasedOn": "2026-11-14T00:00:00Z",
+    "title": {
+      "en": "The Parcel That Never Left the Counter",
+      "zh": "永远留在柜台的包裹",
+      "ja": "カウンターを離れなかった小包",
+      "ko": "카운터를 떠나지 않은 소포",
+      "es": "El paquete que nunca salió del mostrador"
+    },
+    "subtitle": {
+      "en": "Late Shift at the Neighborhood Post Office",
+      "zh": "社区邮局的夜班",
+      "ja": "街の郵便局の深夜勤務",
+      "ko": "동네 우체국 야간 근무",
+      "es": "Turno nocturno en la oficina postal vecinal"
+    },
+    "hook": {
+      "en": "Working the late shift alone, I noticed the same parcel kept returning, addressed to a name no one here recognizes.",
+      "zh": "独自值夜班时，我发现同一个包裹不断被退回，收件人姓名在这里无人知晓。",
+      "ja": "深夜の勤務中、誰も知らない名前宛の同じ小包が何度も戻ってきた。",
+      "ko": "혼자 야간 근무를 하던 중, 여기에선 아무도 모르는 이름으로 된 같은 소포가 계속 돌아오는 걸 알았다.",
+      "es": "Trabajando solo en el turno nocturno, noté que el mismo paquete seguía regresando, dirigido a un nombre que nadie reconoce aquí."
+    },
+    "ink": "#8B4513",
+    "imageUrl": "/pulp-hour/covers/late-night-post-office-clerk.jpg",
+    "persona": "Set in a small-town post office during the quiet late-night shift, the protagonist is the lone clerk responsible for sorting and processing mail. Their voice is weary but attentive, noticing subtle oddities in routine parcels and correspondence. A courteous, well-meaning regular customer or colleague offers gentle observations that never quite align with the protagonist’s growing suspicion. The central threat revolves around a parcel that repeatedly returns, addressed to an unknown name, suggesting a quiet puzzle of mistaken identity or hidden correspondence that unsettles the protagonist’s solitary vigil."
   }
 ]
