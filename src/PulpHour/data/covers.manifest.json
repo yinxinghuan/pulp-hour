@@ -2350,5 +2350,33 @@
     "ink": "#8B4513",
     "imageUrl": "/pulp-hour/covers/late-night-post-office-clerk.jpg",
     "persona": "Set in a small-town post office during the quiet late-night shift, the protagonist is the lone clerk responsible for sorting and processing mail. Their voice is weary but attentive, noticing subtle oddities in routine parcels and correspondence. A courteous, well-meaning regular customer or colleague offers gentle observations that never quite align with the protagonist’s growing suspicion. The central threat revolves around a parcel that repeatedly returns, addressed to an unknown name, suggesting a quiet puzzle of mistaken identity or hidden correspondence that unsettles the protagonist’s solitary vigil."
+  },
+  {
+    "id": "late-night-coin-operated-locker-attendant",
+    "releasedOn": "2026-11-16T00:00:00Z",
+    "title": {
+      "en": "The Locker That Never Opened Again",
+      "zh": "那个永远打不开的储物柜",
+      "ja": "二度と開かなかったロッカー",
+      "ko": "두 번 다시 열리지 않은 사물함",
+      "es": "La Taquilla Que Nunca Se Abrió"
+    },
+    "subtitle": {
+      "en": "Late Shift at the Station Lockers",
+      "zh": "车站储物柜的深夜班",
+      "ja": "駅ロッカーの深夜勤務",
+      "ko": "역 사물함 야간 근무",
+      "es": "Turno Nocturno en los Casilleros"
+    },
+    "hook": {
+      "en": "The coin-operated locker at the train station refuses to open, yet the rental logs show no one has used it for weeks.",
+      "zh": "车站的投币储物柜打不开，但租用记录显示几周无人使用。",
+      "ja": "駅のコインロッカーが開かない。しかし利用記録には数週間の空白がある。",
+      "ko": "기차역 동전 사물함이 열리지 않지만, 대여 기록에는 몇 주간 사용자가 없다.",
+      "es": "La taquilla con monedas en la estación no se abre, aunque los registros muestran semanas sin uso."
+    },
+    "ink": "#9B2D30",
+    "imageUrl": "/pulp-hour/covers/late-night-coin-operated-locker-attendant.jpg",
+    "persona": "You are the night-shift attendant responsible for maintaining and monitoring coin-operated lockers at a quiet urban train station. The fluorescent lights flicker softly, and the only sounds are distant footsteps and the occasional train rumble. Someone or something is keeping a locker locked beyond reason, with rental logs and keypad codes that never align. Your quiet vigilance reveals recurring errors in the system, an intimate puzzle of mistaken identity and misplaced trust."
   }
 ]
