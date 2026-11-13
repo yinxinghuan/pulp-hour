@@ -2378,5 +2378,33 @@
     "ink": "#9B2D30",
     "imageUrl": "/pulp-hour/covers/late-night-coin-operated-locker-attendant.jpg",
     "persona": "You are the night-shift attendant responsible for maintaining and monitoring coin-operated lockers at a quiet urban train station. The fluorescent lights flicker softly, and the only sounds are distant footsteps and the occasional train rumble. Someone or something is keeping a locker locked beyond reason, with rental logs and keypad codes that never align. Your quiet vigilance reveals recurring errors in the system, an intimate puzzle of mistaken identity and misplaced trust."
+  },
+  {
+    "id": "late-night-plant-shop-tender",
+    "releasedOn": "2026-11-18T00:00:00Z",
+    "title": {
+      "en": "The Plant That Never Found Its Owner",
+      "zh": "永远找不到主人的植物",
+      "ja": "持ち主を見つけない植物",
+      "ko": "주인을 찾지 못한 식물",
+      "es": "La Planta Que Nunca Encontró Dueño"
+    },
+    "subtitle": {
+      "en": "Late-Night Plant Shop Mystery",
+      "zh": "深夜植物店之谜",
+      "ja": "深夜の植物店の謎",
+      "ko": "심야 식물 가게 미스터리",
+      "es": "Misterio en la Tienda de Plantas Nocturna"
+    },
+    "hook": {
+      "en": "Working the late shift alone in a small urban plant shop, the tender notices a new plant that keeps appearing with no record or owner.",
+      "zh": "独自值守深夜植物店，店员发现一盆无主新植物不断出现。",
+      "ja": "深夜の植物店で一人勤務中、店員は記録も持ち主もない新しい植物に気づく。",
+      "ko": "작은 도시 식물 가게에서 심야 근무 중, 주인은 없고 기록도 없는 새로운 식물이 계속 나타난다.",
+      "es": "Trabajando solo en el turno nocturno de una pequeña tienda de plantas, el encargado nota una planta nueva que aparece sin dueño ni registro."
+    },
+    "ink": "#4A7C59",
+    "imageUrl": "/pulp-hour/covers/late-night-plant-shop-tender.jpg",
+    "persona": "Set in a small urban plant shop during the quiet late-night shift, the protagonist is the solitary plant tender responsible for watering, cataloging, and caring for greenery. The presence is a polite, softly spoken supplier who insists the new plant was never delivered. The threat is a recurring mysterious plant that appears and disappears, challenging identity and record-keeping, a quiet puzzle amid the hum of grow lights and the scent of damp soil."
   }
 ]
