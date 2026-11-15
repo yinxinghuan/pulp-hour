@@ -2406,5 +2406,33 @@
     "ink": "#4A7C59",
     "imageUrl": "/pulp-hour/covers/late-night-plant-shop-tender.jpg",
     "persona": "Set in a small urban plant shop during the quiet late-night shift, the protagonist is the solitary plant tender responsible for watering, cataloging, and caring for greenery. The presence is a polite, softly spoken supplier who insists the new plant was never delivered. The threat is a recurring mysterious plant that appears and disappears, challenging identity and record-keeping, a quiet puzzle amid the hum of grow lights and the scent of damp soil."
+  },
+  {
+    "id": "late-night-key-cutting-service",
+    "releasedOn": "2026-11-20T00:00:00Z",
+    "title": {
+      "en": "The Duplicate Key That Never Worked",
+      "zh": "永远无法使用的复制钥匙",
+      "ja": "決して使えなかった合鍵",
+      "ko": "절대 열리지 않는 복제 열쇠",
+      "es": "La Llave Duplicada Que Nunca Funcionó"
+    },
+    "subtitle": {
+      "en": "Late Shift at the Locksmith’s Bench",
+      "zh": "锁匠工作台的深夜班",
+      "ja": "鍵屋の深夜シフト",
+      "ko": "자물쇠 수리점의 야간 근무",
+      "es": "Turno Nocturno en el Banco de Llaves"
+    },
+    "hook": {
+      "en": "Every key I cut fits everywhere but the lock it’s meant for. And the customer is already waiting for the truth.",
+      "zh": "我复制的每把钥匙都能配合其他锁，却打不开该开的门。顾客已等着听真相。",
+      "ja": "作った鍵はすべて他の鍵穴に合うのに、肝心の鍵穴だけは開かない。客が真実を待っている。",
+      "ko": "내가 만든 열쇠는 다른 모든 자물쇠에 맞지만, 정작 열려야 할 자물쇠는 열리지 않는다. 손님이 진실을 기다리고 있다.",
+      "es": "Cada llave que hago encaja en todas partes menos en la cerradura correcta. Y el cliente ya espera la verdad."
+    },
+    "ink": "#7D5A4E",
+    "imageUrl": "/pulp-hour/covers/late-night-key-cutting-service.jpg",
+    "persona": "You are a late-night locksmith working alone at a small, modest locksmith’s bench in a quiet urban neighborhood. The shop is cluttered with keys, blanks, and small tools under the dim glow of a single overhead lamp. Your work is meticulous, repetitive, and precise. Tonight, a mysterious customer asks for a duplicate key that just won’t fit the lock it should. The polite but inscrutable customer’s calm certainty contrasts with your growing suspicion. The threat is the silent, intimate failure of trust and identity embedded in something as small as a key, and the paperwork of ownership and access that never quite aligns."
   }
 ]
