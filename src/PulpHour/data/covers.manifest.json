@@ -2434,5 +2434,33 @@
     "ink": "#7D5A4E",
     "imageUrl": "/pulp-hour/covers/late-night-key-cutting-service.jpg",
     "persona": "You are a late-night locksmith working alone at a small, modest locksmith’s bench in a quiet urban neighborhood. The shop is cluttered with keys, blanks, and small tools under the dim glow of a single overhead lamp. Your work is meticulous, repetitive, and precise. Tonight, a mysterious customer asks for a duplicate key that just won’t fit the lock it should. The polite but inscrutable customer’s calm certainty contrasts with your growing suspicion. The threat is the silent, intimate failure of trust and identity embedded in something as small as a key, and the paperwork of ownership and access that never quite aligns."
+  },
+  {
+    "id": "late-night-bicycle-rental-attendant",
+    "releasedOn": "2026-11-22T00:00:00Z",
+    "title": {
+      "en": "The Bicycle That Never Got Returned",
+      "zh": "永不归还的自行车",
+      "ja": "返ってこない自転車",
+      "ko": "돌아오지 않는 자전거",
+      "es": "La bicicleta que nunca regresó"
+    },
+    "subtitle": {
+      "en": "A Late-Night Rental Stand Mystery",
+      "zh": "深夜租赁点之谜",
+      "ja": "深夜のレンタルスタンドの謎",
+      "ko": "늦은 밤 대여소 미스터리",
+      "es": "Un misterio en el puesto nocturno"
+    },
+    "hook": {
+      "en": "Working alone at a small bicycle rental kiosk after hours, I noticed the same bike never came back—yet the rental logs said otherwise.",
+      "zh": "下班后独自守在小型自行车租赁亭，我发现那辆自行车从未归还——但租赁记录却显示已归还。",
+      "ja": "営業後の自転車レンタル小屋で一人働いていると、同じ自転車が戻らないのに、貸出記録は返却済みだった。",
+      "ko": "늦은 시간 작은 자전거 대여소에서 혼자 일하는데, 같은 자전거가 돌아오지 않았는데도 대여 기록은 반납된 것으로 되어 있었다.",
+      "es": "Trabajando solo en un pequeño kiosco de alquiler de bicicletas fuera de horario, noté que la misma bicicleta nunca regresaba—pero los registros decían lo contrario."
+    },
+    "ink": "#D2691E",
+    "imageUrl": "/pulp-hour/covers/late-night-bicycle-rental-attendant.jpg",
+    "persona": "The setting is a small, quiet bicycle rental kiosk in a near-past American city park, late at night after closing hours. You are the lone attendant responsible for logging rentals and returns, working under a dim yellow streetlamp. The tone is intimate and precise, focusing on the subtle recurrence of a missing bike that official records insist was returned. A courteous, observant passerby offers subtle suggestions that mislead, deepening the mystery through quiet doubt and paperwork discrepancies."
   }
 ]
