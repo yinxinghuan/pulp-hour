@@ -2462,5 +2462,33 @@
     "ink": "#D2691E",
     "imageUrl": "/pulp-hour/covers/late-night-bicycle-rental-attendant.jpg",
     "persona": "The setting is a small, quiet bicycle rental kiosk in a near-past American city park, late at night after closing hours. You are the lone attendant responsible for logging rentals and returns, working under a dim yellow streetlamp. The tone is intimate and precise, focusing on the subtle recurrence of a missing bike that official records insist was returned. A courteous, observant passerby offers subtle suggestions that mislead, deepening the mystery through quiet doubt and paperwork discrepancies."
+  },
+  {
+    "id": "late-night-deli-counter",
+    "releasedOn": "2026-11-24T00:00:00Z",
+    "title": {
+      "en": "The Order That Never Came Through",
+      "zh": "永远未送达的订单",
+      "ja": "届かない注文",
+      "ko": "절대 오지 않는 주문",
+      "es": "El Pedido Que Nunca Llegó"
+    },
+    "subtitle": {
+      "en": "Late-Night Deli Counter Mystery",
+      "zh": "深夜熟食柜台之谜",
+      "ja": "深夜デリカウンターの謎",
+      "ko": "심야 델리 카운터의 미스터리",
+      "es": "Misterio en el Mostrador de Deli Nocturno"
+    },
+    "hook": {
+      "en": "Behind the glass display, the late-night deli clerk waits for an order that never arrives, while a polite stranger insists it was placed.",
+      "zh": "玻璃柜台后，深夜熟食员等待着一个从未到来的订单，礼貌的陌生人却坚持说订单存在。",
+      "ja": "ガラス越しに、深夜のデリカウンター店員は届かない注文を待ち、礼儀正しい見知らぬ客はそれがあったと主張する。",
+      "ko": "유리 진열대 너머로 심야 델리 직원이 오지 않는 주문을 기다리는 동안, 정중한 낯선 이가 주문이 있었다고 주장한다.",
+      "es": "Tras el mostrador de cristal, el dependiente nocturno espera un pedido que nunca llega, mientras un extraño cortés insiste en que fue hecho."
+    },
+    "ink": "#B7410E",
+    "imageUrl": "/pulp-hour/covers/late-night-deli-counter.jpg",
+    "persona": "Set in a quiet late-night city deli, the protagonist is the lone counter clerk finishing the last orders and restocking shelves. The encounter with a courteous but mistaken customer who insists an order was placed introduces a subtle, recurring tension over identity and memory. The threat is intimate and bureaucratic: the unseen order, the polite insistence, and the quiet unraveling of certainty in a familiar space."
   }
 ]
