@@ -2490,5 +2490,33 @@
     "ink": "#B7410E",
     "imageUrl": "/pulp-hour/covers/late-night-deli-counter.jpg",
     "persona": "Set in a quiet late-night city deli, the protagonist is the lone counter clerk finishing the last orders and restocking shelves. The encounter with a courteous but mistaken customer who insists an order was placed introduces a subtle, recurring tension over identity and memory. The threat is intimate and bureaucratic: the unseen order, the polite insistence, and the quiet unraveling of certainty in a familiar space."
+  },
+  {
+    "id": "late-night-telephone-switchboard-operator",
+    "releasedOn": "2026-11-26T00:00:00Z",
+    "title": {
+      "en": "The Line That Stayed Open Past Midnight",
+      "zh": "午夜后依然通畅的线路",
+      "ja": "真夜中を過ぎても繋がる線路",
+      "ko": "자정을 넘어서도 열린 전화선",
+      "es": "La línea que permaneció abierta pasada la medianoche"
+    },
+    "subtitle": {
+      "en": "Late-Night Telephone Switchboard Operator",
+      "zh": "午夜电话总机接线员",
+      "ja": "深夜の電話交換手",
+      "ko": "심야 전화 교환원",
+      "es": "Operador nocturno de centralita telefónica"
+    },
+    "hook": {
+      "en": "Alone at the switchboard, I answered calls that never ended—and the voices on the line knew more than they let on.",
+      "zh": "独自在总机前，我接起了永无止境的电话——电话那头的声音知道的，远比表面更多。",
+      "ja": "交換台で一人、終わらない電話に応じていた—回線の向こうの声は、隠された真実を知っていた。",
+      "ko": "교환대에 혼자 앉아 끝나지 않는 전화를 받았다—전화 너머 목소리가 내비친 것은 예상 밖의 것들이었다.",
+      "es": "Solo en la centralita, atendí llamadas que nunca terminaban—y las voces en la línea sabían más de lo que decían."
+    },
+    "ink": "#4B3A72",
+    "imageUrl": "/pulp-hour/covers/late-night-telephone-switchboard-operator.jpg",
+    "persona": "Set in a near-past American city telephone exchange during the late-night shift, the protagonist operates an aging manual switchboard, patching calls with precision. The atmosphere hums with static and faint dial tones. A courteous, knowing caller repeatedly requests connections that seem wrong or misplaced, drawing the protagonist into a quiet menace of mistaken identity and endless recurrence. The tone is intimate, tense, and quietly unsettling, reflecting a world where connection is both lifeline and trap."
   }
 ]
