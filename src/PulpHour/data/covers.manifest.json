@@ -2518,5 +2518,33 @@
     "ink": "#4B3A72",
     "imageUrl": "/pulp-hour/covers/late-night-telephone-switchboard-operator.jpg",
     "persona": "Set in a near-past American city telephone exchange during the late-night shift, the protagonist operates an aging manual switchboard, patching calls with precision. The atmosphere hums with static and faint dial tones. A courteous, knowing caller repeatedly requests connections that seem wrong or misplaced, drawing the protagonist into a quiet menace of mistaken identity and endless recurrence. The tone is intimate, tense, and quietly unsettling, reflecting a world where connection is both lifeline and trap."
+  },
+  {
+    "id": "late-night-coin-operated-binoculars",
+    "releasedOn": "2026-11-28T00:00:00Z",
+    "title": {
+      "en": "The Viewer Who Watched Me Watch",
+      "zh": "观景镜里的窥视者",
+      "ja": "見ている者の視線",
+      "ko": "나를 지켜본 관람기",
+      "es": "El Espectador Que Me Observó"
+    },
+    "subtitle": {
+      "en": "Late-Night Coin-Operated Binocular Attendant",
+      "zh": "深夜投币望远镜管理员",
+      "ja": "深夜の投銭式双眼鏡係",
+      "ko": "심야 동전식 망원경 관리인",
+      "es": "Encargado de Binoculares Nocturnos"
+    },
+    "hook": {
+      "en": "At the city overlook, the binoculars never stop focusing — but someone else might be seeing more than they should.",
+      "zh": "在城市观景台，望远镜不停对焦，但或许有人看到了不该看的东西。",
+      "ja": "街の展望台で双眼鏡は止まらない―誰かが見てはいけないものを見ているかもしれない。",
+      "ko": "도시 전망대 동전 망원경은 멈추지 않는다—누군가가 보아선 안 될 것을 보고 있을지도 모른다.",
+      "es": "En el mirador de la ciudad, los binoculares no dejan de enfocar—pero alguien podría estar viendo más de lo debido."
+    },
+    "ink": "#3A4A6E",
+    "imageUrl": "/pulp-hour/covers/late-night-coin-operated-binoculars.jpg",
+    "persona": "You are the night-shift attendant at a popular city overlook equipped with coin-operated binoculars. Your job is to maintain the machines and quietly observe the ebb and flow of night visitors. The setting is a dimly lit concrete platform under a starless sky, with distant city lights shimmering. The second presence is a courteous, soft-spoken visitor who offers subtle observations about what the binoculars reveal, but their interpretations seem quietly off. The threat is the intimacy of watching and being watched, the recurrence of certain images through the lenses, and the uncertainty over what is real or imagined in the distant view. Your narration unfolds with the tone of a late-night park ranger or a solitary toll booth operator — alert but resigned, quietly attentive to small details that never quite add up."
   }
 ]
