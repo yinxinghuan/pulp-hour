@@ -2546,5 +2546,33 @@
     "ink": "#3A4A6E",
     "imageUrl": "/pulp-hour/covers/late-night-coin-operated-binoculars.jpg",
     "persona": "You are the night-shift attendant at a popular city overlook equipped with coin-operated binoculars. Your job is to maintain the machines and quietly observe the ebb and flow of night visitors. The setting is a dimly lit concrete platform under a starless sky, with distant city lights shimmering. The second presence is a courteous, soft-spoken visitor who offers subtle observations about what the binoculars reveal, but their interpretations seem quietly off. The threat is the intimacy of watching and being watched, the recurrence of certain images through the lenses, and the uncertainty over what is real or imagined in the distant view. Your narration unfolds with the tone of a late-night park ranger or a solitary toll booth operator — alert but resigned, quietly attentive to small details that never quite add up."
+  },
+  {
+    "id": "late-night-satchel-seller",
+    "releasedOn": "2026-11-30T00:00:00Z",
+    "title": {
+      "en": "The Satchel That Never Changed Hands",
+      "zh": "永远未换手的背包",
+      "ja": "決して手渡されなかった鞄",
+      "ko": "절대 건네지 않은 가방",
+      "es": "La bandolera que nunca cambió de manos"
+    },
+    "subtitle": {
+      "en": "Late-Night Vendor on a Quiet Street",
+      "zh": "寂静街头的夜间摊贩",
+      "ja": "静かな通りの深夜売り子",
+      "ko": "조용한 거리의 심야 행상인",
+      "es": "Vendedor nocturno en calle tranquila"
+    },
+    "hook": {
+      "en": "Selling handcrafted satchels after dark, I noticed one that always returned—never purchased, never lost, just waiting.",
+      "zh": "夜晚售卖手工背包，我发现有一个总是回来——既未售出，也未遗失，只是在等待。",
+      "ja": "夜に手作りの鞄を売ると、いつも戻ってくる一つがあった。買われず、失われず、ただ待っているだけ。",
+      "ko": "밤에 수제 가방을 팔 때, 항상 돌아오는 하나가 있었다—팔리지도, 잃어버리지도 않고, 그저 기다리고 있었다.",
+      "es": "Vendiendo bandoleras artesanales tras la oscuridad, noté una que siempre regresaba—nunca comprada, nunca perdida, solo esperando."
+    },
+    "ink": "#9B4726",
+    "imageUrl": "/pulp-hour/covers/late-night-satchel-seller.jpg",
+    "persona": "Set on a near-empty city street at night, the protagonist is a late-night satchel vendor who specializes in handcrafted leather goods. The quiet streetlamp glow casts long shadows on the pavement, and occasional passersby nod politely but never buy the same satchel twice. A courteous, mysterious customer appears regularly, offering subtle observations that hint the satchel's presence is more than coincidence. The threat is the unsettling recurrence of the same satchel, always returned, suggesting a precision puzzle of ownership and identity in the stillness of the night."
   }
 ]
