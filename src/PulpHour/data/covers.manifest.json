@@ -2574,5 +2574,33 @@
     "ink": "#9B4726",
     "imageUrl": "/pulp-hour/covers/late-night-satchel-seller.jpg",
     "persona": "Set on a near-empty city street at night, the protagonist is a late-night satchel vendor who specializes in handcrafted leather goods. The quiet streetlamp glow casts long shadows on the pavement, and occasional passersby nod politely but never buy the same satchel twice. A courteous, mysterious customer appears regularly, offering subtle observations that hint the satchel's presence is more than coincidence. The threat is the unsettling recurrence of the same satchel, always returned, suggesting a precision puzzle of ownership and identity in the stillness of the night."
+  },
+  {
+    "id": "late-night-parking-lot-cleaner",
+    "releasedOn": "2026-12-02T00:00:00Z",
+    "title": {
+      "en": "The Lot That Never Cleared Out",
+      "zh": "永远不清空的停车场",
+      "ja": "決して空にならない駐車場",
+      "ko": "절대 비지 않는 주차장",
+      "es": "El Estacionamiento Que Nunca Se Vació"
+    },
+    "subtitle": {
+      "en": "Late Shift at the Empty Parking Lot",
+      "zh": "深夜无人的停车场值班",
+      "ja": "深夜の無人駐車場勤務",
+      "ko": "심야 주차장 청소 근무",
+      "es": "Turno Nocturno en el Estacionamiento Vacío"
+    },
+    "hook": {
+      "en": "Each night, I sweep the empty lot — but a stray car keeps returning, its headlights flickering like a ghost refusing to leave.",
+      "zh": "每晚我清扫空荡的停车场，但一辆迷路的车不断出现，车灯闪烁如不肯离去的幽灵。",
+      "ja": "毎晩、私は空の駐車場を掃くが、迷い込んだ車が何度も戻り、幽霊のようにヘッドライトがちらつく。",
+      "ko": "매일 밤 나는 텅 빈 주차장을 청소하지만, 헤드라이트가 유령처럼 깜빡이는 낯선 차가 계속 돌아온다.",
+      "es": "Cada noche barro el estacionamiento vacío, pero un auto errante regresa, sus faros parpadean como un fantasma que se niega a partir."
+    },
+    "ink": "#884422",
+    "imageUrl": "/pulp-hour/covers/late-night-parking-lot-cleaner.jpg",
+    "persona": "The protagonist is a solitary night-shift parking lot cleaner in a near-empty suburban commercial lot. The setting is dimly lit by occasional flickering streetlamps and distant neon signs, with the protagonist methodically sweeping and inspecting the lot. The secondary presence is a courteous, vaguely familiar driver who appears intermittently in the returning car, offering polite but subtly incorrect comments about the lot's layout and the car's parking history. The recurring threat is the uncanny precision of the car's return, the mistaken identity of the driver, and the intimacy of the protagonist’s quiet vigil in the empty night."
   }
 ]
